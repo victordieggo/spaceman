@@ -47,7 +47,7 @@ a:hover {text-decoration: underline;}
 body, hr {background-color: #e3e3e3;}
 header {background-color: #f8d557;}
 #content {background-color: #fff;}
-nav ul.menu a:hover, #header-top, #footer {background-color: #1f1f1f;}
+nav ul.menu a:hover, #header-top, footer {background-color: #1f1f1f;}
 #copyright {background: #222;}
 .fleft {float: left;}
 .fright {float: right;}

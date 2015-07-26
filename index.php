@@ -119,8 +119,8 @@
             </div>
         </div>
     
-        <!--FOOTER-->
-        <div id="footer">
+        <!-- START FOOTER -->
+        <footer>
             <div class="wrapper txt-wht">
                 <div class="grid">
                     <div class="threecol">
@@ -149,8 +149,9 @@
                     </div>
                 </div>
             </div>
-        </div>
-    
+        </footer>
+        <!-- END FOOTER -->
+
         <div id="copyright">
             <div class="grid txt-wht txt-small">
                 <div class="twelvecol cnt">
