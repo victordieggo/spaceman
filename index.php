@@ -7,6 +7,7 @@
 	<link rel="icon" href="img/icon.png" />
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" media="screen" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta name="description" content="">
@@ -159,9 +160,6 @@
                 </div>
             </div>
         </div>
-    
-        <!--ADITIONAL STYLES-->
-        <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
 
         <!--JQUERY-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
