@@ -19,11 +19,11 @@
     <!-- BEGIN HEADER-TOP -->
     <div id="header-top">
         <div class="wrapper">
-            <div class="grid txt-wht txt-small">
+            <div class="grid txt-white txt-small">
                 <div class="sixcol">
-                    Version 1.6
+                    Version 1.6.2
                 </div>
-                <div class="sixcol txt-right">
+                <div class="sixcol align-right">
                     I'm gonna chase you out of earth!
                 </div>
             </div>
@@ -37,7 +37,7 @@
             <div class="sixcol">
                 <a class="logo" href=""></a>
             </div>
-            <div class="sixcol txt-right">
+            <div class="sixcol align-right">
                 <!-- BEGIN NAVIGATION -->
                 <nav>
                     <ul class="menu">
@@ -122,7 +122,7 @@
 
     <!-- START FOOTER -->
     <footer>
-        <div class="wrapper txt-wht">
+        <div class="wrapper txt-white">
             <div class="grid">
                 <div class="threecol">
                     <h3>Lorem Ipsum</h3>
@@ -150,9 +150,9 @@
     <!-- END FOOTER -->
 
     <div id="copyright">
-        <div class="grid txt-wht txt-small">
-            <div class="twelvecol cnt">
-                <p>© 2015 Spaceman 1.6 Framework. | Desenvolvido por V. de Várias Fita.</p>
+        <div class="grid txt-white txt-small">
+            <div class="twelvecol align-center">
+                <p>© 2015 Spaceman 1.6.2 Framework. | Desenvolvido por V. de Várias Fita.</p>
             </div>
         </div>
     </div>
