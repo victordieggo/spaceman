@@ -52,8 +52,11 @@ Version: 1.6.2
  * TYPOGRAPHY
  * ====================================================================================================================*/
 
+/*==== DEFINE FONT & WEIGHT ====*/
 body {font-family: 'Open Sans', sans-serif; font-size: 1em;}
 h1, h2, h3, h4, h5, h6 {font-weight: 300;}
+
+/*==== FONT SIZE ====*/
 h1 {font-size: 2em;}
 h2 {font-size: 1.5em;}
 h3 {font-size: 1.17em;}
@@ -61,9 +64,13 @@ h4 {font-size: 1.12em;}
 h5 {font-size: .83em;}
 h6 {font-size: .75em;}
 small, .txt-small {font-size: 0.80em;}
+
+/*==== FONT COLOR ====*/
 body {color: #222;}
 .txt-white, ul.menu a:hover {color: #fff;}
 a {color: inherit;}
+
+/*==== ALINHAMENTOS/EFEITOS ====*/
 .align-center {text-align: center;}
 .align-right {text-align: right;}
 a, nav ul.menu a:hover {text-decoration: none;}
@@ -73,11 +80,14 @@ a:hover {text-decoration: underline;}
  * GLOBAL
  * ====================================================================================================================*/
 
+/*==== BACKGROUND-COLOR ====*/
 body, hr {background-color: #e3e3e3;}
 header {background-color: #f8d557;}
 #content {background-color: #fff;}
 nav ul.menu a:hover, #header-top, footer {background-color: #1f1f1f;}
 #copyright {background: #222;}
+
+/*==== GERAL ====*/
 .fleft {float: left;}
 .fright {float: right;}
 .clear {clear: both;}
