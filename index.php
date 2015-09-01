@@ -6,9 +6,7 @@
     <title>Spaceman Framework</title>
     <link rel="icon" href="img/icon.png" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/global-styles.css" type="text/css" media="screen" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="">
     <meta name="keywords" content="">
@@ -57,7 +55,7 @@
     </header>
     <!-- END HEADER -->
 
-    <!--SLIDER-->
+    <!-- BEGIN SLIDER -->
     <div class="wrapper">
         <div class="flexslider">
             <ul class="slides">
@@ -66,8 +64,9 @@
             </ul>
         </div>
     </div>
-
-    <!--CONTENT-->
+    <!-- END SLIDER -->
+	
+    <!-- BEGIN CONTENT -->
     <div id="content" class="wrapper">
         <div class="grid">
             <div class="threecol">
@@ -119,8 +118,9 @@
             </div>
         </div>
     </div>
+    <!-- END CONTENT -->
 
-    <!-- START FOOTER -->
+    <!-- BEGIN FOOTER -->
     <footer>
         <div class="wrapper txt-white">
             <div class="grid">
@@ -157,9 +157,9 @@
         </div>
     </div>
 
-    <!--JQUERY-->
+    <!-- BEGIN JQUERY // PLACED AT THE BOTTOM OF THE PAGE FOR FASTER LOADING -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="js/jquery.flexslider.js"></script>
+    <script src="js/global-js.js"></script>
     <script type="text/javascript">
         $(window).load(function() {
             $('.flexslider').flexslider({
@@ -167,6 +167,7 @@
             });
         });
     </script>
+    <!-- END JQUERY -->
 
 </body>
 </html>
