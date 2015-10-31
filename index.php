@@ -41,8 +41,18 @@
 					<div class="mobile-nav">Menu</div>
 					<ul class="menu">
 						<li><a href="#">Home</a></li>
-						<li><a href="#">Sobre</a></li>
-						<li><a href="#">Serviços</a></li>
+						<li class="menu-item-has-children">
+							<a href="#">Sobre</a>
+							<ul class="sub-menu">
+								<li><a href="#">Lorem Ipsum</a></li>
+							</ul>
+						</li>
+						<li class="menu-item-has-children">
+							<a href="#">Serviços</a>
+							<ul class="sub-menu">
+								<li><a href="#">Dolor Sit Amet</a></li>
+							</ul>
+						</li>
 						<li><a href="#">Fale Conosco</a></li>
 					</ul>
 				</div>

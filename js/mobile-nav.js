@@ -12,7 +12,6 @@ $(document).ready(function(){
 	//ABRE O SUBMENU
 	$('.menu-item-has-children').click(function(){
 		if ($(window).width() <= 1023) {
-			$(this).toggleClass('selected-item');
 			$(this).children('.sub-menu').slideToggle(400);
 			
 			//EVITA QUE TODAS OS NÍVEIS DO SUBMENU SEJAM ABERTOS JUNTOS
@@ -31,6 +30,11 @@ $(window).on('resize', function() {
 		});
 	}
 	if ($('ul.sub-menu').is(':visible')) {
+		$('ul.sub-menu').css({
+			'display': ''
+		});
+	}
+	if ($('ul.sub-menu').is(':hidden')) {
 		$('ul.sub-menu').css({
 			'display': ''
 		});
