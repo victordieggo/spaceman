@@ -5,16 +5,22 @@
 *{margin:0;padding:0;text-indent:0;list-style:none;border:none;line-height: 160%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}html{overflow-y:scroll;overflow-x:hidden;}
 
 /* ====================================================================================================================
- * GRID
+ * SPACEMAN GRID
  * ====================================================================================================================*/
 
-/*==== MAIN ====*/
+/*==== GRID WRAPPER ====*/
+
+.wrapper {max-width: 1240px; margin: 0 auto;}
+
+/*==== MAIN GRID ====*/
+
 .grid {margin-left: 1px; padding: 1%;}
 .grid:after {content: ""; display: table; clear: both;}
 [class*='col'] {float: left; vertical-align: top; margin: 1%;}
 [class*='prod'] {float: none; display: inline-block;}
 
 /*==== COLUNAS ====*/
+
 .onecol {width: 6.333333333333333%;}
 .twocol {width: 14.66666666666667%;}
 .threecol {width: 23%;}
@@ -28,26 +34,37 @@
 .elevencol {width: 89.66666666666666%;}
 .twelvecol {width: 98%;}
 
-/*==== RESPONSIVE ====*/
+/*==== MEDIA QUERIES ====*/
+
 @media only screen and (max-width: 920px) {
+	
     .grid {margin-left: 0;}
+	
 }
 
 @media only screen and (max-width: 600px) {
+	
     .grid {padding: 4%;}
     [class*='col'], .wrapper {margin: 0 0 4% 0;}    
     div[class*='col'] {width: 100%;}
+	
 }
 
 /* ====================================================================================================================
  * TYPOGRAPHY
  * ====================================================================================================================*/
 
-/*==== DEFINE FONT & WEIGHT ====*/
-body {font-family: 'Open Sans', sans-serif; font-size: 1em;}
-h1, h2, h3, h4, h5, h6 {font-weight: 300;}
+/*==== IMPORT/EMBED FONTS ====*/
 
-/*==== FONT SIZE ====*/
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
+
+/*==== DEFINE FONT & WEIGHT ====*/
+
+body {font-family: 'Open Sans', sans-serif; font-size: 1em;}
+h1, h2, h3, h4, h5, h6 {font-weight: 600;}
+
+/*==== DEFINE FONT SIZE ====*/
+
 h1 {font-size: 2em;}
 h2 {font-size: 1.5em;}
 h3 {font-size: 1.17em;}
@@ -56,12 +73,15 @@ h5 {font-size: .83em;}
 h6 {font-size: .75em;}
 small, .txt-small {font-size: 0.80em;}
 
-/*==== FONT COLOR ====*/
+/*==== DEFINE FONT COLOR ====*/
+
 body {color: #222;}
-.txt-white, ul.menu a:hover {color: #fff;}
+.txt-white, ul.menu li:hover > a {color: #fff;}
+ul.sub-menu a {color: #cecece;}
 a {color: inherit;}
 
 /*==== ALINHAMENTOS/EFEITOS ====*/
+
 .align-center {text-align: center;}
 .align-right {text-align: right;}
 a, nav ul.menu a:hover {text-decoration: none;}
@@ -72,20 +92,30 @@ a:hover {text-decoration: underline;}
  * ====================================================================================================================*/
 
 /*==== BACKGROUND-COLOR ====*/
+
 body, hr {background-color: #e3e3e3;}
 header {background-color: #f8d557;}
 #content {background-color: #fff;}
-nav ul.menu a:hover, #header-top, footer {background-color: #1f1f1f;}
-#copyright {background: #222;}
+#header-top, ul.menu li:hover > a, footer {background-color: #1f1f1f;}
+ul.sub-menu a, #copyright {background: #222;}
 
-/*==== GERAL ====*/
+/*==== FLOATING ====*/
+
 .fleft {float: left;}
 .fright {float: right;}
+.fnone, .vcenter {float: none;}
 .clear {clear: both;}
-.logo, nav ul.menu a, ul.menu li {display: inline-block;}
-.wrapper {max-width: 1240px; margin: 0 auto;}
+
+/*==== POSITION/DISPLAY ====*/
+
+.logo {display: block;}
+.vcenter {display: inline-block;}
+
+/*==== GERAL ====*/
+
 img {max-width: 100%;}
 hr {border: 0; height: 1px; margin: 8px 0;}
+.vcenter {vertical-align: middle;}
 
 /* ====================================================================================================================
  * HEADER
@@ -98,13 +128,44 @@ hr {border: 0; height: 1px; margin: 8px 0;}
     background-image: url(../img/logotipo.svg);
     background-size: 100% 100%;
 }
-nav ul.menu a {padding: 0.3em 1em;}
 
 /* ====================================================================================================================
- * RESPONSIVE
+ * MULTI LEVEL NAVIGATION
+ * ====================================================================================================================*/
+
+/*==== NAVIGATION CORE ====*/
+
+nav li ul {position: absolute; z-index: 9999;}
+nav li ul li {position: relative;}
+
+nav li:hover > ul, nav li ul a, nav ul ul > li {display: block;}
+nav li, nav a {display: inline-block;}
+nav li ul, .mobile-nav {display: none;}
+
+nav ul, nav li ul {white-space: nowrap;}
+nav li ul ul {left: 100%; top:0;}
+
+/*==== NAVIGATION STYLES ====*/
+
+nav a {padding: 0.6em 1em;}
+
+/* ====================================================================================================================
+ * MEDIA QUERIES
  * ====================================================================================================================*/
 
 @media only screen and (max-width: 960px) {
-    .logo {width: 280px; height: 105px;}   
+	   
     img, .wrapper {width: 100%}
+}
+
+@media only screen and (max-width: 920px) {
+	
+	header {text-align: center;}
+    .logo {width: 280px; height: 67px;}
+
+	nav li ul {position: relative;}
+	nav, .mobile-nav, nav ul li, nav a {display: block;}
+    nav ul, nav li:hover > ul {display: none;}
+	nav li ul ul {left: 0;}	
+	
 }
