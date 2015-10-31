@@ -18,7 +18,7 @@
 		<div class="wrapper">
 			<div class="grid txt-white txt-small">
 				<div class="sixcol">
-					Version 1.6.4
+					Version 1.6.5
 				</div>
 				<div class="sixcol align-right">
 					I'm gonna chase you out of earth!
@@ -41,18 +41,8 @@
 					<div class="mobile-nav">Menu</div>
 					<ul class="menu">
 						<li><a href="#">Home</a></li>
-						<li class="menu-item-has-children">
-							<a href="#">Sobre</a>
-							<ul class="sub-menu">
-								<li><a href="#">Lorem Ipsum</a></li>
-							</ul>
-						</li>
-						<li class="menu-item-has-children">
-							<a href="#">Serviços</a>
-							<ul class="sub-menu">
-								<li><a href="#">Dolor Sit Amet</a></li>
-							</ul>
-						</li>
+						<li><a href="#">Sobre</a></li>
+						<li><a href="#">Serviços</a></li>
 						<li><a href="#">Fale Conosco</a></li>
 					</ul>
 				</div>
@@ -130,7 +120,7 @@
 	<div id="copyright">
 		<div class="grid txt-white txt-small">
 			<div class="twelvecol align-center">
-				<p>© 2015 Spaceman 1.6.4 Framework. | Desenvolvido por V. de Várias Fita.</p>
+				<p>© 2015 Spaceman 1.6.5 Framework. | Desenvolvido por V. de Várias Fita.</p>
 			</div>
 		</div>
 	</div>

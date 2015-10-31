@@ -33,8 +33,7 @@ $(window).on('resize', function() {
 		$('ul.sub-menu').css({
 			'display': ''
 		});
-	}
-	if ($('ul.sub-menu').is(':hidden')) {
+	} else {
 		$('ul.sub-menu').css({
 			'display': ''
 		});
