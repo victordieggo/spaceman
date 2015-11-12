@@ -34,6 +34,8 @@
 .elevencol                                      {width: 89.66666666666666%;}
 .twelvecol                                      {width: 98%;}
 
+.colpad                                         {padding: 1em;}
+
 /*=============================== MEDIA QUERIES ===============================*/
 
 @media only screen and (max-width: 920px) {

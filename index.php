@@ -65,7 +65,7 @@
 
 	<!-- BEGIN CONTENT -->
 	<div class="wrapper">
-		<div class="grid bg-light">
+		<div class="grid bg-light">			
 			<div class="fourcol">
 				<img src="img/thumb.jpg" alt="thumb" />
 				<h3>Lorem Ipsum</h3>
