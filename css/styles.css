@@ -2,39 +2,39 @@
  * RESET
  * ====================================================================================================================*/
 
-*{margin:0;padding:0;text-indent:0;list-style:none;border:none;line-height: 160%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}html{overflow-y:scroll;overflow-x:hidden;}
+*{margin:0;padding:0;text-indent:0;list-style:none;border:none;line-height:160%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}html{overflow-y:scroll;overflow-x:hidden;}
 
 /* ====================================================================================================================
  * SPACEMAN GRID
  * ====================================================================================================================*/
 
-/*==== GRID WRAPPER ====*/
+/*================================ GRID WRAPPER ===============================*/
 
-.wrapper {max-width: 1240px; margin: 0 auto;}
+.wrapper                                        {max-width: 1240px; margin: 0 auto;}
 
-/*==== MAIN GRID ====*/
+/*================================== MAIN GRID ================================*/
 
-.grid {margin-left: 1px; padding: 1%;}
-.grid:after {content: ""; display: table; clear: both;}
-[class*='col'] {float: left; vertical-align: top; margin: 1%;}
-[class*='prod'] {float: none; display: inline-block;}
+.grid                                           {margin-left: 1px; padding: 1%;}
+.grid:after                                     {content: ""; display: table; clear: both;}
+[class*='col']                                  {float: left; vertical-align: top; margin: 1%;}
+[class*='prod']                                 {float: none; display: inline-block;}
 
-/*==== COLUNAS ====*/
+/*=================================== COLUNAS =================================*/
 
-.onecol {width: 6.333333333333333%;}
-.twocol {width: 14.66666666666667%;}
-.threecol {width: 23%;}
-.fourcol {width: 31.33333333333333%;}
-.fivecol {width: 39.66666666666667%;}
-.sixcol {width: 48%;}
-.sevencol {width: 56.33333333333333%;}
-.eightcol {width: 64.66666666666666%;}
-.ninecol {width: 73%;}
-.tencol {width: 81.33333333333333%;}
-.elevencol {width: 89.66666666666666%;}
-.twelvecol {width: 98%;}
+.onecol                                         {width: 6.333333333333333%;}
+.twocol                                         {width: 14.66666666666667%;}
+.threecol                                       {width: 23%;}
+.fourcol                                        {width: 31.33333333333333%;}
+.fivecol                                        {width: 39.66666666666667%;}
+.sixcol                                         {width: 48%;}
+.sevencol                                       {width: 56.33333333333333%;}
+.eightcol                                       {width: 64.66666666666666%;}
+.ninecol                                        {width: 73%;}
+.tencol                                         {width: 81.33333333333333%;}
+.elevencol                                      {width: 89.66666666666666%;}
+.twelvecol                                      {width: 98%;}
 
-/*==== MEDIA QUERIES ====*/
+/*=============================== MEDIA QUERIES ===============================*/
 
 @media only screen and (max-width: 920px) {
 	
@@ -54,68 +54,75 @@
  * TYPOGRAPHY
  * ====================================================================================================================*/
 
-/*==== IMPORT/EMBED FONTS ====*/
+/*============================ IMPORT/EMBED FONTS =============================*/
 
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600);
 
-/*==== DEFINE FONT & WEIGHT ====*/
+/*=========================== DEFINE FONT & WEIGHT ============================*/
 
-body {font-family: 'Open Sans', sans-serif; font-size: 1em;}
-h1, h2, h3, h4, h5, h6 {font-weight: 600;}
+body, .btn, input, select, textarea             {font-family: 'Open Sans', sans-serif;}
+h1, h2, h3, h4, h5, h6, strong, .strong         {font-weight: 600;}
 
-/*==== DEFINE FONT SIZE ====*/
+/*============================= DEFINE FONT-SIZE ==============================*/
 
-h1 {font-size: 2em;}
-h2 {font-size: 1.5em;}
-h3 {font-size: 1.17em;}
-h4 {font-size: 1.12em;}
-h5 {font-size: .83em;}
-h6 {font-size: .75em;}
-small, .txt-small {font-size: 0.80em;}
+.align-center                                   {text-align: center;}
+h1                                              {font-size: 2.5em;}
+h2                                              {font-size: 2.2em;}
+h3                                              {font-size: 1.9em;}
+h4                                              {font-size: 1.6em;}
+h5                                              {font-size: 1.3em;}
+h6, body, .btn, input, select, textarea         {font-size: 1em;}
+small, .small                                   {font-size: .8em;}
 
-/*==== DEFINE FONT COLOR ====*/
+/*============================ DEFINE FONT-COLOR ===============================*/
 
-body {color: #222;}
-.txt-white, ul.menu li:hover > a {color: #fff;}
-ul.sub-menu a {color: #cecece;}
-a {color: inherit;}
+body, .btn                                      {color: #222;}
+.txt-white, ul.menu li:hover > a                {color: #fff;}
+ul.sub-menu a                                   {color: #cecece;}
+a                                               {color: inherit;}
 
-/*==== ALINHAMENTOS/EFEITOS ====*/
+/*=========================== ALINHAMENTOS/EFEITOS =============================*/
 
-.align-center {text-align: center;}
-.align-right {text-align: right;}
-a, nav ul.menu a:hover {text-decoration: none;}
-a:hover {text-decoration: underline;}
+.align-center                                   {text-align: center;}
+.align-right                                    {text-align: right;}
+a, nav ul.menu a:hover                          {text-decoration: none;}
+a:hover                                         {text-decoration: underline;}
+.uppercase 										{text-transform: uppercase;}
 
 /* ====================================================================================================================
- * GLOBAL
+ * BASE STYLES
  * ====================================================================================================================*/
 
-/*==== BACKGROUND-COLOR ====*/
+/*============================ BACKGROUND-COLOR ===============================*/
 
-body, hr {background-color: #e3e3e3;}
-header {background-color: #f8d557;}
-#content {background-color: #fff;}
-#header-top, ul.menu li:hover > a, footer {background-color: #1f1f1f;}
-ul.sub-menu a, #copyright {background: #222;}
+body, hr                                        {background-color: #e3e3e3;}
+.bg-main, .btn:hover                            {background-color: #f8d557;}
+.bg-light                                       {background-color: #fff;}
+.bg-dark, ul.sub-menu a                         {background: #222;}
+.bg-darker, ul.menu li:hover > a                {background-color: #191919;}
 
-/*==== FLOATING ====*/
+/*================================ FLOATING ===================================*/
 
-.fleft {float: left;}
-.fright {float: right;}
-.fnone, .vcenter {float: none;}
-.clear {clear: both;}
+.fleft                                          {float: left;}
+.fright                                         {float: right;}
+.fnone, .vcenter                                {float: none;}
+.clear                                          {clear: both;}
 
-/*==== POSITION/DISPLAY ====*/
+/*================================= DISPLAY ===================================*/
 
-.logo {display: block;}
-.vcenter {display: inline-block;}
+.block, .logo, small                            {display: block;}
+.inline, .vcenter, .btn                         {display: inline-block;}
 
-/*==== GERAL ====*/
+/*================================= GLOBAL ====================================*/
 
-img {max-width: 100%;}
-hr {border: 0; height: 1px; margin: 8px 0;}
-.vcenter {vertical-align: middle;}
+img                                             {max-width: 100%;}
+hr                                              {border: 0; height: 1px; margin: 8px 0;}
+.vcenter                                        {vertical-align: middle;}
+.smooth-hover, .btn, nav a {
+    -webkit-transition: all .3s;
+       -moz-transition: all .3s;
+            transition: all .3s;
+}
 
 /* ====================================================================================================================
  * HEADER
@@ -133,21 +140,52 @@ hr {border: 0; height: 1px; margin: 8px 0;}
  * MULTI LEVEL NAVIGATION
  * ====================================================================================================================*/
 
-/*==== NAVIGATION CORE ====*/
+/*=========================== NAVIGATION CORE =================================*/
 
-nav li ul {position: absolute; z-index: 9999;}
-nav li ul li {position: relative;}
+nav li ul                                       {position: absolute; z-index: 9999;}
+nav li ul li                                    {position: relative;}
 
-nav li:hover > ul, nav li ul a, nav ul ul > li {display: block;}
-nav li, nav a {display: inline-block;}
-nav li ul, .mobile-nav {display: none;}
+nav li:hover > ul, nav li ul a, nav ul ul > li  {display: block;}
+nav li, nav a                                   {display: inline-block;}
+nav li ul, .mobile-nav                          {display: none;}
 
-nav ul, nav li ul {white-space: nowrap;}
-nav li ul ul {left: 100%; top:0;}
+nav ul, nav li ul                               {white-space: nowrap;}
 
-/*==== NAVIGATION STYLES ====*/
+/*========================== NAVIGATION STYLES ================================*/
 
-nav a {padding: 0.6em 1em;}
+nav a                                           {padding: .6em 1em;}
+
+/* ====================================================================================================================
+ * FORM, BUTTON E INPUT
+ * ====================================================================================================================*/
+
+/*================================ BOTÕES =====================================*/
+
+.btn, a.btn, input[type="submit"], input[type="button"], input[type="checkbox"], input[type="radio"] {border: none;}
+
+.btn, a.btn {
+	background-color: #eee;
+	padding: 1em 2.3em;
+	text-decoration: none;
+	box-sizing: border-box;
+}
+
+/*================================ INPUT =====================================*/
+
+input[type="submit"], input[type="button"], input[type="checkbox"], input[type="radio"] {height: auto; width: auto;}
+
+input, select, textarea                                 {width: 100%; border: 1px solid #cecece;}
+
+input, select                                           {height: 3.5em; padding: 0 .6em;}
+
+.btn:focus, input:focus, select:focus, textarea:focus   {outline: none;}
+
+textarea                                                {height: 9em; padding: .6em; resize: none;}
+
+.btn, input, select, textarea                           {cursor: pointer;}
+
+::-webkit-input-placeholder                             {color: #888;}
+:-ms-input-placeholder                                  {color: #888;}
 
 /* ====================================================================================================================
  * MEDIA QUERIES

@@ -14,14 +14,14 @@
 <body>
 
 	<!-- BEGIN HEADER-TOP -->
-	<div id="header-top">
+	<div class="bg-dark">
 		<div class="wrapper">
-			<div class="grid txt-white txt-small">
+			<div class="grid txt-white small">
 				<div class="sixcol">
-					Version 1.6.5
+					<p>Version 1.7</p>
 				</div>
 				<div class="sixcol align-right">
-					I'm gonna chase you out of earth!
+					<p>I'm gonna chase you out of earth!</p>
 				</div>
 			</div>
 		</div>
@@ -29,15 +29,15 @@
 	<!-- END HEADER TOP-->
 
 	<!-- BEGIN HEADER -->
-	<header class="wrapper">
+	<header class="wrapper bg-main">
 		<div class="grid">
-			<div class="twelvecol">
+			<div class="sixcol">
 				<a class="logo" href=""></a>
 			</div>
 
 			<!-- BEGIN NAVIGATION -->
-			<nav>
-				<div class="twelvecol">
+			<div class="sixcol">
+				<nav>
 					<div class="mobile-nav">Menu</div>
 					<ul class="menu">
 						<li><a href="#">Home</a></li>
@@ -45,8 +45,8 @@
 						<li><a href="#">Serviços</a></li>
 						<li><a href="#">Fale Conosco</a></li>
 					</ul>
-				</div>
-			</nav>
+				</nav>
+			</div>
 			<!-- END NAVIGATION -->
 
 		</div>
@@ -57,31 +57,35 @@
 	<div class="wrapper">
 		<div class="flexslider">
 			<ul class="slides">
-				<li><img src="img/slide1.jpg" alt="" />
-				</li>
+				<li><img src="img/slide1.jpg" alt="" /></li>
 			</ul>
 		</div>
 	</div>
 	<!-- END SLIDER -->
 
 	<!-- BEGIN CONTENT -->
-	<div id="content" class="wrapper">
-		<div class="grid">
+	<div class="wrapper">
+		<div class="grid bg-light">
+			
+			<div class="twelvecol">
+				<h3>Bacon ipsum dolor amet strip steak <small>flank beef pastrami tail, shoulder kielbasa</small></h3>
+			</div>
+			
 			<div class="fourcol">
 				<img src="img/thumb.jpg" alt="thumb" />
-				<h2>Lorem Ipsum</h2>
+				<h3>Lorem Ipsum</h3>
 				<hr/>
 				<p>Bacon ipsum dolor amet strip steak flank beef pastrami tail, shoulder kielbasa tenderloin fatback brisket. Bresaola shankle leberkas t-bone strip steak, capicola chuck hamburger bacon pork meatloaf ball...</p>
 			</div>
 			<div class="fourcol">
 				<img src="img/thumb.jpg" alt="thumb" />
-				<h2>Lorem Ipsum</h2>
+				<h3>Lorem Ipsum</h3>
 				<hr/>
 				<p>Bacon ipsum dolor amet strip steak flank beef pastrami tail, shoulder kielbasa tenderloin fatback brisket. Bresaola shankle leberkas t-bone strip steak, capicola chuck hamburger bacon pork meatloaf ball...</p>
 			</div>
 			<div class="fourcol">
 				<img src="img/thumb.jpg" alt="thumb" />
-				<h2>Lorem Ipsum</h2>
+				<h3>Lorem Ipsum</h3>
 				<hr/>
 				<p>Bacon ipsum dolor amet strip steak flank beef pastrami tail, shoulder kielbasa tenderloin fatback brisket. Bresaola shankle leberkas t-bone strip steak, capicola chuck hamburger bacon pork meatloaf ball...</p>
 			</div>
@@ -91,25 +95,25 @@
 
 	<!-- BEGIN FOOTER -->
 	<footer>
-		<div class="wrapper txt-white">
+		<div class="wrapper bg-dark txt-white">
 			<div class="grid">
 				<div class="threecol">
-					<h3>Lorem Ipsum</h3>
+					<h5>Lorem Ipsum</h5>
 					<hr/>
 					<p>Bacon ipsum dolor amet strip steak flank beef pastrami tail, shoulder kielbasa tenderloin fatback brisket...</p>
 				</div>
 				<div class="threecol">
-					<h3>Lorem Ipsum</h3>
+					<h5>Lorem Ipsum</h5>
 					<hr/>
 					<p>Bacon ipsum dolor amet strip steak flank beef pastrami tail, shoulder kielbasa tenderloin fatback brisket...</p>
 				</div>
 				<div class="threecol">
-					<h3>Lorem Ipsum</h3>
+					<h5>Lorem Ipsum</h5>
 					<hr/>
 					<p>Bacon ipsum dolor amet strip steak flank beef pastrami tail, shoulder kielbasa tenderloin fatback brisket...</p>
 				</div>
 				<div class="threecol">
-					<h3>Lorem Ipsum</h3>
+					<h5>Lorem Ipsum</h5>
 					<hr/>
 					<p>Bacon ipsum dolor amet strip steak flank beef pastrami tail, shoulder kielbasa tenderloin fatback brisket...</p>
 				</div>
@@ -117,10 +121,10 @@
 		</div>
 	</footer>
 
-	<div id="copyright">
-		<div class="grid txt-white txt-small">
-			<div class="twelvecol align-center">
-				<p>© 2015 Spaceman 1.6.5 Framework. | Desenvolvido por V. de Várias Fita.</p>
+	<div class="bg-darker">
+		<div class="grid txt-white">
+			<div class="twelvecol align-center small">
+				<p>© 2015 Spaceman 1.7 Framework. | Desenvolvido por V. de Várias Fita.</p>
 			</div>
 		</div>
 	</div>
