@@ -66,11 +66,6 @@
 	<!-- BEGIN CONTENT -->
 	<div class="wrapper">
 		<div class="grid bg-light">
-			
-			<div class="twelvecol">
-				<h3>Bacon ipsum dolor amet strip steak <small>flank beef pastrami tail, shoulder kielbasa</small></h3>
-			</div>
-			
 			<div class="fourcol">
 				<img src="img/thumb.jpg" alt="thumb" />
 				<h3>Lorem Ipsum</h3>
