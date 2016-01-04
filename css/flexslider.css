@@ -1,5 +1,5 @@
 /*
- * jQuery FlexSlider v2.5.0
+ * jQuery FlexSlider v2.6.0
  * http://www.woothemes.com/flexslider/
  *
  * Copyright 2012 WooThemes
@@ -7,7 +7,7 @@
  * http://www.gnu.org/licenses/gpl-2.0.html
  *
  * Contributing author: Tyler Smith (@mbmufffin)
- * 
+ *
  */
 /* ====================================================================================================================
  * FONT-FACE
@@ -23,9 +23,7 @@
  * RESETS
  * ====================================================================================================================*/
 .flex-container a:hover,
-.flex-slider a:hover,
-.flex-container a:focus,
-.flex-slider a:focus {
+.flex-slider a:hover {
   outline: none;
 }
 .slides,
@@ -75,20 +73,16 @@ html[xmlns] .flexslider .slides {
  * DEFAULT THEME
  * ====================================================================================================================*/
 .flexslider {
-
   background: #ffffff;
   position: relative;
   zoom: 1;
-  -webkit-box-shadow: '' 0 1px 4px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: '' 0 1px 4px rgba(0, 0, 0, 0.2);
-  -o-box-shadow: '' 0 1px 4px rgba(0, 0, 0, 0.2);
-  box-shadow: '' 0 1px 4px rgba(0, 0, 0, 0.2);
 }
 .flexslider .slides {
   zoom: 1;
 }
 .flexslider .slides img {
   height: auto;
+  -moz-user-select: none;
 }
 .flex-viewport {
   max-height: 2000px;
@@ -112,6 +106,7 @@ html[xmlns] .flexslider .slides {
   display: block;
   width: 40px;
   height: 40px;
+  line-height: 40px;
   margin: -20px 0 0;
   position: absolute;
   top: 50%;
@@ -119,8 +114,7 @@ html[xmlns] .flexslider .slides {
   overflow: hidden;
   opacity: 0;
   cursor: pointer;
-  line-height: 40px;
-  color: #fff;
+  color: rgba(0, 0, 0, 0.8);
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
@@ -132,6 +126,7 @@ html[xmlns] .flexslider .slides {
   font-size: 40px;
   display: inline-block;
   content: '\f001';
+  color: rgba(255, 255, 255, 0.8);
 }
 .flex-direction-nav a.flex-next:before {
   content: '\f002';
@@ -161,6 +156,7 @@ html[xmlns] .flexslider .slides {
   opacity: 0!important;
   filter: alpha(opacity=0);
   cursor: default;
+  z-index: -1;
 }
 .flex-pauseplay a {
   display: block;
@@ -240,6 +236,7 @@ html[xmlns] .flexslider .slides {
   display: block;
   opacity: .7;
   cursor: pointer;
+  -moz-user-select: none;
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
   -ms-transition: all 1s ease;

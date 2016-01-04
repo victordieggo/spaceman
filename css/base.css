@@ -1,0 +1,131 @@
+/* ====================================================================================================================
+ * BASE STYLES
+ * ====================================================================================================================*/
+
+/*============================ BACKGROUND-COLOR ===============================*/
+
+.bg-primary, .btn:hover                         {background-color: #f8d557;}
+
+.bg-white                                       {background-color: #fff;}
+.bg-grey, hr                                    {background-color: #e3e3e3;}
+.bg-grey-dark, .btn                             {background-color: #afafaf;}
+
+.bg-dark, .sub-menu a                           {background-color: #222;}
+
+.bg-darker, .menu li:hover > a, 
+a.nav-highlight, .sub-menu a.nav-highlight      {background-color: #191919;}
+
+button, .bg-none                                {background-color: transparent;}
+
+/*================================ FLOATING ===================================*/
+
+.fleft                                          {float: left;}
+.fright                                         {float: right;}
+.fnone, .vcenter                                {float: none;}
+.clear                                          {clear: both;}
+
+/*================================ POSITION ===================================*/
+
+.relative                                       {position: relative;}
+.absolute                                       {position: absolute;}
+
+/*================================= DISPLAY ===================================*/
+
+.hide, .show-md, .show-sm                       {display: none;}
+.block, small                                   {display: block;}
+.inline, .vcenter, .btn                         {display: inline-block;}
+
+/*================================= SPACERS ===================================*/
+
+.spacer-05                                      {margin: 0.5em 0;}
+.spacer-10                                      {margin: 1.0em 0;}
+.spacer-15                                      {margin: 1.5em 0;}
+.spacer-20                                      {margin: 2.0em 0;}
+.spacer-25                                      {margin: 2.5em 0;}
+.spacer-30                                      {margin: 3.0em 0;}
+
+.spacer-top-05                                  {margin-top: 0.5em;}
+.spacer-top-10                                  {margin-top: 1.0em;}
+.spacer-top-15                                  {margin-top: 1.5em;}
+.spacer-top-20                                  {margin-top: 2.0em;}
+.spacer-top-25                                  {margin-top: 2.5em;}
+.spacer-top-30                                  {margin-top: 3.0em;}
+
+.spacer-bottom-05                               {margin-bottom: 0.5em;}
+.spacer-bottom-10                               {margin-bottom: 1.0em;}
+.spacer-bottom-15                               {margin-bottom: 1.5em;}
+.spacer-bottom-20                               {margin-bottom: 2.0em;}
+.spacer-bottom-25                               {margin-bottom: 2.5em;}
+.spacer-bottom-30                               {margin-bottom: 3.0em;}
+
+/*==================================== PADS ===================================*/
+
+.pad-05                                         {padding: 0.5em;}
+.pad-10                                         {padding: 1.0em;}
+.pad-20                                         {padding: 2.0em;}
+.pad-25                                         {padding: 2.5em;}
+.pad-30                                         {padding: 3.0em;}
+
+.pad-top-05                                     {padding-top: 0.5em;}
+.pad-top-10                                     {padding-top: 1.0em;}
+.pad-top-20                                     {padding-top: 2.0em;}
+.pad-top-25                                     {padding-top: 2.5em;}
+.pad-top-30                                     {padding-top: 3.0em;}
+
+.pad-bottom-05                                  {padding-bottom: 0.5em;}
+.pad-bottom-10                                  {padding-bottom: 1.0em;}
+.pad-bottom-20                                  {padding-bottom: 2.0em;}
+.pad-bottom-25                                  {padding-bottom: 2.5em;}
+.pad-bottom-30                                  {padding-bottom: 3.0em;}
+
+/*========================= CLASSES/TAGS VARIADAS =============================*/
+
+img                                             {max-width: 100%;}
+.full-width                                     {width: 100%;}
+hr                                              {border: 0; height: 1px;}
+
+.vcenter                                        {vertical-align: middle;}
+.hcenter, .wrapper                              {margin: 0 auto;}
+
+.smooth-hover, .btn, .main-nav a                {-webkit-transition: all .3s; -moz-transition: all .3s; transition: all .3s;}
+
+/*================================ AUTO SIZING ================================*/
+
+.auto-size, .auto-width, input[type="submit"], input[type="button"], input[type="checkbox"], input[type="radio"] {
+	width: auto !important;
+}
+
+.auto-size, .auto-height, input[type="submit"], input[type="button"], input[type="checkbox"], input[type="radio"] {
+	height: auto !important;
+}
+
+/* ====================================================================================================================
+ * MEDIA QUERIES
+ * ====================================================================================================================*/
+
+@media only screen and (max-width: 992px) {
+	  
+	[class*='col'].stretch-mid                          {width: 48%;}
+	.stretch-mid                                        {width: 50%;}
+	[class*='col'].stretch                              {width: 98%;}
+    img, .wrapper, .stretch                             {width: 100%;}
+	
+	.show-md                                            {display: block;}
+    .hide-md                                            {display: none;}
+	
+}
+
+@media only screen and (max-width: 768px) {
+	
+	[class*='stretch']                                  {width: 100% !important;}
+	.show-sm                                            {display: block;}
+    .hide-sm                                            {display: none;}
+	
+}
+
+@media only screen and (max-width: 480px) {
+
+	.show-ex-sm                                          {display: block;}
+    .hide-ex-sm                                          {display: none;}
+	
+}

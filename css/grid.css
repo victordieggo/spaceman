@@ -1,0 +1,45 @@
+/* ====================================================================================================================
+ * RESET
+ * ====================================================================================================================*/
+
+*{margin:0;padding:0;text-indent:0;list-style:none;border:none;line-height:160%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}html{overflow-y:scroll;overflow-x:hidden;}
+
+/* ====================================================================================================================
+ * SPACEMAN GRID
+ * ====================================================================================================================*/
+
+/*================================ GRID WRAPPER ===============================*/
+
+.wrapper                                        {max-width: 1240px;}
+
+/*================================== GRID CORE ================================*/
+
+.row                                            {padding: 1%;}
+.row:after                                      {content: ""; display: table; clear: both;}
+[class*='col']                                  {float: left; vertical-align: top; margin: 1%;}
+[class*='col'].no-spacer                        {margin: 0 1%;}
+
+/*=================================== COLUNAS =================================*/
+
+.onecol                                         {width: 6.333333333333333%;}
+.twocol                                         {width: 14.66666666666667%;}
+.threecol                                       {width: 23%;}
+.fourcol                                        {width: 31.33333333333333%;}
+.fivecol                                        {width: 39.66666666666667%;}
+.sixcol                                         {width: 48%;}
+.sevencol                                       {width: 56.33333333333333%;}
+.eightcol                                       {width: 64.66666666666666%;}
+.ninecol                                        {width: 73%;}
+.tencol                                         {width: 81.33333333333333%;}
+.elevencol                                      {width: 89.66666666666666%;}
+.twelvecol                                      {width: 98%;}
+
+/*=============================== MEDIA QUERIES ===============================*/
+
+@media only screen and (max-width: 768px) {
+	
+    .row                                         {padding: 4%;}
+    [class*='col']                               {width: 100%; margin: 0 0 4% 0;}
+    .row div[class*='col']:last-child            {margin-bottom: 0;}
+	
+}

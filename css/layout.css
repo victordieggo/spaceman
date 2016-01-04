@@ -1,0 +1,110 @@
+/* ====================================================================================================================
+ * LAYOUT
+ * CSS exclusivo para as partes do layout
+ * ====================================================================================================================*/
+
+/* ====================================================================================================================
+ * HEADER
+ * ====================================================================================================================*/
+
+.logo {
+    width: 280px;
+	height: 67px;
+    background: url(../img/logotipo.png);
+    background-image: url(../img/logotipo.svg);
+    background-size: 100% 100%;
+}
+
+.border-test {border: 1px solid #ff0000;}
+
+/* ====================================================================================================================
+ * NAVIGATION
+ * ====================================================================================================================*/
+
+.main-nav                                       {line-height: 67px;}
+.main-nav ul, .main-nav li ul                   {white-space: nowrap;}
+.main-nav li ul ul                              {left: 100%; top:0;}
+.main-nav a                                     {padding: 8px 20px;}
+
+.main-nav li ul                                 {position: absolute; z-index: 9999; display: none;}
+.main-nav li ul li                              {position: relative;}
+
+.main-nav li:hover > ul, .main-nav li ul a, 
+.main-nav ul ul > li	                        {display: block;}
+.main-nav li, .main-nav a                       {display: inline-block;}
+
+/* ====================================================================================================================
+ * FORM, BUTTON E INPUT
+ * ====================================================================================================================*/
+
+/*================================ BOTÕES =====================================*/
+
+.btn, a.btn, input[type="submit"], input[type="button"], input[type="checkbox"], input[type="radio"] {border: none;}
+
+.btn, a.btn                                             {padding: 0.98em 2.3em;}
+
+/*================================ INPUT =====================================*/
+
+input, select, textarea                                 {width: 100%; border: 1px solid #cecece;}
+
+input, select                                           {height: 3.5em; padding: 0 .6em;}
+
+button:focus, input:focus, select:focus, textarea:focus {outline: none;}
+
+textarea                                                {height: 9em; padding: .6em; resize: none;}
+
+button, .btn, input, select, textarea                   {cursor: pointer;}
+
+::-webkit-input-placeholder                             {color: #888;}
+:-ms-input-placeholder                                  {color: #888;}
+
+/* ====================================================================================================================
+ * LAYOUT MEDIA QUERIES
+ * ====================================================================================================================*/
+
+@media only screen and (max-width: 992px) {
+	
+	header .eightcol {float: none; margin: 0; height: 0; padding: 0;}
+	
+	.logo                                               {width: 173px; height: 41px;}
+	.nav-btn i                                          {line-height: 41px;}
+	
+	.main-nav {
+		background: #1d1d1d;
+		color: #fff;
+		text-transform: uppercase; 
+		
+		position: fixed;
+		top: 0; left: 0; 
+		z-index: 9999; 
+		
+		width: 15em;
+		min-height: 100%;
+		height: 100%;
+		
+		overflow-y: scroll;
+		overflow-x: hidden;
+	}
+	
+	.main-nav a                                         {padding: 1em}
+	
+	.main-nav li, .main-nav a                           {display: block;}
+	.main-nav li:hover > ul                             {display: none;}
+	
+	.main-nav li ul                                     {position: relative;}
+	.main-nav li ul ul                                  {left: 0;}	
+		
+	.menu-item-has-children > a::after                  {font-family: 'FontAwesome'; content: "\f107"; float: right;}
+	.menu-item-has-children a.nav-highlight:after       {content: "\f106";}
+	
+}
+
+@media only screen and (max-width: 768px) {
+
+
+}
+
+@media only screen and (max-width: 480px) {
+
+	
+}
