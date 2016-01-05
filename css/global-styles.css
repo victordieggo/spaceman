@@ -78,7 +78,8 @@ a                                               {color: inherit;}
 .align-center                                   {text-align: center;}
 .align-left                                     {text-align: left;}
 .align-right                                    {text-align: right;}
-a, nav a:hover, a.btn:hover, .no-underline:hover             {text-decoration: none;}
+a, nav a:hover, a.btn:hover, 
+.no-underline:hover                             {text-decoration: none;}
 a:hover                                         {text-decoration: underline;}
 .uppercase 										{text-transform: uppercase;}
 /* ====================================================================================================================
@@ -228,8 +229,6 @@ hr                                              {border: 0; height: 1px;}
     background-image: url(../img/logotipo.svg);
     background-size: 100% 100%;
 }
-
-.border-test {border: 1px solid #ff0000;}
 
 /* ====================================================================================================================
  * NAVIGATION
