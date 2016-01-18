@@ -62,7 +62,7 @@ h1                                              {font-size: 2.5em;}
 h2                                              {font-size: 2.2em;}
 h3                                              {font-size: 1.9em;}
 h4                                              {font-size: 1.6em;}
-h5                                              {font-size: 1.3em;}
+h5, .btn.btn-large                              {font-size: 1.3em;}
 h6, body, .btn, input, select, textarea         {font-size: 1em;}
 small, .small                                   {font-size: .8em;}
 
@@ -162,26 +162,28 @@ button, .bg-none                                {background-color: transparent;}
 .pad-bottom-25                                  {padding-bottom: 2.5em;}
 .pad-bottom-30                                  {padding-bottom: 3.0em;}
 
+/*================================ AUTO SIZING ================================*/
+
+.auto-size, .auto-width, input[type].btn, 
+input[type="checkbox"], input[type="radio"]     {width: auto !important;}
+
+.auto-size, .auto-height, input[type].btn, 
+input[type="checkbox"], input[type="radio"]     {height: auto !important;}
+
 /*========================= CLASSES/TAGS VARIADAS =============================*/
 
 img                                             {max-width: 100%;}
-.full-width                                     {width: 100%;}
+
+.full-width, input[type].full-width, input, 
+select, textarea                                {width: 100% !important;}
+
 hr                                              {border: 0; height: 1px;}
 
 .vcenter                                        {vertical-align: middle;}
+
 .hcenter, .wrapper                              {margin: 0 auto;}
 
-.smooth-hover, .btn, .main-nav a                {-webkit-transition: all .3s; -moz-transition: all .3s; transition: all .3s;}
-
-/*================================ AUTO SIZING ================================*/
-
-.auto-size, .auto-width, input[type="submit"], input[type="button"], input[type="checkbox"], input[type="radio"] {
-	width: auto !important;
-}
-
-.auto-size, .auto-height, input[type="submit"], input[type="button"], input[type="checkbox"], input[type="radio"] {
-	height: auto !important;
-}
+.smooth-hover, .btn, .main-nav, .main-nav a     {-webkit-transition: all .3s; -moz-transition: all .3s; transition: all .3s;}
 
 /* ====================================================================================================================
  * MEDIA QUERIES
@@ -254,13 +256,13 @@ hr                                              {border: 0; height: 1px;}
 
 .btn, a.btn, input[type="submit"], input[type="button"], input[type="checkbox"], input[type="radio"] {border: none;}
 
-.btn, a.btn                                             {padding: 0.98em 2.3em;}
+.btn, a.btn                                             {padding: 1em 2.3em;}
 
 /*================================ INPUT =====================================*/
 
 input, select, textarea                                 {width: 100%; border: 1px solid #cecece;}
 
-input, select                                           {height: 3.5em; padding: 0 .6em;}
+input, select                                           {height: 3.58em; padding: 0 .6em;}
 
 button:focus, input:focus, select:focus, textarea:focus {outline: none;}
 
@@ -288,7 +290,7 @@ button, .btn, input, select, textarea                   {cursor: pointer;}
 		text-transform: uppercase; 
 		
 		position: fixed;
-		top: 0; left: 0; 
+		top: 0; left: -15em; 
 		z-index: 9999; 
 		
 		width: 15em;
@@ -299,6 +301,8 @@ button, .btn, input, select, textarea                   {cursor: pointer;}
 		overflow-x: hidden;
 	}
 	
+    .main-nav.open                                      {left: 0;}
+    
 	.main-nav a                                         {padding: 1em}
 	
 	.main-nav li, .main-nav a                           {display: block;}

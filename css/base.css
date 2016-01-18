@@ -78,26 +78,28 @@ button, .bg-none                                {background-color: transparent;}
 .pad-bottom-25                                  {padding-bottom: 2.5em;}
 .pad-bottom-30                                  {padding-bottom: 3.0em;}
 
+/*================================ AUTO SIZING ================================*/
+
+.auto-size, .auto-width, input[type].btn, 
+input[type="checkbox"], input[type="radio"]     {width: auto !important;}
+
+.auto-size, .auto-height, input[type].btn, 
+input[type="checkbox"], input[type="radio"]     {height: auto !important;}
+
 /*========================= CLASSES/TAGS VARIADAS =============================*/
 
 img                                             {max-width: 100%;}
-.full-width                                     {width: 100%;}
+
+.full-width, input[type].full-width, input, 
+select, textarea                                {width: 100% !important;}
+
 hr                                              {border: 0; height: 1px;}
 
 .vcenter                                        {vertical-align: middle;}
+
 .hcenter, .wrapper                              {margin: 0 auto;}
 
-.smooth-hover, .btn, .main-nav a                {-webkit-transition: all .3s; -moz-transition: all .3s; transition: all .3s;}
-
-/*================================ AUTO SIZING ================================*/
-
-.auto-size, .auto-width, input[type="submit"], input[type="button"], input[type="checkbox"], input[type="radio"] {
-	width: auto !important;
-}
-
-.auto-size, .auto-height, input[type="submit"], input[type="button"], input[type="checkbox"], input[type="radio"] {
-	height: auto !important;
-}
+.smooth-hover, .btn, .main-nav, .main-nav a     {-webkit-transition: all .3s; -moz-transition: all .3s; transition: all .3s;}
 
 /* ====================================================================================================================
  * MEDIA QUERIES

@@ -2,14 +2,14 @@ jQuery(document).ready(function(){
 	
 	//ABRE O MENU
 	jQuery('.nav-btn').click(function() {
-		if (jQuery(window).width() <= 1023) {
-			jQuery('.main-nav').animate({width:'toggle'},250);
+		if (jQuery(window).width() <= 992) {
+			jQuery('.main-nav').toggleClass('open');
 		}
 	});
 	
 	//ABRE O SUBMENU
 	jQuery('.menu-item-has-children').click(function(){
-		if (jQuery(window).width() <= 1023) {
+		if (jQuery(window).width() <= 992) {
 			jQuery(this).children('.sub-menu').slideToggle(400);
 			
 			//ADD HIGHLIGHT COLOR
@@ -26,7 +26,7 @@ jQuery(document).ready(function(){
     jQuery('html').click(function() {
 		if (jQuery(window).width() <= 992) {
 			if (jQuery('.main-nav').is(':visible') ){
-				jQuery('.main-nav').animate({width:'toggle'},250);
+				jQuery('.main-nav').removeClass('open');
 				jQuery('.nav-btn').removeClass( "selected" );
 			} 
 		}

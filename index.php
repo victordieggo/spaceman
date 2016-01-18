@@ -3,7 +3,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Spaceman Framework 1.7.5</title>
+    <title>Spaceman Framework 1.7.6</title>
     <link rel="icon" href="img/icon.png" />
     <link rel="stylesheet" href="css/global-styles.css" type="text/css" media="screen" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -18,7 +18,7 @@
         <div class="wrapper">
             <div class="row txt-white small">
                 <div class="sixcol no-spacer">
-                    <p>Version 1.7.5</p>
+                    <p>Version 1.7.6</p>
                 </div>
                 <div class="sixcol align-right no-spacer">
                     <p>I'm gonna chase you out of earth!</p>
@@ -36,7 +36,7 @@
                 <a class="logo fleft vcenter" href=""></a>
 				
                 <!-- BEGIN NAVIGATION -->
-                <nav class="main-nav vcenter hide-md">
+                <nav class="main-nav vcenter">
                     <ul class="menu">
                         <li><a href="#">Home</a></li>
                         <li><a href="#">Sobre</a></li>
@@ -69,7 +69,6 @@
     <!-- BEGIN CONTENT -->
     <section class="wrapper">
         <div class="row bg-white">
-			
             <div class="fourcol stretch">
                 <img src="img/thumb.jpg" alt="thumb">
                 <h3>Lorem Ipsum</h3>
@@ -90,7 +89,6 @@
                 <hr class="spacer-10">
                 <p>Bacon ipsum dolor amet strip steak flank beef pastrami tail, shoulder kielbasa tenderloin fatback brisket. Bresaola shankle leberkas t-bone strip steak, capicola chuck hamburger bacon pork meatloaf ball...</p>
             </div>
-			
         </div>
     </section>
     <!-- END CONTENT -->
@@ -131,7 +129,7 @@
 		<div class="bg-darker">
             <div class="row txt-white">
                 <div class="twelvecol pad-05 align-center small no-spacer">
-                    <p>© 2015 Spaceman 1.7.5 Framework. | Desenvolvido por <a class="no-underline" href="">V. de Várias Fita</a>.</p>
+                    <p>© 2015 Spaceman 1.7.6 Framework. | Desenvolvido por <a class="no-underline" href="">V. de Várias Fita</a>.</p>
                 </div>
             </div>
         </div>

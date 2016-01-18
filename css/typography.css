@@ -17,7 +17,7 @@ h1                                              {font-size: 2.5em;}
 h2                                              {font-size: 2.2em;}
 h3                                              {font-size: 1.9em;}
 h4                                              {font-size: 1.6em;}
-h5                                              {font-size: 1.3em;}
+h5, .btn.btn-large                              {font-size: 1.3em;}
 h6, body, .btn, input, select, textarea         {font-size: 1em;}
 small, .small                                   {font-size: .8em;}
 
