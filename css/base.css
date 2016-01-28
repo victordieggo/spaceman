@@ -2,21 +2,6 @@
  * BASE STYLES
  * ====================================================================================================================*/
 
-/*============================ BACKGROUND-COLOR ===============================*/
-
-.bg-primary, .btn:hover                         {background-color: #f8d557;}
-
-.bg-white                                       {background-color: #fff;}
-.bg-grey, hr                                    {background-color: #e3e3e3;}
-.bg-grey-dark, .btn                             {background-color: #afafaf;}
-
-.bg-dark, .sub-menu a                           {background-color: #222;}
-
-.bg-darker, .menu li:hover > a, 
-a.nav-highlight, .sub-menu a.nav-highlight      {background-color: #191919;}
-
-button, .bg-none                                {background-color: transparent;}
-
 /*================================ FLOATING ===================================*/
 
 .fleft                                          {float: left;}
@@ -32,7 +17,7 @@ button, .bg-none                                {background-color: transparent;}
 /*================================= DISPLAY ===================================*/
 
 .hide, .show-md, .show-sm                       {display: none;}
-.block, small                                   {display: block;}
+.block                                          {display: block;}
 .inline, .vcenter, .btn                         {display: inline-block;}
 
 /*================================= SPACERS ===================================*/
@@ -101,9 +86,15 @@ hr                                              {border: 0; height: 1px;}
 
 .smooth-hover, .btn, .main-nav, .main-nav a     {-webkit-transition: all .3s; -moz-transition: all .3s; transition: all .3s;}
 
+.no-border, .btn, input[type="submit"], 
+input[type="button"], input[type="checkbox"], 
+input[type="radio"]                             {border: none;}
+
 /* ====================================================================================================================
  * MEDIA QUERIES
  * ====================================================================================================================*/
+
+/*========================= MEDIUM/MD RESOLUTIONS ============================*/
 
 @media only screen and (max-width: 992px) {
 	  
@@ -117,17 +108,23 @@ hr                                              {border: 0; height: 1px;}
 	
 }
 
+/*========================= SMALL/SM RESOLUTIONS =============================*/
+
 @media only screen and (max-width: 768px) {
 	
 	[class*='stretch']                                  {width: 100% !important;}
+	[class*='col'].stretch, [class*='col'].stretch-mid  {width: 98% !important;}
+	
 	.show-sm                                            {display: block;}
     .hide-sm                                            {display: none;}
 	
 }
 
+/*====================== EXTRA SMALL/XS RESOLUTIONS ==========================*/
+
 @media only screen and (max-width: 480px) {
 
-	.show-ex-sm                                          {display: block;}
-    .hide-ex-sm                                          {display: none;}
+	.show-xs                                             {display: block;}
+    .hide-xs                                             {display: none;}
 	
 }

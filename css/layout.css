@@ -4,6 +4,42 @@
  * ====================================================================================================================*/
 
 /* ====================================================================================================================
+ * BACKGROUND-COLOR
+ * ====================================================================================================================*/
+
+/*============================== MAIN COLORS ==================================*/
+
+.bg-primary, .btn.btn-primary                    {background-color: #f8d557;}
+
+.bg-white                                        {background-color: #fff;}
+.bg-light-grey, hr                               {background-color: #e3e3e3;}
+.bg-grey, .btn                                   {background-color: #afafaf;}
+
+.bg-dark, .sub-menu a                            {background-color: #222;}
+
+.bg-darker, .main-nav ul > li:hover > a, 
+a.nav-highlight, .sub-menu a.nav-highlight       {background-color: #191919;}
+
+button, .bg-none                                 {background-color: transparent;}
+
+/*================================= ALERTS ====================================*/
+
+.bg-sucess, .btn-sucess                          {background-color: #5cb85c;}
+.btn-sucess:hover                                {background-color: #449d44;}
+
+.bg-warning, .btn-warning                        {background-color: #f0ad4e;}
+.btn-warning:hover                               {background-color: #ec971f;}
+
+.bg-danger, .btn-danger                          {background-color: #d9534f;}
+.btn-danger:hover                                {background-color: #c9302c;}
+
+.bg-info, .btn-info                              {background-color: #49a0d7;}
+.btn-info:hover                                  {background-color: #3586b9;}
+
+.bg-mute, .btn-mute                              {background-color: #b9b9b9;}
+.btn-mute:hover                                  {background-color: #9d9d9d;}
+
+/* ====================================================================================================================
  * HEADER
  * ====================================================================================================================*/
 
@@ -19,17 +55,18 @@
  * NAVIGATION
  * ====================================================================================================================*/
 
-.main-nav                                       {line-height: 67px;}
-.main-nav ul, .main-nav li ul                   {white-space: nowrap;}
-.main-nav li ul ul                              {left: 100%; top:0;}
-.main-nav a                                     {padding: 8px 20px;}
-
-.main-nav li ul                                 {position: absolute; z-index: 9999; display: none;}
-.main-nav li ul li                              {position: relative;}
+.main-nav li ul                                  {position: absolute; z-index: 9999; display: none;}
+.main-nav li ul li                               {position: relative;}
+.main-nav li ul ul                               {top: 0; left: 100%;}
 
 .main-nav li:hover > ul, .main-nav li ul a, 
-.main-nav ul ul > li	                        {display: block;}
-.main-nav li, .main-nav a                       {display: inline-block;}
+.main-nav ul ul > li                             {display: block;}
+.main-nav li, .main-nav a                        {display: inline-block;}
+
+.main-nav a                                      {padding: 8px 20px;}
+
+.main-nav                                        {line-height: 67px;}
+.main-nav ul, .main-nav li ul                    {white-space: nowrap;}
 
 /* ====================================================================================================================
  * FORM, BUTTON E INPUT
@@ -37,72 +74,75 @@
 
 /*================================ BOTÕES =====================================*/
 
-.btn, a.btn, input[type="submit"], input[type="button"], input[type="checkbox"], input[type="radio"] {border: none;}
-
-.btn, a.btn                                             {padding: 1em 2.3em;}
+.btn                                             {padding: 1.2em 2.3em;}
 
 /*================================ INPUT =====================================*/
 
-input, select, textarea                                 {width: 100%; border: 1px solid #cecece;}
+input, select, textarea                          {width: 100%; border: 1px solid #cecece;}
 
-input, select                                           {height: 3.58em; padding: 0 .6em;}
+input, select                                    {height: 3.95em; padding: 0 0.6em;}
 
-button:focus, input:focus, select:focus, textarea:focus {outline: none;}
+button:focus, input:focus, select:focus, 
+textarea:focus                                   {outline: none;}
 
-textarea                                                {height: 9em; padding: .6em; resize: none;}
+textarea                                         {height: 9em; padding: .6em; resize: none;}
 
-button, .btn, input, select, textarea                   {cursor: pointer;}
+button, .btn, input, select, textarea            {cursor: pointer;}
 
-::-webkit-input-placeholder                             {color: #888;}
-:-ms-input-placeholder                                  {color: #888;}
+::-webkit-input-placeholder                      {color: #888;}
+:-ms-input-placeholder                           {color: #888;}
 
 /* ====================================================================================================================
  * LAYOUT MEDIA QUERIES
  * ====================================================================================================================*/
 
+/*========================= MEDIUM/MD RESOLUTIONS ============================*/
+
 @media only screen and (max-width: 992px) {
-	
-	header .eightcol {float: none; margin: 0; height: 0; padding: 0;}
-	
-	.logo                                               {width: 173px; height: 41px;}
-	.nav-btn i                                          {line-height: 41px;}
+
+	.logo                                        {width: 173px; height: 41px;}
+	.nav-btn i                                   {line-height: 41px;}
 	
 	.main-nav {
-		background: #1d1d1d;
-		color: #fff;
-		text-transform: uppercase; 
-		
 		position: fixed;
-		top: 0; left: -15em; 
+		top: 0; 
+		left: -15em; /* negative width value */
 		z-index: 9999; 
 		
 		width: 15em;
-		min-height: 100%;
 		height: 100%;
+		min-height: 100%;
 		
 		overflow-y: scroll;
 		overflow-x: hidden;
-	}
-	
-    .main-nav.open                                      {left: 0;}
-    
-	.main-nav a                                         {padding: 1em}
-	
-	.main-nav li, .main-nav a                           {display: block;}
-	.main-nav li:hover > ul                             {display: none;}
-	
-	.main-nav li ul                                     {position: relative;}
-	.main-nav li ul ul                                  {left: 0;}	
 		
-	.menu-item-has-children > a::after                  {font-family: 'FontAwesome'; content: "\f107"; float: right;}
-	.menu-item-has-children a.nav-highlight:after       {content: "\f106";}
+		color: #fff;
+		text-transform: uppercase; 
+		
+		background: #1d1d1d;
+	}
+
+	.main-nav li ul                              {position: relative;}
+	.main-nav li ul ul, .main-nav.open           {left: 0;}
+	
+	.main-nav li, .main-nav a                    {display: block;}
+	.main-nav li:hover > ul                      {display: none;}
+    
+	.main-nav a                                  {padding: 1em;}
+
+	.menu-item-has-children > a:after            {float: right; font-family: 'FontAwesome'; content: "\f107";}
+	.menu-item-has-children .nav-highlight:after {content: "\f106";}
 	
 }
+
+/*========================= SMALL/SM RESOLUTIONS =============================*/
 
 @media only screen and (max-width: 768px) {
 
 
 }
+
+/*====================== EXTRA SMALL/XS RESOLUTIONS ==========================*/
 
 @media only screen and (max-width: 480px) {
 

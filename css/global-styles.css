@@ -2,7 +2,7 @@
  * RESET
  * ====================================================================================================================*/
 
-*{margin:0;padding:0;text-indent:0;list-style:none;border:none;line-height:160%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}html{overflow-y:scroll;overflow-x:hidden;}
+*{margin:0;padding:0;text-indent:0;list-style:none;border:none;line-height: 160%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}html{overflow-y:scroll;overflow-x:hidden;text-size-adjust:none;text-rendering:optimizeLegibility;text-rendering:geometricPrecision;font-smooth:always;font-smoothing:antialiased;-moz-font-smoothing:antialiased;-webkit-font-smoothing:antialiased;-webkit-font-smoothing:subpixel-antialiased;}body{opacity:0.99;}
 
 /* ====================================================================================================================
  * SPACEMAN GRID
@@ -21,26 +21,46 @@
 
 /*=================================== COLUNAS =================================*/
 
-.onecol                                         {width: 6.333333333333333%;}
-.twocol                                         {width: 14.66666666666667%;}
-.threecol                                       {width: 23%;}
-.fourcol                                        {width: 31.33333333333333%;}
-.fivecol                                        {width: 39.66666666666667%;}
-.sixcol                                         {width: 48%;}
-.sevencol                                       {width: 56.33333333333333%;}
-.eightcol                                       {width: 64.66666666666666%;}
-.ninecol                                        {width: 73%;}
-.tencol                                         {width: 81.33333333333333%;}
-.elevencol                                      {width: 89.66666666666666%;}
-.twelvecol                                      {width: 98%;}
+[class*='onecol']                               {width: 6.333333333333333%;}
+[class*='twocol']                               {width: 14.66666666666667%;}
+[class*='threecol']                             {width: 23%;}
+[class*='fourcol']                              {width: 31.33333333333333%;}
+[class*='fivecol']                              {width: 39.66666666666667%;}
+[class*='sixcol']                               {width: 48%;}
+[class*='sevencol']                             {width: 56.33333333333333%;}
+[class*='eightcol']                             {width: 64.66666666666666%;}
+[class*='ninecol']                              {width: 73%;}
+[class*='tencol']                               {width: 81.33333333333333%;}
+[class*='elevencol']                            {width: 89.66666666666666%;}
+[class*='twelvecol']                            {width: 98%;}
 
-/*=============================== MEDIA QUERIES ===============================*/
+/* ====================================================================================================================
+ * GRID MEDIA QUERIES
+ * ====================================================================================================================*/
+
+/*========================= MEDIUM/MD RESOLUTIONS ============================*/
+
+@media only screen and (max-width: 992px) {
+	
+	[class*='col-md']                            {width: 98%;}
+	
+}
+
+/*========================= SMALL/SM RESOLUTIONS =============================*/
 
 @media only screen and (max-width: 768px) {
 	
-    .row                                         {padding: 4%;}
-    [class*='col']                               {width: 100%; margin: 0 0 4% 0;}
-    .row div[class*='col']:last-child            {margin-bottom: 0;}
+    .row                                         {padding: 2%;}
+	[class*='col-sm']                            {width: 98%;}
+	
+}
+
+/*====================== EXTRA SMALL/XS RESOLUTIONS ==========================*/
+
+@media only screen and (max-width: 480px) {
+
+	.row                                         {padding: 3%;}
+	[class*='col-xm']                            {width: 98%;}
 	
 }
 /* ====================================================================================================================
@@ -53,8 +73,8 @@
 
 /*=========================== DEFINE FONT & WEIGHT ============================*/
 
-body, .btn, input, select, textarea             {font-family: 'Open Sans', sans-serif;}
-h1, h2, h3, h4, h5, h6, strong, .strong         {font-weight: 600;}
+body, .btn, input, select, textarea                {font-family: 'Open Sans', sans-serif;}
+h1, h2, h3, h4, h5, h6, strong, .text-strong, .btn {font-weight: 600;}
 
 /*============================= DEFINE FONT-SIZE ==============================*/
 
@@ -64,42 +84,34 @@ h3                                              {font-size: 1.9em;}
 h4                                              {font-size: 1.6em;}
 h5, .btn.btn-large                              {font-size: 1.3em;}
 h6, body, .btn, input, select, textarea         {font-size: 1em;}
-small, .small                                   {font-size: .8em;}
+small, .btn-small, .text-small, .input-small    {font-size: .8em;}
 
 /*============================ DEFINE FONT-COLOR ===============================*/
 
 body, .btn                                      {color: #222;}
-.txt-white, ul.menu li:hover > a                {color: #fff;}
-ul.sub-menu a                                   {color: #cecece;}
+.text-white, .main-nav li:hover a               {color: #fff;}
 a                                               {color: inherit;}
+
+/*================================= ALERTS ====================================*/
+
+.text-sucess                                    {background-color: #5cb85c;}
+.text-warning                                   {background-color: #f0ad4e;}
+.text-danger                                    {background-color: #d9534f;}
+.text-info                                      {background-color: #49a0d7;}
 
 /*=========================== ALINHAMENTOS/EFEITOS =============================*/
 
 .align-center                                   {text-align: center;}
 .align-left                                     {text-align: left;}
 .align-right                                    {text-align: right;}
-a, nav a:hover, a.btn:hover, 
-.no-underline:hover                             {text-decoration: none;}
+
+a, nav a:hover, .btn:hover, .no-underline:hover {text-decoration: none;}
 a:hover                                         {text-decoration: underline;}
-.uppercase 										{text-transform: uppercase;}
+
+.text-uppercase 							    {text-transform: uppercase;}
 /* ====================================================================================================================
  * BASE STYLES
  * ====================================================================================================================*/
-
-/*============================ BACKGROUND-COLOR ===============================*/
-
-.bg-primary, .btn:hover                         {background-color: #f8d557;}
-
-.bg-white                                       {background-color: #fff;}
-.bg-grey, hr                                    {background-color: #e3e3e3;}
-.bg-grey-dark, .btn                             {background-color: #afafaf;}
-
-.bg-dark, .sub-menu a                           {background-color: #222;}
-
-.bg-darker, .menu li:hover > a, 
-a.nav-highlight, .sub-menu a.nav-highlight      {background-color: #191919;}
-
-button, .bg-none                                {background-color: transparent;}
 
 /*================================ FLOATING ===================================*/
 
@@ -116,7 +128,7 @@ button, .bg-none                                {background-color: transparent;}
 /*================================= DISPLAY ===================================*/
 
 .hide, .show-md, .show-sm                       {display: none;}
-.block, small                                   {display: block;}
+.block                                          {display: block;}
 .inline, .vcenter, .btn                         {display: inline-block;}
 
 /*================================= SPACERS ===================================*/
@@ -185,9 +197,15 @@ hr                                              {border: 0; height: 1px;}
 
 .smooth-hover, .btn, .main-nav, .main-nav a     {-webkit-transition: all .3s; -moz-transition: all .3s; transition: all .3s;}
 
+.no-border, .btn, input[type="submit"], 
+input[type="button"], input[type="checkbox"], 
+input[type="radio"]                             {border: none;}
+
 /* ====================================================================================================================
  * MEDIA QUERIES
  * ====================================================================================================================*/
+
+/*========================= MEDIUM/MD RESOLUTIONS ============================*/
 
 @media only screen and (max-width: 992px) {
 	  
@@ -201,24 +219,66 @@ hr                                              {border: 0; height: 1px;}
 	
 }
 
+/*========================= SMALL/SM RESOLUTIONS =============================*/
+
 @media only screen and (max-width: 768px) {
 	
 	[class*='stretch']                                  {width: 100% !important;}
+	[class*='col'].stretch, [class*='col'].stretch-mid  {width: 98% !important;}
+	
 	.show-sm                                            {display: block;}
     .hide-sm                                            {display: none;}
 	
 }
 
+/*====================== EXTRA SMALL/XS RESOLUTIONS ==========================*/
+
 @media only screen and (max-width: 480px) {
 
-	.show-ex-sm                                          {display: block;}
-    .hide-ex-sm                                          {display: none;}
+	.show-xs                                             {display: block;}
+    .hide-xs                                             {display: none;}
 	
 }
 /* ====================================================================================================================
  * LAYOUT
  * CSS exclusivo para as partes do layout
  * ====================================================================================================================*/
+
+/* ====================================================================================================================
+ * BACKGROUND-COLOR
+ * ====================================================================================================================*/
+
+/*============================== MAIN COLORS ==================================*/
+
+.bg-primary, .btn.btn-primary                    {background-color: #f8d557;}
+
+.bg-white                                        {background-color: #fff;}
+.bg-light-grey, hr                               {background-color: #e3e3e3;}
+.bg-grey, .btn                                   {background-color: #afafaf;}
+
+.bg-dark, .sub-menu a                            {background-color: #222;}
+
+.bg-darker, .main-nav ul > li:hover > a, 
+a.nav-highlight, .sub-menu a.nav-highlight       {background-color: #191919;}
+
+button, .bg-none                                 {background-color: transparent;}
+
+/*================================= ALERTS ====================================*/
+
+.bg-sucess, .btn-sucess                          {background-color: #5cb85c;}
+.btn-sucess:hover                                {background-color: #449d44;}
+
+.bg-warning, .btn-warning                        {background-color: #f0ad4e;}
+.btn-warning:hover                               {background-color: #ec971f;}
+
+.bg-danger, .btn-danger                          {background-color: #d9534f;}
+.btn-danger:hover                                {background-color: #c9302c;}
+
+.bg-info, .btn-info                              {background-color: #49a0d7;}
+.btn-info:hover                                  {background-color: #3586b9;}
+
+.bg-mute, .btn-mute                              {background-color: #b9b9b9;}
+.btn-mute:hover                                  {background-color: #9d9d9d;}
 
 /* ====================================================================================================================
  * HEADER
@@ -236,17 +296,18 @@ hr                                              {border: 0; height: 1px;}
  * NAVIGATION
  * ====================================================================================================================*/
 
-.main-nav                                       {line-height: 67px;}
-.main-nav ul, .main-nav li ul                   {white-space: nowrap;}
-.main-nav li ul ul                              {left: 100%; top:0;}
-.main-nav a                                     {padding: 8px 20px;}
-
-.main-nav li ul                                 {position: absolute; z-index: 9999; display: none;}
-.main-nav li ul li                              {position: relative;}
+.main-nav li ul                                  {position: absolute; z-index: 9999; display: none;}
+.main-nav li ul li                               {position: relative;}
+.main-nav li ul ul                               {top: 0; left: 100%;}
 
 .main-nav li:hover > ul, .main-nav li ul a, 
-.main-nav ul ul > li	                        {display: block;}
-.main-nav li, .main-nav a                       {display: inline-block;}
+.main-nav ul ul > li                             {display: block;}
+.main-nav li, .main-nav a                        {display: inline-block;}
+
+.main-nav a                                      {padding: 8px 20px;}
+
+.main-nav                                        {line-height: 67px;}
+.main-nav ul, .main-nav li ul                    {white-space: nowrap;}
 
 /* ====================================================================================================================
  * FORM, BUTTON E INPUT
@@ -254,72 +315,75 @@ hr                                              {border: 0; height: 1px;}
 
 /*================================ BOTÕES =====================================*/
 
-.btn, a.btn, input[type="submit"], input[type="button"], input[type="checkbox"], input[type="radio"] {border: none;}
-
-.btn, a.btn                                             {padding: 1em 2.3em;}
+.btn                                             {padding: 1.2em 2.3em;}
 
 /*================================ INPUT =====================================*/
 
-input, select, textarea                                 {width: 100%; border: 1px solid #cecece;}
+input, select, textarea                          {width: 100%; border: 1px solid #cecece;}
 
-input, select                                           {height: 3.58em; padding: 0 .6em;}
+input, select                                    {height: 3.95em; padding: 0 0.6em;}
 
-button:focus, input:focus, select:focus, textarea:focus {outline: none;}
+button:focus, input:focus, select:focus, 
+textarea:focus                                   {outline: none;}
 
-textarea                                                {height: 9em; padding: .6em; resize: none;}
+textarea                                         {height: 9em; padding: .6em; resize: none;}
 
-button, .btn, input, select, textarea                   {cursor: pointer;}
+button, .btn, input, select, textarea            {cursor: pointer;}
 
-::-webkit-input-placeholder                             {color: #888;}
-:-ms-input-placeholder                                  {color: #888;}
+::-webkit-input-placeholder                      {color: #888;}
+:-ms-input-placeholder                           {color: #888;}
 
 /* ====================================================================================================================
  * LAYOUT MEDIA QUERIES
  * ====================================================================================================================*/
 
+/*========================= MEDIUM/MD RESOLUTIONS ============================*/
+
 @media only screen and (max-width: 992px) {
-	
-	header .eightcol {float: none; margin: 0; height: 0; padding: 0;}
-	
-	.logo                                               {width: 173px; height: 41px;}
-	.nav-btn i                                          {line-height: 41px;}
+
+	.logo                                        {width: 173px; height: 41px;}
+	.nav-btn i                                   {line-height: 41px;}
 	
 	.main-nav {
-		background: #1d1d1d;
-		color: #fff;
-		text-transform: uppercase; 
-		
 		position: fixed;
-		top: 0; left: -15em; 
+		top: 0; 
+		left: -15em; /* negative width value */
 		z-index: 9999; 
 		
 		width: 15em;
-		min-height: 100%;
 		height: 100%;
+		min-height: 100%;
 		
 		overflow-y: scroll;
 		overflow-x: hidden;
-	}
-	
-    .main-nav.open                                      {left: 0;}
-    
-	.main-nav a                                         {padding: 1em}
-	
-	.main-nav li, .main-nav a                           {display: block;}
-	.main-nav li:hover > ul                             {display: none;}
-	
-	.main-nav li ul                                     {position: relative;}
-	.main-nav li ul ul                                  {left: 0;}	
 		
-	.menu-item-has-children > a::after                  {font-family: 'FontAwesome'; content: "\f107"; float: right;}
-	.menu-item-has-children a.nav-highlight:after       {content: "\f106";}
+		color: #fff;
+		text-transform: uppercase; 
+		
+		background: #1d1d1d;
+	}
+
+	.main-nav li ul                              {position: relative;}
+	.main-nav li ul ul, .main-nav.open           {left: 0;}
+	
+	.main-nav li, .main-nav a                    {display: block;}
+	.main-nav li:hover > ul                      {display: none;}
+    
+	.main-nav a                                  {padding: 1em;}
+
+	.menu-item-has-children > a:after            {float: right; font-family: 'FontAwesome'; content: "\f107";}
+	.menu-item-has-children .nav-highlight:after {content: "\f106";}
 	
 }
+
+/*========================= SMALL/SM RESOLUTIONS =============================*/
 
 @media only screen and (max-width: 768px) {
 
 
 }
+
+/*====================== EXTRA SMALL/XS RESOLUTIONS ==========================*/
 
 @media only screen and (max-width: 480px) {
 

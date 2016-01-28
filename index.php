@@ -3,7 +3,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Spaceman Framework 1.7.6</title>
+    <title>Spaceman Framework 1.7.7</title>
     <link rel="icon" href="img/icon.png" />
     <link rel="stylesheet" href="css/global-styles.css" type="text/css" media="screen" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -11,17 +11,19 @@
     <meta name="keywords" content="">
 </head>
 
-<body class="bg-grey">
+<body class="bg-light-grey">
 
     <!-- BEGIN HEADER-TOP -->
     <div class="bg-dark hide-sm">
         <div class="wrapper">
-            <div class="row txt-white small">
+            <div class="row text-white">
                 <div class="sixcol no-spacer">
-                    <p>Version 1.7.6</p>
+                    <p><small>Version 1.7.7</small>
+                    </p>
                 </div>
                 <div class="sixcol align-right no-spacer">
-                    <p>I'm gonna chase you out of earth!</p>
+                    <p><small>I'm gonna chase you out of earth!</small>
+                    </p>
                 </div>
             </div>
         </div>
@@ -34,7 +36,7 @@
             <div class="twelvecol">
 
                 <a class="logo fleft vcenter" href=""></a>
-				
+
                 <!-- BEGIN NAVIGATION -->
                 <nav class="main-nav vcenter">
                     <ul class="menu">
@@ -45,8 +47,8 @@
                     </ul>
                 </nav>
                 <!-- END NAVIGATION -->
-				
-                <button class="nav-btn bg-main show-md fright">
+
+                <button class="nav-btn show-md bg-main fright">
                     <i class="fa fa-bars fa-2x txt-purple"></i>
                 </button>
 
@@ -67,73 +69,76 @@
     <!-- END SLIDER -->
 
     <!-- BEGIN CONTENT -->
-    <section class="wrapper">
-        <div class="row bg-white">
-            <div class="fourcol stretch">
+    <section class="wrapper bg-white">
+        <div class="row">
+
+            <?php // include 'GUI.htm'; ?>
+
+            <div class="fourcol-sm">
                 <img src="img/thumb.jpg" alt="thumb">
                 <h3>Lorem Ipsum</h3>
                 <hr class="spacer-10">
                 <p>Bacon ipsum dolor amet strip steak flank beef pastrami tail, shoulder kielbasa tenderloin fatback brisket. Bresaola shankle leberkas t-bone strip steak, capicola chuck hamburger bacon pork meatloaf ball...</p>
             </div>
-			
-            <div class="fourcol stretch">
+
+            <div class="fourcol-sm">
                 <img src="img/thumb.jpg" alt="thumb">
                 <h3>Lorem Ipsum</h3>
                 <hr class="spacer-10">
                 <p>Bacon ipsum dolor amet strip steak flank beef pastrami tail, shoulder kielbasa tenderloin fatback brisket. Bresaola shankle leberkas t-bone strip steak, capicola chuck hamburger bacon pork meatloaf ball...</p>
             </div>
-			
-            <div class="fourcol stretch">
+
+            <div class="fourcol-sm">
                 <img src="img/thumb.jpg" alt="thumb">
                 <h3>Lorem Ipsum</h3>
                 <hr class="spacer-10">
                 <p>Bacon ipsum dolor amet strip steak flank beef pastrami tail, shoulder kielbasa tenderloin fatback brisket. Bresaola shankle leberkas t-bone strip steak, capicola chuck hamburger bacon pork meatloaf ball...</p>
             </div>
+
         </div>
     </section>
     <!-- END CONTENT -->
 
     <!-- BEGIN FOOTER -->
     <footer>
-		
-        <div class="wrapper bg-dark txt-white">
+        <div class="wrapper bg-dark text-white">
             <div class="row">
 
-                <div class="threecol stretch-mid">
+                <div class="threecol-md stretch-mid">
                     <h5>Lorem Ipsum</h5>
                     <hr class="spacer-10">
                     <p>Bacon ipsum dolor amet strip steak flank beef pastrami tail, shoulder kielbasa tenderloin fatback brisket...</p>
                 </div>
 
-                <div class="threecol stretch-mid">
+                <div class="threecol-md stretch-mid">
                     <h5>Lorem Ipsum</h5>
                     <hr class="spacer-10">
                     <p>Bacon ipsum dolor amet strip steak flank beef pastrami tail, shoulder kielbasa tenderloin fatback brisket...</p>
                 </div>
 
-                <div class="threecol stretch-mid">
+                <div class="threecol-md stretch-mid">
                     <h5>Lorem Ipsum</h5>
                     <hr class="spacer-10">
                     <p>Bacon ipsum dolor amet strip steak flank beef pastrami tail, shoulder kielbasa tenderloin fatback brisket...</p>
                 </div>
 
-                <div class="threecol stretch-mid">
+                <div class="threecol-md stretch-mid">
                     <h5>Lorem Ipsum</h5>
                     <hr class="spacer-10">
                     <p>Bacon ipsum dolor amet strip steak flank beef pastrami tail, shoulder kielbasa tenderloin fatback brisket...</p>
                 </div>
-				
-			</div>
-		</div>
-		
-		<div class="bg-darker">
-            <div class="row txt-white">
-                <div class="twelvecol pad-05 align-center small no-spacer">
-                    <p>© 2015 Spaceman 1.7.6 Framework. | Desenvolvido por <a class="no-underline" href="">V. de Várias Fita</a>.</p>
+
+            </div>
+        </div>
+
+        <div class="bg-darker">
+            <div class="row text-white">
+                <div class="twelvecol pad-05 align-center no-spacer">
+                    <p><small>© 2015 Spaceman 1.7.7 Framework. Desenvolvido por <a class="no-underline" href="">V.</a></small>
+                    </p>
                 </div>
             </div>
         </div>
-		
     </footer>
     <!-- END FOOTER -->
 
@@ -141,7 +146,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="js/global-js.js"></script>
     <script type="text/javascript">
-        $(window).load(function () {
+        $(window).load(function() {
             $('.flexslider').flexslider({
                 controlNav: false,
             });

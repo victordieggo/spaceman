@@ -2,7 +2,7 @@
  * RESET
  * ====================================================================================================================*/
 
-*{margin:0;padding:0;text-indent:0;list-style:none;border:none;line-height:160%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}html{overflow-y:scroll;overflow-x:hidden;}
+*{margin:0;padding:0;text-indent:0;list-style:none;border:none;line-height: 160%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}html{overflow-y:scroll;overflow-x:hidden;text-size-adjust:none;text-rendering:optimizeLegibility;text-rendering:geometricPrecision;font-smooth:always;font-smoothing:antialiased;-moz-font-smoothing:antialiased;-webkit-font-smoothing:antialiased;-webkit-font-smoothing:subpixel-antialiased;}body{opacity:0.99;}
 
 /* ====================================================================================================================
  * SPACEMAN GRID
@@ -21,25 +21,45 @@
 
 /*=================================== COLUNAS =================================*/
 
-.onecol                                         {width: 6.333333333333333%;}
-.twocol                                         {width: 14.66666666666667%;}
-.threecol                                       {width: 23%;}
-.fourcol                                        {width: 31.33333333333333%;}
-.fivecol                                        {width: 39.66666666666667%;}
-.sixcol                                         {width: 48%;}
-.sevencol                                       {width: 56.33333333333333%;}
-.eightcol                                       {width: 64.66666666666666%;}
-.ninecol                                        {width: 73%;}
-.tencol                                         {width: 81.33333333333333%;}
-.elevencol                                      {width: 89.66666666666666%;}
-.twelvecol                                      {width: 98%;}
+[class*='onecol']                               {width: 6.333333333333333%;}
+[class*='twocol']                               {width: 14.66666666666667%;}
+[class*='threecol']                             {width: 23%;}
+[class*='fourcol']                              {width: 31.33333333333333%;}
+[class*='fivecol']                              {width: 39.66666666666667%;}
+[class*='sixcol']                               {width: 48%;}
+[class*='sevencol']                             {width: 56.33333333333333%;}
+[class*='eightcol']                             {width: 64.66666666666666%;}
+[class*='ninecol']                              {width: 73%;}
+[class*='tencol']                               {width: 81.33333333333333%;}
+[class*='elevencol']                            {width: 89.66666666666666%;}
+[class*='twelvecol']                            {width: 98%;}
 
-/*=============================== MEDIA QUERIES ===============================*/
+/* ====================================================================================================================
+ * GRID MEDIA QUERIES
+ * ====================================================================================================================*/
+
+/*========================= MEDIUM/MD RESOLUTIONS ============================*/
+
+@media only screen and (max-width: 992px) {
+	
+	[class*='col-md']                            {width: 98%;}
+	
+}
+
+/*========================= SMALL/SM RESOLUTIONS =============================*/
 
 @media only screen and (max-width: 768px) {
 	
-    .row                                         {padding: 4%;}
-    [class*='col']                               {width: 100%; margin: 0 0 4% 0;}
-    .row div[class*='col']:last-child            {margin-bottom: 0;}
+    .row                                         {padding: 2%;}
+	[class*='col-sm']                            {width: 98%;}
+	
+}
+
+/*====================== EXTRA SMALL/XS RESOLUTIONS ==========================*/
+
+@media only screen and (max-width: 480px) {
+
+	.row                                         {padding: 3%;}
+	[class*='col-xm']                            {width: 98%;}
 	
 }
