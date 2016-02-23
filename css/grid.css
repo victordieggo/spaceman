@@ -2,7 +2,7 @@
  * RESET
  * ====================================================================================================================*/
 
-*{margin:0;padding:0;text-indent:0;list-style:none;border:none;line-height: 160%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}html{overflow-y:scroll;overflow-x:hidden;text-size-adjust:none;text-rendering:optimizeLegibility;text-rendering:geometricPrecision;font-smooth:always;font-smoothing:antialiased;-moz-font-smoothing:antialiased;-webkit-font-smoothing:antialiased;-webkit-font-smoothing:subpixel-antialiased;}body{opacity:0.99;}
+*{margin:0;padding:0;text-indent:0;list-style:none;border:none;line-height:160%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}html{overflow-y:scroll;overflow-x:hidden;text-size-adjust:none;text-rendering:optimizeLegibility;text-rendering:geometricPrecision;font-smooth:always;font-smoothing:antialiased;-moz-font-smoothing:antialiased;-webkit-font-smoothing:antialiased;-webkit-font-smoothing:subpixel-antialiased;}body{opacity:0.99;}
 
 /* ====================================================================================================================
  * SPACEMAN GRID
@@ -16,23 +16,23 @@
 
 .row                                            {padding: 1%;}
 .row:after                                      {content: ""; display: table; clear: both;}
-[class*='col']                                  {float: left; vertical-align: top; margin: 1%;}
-[class*='col'].no-spacer                        {margin: 0 1%;}
+div[class*='col-']                              {float: left; vertical-align: top; margin: 1%;}
+div[class*='col-'].no-spacer                   	{margin: 0 1%;}
 
 /*=================================== COLUNAS =================================*/
 
-[class*='onecol']                               {width: 6.333333333333333%;}
-[class*='twocol']                               {width: 14.66666666666667%;}
-[class*='threecol']                             {width: 23%;}
-[class*='fourcol']                              {width: 31.33333333333333%;}
-[class*='fivecol']                              {width: 39.66666666666667%;}
-[class*='sixcol']                               {width: 48%;}
-[class*='sevencol']                             {width: 56.33333333333333%;}
-[class*='eightcol']                             {width: 64.66666666666666%;}
-[class*='ninecol']                              {width: 73%;}
-[class*='tencol']                               {width: 81.33333333333333%;}
-[class*='elevencol']                            {width: 89.66666666666666%;}
-[class*='twelvecol']                            {width: 98%;}
+.col-1, .col-md-1, .col-sm-1, .col-xm-1         {width: 6.333333333333333%;}
+.col-2, .col-md-2, .col-sm-2, .col-xm-2         {width: 14.66666666666667%;}
+.col-3, .col-md-3, .col-sm-3, .col-xm-3         {width: 23%;}
+.col-4, .col-md-4, .col-sm-4, .col-xm-4         {width: 31.33333333333333%;}
+.col-5, .col-md-5, .col-sm-5, .col-xm-5         {width: 39.66666666666667%;}
+.col-6, .col-md-6, .col-sm-6, .col-xm-6         {width: 48%;}
+.col-7, .col-md-7, .col-sm-7, .col-xm-7         {width: 56.33333333333333%;}
+.col-8, .col-md-8, .col-sm-8, .col-xm-8         {width: 64.66666666666666%;}
+.col-9, .col-md-9, .col-sm-9, .col-xm-9         {width: 73%;}
+.col-10, .col-md-10, .col-sm-10, .col-xm-10     {width: 81.33333333333333%;}
+.col-11, .col-md-11, .col-sm-11, .col-xm-11     {width: 89.66666666666666%;}
+.col-12, .col-md-12, .col-sm-12, .col-xm-12     {width: 98%;}
 
 /* ====================================================================================================================
  * GRID MEDIA QUERIES
@@ -42,7 +42,7 @@
 
 @media only screen and (max-width: 992px) {
 	
-	[class*='col-md']                            {width: 98%;}
+	div[class*='col-md']                         {width: 98%;}
 	
 }
 
@@ -51,7 +51,7 @@
 @media only screen and (max-width: 768px) {
 	
     .row                                         {padding: 2%;}
-	[class*='col-sm']                            {width: 98%;}
+	div[class*='col-sm']                         {width: 98%;}
 	
 }
 
@@ -60,6 +60,6 @@
 @media only screen and (max-width: 480px) {
 
 	.row                                         {padding: 3%;}
-	[class*='col-xm']                            {width: 98%;}
+	div[class*='col-xm']                         {width: 98%;}
 	
 }

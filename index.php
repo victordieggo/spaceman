@@ -3,7 +3,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Spaceman Framework 1.7.7</title>
+    <title>Spaceman Framework 1.8</title>
     <link rel="icon" href="img/icon.png" />
     <link rel="stylesheet" href="css/global-styles.css" type="text/css" media="screen" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -17,11 +17,11 @@
     <div class="bg-dark hide-sm">
         <div class="wrapper">
             <div class="row text-white">
-                <div class="sixcol no-spacer">
-                    <p><small>Version 1.7.7</small>
+                <div class="col-6 no-spacer">
+                    <p><small>Version 1.8</small>
                     </p>
                 </div>
-                <div class="sixcol align-right no-spacer">
+                <div class="col-6 align-right no-spacer">
                     <p><small>I'm gonna chase you out of earth!</small>
                     </p>
                 </div>
@@ -33,7 +33,7 @@
     <!-- BEGIN HEADER -->
     <header class="wrapper bg-primary">
         <div class="row">
-            <div class="twelvecol">
+            <div class="col-12">
 
                 <a class="logo fleft vcenter" href=""></a>
 
@@ -51,7 +51,7 @@
                 <button class="nav-btn show-md bg-main fright">
                     <i class="fa fa-bars fa-2x txt-purple"></i>
                 </button>
-
+				
             </div>
         </div>
     </header>
@@ -73,22 +73,22 @@
         <div class="row">
 
             <?php // include 'GUI.htm'; ?>
-
-            <div class="fourcol-sm">
+			
+            <div class="col-md-4">
                 <img src="img/thumb.jpg" alt="thumb">
                 <h3>Lorem Ipsum</h3>
                 <hr class="spacer-10">
                 <p>Bacon ipsum dolor amet strip steak flank beef pastrami tail, shoulder kielbasa tenderloin fatback brisket. Bresaola shankle leberkas t-bone strip steak, capicola chuck hamburger bacon pork meatloaf ball...</p>
             </div>
 
-            <div class="fourcol-sm">
+            <div class="col-md-4">
                 <img src="img/thumb.jpg" alt="thumb">
                 <h3>Lorem Ipsum</h3>
                 <hr class="spacer-10">
                 <p>Bacon ipsum dolor amet strip steak flank beef pastrami tail, shoulder kielbasa tenderloin fatback brisket. Bresaola shankle leberkas t-bone strip steak, capicola chuck hamburger bacon pork meatloaf ball...</p>
             </div>
 
-            <div class="fourcol-sm">
+            <div class="col-md-4">
                 <img src="img/thumb.jpg" alt="thumb">
                 <h3>Lorem Ipsum</h3>
                 <hr class="spacer-10">
@@ -104,25 +104,25 @@
         <div class="wrapper bg-dark text-white">
             <div class="row">
 
-                <div class="threecol-md stretch-mid">
+                <div class="col-md-3">
                     <h5>Lorem Ipsum</h5>
                     <hr class="spacer-10">
                     <p>Bacon ipsum dolor amet strip steak flank beef pastrami tail, shoulder kielbasa tenderloin fatback brisket...</p>
                 </div>
 
-                <div class="threecol-md stretch-mid">
+                <div class="col-md-3">
                     <h5>Lorem Ipsum</h5>
                     <hr class="spacer-10">
                     <p>Bacon ipsum dolor amet strip steak flank beef pastrami tail, shoulder kielbasa tenderloin fatback brisket...</p>
                 </div>
 
-                <div class="threecol-md stretch-mid">
+                <div class="col-md-3">
                     <h5>Lorem Ipsum</h5>
                     <hr class="spacer-10">
                     <p>Bacon ipsum dolor amet strip steak flank beef pastrami tail, shoulder kielbasa tenderloin fatback brisket...</p>
                 </div>
 
-                <div class="threecol-md stretch-mid">
+                <div class="col-md-3">
                     <h5>Lorem Ipsum</h5>
                     <hr class="spacer-10">
                     <p>Bacon ipsum dolor amet strip steak flank beef pastrami tail, shoulder kielbasa tenderloin fatback brisket...</p>
@@ -133,8 +133,8 @@
 
         <div class="bg-darker">
             <div class="row text-white">
-                <div class="twelvecol pad-05 align-center no-spacer">
-                    <p><small>© 2015 Spaceman 1.7.7 Framework. Desenvolvido por <a class="no-underline" href="">V.</a></small>
+                <div class="col-12 pad-05 align-center no-spacer">
+                    <p><small>© 2015 Spaceman 1.8 Framework. Desenvolvido por <a class="no-underline" href="">V.</a></small>
                     </p>
                 </div>
             </div>
