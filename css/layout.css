@@ -74,13 +74,17 @@ button, .bg-none                                 {background-color: transparent;
 
 /*================================ BOTÕES =====================================*/
 
-.btn                                             {padding: 1.2em 2.3em;}
+.btn.btn-small                                   {padding: 0.8em 1.8em;}
+.btn                                             {padding: 1em 2em;}
+.btn.btn-large                                   {padding: 1.2em 2.2em;}
 
 /*================================ INPUT =====================================*/
 
 input, select, textarea                          {width: 100%; border: 1px solid #cecece;}
 
-input, select                                    {height: 3.95em; padding: 0 0.6em;}
+input, select                                    {height: 3.58em; padding: 0 0.6em;}
+
+.input-small                                     {height: 3.2em;}
 
 button:focus, input:focus, select:focus, 
 textarea:focus                                   {outline: none;}
@@ -103,23 +107,30 @@ button, .btn, input, select, textarea            {cursor: pointer;}
 	.logo                                        {width: 173px; height: 41px;}
 	.nav-btn i                                   {line-height: 41px;}
 	
-	.main-nav {
+	.screen-cover, .main-nav {
 		position: fixed;
-		top: 0; 
-		left: -15em; /* negative width value */
-		z-index: 9999; 
-		
-		width: 15em;
+		min-height: 100%; 
 		height: 100%;
-		min-height: 100%;
+		z-index: 9999;
+	}
+	
+	.screen-cover {
+		background-color: rgba(29, 29, 29, 0.51);
+	}
+	
+	.main-nav {
+		top: 0; 
+		left: -13em; /* negative width value */
 		
-		overflow-y: scroll;
+		width: 13em;
+		
+		overflow-y: auto;
 		overflow-x: hidden;
 		
 		color: #fff;
 		text-transform: uppercase; 
 		
-		background: #1d1d1d;
+		background-color: #1d1d1d;
 	}
 
 	.main-nav li ul                              {position: relative;}
@@ -145,6 +156,6 @@ button, .btn, input, select, textarea            {cursor: pointer;}
 /*====================== EXTRA SMALL/XS RESOLUTIONS ==========================*/
 
 @media only screen and (max-width: 480px) {
-
 	
+
 }

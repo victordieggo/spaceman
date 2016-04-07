@@ -18,7 +18,8 @@
 
 .hide, .show-md, .show-sm                       {display: none;}
 .block                                          {display: block;}
-.inline, .vcenter, .btn                         {display: inline-block;}
+.inline                                         {display: inline;}
+.inline-block, .vcenter, .btn                   {display: inline-block;}
 
 /*================================= SPACERS ===================================*/
 

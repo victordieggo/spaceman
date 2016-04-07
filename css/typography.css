@@ -19,7 +19,7 @@ h3                                              {font-size: 1.9em;}
 h4                                              {font-size: 1.6em;}
 h5, .btn.btn-large                              {font-size: 1.3em;}
 h6, body, .btn, input, select, textarea         {font-size: 1em;}
-small, .btn-small, .text-small, .input-small    {font-size: .8em;}
+small, .btn-small, .text-small, .input-small    {font-size: 0.8em;}
 
 /*============================ DEFINE FONT-COLOR ===============================*/
 
@@ -29,10 +29,10 @@ a                                               {color: inherit;}
 
 /*================================= ALERTS ====================================*/
 
-.text-sucess                                    {background-color: #5cb85c;}
-.text-warning                                   {background-color: #f0ad4e;}
-.text-danger                                    {background-color: #d9534f;}
-.text-info                                      {background-color: #49a0d7;}
+.text-sucess                                    {color: #5cb85c;}
+.text-warning                                   {color: #f0ad4e;}
+.text-danger                                    {color: #d9534f;}
+.text-info                                      {color: #49a0d7;}
 
 /*=========================== ALINHAMENTOS/EFEITOS =============================*/
 

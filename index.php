@@ -3,7 +3,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Spaceman Framework 1.8</title>
+    <title>Spaceman Framework 1.8.1</title>
     <link rel="icon" href="img/icon.png" />
     <link rel="stylesheet" href="css/global-styles.css" type="text/css" media="screen" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -12,18 +12,18 @@
 </head>
 
 <body class="bg-light-grey">
+	
+	<div class="screen-cover full-width hide"></div>
 
     <!-- BEGIN HEADER-TOP -->
     <div class="bg-dark hide-sm">
         <div class="wrapper">
             <div class="row text-white">
                 <div class="col-6 no-spacer">
-                    <p><small>Version 1.8</small>
-                    </p>
+                    <p><small>Version 1.8.1</small></p>
                 </div>
                 <div class="col-6 align-right no-spacer">
-                    <p><small>I'm gonna chase you out of earth!</small>
-                    </p>
+                    <p><small>I'm gonna chase you out of earth!</small></p>
                 </div>
             </div>
         </div>
@@ -134,7 +134,7 @@
         <div class="bg-darker">
             <div class="row text-white">
                 <div class="col-12 pad-05 align-center no-spacer">
-                    <p><small>© 2015 Spaceman 1.8 Framework. Desenvolvido por <a class="no-underline" href="">V.</a></small>
+                    <p><small>© 2015 Spaceman 1.8.1 Framework. Desenvolvido por <a class="no-underline" href="">V.</a></small>
                     </p>
                 </div>
             </div>

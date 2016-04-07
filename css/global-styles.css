@@ -16,8 +16,8 @@
 
 .row                                            {padding: 1%;}
 .row:after                                      {content: ""; display: table; clear: both;}
-div[class*='col-']                              {float: left; vertical-align: top; margin: 1%;}
-div[class*='col-'].no-spacer                   	{margin: 0 1%;}
+[class*='col-']                                 {float: left; vertical-align: top; margin: 1%;}
+[class*='col-'].no-spacer                   	{margin: 0 1%;}
 
 /*=================================== COLUNAS =================================*/
 
@@ -84,7 +84,7 @@ h3                                              {font-size: 1.9em;}
 h4                                              {font-size: 1.6em;}
 h5, .btn.btn-large                              {font-size: 1.3em;}
 h6, body, .btn, input, select, textarea         {font-size: 1em;}
-small, .btn-small, .text-small, .input-small    {font-size: .8em;}
+small, .btn-small, .text-small, .input-small    {font-size: 0.8em;}
 
 /*============================ DEFINE FONT-COLOR ===============================*/
 
@@ -94,10 +94,10 @@ a                                               {color: inherit;}
 
 /*================================= ALERTS ====================================*/
 
-.text-sucess                                    {background-color: #5cb85c;}
-.text-warning                                   {background-color: #f0ad4e;}
-.text-danger                                    {background-color: #d9534f;}
-.text-info                                      {background-color: #49a0d7;}
+.text-sucess                                    {color: #5cb85c;}
+.text-warning                                   {color: #f0ad4e;}
+.text-danger                                    {color: #d9534f;}
+.text-info                                      {color: #49a0d7;}
 
 /*=========================== ALINHAMENTOS/EFEITOS =============================*/
 
@@ -129,7 +129,8 @@ a:hover                                         {text-decoration: underline;}
 
 .hide, .show-md, .show-sm                       {display: none;}
 .block                                          {display: block;}
-.inline, .vcenter, .btn                         {display: inline-block;}
+.inline                                         {display: inline;}
+.inline-block, .vcenter, .btn                   {display: inline-block;}
 
 /*================================= SPACERS ===================================*/
 
@@ -315,13 +316,17 @@ button, .bg-none                                 {background-color: transparent;
 
 /*================================ BOTÕES =====================================*/
 
-.btn                                             {padding: 1.2em 2.3em;}
+.btn.btn-small                                   {padding: 0.8em 1.8em;}
+.btn                                             {padding: 1em 2em;}
+.btn.btn-large                                   {padding: 1.2em 2.2em;}
 
 /*================================ INPUT =====================================*/
 
 input, select, textarea                          {width: 100%; border: 1px solid #cecece;}
 
-input, select                                    {height: 3.95em; padding: 0 0.6em;}
+input, select                                    {height: 3.58em; padding: 0 0.6em;}
+
+.input-small                                     {height: 3.2em;}
 
 button:focus, input:focus, select:focus, 
 textarea:focus                                   {outline: none;}
@@ -344,23 +349,30 @@ button, .btn, input, select, textarea            {cursor: pointer;}
 	.logo                                        {width: 173px; height: 41px;}
 	.nav-btn i                                   {line-height: 41px;}
 	
-	.main-nav {
+	.screen-cover, .main-nav {
 		position: fixed;
-		top: 0; 
-		left: -15em; /* negative width value */
-		z-index: 9999; 
-		
-		width: 15em;
+		min-height: 100%; 
 		height: 100%;
-		min-height: 100%;
+		z-index: 9999;
+	}
+	
+	.screen-cover {
+		background-color: rgba(29, 29, 29, 0.51);
+	}
+	
+	.main-nav {
+		top: 0; 
+		left: -13em; /* negative width value */
 		
-		overflow-y: scroll;
+		width: 13em;
+		
+		overflow-y: auto;
 		overflow-x: hidden;
 		
 		color: #fff;
 		text-transform: uppercase; 
 		
-		background: #1d1d1d;
+		background-color: #1d1d1d;
 	}
 
 	.main-nav li ul                              {position: relative;}
@@ -386,8 +398,8 @@ button, .btn, input, select, textarea            {cursor: pointer;}
 /*====================== EXTRA SMALL/XS RESOLUTIONS ==========================*/
 
 @media only screen and (max-width: 480px) {
-
 	
+
 }
 /*
  * jQuery FlexSlider v2.6.0

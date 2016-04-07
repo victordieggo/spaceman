@@ -16,8 +16,8 @@
 
 .row                                            {padding: 1%;}
 .row:after                                      {content: ""; display: table; clear: both;}
-div[class*='col-']                              {float: left; vertical-align: top; margin: 1%;}
-div[class*='col-'].no-spacer                   	{margin: 0 1%;}
+[class*='col-']                                 {float: left; vertical-align: top; margin: 1%;}
+[class*='col-'].no-spacer                   	{margin: 0 1%;}
 
 /*=================================== COLUNAS =================================*/
 
