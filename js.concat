@@ -10,5 +10,5 @@ output = js/global-js.js;
 minify = true;
 
 // the list of files (paths relative to project root) to concatenate
--js/jquery.flexslider.js;
+-js/flexslider.js;
 -js/navigation.js;

@@ -7,6 +7,7 @@ concatOnSave = true;
 output = css/global-styles.css;
 
 // the list of files (paths relative to project root) to concatenate
+-css/reset.css;
 -css/grid.css;
 -css/typography.css;
 -css/base.css;

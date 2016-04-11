@@ -1,11 +1,5 @@
 /* ====================================================================================================================
- * RESET
- * ====================================================================================================================*/
-
-*{margin:0;padding:0;text-indent:0;list-style:none;border:none;line-height:160%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}html{overflow-y:scroll;overflow-x:hidden;text-size-adjust:none;text-rendering:optimizeLegibility;text-rendering:geometricPrecision;font-smooth:always;font-smoothing:antialiased;-moz-font-smoothing:antialiased;-webkit-font-smoothing:antialiased;-webkit-font-smoothing:subpixel-antialiased;}body{opacity:0.99;}
-
-/* ====================================================================================================================
- * SPACEMAN GRID
+ * SPACEMAN GRID 1.8.2
  * ====================================================================================================================*/
 
 /*================================ GRID WRAPPER ===============================*/
