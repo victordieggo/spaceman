@@ -1,0 +1,20 @@
+{
+  "name": "Spaceman",
+  "version": "1.8.3",
+  "description": "Gulp package structure for projects using Spaceman Framework.",
+  "repository": {
+    "type": "git",
+    "url": "https://victordieggo@bitbucket.org/victordieggo/spaceman.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Victor Diego",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "*",
+    "gulp-concat": "*",
+    "gulp-cssmin": "*",
+    "gulp-uglify": "*"
+  }
+}
