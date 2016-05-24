@@ -13,6 +13,7 @@
 
 .relative                                       {position: relative;}
 .absolute                                       {position: absolute;}
+.fixed                                          {position: fixed;}
 
 /*================================= DISPLAY ===================================*/
 
@@ -48,6 +49,7 @@
 
 .pad-05                                         {padding: 0.5em;}
 .pad-10                                         {padding: 1.0em;}
+.pad-15                                         {padding: 1.5em;}
 .pad-20                                         {padding: 2.0em;}
 .pad-25                                         {padding: 2.5em;}
 .pad-30                                         {padding: 3.0em;}

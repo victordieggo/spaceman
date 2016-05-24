@@ -132,7 +132,9 @@ button, .btn, input, select, textarea            {cursor: pointer;}
 		
 		background-color: #1d1d1d;
 	}
-
+	
+	.main-nav ul, .main-nav li ul                {white-space: normal;}
+	
 	.main-nav li ul                              {position: relative;}
 	.main-nav li ul ul, .main-nav.open           {left: 0;}
 	
