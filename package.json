@@ -1,6 +1,6 @@
 {
   "name": "Spaceman",
-  "version": "1.8.3",
+  "version": "1.8.4",
   "description": "Gulp package structure for projects using Spaceman Framework.",
   "repository": {
     "type": "git",
