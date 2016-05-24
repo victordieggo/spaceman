@@ -14,7 +14,7 @@ gulp.task('cssmin', function(){
 
 // CONCAT/MINIFY JS
 gulp.task('jsmin', function(){
-	gulp.src(['js/*.js', '!js/global-js.js*'])
+	gulp.src(['js/*.js', '!js/global-js.js*', '!js/jquery.min*'])
 		.pipe(concat('global-js.js'))
 		.pipe(uglify())
 		.pipe(gulp.dest('js'))

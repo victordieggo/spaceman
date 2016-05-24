@@ -13,7 +13,7 @@
 
 <body class="bg-light-grey">
 	
-    <div class="screen-cover full-width hide"></div>
+    <div class="screen-cover fixed full-width hide"></div>
 
     <!-- BEGIN HEADER-TOP -->
     <div class="bg-dark hide-sm">
@@ -67,12 +67,12 @@
         </div>
     </div>
     <!-- END SLIDER -->
+    
+    <?php // include 'GUI.htm'; ?>
 
     <!-- BEGIN CONTENT -->
     <section class="wrapper bg-white">
         <div class="row">
-
-            <?php // include 'GUI.htm'; ?>
 			
             <div class="col-md-4">
                 <img src="img/thumb.jpg" alt="thumb">
@@ -143,7 +143,7 @@
     <!-- END FOOTER -->
 
     <!-- BEGIN JQUERY // PLACED AT THE BOTTOM OF THE PAGE FOR FASTER LOADING -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="js/jquery.min.js"></script>
     <script src="js/global-js.js"></script>
     <script type="text/javascript">
         $(window).load(function() {

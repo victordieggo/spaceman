@@ -17,11 +17,16 @@ function MobileNavigation() {
 			jQuery('.main-nav').toggleClass('open');
 			jQuery(this).toggleClass('selected');
 			jQuery('.screen-cover').toggleClass('hide');
+            jQuery('body').addClass('fixed');
 		}
 	});
 	
 	//OPEN SUB MENU
 	jQuery('.menu-item-has-children').click(function () {
+        
+        //REMOVE HREF FROM MENU ITENS WITH SUB-ITENS
+		jQuery('.menu-item-has-children > a').removeAttr('href').css('cursor', 'pointer');
+        
 		if (jQuery(window).width() <= 992) {
 			jQuery(this).children('.sub-menu').slideToggle(400);
 			
@@ -42,6 +47,7 @@ function MobileNavigation() {
 				jQuery('.main-nav').removeClass('open');
 				jQuery('.nav-btn').removeClass('selected');
 				jQuery('.screen-cover').addClass('hide');
+                jQuery('body').removeClass('fixed');
 			}
 		}
     });
@@ -64,6 +70,7 @@ function ResizeFallback() {
 		
 		//HIDE SCREEN COVER DIV
 		jQuery('.screen-cover').addClass('hide');
+        jQuery('body').removeClass('fixed');
 
         //FORCE MAIN NAV TO APPEAR EVEN AFTER BEIGN CLOSED ON MOBILE
         if (jQuery('.main-nav').not(':visible')) {
@@ -96,6 +103,7 @@ function ResizeFallback() {
             
 			//IF MAIN NAV WAS OPEN, SHOW THE SCREEN COVER DIV
             jQuery('.screen-cover').removeClass('hide');
+            jQuery('body').addClass('fixed');
             
         }
 		

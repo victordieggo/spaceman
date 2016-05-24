@@ -69,32 +69,44 @@ button, .bg-none                                 {background-color: transparent;
 .main-nav ul, .main-nav li ul                    {white-space: nowrap;}
 
 /* ====================================================================================================================
- * FORM, BUTTON E INPUT
+ * FORM, BUTTON AND INPUT
  * ====================================================================================================================*/
 
-/*================================ BOTÕES =====================================*/
+input, select, textarea, .btn, .label            {border-radius: 0.2em; vertical-align: top;}
+button, .btn, input, select, textarea            {cursor: pointer;}
 
-.btn.btn-small                                   {padding: 0.8em 1.8em;}
-.btn                                             {padding: 1em 2em;}
-.btn.btn-large                                   {padding: 1.2em 2.2em;}
+/*============================ BTN BACKGROUND =================================*/
+
+.btn                                             {padding: 0.78em 0.8em; line-height: normal; }
+.btn, input.btn, .btn:focus                      {box-shadow: none; white-space: normal;}
 
 /*================================ INPUT =====================================*/
 
-input, select, textarea                          {width: 100%; border: 1px solid #cecece;}
+input, select, textarea                          {width: 100%; box-shadow: inset 0 0 0 1px #cecece; }
 
-input, select                                    {height: 3.58em; padding: 0 0.6em;}
+input, select                                    {height: 2.94em; padding: 0 0.8em;}
 
-.input-small                                     {height: 3.2em;}
+select {
+	background: url('../img/select-arrow.svg') no-repeat right #fff;
+	background-size: 1.3em;
+	padding-right: 2em;
+	-webkit-appearance: none;
+	   -moz-appearance: none;
+	        appearance: none;
+}
 
-button:focus, input:focus, select:focus, 
-textarea:focus                                   {outline: none;}
+select::-ms-expand                               {display: none;}
 
-textarea                                         {height: 9em; padding: .6em; resize: none;}
+.input-small                                     {height: 3em;}
+.input-large                                     {height: 3.8em;}
 
-button, .btn, input, select, textarea            {cursor: pointer;}
+textarea                                         {padding: .6em; resize: none; overflow-y: auto;}
 
 ::-webkit-input-placeholder                      {color: #888;}
 :-ms-input-placeholder                           {color: #888;}
+
+button:focus, input:focus, select:focus, 
+textarea:focus                                   {outline: none; box-shadow: inset 0 0 0 1px #909090;}
 
 /* ====================================================================================================================
  * LAYOUT MEDIA QUERIES
@@ -108,7 +120,6 @@ button, .btn, input, select, textarea            {cursor: pointer;}
 	.nav-btn i                                   {line-height: 41px;}
 	
 	.screen-cover, .main-nav {
-		position: fixed;
 		min-height: 100%; 
 		height: 100%;
 		z-index: 9999;
@@ -119,6 +130,8 @@ button, .btn, input, select, textarea            {cursor: pointer;}
 	}
 	
 	.main-nav {
+        position: fixed;
+        
 		top: 0; 
 		left: -13em; /* negative width value */
 		
