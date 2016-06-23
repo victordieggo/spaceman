@@ -54,6 +54,6 @@
 @media only screen and (max-width: 480px) {
 
 	.row                                         {padding: 3%;}
-	div[class*='col-xm']                         {width: 98%;}
+	div[class*='col-xs']                         {width: 98%;}
 	
 }

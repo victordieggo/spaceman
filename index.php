@@ -15,7 +15,8 @@
 	
     <div class="screen-cover fixed full-width hide"></div>
 
-    <!-- BEGIN HEADER-TOP -->
+    
+    <!--============================ HEADER-TOP ============================-->
     <div class="bg-dark hide-sm">
         <div class="wrapper">
             <div class="row text-white">
@@ -28,16 +29,16 @@
             </div>
         </div>
     </div>
-    <!-- END HEADER TOP-->
+    <!--============================ /HEADER-TOP ============================-->
 
-    <!-- BEGIN HEADER -->
+    <!--============================ HEADER ============================-->
     <header class="wrapper bg-primary">
         <div class="row">
             <div class="col-12">
 
                 <a class="logo fleft vcenter" href=""></a>
 
-                <!-- BEGIN NAVIGATION -->
+                <!--============================ NAVIGATION ============================-->
                 <nav class="main-nav vcenter">
                     <ul class="menu">
                         <li><a href="#">Home</a></li>
@@ -46,8 +47,8 @@
                         <li><a href="#">Fale Conosco</a></li>
                     </ul>
                 </nav>
-                <!-- END NAVIGATION -->
-
+                <!--============================ /NAVIGATION ============================-->
+                
                 <button class="nav-btn show-md bg-main fright">
                     <i class="fa fa-bars fa-2x"></i>
                 </button>
@@ -55,9 +56,9 @@
             </div>
         </div>
     </header>
-    <!-- END HEADER -->
+    <!--============================ /HEADER ============================-->
 
-    <!-- BEGIN SLIDER -->
+    <!--============================ SLIDER ============================-->
     <div class="wrapper">
         <div class="flexslider">
             <ul class="slides">
@@ -66,11 +67,11 @@
             </ul>
         </div>
     </div>
-    <!-- END SLIDER -->
+    <!--============================ /SLIDER ============================-->
     
     <?php // include 'GUI.htm'; ?>
 
-    <!-- BEGIN CONTENT -->
+    <!--============================ MAIN CONTENT ============================-->
     <section class="wrapper bg-white">
         <div class="row">
 			
@@ -97,9 +98,9 @@
 
         </div>
     </section>
-    <!-- END CONTENT -->
+    <!--============================ /MAIN CONTENT ============================-->
 
-    <!-- BEGIN FOOTER -->
+    <!--============================ FOOTER ============================-->
     <footer>
         <div class="wrapper bg-dark text-white">
             <div class="row">
@@ -140,9 +141,9 @@
             </div>
         </div>
     </footer>
-    <!-- END FOOTER -->
+    <!--============================ /FOOTER ============================-->
 
-    <!-- BEGIN JQUERY // PLACED AT THE BOTTOM OF THE PAGE FOR FASTER LOADING -->
+    <!--============================ SCRIPTS ============================-->
     <script src="js/jquery.min.js"></script>
     <script src="js/global-js.js"></script>
     <script type="text/javascript">
@@ -152,7 +153,7 @@
             });
         });
     </script>
-    <!-- END JQUERY -->
+    <!--============================ /SCRIPTS ============================-->
 
 </body>
 </html>

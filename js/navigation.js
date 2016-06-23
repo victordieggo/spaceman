@@ -1,5 +1,5 @@
 /* ====================================================================================================================
- * SPACEMAN MOBILE NAVIGATION 1.8.2
+ * SPACEMAN MOBILE NAVIGATION 1.8.4
  * ====================================================================================================================*/
 /*global $, jQuery*/
 
@@ -20,12 +20,12 @@ function MobileNavigation() {
             jQuery('body').addClass('fixed');
 		}
 	});
+    
+    //PREVENT CLICK FROM LINKS INSIDE ITENS WITH SUB ITENS
+    jQuery('.menu-item-has-children > a').click(function (e) {e.preventDefault(); });
 	
 	//OPEN SUB MENU
 	jQuery('.menu-item-has-children').click(function () {
-        
-        //REMOVE HREF FROM MENU ITENS WITH SUB-ITENS
-		jQuery('.menu-item-has-children > a').removeAttr('href').css('cursor', 'pointer');
         
 		if (jQuery(window).width() <= 992) {
 			jQuery(this).children('.sub-menu').slideToggle(400);
@@ -39,19 +39,25 @@ function MobileNavigation() {
 			});
 		}
 	});
+
+}
+
+//-------------------------------------------------------------------
+// FUNCTION: CLOSE MOBILE NAVIGATION
+//-------------------------------------------------------------------
+
+function CloseNavigation() {
 	
-	//CLOSE MENU IF USER CLICKS OUTSIDE
-    jQuery('html').click(function () {
-		if (jQuery(window).width() <= 992) {
-			if (jQuery('.main-nav').is(':visible')) {
-				jQuery('.main-nav').removeClass('open');
-				jQuery('.nav-btn').removeClass('selected');
-				jQuery('.screen-cover').addClass('hide');
-                jQuery('body').removeClass('fixed');
-			}
-		}
-    });
-	//EXCEPTIONS: ITENS LISTED HERE WONT CLOSE THE MAIN NAVIGATION WHEN CLICKED
+	"use strict";
+
+	if ((jQuery(window).width() <= 992) && (jQuery('.main-nav').is(':visible'))) {
+        jQuery('.main-nav').removeClass('open');
+        jQuery('.nav-btn').removeClass('selected');
+        jQuery('.screen-cover').addClass('hide');
+        jQuery('body').removeClass('fixed');
+    }
+    
+    //EXCEPTIONS: ITENS LISTED HERE WONT CLOSE THE MAIN NAVIGATION WHEN CLICKED
     jQuery('.main-nav, .nav-btn').click(function (event) {
         event.stopPropagation();
     });
@@ -116,3 +122,5 @@ function ResizeFallback() {
 
 jQuery(document).ready(MobileNavigation);
 jQuery(window).on('resize', ResizeFallback);
+jQuery('.main-nav, .screen-cover').on('swipeleft', CloseNavigation);
+jQuery('.screen-cover').click(CloseNavigation);

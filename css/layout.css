@@ -133,9 +133,9 @@ textarea:focus                                   {outline: none; box-shadow: ins
         position: fixed;
         
 		top: 0; 
-		left: -13em; /* negative width value */
+		left: -18em; /* negative width value */
 		
-		width: 13em;
+		width: 18em;
 		
 		overflow-y: auto;
 		overflow-x: hidden;
@@ -171,6 +171,7 @@ textarea:focus                                   {outline: none; box-shadow: ins
 /*====================== EXTRA SMALL/XS RESOLUTIONS ==========================*/
 
 @media only screen and (max-width: 480px) {
-	
+
+    .main-nav                                    {left: -75%; width: 75%;}
 
 }

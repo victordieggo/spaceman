@@ -17,7 +17,7 @@
 
 /*================================= DISPLAY ===================================*/
 
-.hide, .show-md, .show-sm                       {display: none;}
+.hide, .show-md, .show-sm, .show-xs             {display: none;}
 .block                                          {display: block;}
 .inline                                         {display: inline;}
 .inline-block, .vcenter, .btn                   {display: inline-block;}
