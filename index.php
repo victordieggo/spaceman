@@ -14,7 +14,6 @@
 <body class="bg-light-grey">
 	
     <div class="screen-cover fixed full-width hide"></div>
-
     
     <!--============================ HEADER-TOP ============================-->
     <div class="bg-dark hide-sm">
@@ -40,16 +39,53 @@
 
                 <!--============================ NAVIGATION ============================-->
                 <nav class="main-nav vcenter">
-                    <ul class="menu">
+                    <ul>
                         <li><a href="#">Home</a></li>
-                        <li><a href="#">Sobre</a></li>
+                        <li class="menu-item-has-children">
+							<a href="#">Sobre</a>
+							<ul>
+								<li class="menu-item-has-children">
+									<a href="#">Serviços</a>
+									<ul>
+										<li><a href="#">Serviços</a></li>
+										<li><a href="#">Serviços</a></li>
+									</ul>
+								</li>
+								<li class="menu-item-has-children">
+									<a href="#">Serviços</a>
+									<ul>
+										<li><a href="#">Fale Conosco</a></li>
+										<li class="menu-item-has-children">
+											<a href="#">Fale Conosco</a>
+											<ul>
+												<li class="menu-item-has-children">
+													<a href="#">Fale Conosco</a>
+													<ul>
+														<li><a href="#">Serviços</a></li>
+														<li><a href="#">Serviços</a></li>
+													</ul>
+												</li>
+												<li class="menu-item-has-children">
+													<a href="#">Fale Conosco</a>
+													<ul>
+														<li><a href="#">Serviços</a></li>
+														<li><a href="#">Serviços</a></li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+										<li><a href="#">Fale Conosco</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
                         <li><a href="#">Serviços</a></li>
                         <li><a href="#">Fale Conosco</a></li>
                     </ul>
                 </nav>
                 <!--============================ /NAVIGATION ============================-->
                 
-                <button class="nav-btn show-md bg-main fright">
+                <button class="nav-btn show-md fright">
                     <i class="fa fa-bars fa-2x"></i>
                 </button>
 				
@@ -69,7 +105,7 @@
     </div>
     <!--============================ /SLIDER ============================-->
     
-    <?php // include 'GUI.htm'; ?>
+    <?php include 'GUI.htm'; ?>
 
     <!--============================ MAIN CONTENT ============================-->
     <section class="wrapper bg-white">

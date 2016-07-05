@@ -9,34 +9,33 @@
 
 function MobileNavigation() {
 	
-	"use strict";
+	'use strict';
 
 	//OPEN MAIN MENU
 	jQuery('.nav-btn').click(function () {
-		if (jQuery(window).width() <= 992) {
+		if (window.innerWidth <= 992) {
+			jQuery(this).blur().toggleClass('selected');
 			jQuery('.main-nav').toggleClass('open');
-			jQuery(this).toggleClass('selected');
 			jQuery('.screen-cover').toggleClass('hide');
             jQuery('body').addClass('fixed');
 		}
 	});
-    
-    //PREVENT CLICK FROM LINKS INSIDE ITENS WITH SUB ITENS
-    jQuery('.menu-item-has-children > a').click(function (e) {e.preventDefault(); });
-	
-	//OPEN SUB MENU
-	jQuery('.menu-item-has-children').click(function () {
-        
-		if (jQuery(window).width() <= 992) {
-			jQuery(this).children('.sub-menu').slideToggle(400);
+
+	jQuery('.main-nav li').each(function () {
+		if (jQuery(this).has('ul').length) {
 			
-			//ADD HIGHLIGHT COLOR
-			jQuery(this).children('a').toggleClass('nav-highlight');
+			jQuery(this).children('a').click(function (e) {e.preventDefault(); });
 			
-			//AVOID OPENING ALL SUB MENU´S LEVELS AT THE SAME TIME
-			jQuery('.sub-menu').children().click(function (event) {
-				event.stopPropagation();
+			jQuery(this).click(function () {
+				if (window.innerWidth <= 992) {
+					jQuery(this).children('.main-nav ul ul').slideToggle(400);
+					jQuery(this).children('a').toggleClass('nav-highlight');
+					jQuery('.main-nav ul ul').children().click(function (event) {
+						event.stopPropagation();
+					});
+				}
 			});
+			
 		}
 	});
 
@@ -48,9 +47,9 @@ function MobileNavigation() {
 
 function CloseNavigation() {
 	
-	"use strict";
+	'use strict';
 
-	if ((jQuery(window).width() <= 992) && (jQuery('.main-nav').is(':visible'))) {
+	if ((window.innerWidth <= 992) && (jQuery('.main-nav').is(':visible'))) {
         jQuery('.main-nav').removeClass('open');
         jQuery('.nav-btn').removeClass('selected');
         jQuery('.screen-cover').addClass('hide');
@@ -70,9 +69,9 @@ function CloseNavigation() {
 
 function ResizeFallback() {
 	
-	"use strict";
+	'use strict';
 
-	if (jQuery(window).width() > 992) {
+	if (window.innerWidth > 992) {
 		
 		//HIDE SCREEN COVER DIV
 		jQuery('.screen-cover').addClass('hide');
@@ -86,18 +85,14 @@ function ResizeFallback() {
         }
 
         //FORCE SUB-MENU ITENS TO HIDE IF THEY ARE OPEN ON MOBILE
-        if (jQuery('ul.sub-menu').is(':visible')) {
-            jQuery('ul.sub-menu').css({
-                'display': ''
-            });
-        } else {
-            jQuery('ul.sub-menu').css({
+        if (jQuery('.main-nav ul ul').is(':visible')) {
+            jQuery('.main-nav ul ul').css({
                 'display': ''
             });
         }
 
         //REMOVE HIGHLIGHT COLOR
-        jQuery('.menu-item-has-children').children('a').removeClass('nav-highlight');
+        jQuery('.main-nav li').children('a').removeClass('nav-highlight');
 
         //REMOVE SELECTED CLASS FROM NAV BUTTON
         jQuery('.nav-btn').removeClass('selected');

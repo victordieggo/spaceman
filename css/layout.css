@@ -15,10 +15,9 @@
 .bg-light-grey, hr                               {background-color: #e3e3e3;}
 .bg-grey, .btn                                   {background-color: #afafaf;}
 
-.bg-dark, .sub-menu a                            {background-color: #222;}
+.bg-dark, .main-nav li ul                        {background-color: #222;}
 
-.bg-darker, .main-nav ul > li:hover > a, 
-a.nav-highlight, .sub-menu a.nav-highlight       {background-color: #191919;}
+.bg-darker, .main-nav li:hover > a, .nav-highlight {background-color: #191919;}
 
 button, .bg-none                                 {background-color: transparent;}
 
@@ -55,12 +54,16 @@ button, .bg-none                                 {background-color: transparent;
  * NAVIGATION
  * ====================================================================================================================*/
 
-.main-nav li ul                                  {position: absolute; z-index: 9999; display: none;}
+.main-nav li ul                                  {position: absolute; z-index: 9999; visibility: hidden; opacity: 0;}
+
 .main-nav li ul li                               {position: relative;}
 .main-nav li ul ul                               {top: 0; left: 100%;}
 
-.main-nav li:hover > ul, .main-nav li ul a, 
-.main-nav ul ul > li                             {display: block;}
+.main-nav li:hover > ul                          {visibility: visible; opacity: 1;}
+
+
+.main-nav li ul, .main-nav li ul a, .main-nav ul ul > li {display: block;}
+
 .main-nav li, .main-nav a                        {display: inline-block;}
 
 .main-nav a                                      {padding: 8px 20px;}
@@ -82,9 +85,14 @@ button, .btn, input, select, textarea            {cursor: pointer;}
 
 /*================================ INPUT =====================================*/
 
-input, select, textarea                          {width: 100%; box-shadow: inset 0 0 0 1px #cecece; }
-
 input, select                                    {height: 2.94em; padding: 0 0.8em;}
+
+input, select, textarea {
+	width: 100%; 
+	-webkit-box-shadow: inset 0 0 0 1px #cecece;
+	   -moz-box-shadow: inset 0 0 0 1px #cecece;
+	        box-shadow: inset 0 0 0 1px #cecece;
+}
 
 select {
 	background: url('../img/select-arrow.svg') no-repeat right #fff;
@@ -105,12 +113,22 @@ textarea                                         {padding: .6em; resize: none; o
 ::-webkit-input-placeholder                      {color: #888;}
 :-ms-input-placeholder                           {color: #888;}
 
-button:focus, input:focus, select:focus, 
-textarea:focus                                   {outline: none; box-shadow: inset 0 0 0 1px #909090;}
+button:focus, input:focus, select:focus, textarea:focus {
+	outline: none; 
+	-webkit-box-shadow: inset 0 0 0 1px #909090;
+	   -moz-box-shadow: inset 0 0 0 1px #909090;
+	        box-shadow: inset 0 0 0 1px #909090;
+}
 
 /* ====================================================================================================================
  * LAYOUT MEDIA QUERIES
  * ====================================================================================================================*/
+
+@media only screen and (min-width: 993px) {
+	
+	.main-nav li ul {-webkit-transition: all .3s; -moz-transition: all .3s; transition: all .3s;}
+	
+}
 
 /*========================= MEDIUM/MD RESOLUTIONS ============================*/
 
@@ -144,11 +162,13 @@ textarea:focus                                   {outline: none; box-shadow: ins
 		text-transform: uppercase; 
 		
 		background-color: #1d1d1d;
+		
+		-webkit-transition: all .3s; -moz-transition: all .3s; transition: all .3s;
 	}
 	
 	.main-nav ul, .main-nav li ul                {white-space: normal;}
 	
-	.main-nav li ul                              {position: relative;}
+	.main-nav li ul                              {position: relative; visibility: visible; display: none; opacity: 1;}
 	.main-nav li ul ul, .main-nav.open           {left: 0;}
 	
 	.main-nav li, .main-nav a                    {display: block;}

@@ -24,7 +24,7 @@ small, .btn-small, .text-small, .input-small    {font-size: 0.8em;}
 /*============================ DEFINE FONT-COLOR ===============================*/
 
 body, .btn                                      {color: #222;}
-.text-white, .main-nav li:hover a               {color: #fff;}
+.text-white, .main-nav li:hover, .main-nav ul ul                 {color: #fff;}
 a                                               {color: inherit;}
 
 /*================================= ALERTS ====================================*/
