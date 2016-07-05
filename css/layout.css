@@ -62,9 +62,9 @@ button, .bg-none                                 {background-color: transparent;
 .main-nav li:hover > ul                          {visibility: visible; opacity: 1;}
 
 
-.main-nav li ul, .main-nav li ul a, .main-nav ul ul > li {display: block;}
+.main-nav li ul, .main-nav a, .main-nav ul ul > li {display: block;}
 
-.main-nav li, .main-nav a                        {display: inline-block;}
+.main-nav li                                     {display: inline-block;}
 
 .main-nav a                                      {padding: 8px 20px;}
 
