@@ -89,7 +89,12 @@ hr                                              {border: 0; height: 1px;}
 
 .centered, .wrapper                             {margin: 0 auto;}
 
-.smooth-hover, .btn, input, select, textarea, .main-nav a                          {-webkit-transition: all .3s; -moz-transition: all .3s; transition: all .3s;}
+.smooth-hover, .btn, input, select, textarea, .main-nav a {
+    -webkit-transition: all .3s; 
+    -moz-transition: all .3s; 
+    -o-transition: all .3s; 
+    transition: all .3s;
+}
 
 .no-border, .btn, input[type="submit"], 
 input[type="button"], input[type="checkbox"], 

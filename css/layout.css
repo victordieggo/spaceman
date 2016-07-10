@@ -9,19 +9,17 @@
 
 /*============================== MAIN COLORS ==================================*/
 
-.bg-primary, .btn.btn-primary                    {background-color: #f8d557;}
-
 .bg-white                                        {background-color: #fff;}
 .bg-light-grey, hr                               {background-color: #e3e3e3;}
 .bg-grey, .btn                                   {background-color: #afafaf;}
 
 .bg-dark, .main-nav li ul                        {background-color: #222;}
 
-.bg-darker, .main-nav li:hover > a, .nav-highlight {background-color: #191919;}
+.bg-darker, .nav-highlight                       {background-color: #191919;}
 
 button, .bg-none                                 {background-color: transparent;}
 
-/*================================= ALERTS ====================================*/
+/*================================ ALERTS =====================================*/
 
 .bg-sucess, .btn-sucess                          {background-color: #5cb85c;}
 .btn-sucess:hover                                {background-color: #449d44;}
@@ -54,38 +52,28 @@ button, .bg-none                                 {background-color: transparent;
  * NAVIGATION
  * ====================================================================================================================*/
 
+.main-nav a                                      {padding: 0.5em 1em;}
+
 .main-nav li ul                                  {position: absolute; z-index: 9999; visibility: hidden; opacity: 0;}
+.main-nav li:hover > ul                          {visibility: visible; opacity: 1;}
 
 .main-nav li ul li                               {position: relative;}
 .main-nav li ul ul                               {top: 0; left: 100%;}
 
-.main-nav li:hover > ul                          {visibility: visible; opacity: 1;}
-
-
-.main-nav li ul, .main-nav a, .main-nav ul ul > li {display: block;}
-
 .main-nav li                                     {display: inline-block;}
+.main-nav a, .main-nav ul ul > li                {display: block;}
 
-.main-nav a                                      {padding: 8px 20px;}
-
-.main-nav                                        {line-height: 67px;}
 .main-nav ul, .main-nav li ul                    {white-space: nowrap;}
 
 /* ====================================================================================================================
- * FORM, BUTTON AND INPUT
+ * FORM ELEMENTS/BUTTONS
  * ====================================================================================================================*/
 
-input, select, textarea, .btn, .label            {border-radius: 0.2em; vertical-align: top;}
-button, .btn, input, select, textarea            {cursor: pointer;}
-
-/*============================ BTN BACKGROUND =================================*/
-
-.btn                                             {padding: 0.78em 0.8em; line-height: normal; }
+input, select, textarea, .btn, .label, textarea  {border-radius: 0.2em; padding: 0.55em 1em; vertical-align: top;}
+a, input, select, textarea, button, .btn, .label {cursor: pointer;}
 .btn, input.btn, .btn:focus                      {box-shadow: none; white-space: normal;}
 
 /*================================ INPUT =====================================*/
-
-input, select                                    {height: 2.94em; padding: 0 0.8em;}
 
 input, select, textarea {
 	width: 100%; 
@@ -105,10 +93,7 @@ select {
 
 select::-ms-expand                               {display: none;}
 
-.input-small                                     {height: 3em;}
-.input-large                                     {height: 3.8em;}
-
-textarea                                         {padding: .6em; resize: none; overflow-y: auto;}
+textarea                                         {resize: none; overflow-y: auto;}
 
 ::-webkit-input-placeholder                      {color: #888;}
 :-ms-input-placeholder                           {color: #888;}
@@ -126,7 +111,14 @@ button:focus, input:focus, select:focus, textarea:focus {
 
 @media only screen and (min-width: 993px) {
 	
-	.main-nav li ul {-webkit-transition: all .3s; -moz-transition: all .3s; transition: all .3s;}
+    .main-nav > ul > li:hover > a {background-color: transparent; opacity: 0.5;}
+    .main-nav li:hover > a {background-color: #191919;}
+	.main-nav li ul {
+        -webkit-transition: all .3s; 
+        -moz-transition: all .3s; 
+        -o-transition: all .3s; 
+        transition: all .3s;
+    }
 	
 }
 
@@ -144,6 +136,7 @@ button:focus, input:focus, select:focus, textarea:focus {
 	}
 	
 	.screen-cover {
+		background-color: #000;
 		background-color: rgba(29, 29, 29, 0.51);
 	}
 	
@@ -163,7 +156,10 @@ button:focus, input:focus, select:focus, textarea:focus {
 		
 		background-color: #1d1d1d;
 		
-		-webkit-transition: all .3s; -moz-transition: all .3s; transition: all .3s;
+		-webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        -o-transition: all .3s;
+        transition: all .3s;
 	}
 	
 	.main-nav ul, .main-nav li ul                {white-space: normal;}
@@ -185,7 +181,8 @@ button:focus, input:focus, select:focus, textarea:focus {
 
 @media only screen and (max-width: 768px) {
 
-
+    body                                         {font-size: 0.8em;}
+    
 }
 
 /*====================== EXTRA SMALL/XS RESOLUTIONS ==========================*/
