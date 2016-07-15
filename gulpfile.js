@@ -1,3 +1,8 @@
+/* ====================================================================================================================
+ * GULPFILE FOR SPACEMAN 1.9
+ * ====================================================================================================================*/
+/*global require*/
+
 // VARS
 var gulp = require('gulp'),
     concat = require('gulp-concat'),
@@ -7,6 +12,7 @@ var gulp = require('gulp'),
 
 // BUILD CSS
 gulp.task('buildCSS', function () {
+    'use strict';
 	gulp.src(['css/reset.css', 'css/grid.css', 'css/typography.css', 'css/base.css', 'css/layout.css', 'css/flexslider.css', 'css/font-awesome.css'])
 		.pipe(concat('global-styles.css'))
 		.pipe(cssmin())
@@ -16,6 +22,7 @@ gulp.task('buildCSS', function () {
 
 // BUILD JS
 gulp.task('buildJS', function () {
+    'use strict';
 	gulp.src(['js/*.js', '!js/global-js.js*', '!js/jquery.min*'])
 		.pipe(concat('global-js.js'))
 		.pipe(uglify())
@@ -25,6 +32,7 @@ gulp.task('buildJS', function () {
 
 // GULP WATCH
 gulp.task('watch', function () {
+    'use strict';
     livereload.listen();
 	gulp.watch(['js/*.js', '!js/global-js.js*'], ['buildJS']);
 	gulp.watch(['css/*.css', '!css/global-styles.css*'], ['buildCSS']);

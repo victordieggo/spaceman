@@ -101,7 +101,7 @@ img                                             {max-width: 100%;}
 hr                                              {border: 0; height: 1px;}
 .hide-overflow, .removeScroll                   {overflow: hidden;}
 
-.vcenter, input, select, textarea, .btn, .label, textarea {vertical-align: middle;}
+.vcenter, input, select, textarea, .btn, .label {vertical-align: middle;}
 
 .smooth-hover, .btn, input, select, textarea, .main-nav a {
     -webkit-transition: all .3s; 
