@@ -1,6 +1,5 @@
 /* ====================================================================================================================
  * LAYOUT
- * CSS exclusivo para as partes do layout
  * ====================================================================================================================*/
 
 /* ====================================================================================================================
@@ -9,13 +8,15 @@
 
 /*============================== MAIN COLORS ==================================*/
 
+.bg-primary, .nav-highlight                      {background-color: #0d6788;}
+
 .bg-white                                        {background-color: #fff;}
 .bg-light-grey, hr                               {background-color: #e3e3e3;}
 .bg-grey, .btn                                   {background-color: #afafaf;}
 
 .bg-dark, .main-nav li ul                        {background-color: #222;}
 
-.bg-darker, .nav-highlight                       {background-color: #191919;}
+.bg-darker                                       {background-color: #121212;}
 
 button, .bg-none                                 {background-color: transparent;}
 
@@ -37,31 +38,15 @@ button, .bg-none                                 {background-color: transparent;
 .btn-mute:hover                                  {background-color: #9d9d9d;}
 
 /* ====================================================================================================================
- * HEADER
- * ====================================================================================================================*/
-
-.logo {
-    width: 280px;
-	height: 67px;
-    background: url(../img/logotipo.png);
-    background-image: url(../img/logotipo.svg);
-    background-size: 100% 100%;
-}
-
-/* ====================================================================================================================
  * NAVIGATION
  * ====================================================================================================================*/
 
-.main-nav a                                      {padding: 0.5em 1em;}
-
-.main-nav li ul                                  {position: absolute; z-index: 9999; visibility: hidden; opacity: 0;}
-.main-nav li:hover > ul                          {visibility: visible; opacity: 1;}
+.main-nav li ul                                  {position: absolute; z-index: 9999; display: none;}
 
 .main-nav li ul li                               {position: relative;}
 .main-nav li ul ul                               {top: 0; left: 100%;}
 
-.main-nav li                                     {display: inline-block;}
-.main-nav a, .main-nav ul ul > li                {display: block;}
+.main-nav a                                      {display: block; padding: 0.7em 1em;}
 
 .main-nav ul, .main-nav li ul                    {white-space: nowrap;}
 
@@ -69,34 +54,14 @@ button, .bg-none                                 {background-color: transparent;
  * FORM ELEMENTS/BUTTONS
  * ====================================================================================================================*/
 
-input, select, textarea, .btn, .label, textarea  {border-radius: 0.2em; padding: 0.55em 1em; vertical-align: top;}
-a, input, select, textarea, button, .btn, .label {cursor: pointer;}
+input, select, textarea, .btn, .label            {border-radius: 0.2em; padding: 0.7em 1em;}
 .btn, input.btn, .btn:focus                      {box-shadow: none; white-space: normal;}
 
-/*================================ INPUT =====================================*/
-
 input, select, textarea {
-	width: 100%; 
 	-webkit-box-shadow: inset 0 0 0 1px #cecece;
 	   -moz-box-shadow: inset 0 0 0 1px #cecece;
 	        box-shadow: inset 0 0 0 1px #cecece;
 }
-
-select {
-	background: url('../img/select-arrow.svg') no-repeat right #fff;
-	background-size: 1.3em;
-	padding-right: 2em;
-	-webkit-appearance: none;
-	   -moz-appearance: none;
-	        appearance: none;
-}
-
-select::-ms-expand                               {display: none;}
-
-textarea                                         {resize: none; overflow-y: auto;}
-
-::-webkit-input-placeholder                      {color: #888;}
-:-ms-input-placeholder                           {color: #888;}
 
 button:focus, input:focus, select:focus, textarea:focus {
 	outline: none; 
@@ -105,14 +70,26 @@ button:focus, input:focus, select:focus, textarea:focus {
 	        box-shadow: inset 0 0 0 1px #909090;
 }
 
+select {
+	background: url('../img/select-arrow.svg') no-repeat right #fff;
+	background-size: 1.3em;
+	padding-right: 2em;
+}
+
 /* ====================================================================================================================
  * LAYOUT MEDIA QUERIES
  * ====================================================================================================================*/
 
+/*========================= LARGE/LG RESOLUTIONS ============================*/
+
 @media only screen and (min-width: 993px) {
 	
-    .main-nav > ul > li:hover > a {background-color: transparent; opacity: 0.5;}
-    .main-nav li:hover > a {background-color: #191919;}
+    .main-nav > ul > li           {display: inline-block;}
+    .main-nav li:hover > ul       {display: block;}
+    
+    .main-nav > ul > li:hover > a, 
+    .main-nav li:hover > a {background-color: #0d6788;}
+    
 	.main-nav li ul {
         -webkit-transition: all .3s; 
         -moz-transition: all .3s; 
@@ -125,9 +102,6 @@ button:focus, input:focus, select:focus, textarea:focus {
 /*========================= MEDIUM/MD RESOLUTIONS ============================*/
 
 @media only screen and (max-width: 992px) {
-
-	.logo                                        {width: 173px; height: 41px;}
-	.nav-btn i                                   {line-height: 41px;}
 	
 	.screen-cover, .main-nav {
 		min-height: 100%; 
@@ -150,8 +124,7 @@ button:focus, input:focus, select:focus, textarea:focus {
 		
 		overflow-y: auto;
 		overflow-x: hidden;
-		
-		color: #fff;
+        
 		text-transform: uppercase; 
 		
 		background-color: #1d1d1d;
@@ -164,13 +137,10 @@ button:focus, input:focus, select:focus, textarea:focus {
 	
 	.main-nav ul, .main-nav li ul                {white-space: normal;}
 	
-	.main-nav li ul                              {position: relative; visibility: visible; display: none; opacity: 1;}
+	.main-nav li ul                              {position: relative; display: none;}
 	.main-nav li ul ul, .main-nav.open           {left: 0;}
-	
-	.main-nav li, .main-nav a                    {display: block;}
-	.main-nav li:hover > ul                      {display: none;}
     
-	.main-nav a                                  {padding: 1em;}
+	.main-nav a                                  {padding: 1.5em;}
 
 	.menu-item-has-children > a:after            {float: right; font-family: 'FontAwesome'; content: "\f107";}
 	.menu-item-has-children .nav-highlight:after {content: "\f106";}

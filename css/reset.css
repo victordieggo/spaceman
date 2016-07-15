@@ -8,15 +8,12 @@
 	text-indent: 0;
 	list-style: none;
 	border: none;
-	line-height: 160%;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
 html {
-	overflow-y: scroll;
-	overflow-x: hidden;
 	text-size-adjust: none;
 	text-rendering: optimizeLegibility;
 	text-rendering: geometricPrecision;
@@ -29,4 +26,9 @@ html {
 
 body {
 	opacity: 0.99;
+}
+
+html, body {
+    overflow: auto;
+    height: auto;
 }

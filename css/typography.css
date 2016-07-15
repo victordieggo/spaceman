@@ -2,15 +2,11 @@
  * TYPOGRAPHY
  * ====================================================================================================================*/
 
-/*============================ IMPORT/EMBED FONTS =============================*/
+/*============================= FONT-FAMILY/HEIGHT ==============================*/
 
+body, .btn, input, select, textarea             {font-family: 'Montserrat', sans-serif; font-weight: 400;}
 
-
-/*=========================== DEFINE FONT & WEIGHT ============================*/
-
-body, .btn, input, select, textarea                {font-family: 'Montserrat', sans-serif; font-weight: 400;}
-
-/*============================= DEFINE FONT-SIZE ==============================*/
+/*================================ FONT-SIZE ===================================*/
 
 body, .btn, input, select, textarea             {font-size: 1em;}
 small, .btn-small, .text-small, .input-small    {font-size: 0.8em;}
@@ -21,22 +17,19 @@ h3                                              {font-size: 1.9em;}
 h2                                              {font-size: 2.2em;}
 h1                                              {font-size: 2.5em;}
 
-/*============================ DEFINE FONT-COLOR ===============================*/
+/*================================ FONT-COLOR ==================================*/
 
 body, .btn                                      {color: #222;}
 .text-white                                     {color: #fff;}
-a                                               {color: inherit;}
-
-/*================================= ALERTS ====================================*/
-
 .text-sucess                                    {color: #5cb85c;}
 .text-warning                                   {color: #f0ad4e;}
 .text-danger                                    {color: #d9534f;}
 .text-info                                      {color: #49a0d7;}
+a                                               {color: inherit;}
 
 /*=========================== ALINHAMENTOS/EFEITOS =============================*/
 
-.align-center                                   {text-align: center;}
+.align-center, .btn                             {text-align: center;}
 .align-left                                     {text-align: left;}
 .align-right                                    {text-align: right;}
 
