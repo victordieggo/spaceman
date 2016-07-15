@@ -18,21 +18,18 @@ var screenCover = jQuery('.screen-cover'),
 function MobileNavigation() {
 
 	'use strict';
-
-	//OPEN MAIN MENU
+	
 	jQuery('.nav-btn').click(function () {
-		if (window.innerWidth <= 992) {
-			jQuery(this).blur();
-			nav.toggleClass('open');
-			screenCover.show();
-			body.addClass('removeScroll');
-		}
+		jQuery(this).blur();
+		nav.toggleClass('open');
+		screenCover.show();
+		body.addClass('removeScroll');
 	});
 
 	jQuery('li', nav).each(function () {
 		if (jQuery(this).has('ul').length) {
 
-			jQuery('a', this).click(function (e) {
+			jQuery('a:first', this).click(function (e) {
 				e.preventDefault();
 			});
 
@@ -100,6 +97,5 @@ function ResizeFallback() {
 
 jQuery(document).ready(MobileNavigation);
 jQuery(window).resize(ResizeFallback);
-
-nav.swipeleft(CloseNavigation);
-screenCover.swipeleft(CloseNavigation).click(CloseNavigation);
+jQuery(nav).on('swipeleft', CloseNavigation);
+jQuery(screenCover).on('swipeleft click', CloseNavigation);

@@ -55,6 +55,7 @@
 	margin: 0;
 	padding: 0;
     overflow: hidden;
+	z-index: -1;
 }
 
 .flexslider .slides > li {

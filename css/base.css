@@ -92,7 +92,7 @@ input, select, textarea, button                  {-webkit-appearance: none; -moz
 .auto-size, .auto-height                        {height: auto;}
 
 .full-width, input, select, textarea            {width: 100%;}
-.full-height, .removeScroll                     {height: 100%;}
+.full-height                                    {height: 100%;}
 
 /*==================================== MISC ===================================*/
 
