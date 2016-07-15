@@ -69,7 +69,7 @@
     <!--============================ SLIDER ============================-->
     <div class="flexslider">
         <ul class="slides">
-            <li><img src="img/slide2.jpg" alt=""></li>
+            <li><img src="img/slide.jpg" alt=""></li>
         </ul>
     </div>
     <!--============================ /SLIDER ============================-->
