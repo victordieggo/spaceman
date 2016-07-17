@@ -103,6 +103,8 @@ hr                                              {border: 0; height: 1px;}
 
 .vcenter, input, select, textarea, .btn, .label {vertical-align: middle;}
 
+.circle                                         {border-radius: 50%;}
+
 .smooth-hover, .btn, input, select, textarea, .main-nav a {
     -webkit-transition: all .3s; 
     -moz-transition: all .3s; 

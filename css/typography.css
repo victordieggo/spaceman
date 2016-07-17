@@ -29,7 +29,7 @@ a                                               {color: inherit;}
 
 /*=========================== ALINHAMENTOS/EFEITOS =============================*/
 
-p, article {line-height: 160%;}
+p, article                                      {line-height: 160%;}
 
 .align-center, .btn                             {text-align: center;}
 .align-left                                     {text-align: left;}

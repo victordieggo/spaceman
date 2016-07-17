@@ -76,48 +76,7 @@
     </div>
     <!--============================ /SLIDER ============================-->
 
-	<?php // include 'gui.htm'; ?>
-	
-    <!--============================ MAIN CONTENT ============================-->
-    <section class="wrapper">
-        <div class="row">
-			<div class="col-sm-4 pad-10">
-				<h5>
-					<i class="fa fa-rocket fa-fw" aria-hidden="true"></i>
-					Spaceman v1.9
-				</h5>
-				<hr class="bg-dark spacer-10">
-				<p>To be the first person to enter the cosmos, to engage, single-handed, in an unprecedented duel with the forces of nature — could one dream of anything more?</p>
-			</div>
-			<div class="col-sm-4 pad-10">
-				<h5>
-					<i class="fa fa-code fa-fw" aria-hidden="true"></i>
-					HTML/CSS Boilerplate
-				</h5>
-				<hr class="bg-dark spacer-10">
-				<p>The path of a cosmonaut is not an easy, triumphant march to glory. You have to get to know the meaning not just of joy but also of grief, before being allowed in.</p>
-			</div>
-			<div class="col-sm-4 pad-10">
-				<h5>
-					<i class="fa fa-cogs fa-fw" aria-hidden="true"></i>
-					Frontend Framework
-				</h5>
-				<hr class="bg-dark spacer-10">
-				<p>It suddenly struck me that that tiny pea, pretty and blue, was the Earth. I put up my thumb and shut one eye, and my thumb blotted out the planet Earth.</p>
-			</div>
-		</div>
-    </section>
-	<section class="bg-lightgrey">
-		<div class="wrapper">
-			<div class="row  align-center">
-				<div class="col-sm-10 fnone inline-block pad-10">
-					<h4 class="spacer-bottom-10">"Here am I floating 'round my tin can, far above the moon, Planet Earth is blue and there's nothing I can do"</h4>
-					<i>- Major Tom, CEO</i>
-				</div>
-			</div>
-		</div>
-	</section>
-    <!--============================ /MAIN CONTENT ============================-->
+	<?php include 'gui.htm'; ?>
 
     <!--============================ FOOTER ============================-->
     <footer class="bg-darker text-white">
