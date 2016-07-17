@@ -11,7 +11,7 @@
 .bg-primary, .nav-highlight                      {background-color: #0d6788;}
 
 .bg-white                                        {background-color: #fff;}
-.bg-light-grey, hr                               {background-color: #e3e3e3;}
+.bg-lightgrey, hr                                {background-color: #e3e3e3;}
 .bg-grey, .btn                                   {background-color: #afafaf;}
 
 .bg-dark, .main-nav li ul                        {background-color: #222;}

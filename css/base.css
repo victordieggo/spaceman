@@ -72,7 +72,7 @@
  * FORM ELEMENTS/BUTTONS
  * ====================================================================================================================*/
 
-a, input, select, textarea, button, .btn, .label {cursor: pointer;}
+a, input, select, textarea, button, .btn, label  {cursor: pointer;}
 
 select::-ms-expand                               {display: none;}
 textarea                                         {resize: none; overflow-y: auto;}

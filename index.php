@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Spaceman 1.9</title>
     <link rel="icon" href="img/icon.png" />
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="css/global-styles.css" type="text/css" media="screen" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="">
@@ -32,28 +32,28 @@
                         <ul>
                             <li><a href="#">Home</a></li>
                             <li class="menu-item-has-children">
-                                <a href="http://materializecss.com/grid.html">Sobre</a>
+                                <a href="#">About</a>
                                 <ul>
                                     <li class="menu-item-has-children">
-										<a href="http://materializecss.com/grid.html">Serviços</a>
+										<a href="#">Lorem Ipsum</a>
                                         <ul>
-                                            <li><a href="http://materializecss.com/grid.html">Serviços</a></li>
-                                            <li><a href="#">Serviços</a></li>
+                                            <li><a href="#">Dolor Sit Amet</a></li>
+                                            <li><a href="#">Lorem Ipsum</a></li>
                                         </ul>
                                     </li>
                                 <li class="menu-item-has-children">
-									<a href="http://materializecss.com/grid.html">Serviços</a>
+									<a href="#">Dolor Sit Amet</a>
                                     <ul>
-                                        <li><a href="#">Fale Conosco</a></li>
+                                        <li><a href="#">Lorem Ipsum</a></li>
                                         <li><a href="#">Dolor Sit</a></li>
-                                        <li> <a href="#">Fale Conosco</a></li>
-                                        <li><a href="#">Fale Conosco</a></li>
+                                        <li> <a href="#">In Faucibus</a></li>
+                                        <li><a href="#">Velit Semper</a></li>
                                     </ul>
                                 </li>
                             </ul>
                         </li>
-                        <li><a href="#">Serviços</a></li>
-                        <li><a href="#">Fale Conosco</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Contact</a></li>
                     </ul>
                     </nav>
                     <!--============================ /NAVIGATION ============================-->
@@ -76,71 +76,47 @@
     </div>
     <!--============================ /SLIDER ============================-->
 
+	<?php // include 'gui.htm'; ?>
+	
     <!--============================ MAIN CONTENT ============================-->
     <section class="wrapper">
-        <div class="row bg-white">
-
-			<div class="col-12 bg-dark text-white pad-10">
-				<h3>GUI - VISUAL GUIDE</h3>
-			</div>
-
-			<!-- BEGIN BOTÕES/INPUTS -->
-			<div class="col-md-7">
-				<h1>h1 <strong>lorem</strong> ipsum dolor sit amet</h1>
-				<h2>h2 lorem ipsum dolor sit amet</h2>
-				<h3>h3 lorem ipsum dolor sit amet</h3>
-				<h4>h4 lorem ipsum dolor sit amet</h4>
-				<h5>h5 lorem ipsum dolor sit amet</h5>
-				<h6>h6 lorem ipsum dolor sit amet</h6>
-			</div>
-
-			<div class="col-md-5">
-				<p>p lorem ipsum dolor sit amet</p>
-				<p><strong>p strong lorem ipsum dolor sit amet</strong></p>
-				<p><i>p italic lorem ipsum dolor sit amet</i></p>
-				<p><small>p small lorem ipsum dolor sit amet</small></p>
+        <div class="row">
+			<div class="col-sm-4 pad-10">
+				<h5>
+					<i class="fa fa-rocket fa-fw" aria-hidden="true"></i>
+					Spaceman v1.9
+				</h5>
 				<hr class="bg-dark spacer-10">
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et enim dui. Nunc accumsan tortor sit amet risus malesuada, eu viverra eros hendrerit. Sed nec ipsum eu tellus viverra finibus ut eget justo.</p>
+				<p>To be the first person to enter the cosmos, to engage, single-handed, in an unprecedented duel with the forces of nature — could one dream of anything more?</p>
 			</div>
-
-			<div class="col-12">
-				<a class="btn btn-small">btn</a>
-				<a class="btn btn-small btn-sucess">btn sucess</a>
-				<button class="btn btn-small btn-info">btn info</button>
-				<input class="btn btn-small btn-warning" type="button" value="btn warning" />
-				<input class="btn btn-small btn-danger" type="submit" value="btn danger" />
-				<input class="input-small auto-width" type="text" placeholder="lorem ipsum" />
-				<select class="input-small auto-width">
-					<option>opção</option>
-				</select>
+			<div class="col-sm-4 pad-10">
+				<h5>
+					<i class="fa fa-code fa-fw" aria-hidden="true"></i>
+					HTML/CSS Boilerplate
+				</h5>
+				<hr class="bg-dark spacer-10">
+				<p>The path of a cosmonaut is not an easy, triumphant march to glory. You have to get to know the meaning not just of joy but also of grief, before being allowed in.</p>
 			</div>
-
-			<div class="col-12 spacer-bottom-10">
-				<a class="btn">btn</a>
-				<a class="btn btn-sucess">btn sucess</a>
-				<button class="btn btn-info">btn info</button>
-				<input class="btn btn-warning" type="button" value="btn warning" />
-				<input class="btn btn-danger" type="submit" value="btn danger" />
-				<input class="auto-width" type="text" placeholder="lorem ipsum" />
-				<select class="auto-width">
-					<option>opção</option>
-				</select>
+			<div class="col-sm-4 pad-10">
+				<h5>
+					<i class="fa fa-cogs fa-fw" aria-hidden="true"></i>
+					Frontend Framework
+				</h5>
+				<hr class="bg-dark spacer-10">
+				<p>It suddenly struck me that that tiny pea, pretty and blue, was the Earth. I put up my thumb and shut one eye, and my thumb blotted out the planet Earth.</p>
 			</div>
-
-			<div class="col-12 spacer-bottom-10">
-				<a class="btn btn-large">btn</a>
-				<a class="btn btn-large btn-sucess">btn sucess</a>
-				<button class="btn btn-large btn-info">btn info</button>
-				<input class="btn btn-large btn-warning" type="button" value="btn warning" />
-				<input class="btn btn-large btn-danger" type="submit" value="btn danger" />
-				<input class="input-large auto-width" type="text" placeholder="lorem ipsum" />
-				<select class="input-large auto-width">
-					<option>opção</option>
-				</select>
-			</div>
-
 		</div>
     </section>
+	<section class="bg-lightgrey">
+		<div class="wrapper">
+			<div class="row  align-center">
+				<div class="col-sm-10 fnone inline-block pad-10">
+					<h4 class="spacer-bottom-10">"Here am I floating 'round my tin can, far above the moon, Planet Earth is blue and there's nothing I can do"</h4>
+					<i>- Major Tom, CEO</i>
+				</div>
+			</div>
+		</div>
+	</section>
     <!--============================ /MAIN CONTENT ============================-->
 
     <!--============================ FOOTER ============================-->
