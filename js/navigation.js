@@ -1,5 +1,5 @@
 /* ====================================================================================================================
- * SPACEMAN MOBILE NAVIGATION 1.9
+ * SPACEMAN MOBILE NAVIGATION 1.9.0
  * ====================================================================================================================*/
 /*global $, jQuery*/
 
@@ -9,7 +9,7 @@
 
 var screenCover = jQuery('.screen-cover'),
     nav         = jQuery('.main-nav'),
-    body        = jQuery('html, body');
+    page        = jQuery('html, body');
 
 //-------------------------------------------------------------------
 // FUNCTION: MOBILE NAVIGATION CORE
@@ -21,28 +21,27 @@ function MobileNavigation() {
 	
 	jQuery('.nav-btn').click(function () {
 		jQuery(this).blur();
-		nav.toggleClass('open');
+		nav.toggleClass('main-nav-active');
 		screenCover.show();
-		body.addClass('removeScroll');
+		page.addClass('remove-scroll');
 	});
 
-	jQuery('li', nav).each(function () {
-		if (jQuery(this).has('ul').length) {
+	jQuery('.menu-item-has-children').each(function () {
+		
+		jQuery('a:first', this).click(function (e) {
+			e.preventDefault();
+		});
 
-			jQuery('a:first', this).click(function (e) {
-				e.preventDefault();
-			});
+		jQuery(this).click(function () {
+			if (window.innerWidth <= 992) {
+				jQuery('ul:first', this).slideToggle(400);
+				jQuery('a:first', this).toggleClass('nav-highlight');
+				jQuery('ul', this).children().click(function (event) {
+					event.stopPropagation();
+				});
+			}
+		});
 
-			jQuery(this).click(function () {
-				if (window.innerWidth <= 992) {
-					jQuery('ul:first', this).slideToggle(400);
-					jQuery('a:first', this).toggleClass('nav-highlight');
-					jQuery('ul', this).children().click(function (event) {
-						event.stopPropagation();
-                    });
-				}
-            });
-        }
 	});
 }
 
@@ -55,9 +54,9 @@ function CloseNavigation() {
 	'use strict';
 
 	if ((window.innerWidth <= 992) && (nav.is(':visible'))) {
-		nav.removeClass('open');
+		nav.removeClass('main-nav-active');
 		screenCover.hide();
-		body.removeClass('removeScroll');
+		page.removeClass('remove-scroll');
 	}
 
 }
@@ -73,7 +72,7 @@ function ResizeFallback() {
 	if (window.innerWidth > 992) {
 
 		screenCover.hide();
-		body.removeClass('removeScroll');
+		page.removeClass('remove-scroll');
 
         jQuery('ul', nav).css({
             'display': ''
@@ -83,9 +82,9 @@ function ResizeFallback() {
         
 	} else {
         
-		if (nav.hasClass('open')) {
+		if (nav.hasClass('main-nav-active')) {
 			screenCover.show();
-			body.addClass('removeScroll');
+			page.addClass('remove-scroll');
 		}
         
 	}

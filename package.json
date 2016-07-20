@@ -1,6 +1,6 @@
 {
   "name": "Spaceman",
-  "version": "1.9",
+  "version": "1.9.0",
   "description": "Gulp package structure for projects using Spaceman Framework.",
   "repository": {
     "type": "git",
@@ -13,9 +13,10 @@
   "license": "MIT",
   "devDependencies": {
     "gulp": "*",
+    "gulp-combine-mq": "*",
     "gulp-concat": "*",
     "gulp-cssmin": "*",
-    "gulp-uglify": "*",
-    "gulp-livereload": "*"
+    "gulp-livereload": "*",
+    "gulp-uglify": "*"
   }
 }

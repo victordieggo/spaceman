@@ -22,7 +22,7 @@
             <div class="row">
                 <div class="col-6 vcenter">
                     <h3 class="inline text-uppercase">Spaceman</h3>
-                    <small>1.9</small>
+                    <small>1.9.0</small>
                 </div><!--
                 AVOID DISPLAY INLINE LINE BREAK
                 --><div class="col-6 vcenter align-right">
@@ -83,7 +83,7 @@
         <div class="wrapper">
             <div class="row">
                 <div class="col-12 pad-05 align-center">
-                    <small>Spaceman Framework 1.9 - Desenvolvido por <a class="no-underline" href="" target="_blank">V.</a></small>
+                    <small>Spaceman Framework 1.9.0 - Desenvolvido por <a class="no-underline" href="" target="_blank">V.</a></small>
                 </div>
             </div>
         </div>

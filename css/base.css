@@ -99,7 +99,7 @@ input, select, textarea, button                  {-webkit-appearance: none; -moz
 .centered, .wrapper                             {margin: 0 auto;}
 img                                             {max-width: 100%;}
 hr                                              {border: 0; height: 1px;}
-.hide-overflow, .removeScroll                   {overflow: hidden;}
+.hide-overflow, .remove-scroll                  {overflow: hidden;}
 
 .vcenter, input, select, textarea, .btn, .label {vertical-align: middle;}
 

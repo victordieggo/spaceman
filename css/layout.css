@@ -1,8 +1,4 @@
 /* ====================================================================================================================
- * LAYOUT
- * ====================================================================================================================*/
-
-/* ====================================================================================================================
  * BACKGROUND-COLOR
  * ====================================================================================================================*/
 
@@ -38,19 +34,6 @@ button, .bg-none                                 {background-color: transparent;
 .btn-mute:hover                                  {background-color: #9d9d9d;}
 
 /* ====================================================================================================================
- * NAVIGATION
- * ====================================================================================================================*/
-
-.main-nav li ul                                  {position: absolute; display: none;}
-
-.main-nav li ul li                               {position: relative;}
-.main-nav li ul ul                               {top: 0; left: 100%;}
-
-.main-nav a                                      {display: block; padding: 0.7em 1em;}
-
-.main-nav ul, .main-nav li ul                    {white-space: nowrap;}
-
-/* ====================================================================================================================
  * FORM ELEMENTS/BUTTONS
  * ====================================================================================================================*/
 
@@ -84,11 +67,7 @@ select {
 
 @media only screen and (min-width: 993px) {
 	
-    .main-nav > ul > li           {display: inline-block;}
-    .main-nav li:hover > ul       {display: block;}
-    
-    .main-nav > ul > li:hover > a, 
-    .main-nav li:hover > a {background-color: #0d6788;}
+	
 	
 }
 
@@ -96,46 +75,7 @@ select {
 
 @media only screen and (max-width: 992px) {
 	
-	.screen-cover, .main-nav {
-		min-height: 100%; 
-		height: 100%;
-	}
 	
-	.screen-cover {
-		background-color: #000;
-		background-color: rgba(29, 29, 29, 0.7);
-	}
-	
-	.main-nav {
-        position: fixed;
-        
-		top: 0; 
-		left: -18em; /* negative width value */
-		
-		width: 18em;
-		
-		overflow-y: auto;
-		overflow-x: hidden;
-        
-		text-transform: uppercase; 
-		
-		background-color: #1d1d1d;
-		
-		-webkit-transition: all .3s;
-        -moz-transition: all .3s;
-        -o-transition: all .3s;
-        transition: all .3s;
-	}
-	
-	.main-nav ul, .main-nav li ul                {white-space: normal;}
-	
-	.main-nav li ul                              {position: relative; display: none;}
-	.main-nav li ul ul, .main-nav.open           {left: 0;}
-    
-	.main-nav a                                  {padding: 1.5em;}
-
-	.menu-item-has-children > a:after            {float: right; font-family: 'FontAwesome'; content: "\f107";}
-	.menu-item-has-children .nav-highlight:after {content: "\f106";}
 	
 }
 
