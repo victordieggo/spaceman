@@ -3,7 +3,7 @@
   "description": "Spaceman frontend framework",
   "main": "index.php",
   "authors": [
-    "Victor Diego"
+    "Victor Diego <victordieggo@gmail.com>"
   ],
   "license": "MIT",
   "keywords": [
