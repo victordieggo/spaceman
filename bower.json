@@ -1,0 +1,23 @@
+{
+  "name": "Spaceman",
+  "description": "Spaceman frontend framework",
+  "main": "index.php",
+  "authors": [
+    "Victor Diego"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "frontend",
+    "framework",
+    "spaceman"
+  ],
+  "homepage": "victordiego.com/spaceman",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
