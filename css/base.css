@@ -13,14 +13,14 @@
 
 .relative                                        {position: relative;}
 .absolute                                        {position: absolute;}
-.fixed                                           {position: fixed;}
+.fixed, .screen-cover                            {position: fixed;}
 
 /*================================= DISPLAY ===================================*/
 
-.hide, .show-md, .show-sm, .show-xs              {display: none;}
 .block                                           {display: block;}
 .inline                                          {display: inline;}
 .inline-block, .vcenter, .btn                    {display: inline-block;}
+.hide, .show-md, .show-sm, .show-xs              {display: none;}
 
 /*================================= SPACERS ===================================*/
 
@@ -72,7 +72,7 @@
  * FORM ELEMENTS/BUTTONS
  * ====================================================================================================================*/
 
-a, input, select, textarea, button, .btn, label  {cursor: pointer;}
+a, input, select, textarea, button, label        {cursor: pointer;}
 
 select::-ms-expand                               {display: none;}
 textarea                                         {resize: none; overflow-y: auto;}
@@ -91,19 +91,24 @@ input, select, textarea, button                  {-webkit-appearance: none; -moz
 .auto-size, .auto-width, .btn                   {width: auto;}
 .auto-size, .auto-height                        {height: auto;}
 
-.full-width, input, select, textarea            {width: 100%;}
-.full-height                                    {height: 100%;}
+.full-size, .full-width, input, select, textarea {width: 100%;}
+.full-size, .full-height                         {height: 100%;}
 
 /*==================================== MISC ===================================*/
 
 .centered, .wrapper                             {margin: 0 auto;}
 img                                             {max-width: 100%;}
 hr                                              {border: 0; height: 1px;}
-.hide-overflow, .remove-scroll                  {overflow: hidden;}
+.hide-overflow                                  {overflow: hidden;}
 
 .vcenter, input, select, textarea, .btn, .label {vertical-align: middle;}
 
 .circle                                         {border-radius: 50%;}
+
+.screen-cover {
+	background-color: rgb(29, 29, 29);
+	background-color: rgba(29, 29, 29, 0.7);
+}
 
 .smooth-hover, .btn, input, select, textarea, .main-nav a {
     -webkit-transition: all .3s; 

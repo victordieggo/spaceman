@@ -21,9 +21,9 @@ function MobileNavigation() {
 	
 	jQuery('.nav-btn').click(function () {
 		jQuery(this).blur();
-		nav.toggleClass('main-nav-is-active');
-		screenCover.show();
-		page.addClass('remove-scroll');
+		nav.addClass('main-nav-is-active');
+		page.addClass('hide-overflow');
+		screenCover.removeClass('hide');
 	});
 
 	jQuery('.menu-item-has-children').each(function () {
@@ -55,8 +55,8 @@ function CloseNavigation() {
 
 	if ((window.innerWidth <= 992) && (nav.is(':visible'))) {
 		nav.removeClass('main-nav-is-active');
-		screenCover.hide();
-		page.removeClass('remove-scroll');
+		page.removeClass('hide-overflow');
+		screenCover.addClass('hide');
 	}
 
 }
@@ -71,8 +71,8 @@ function ResizeFallback() {
 
 	if (window.innerWidth > 992) {
 
-		screenCover.hide();
-		page.removeClass('remove-scroll');
+		page.removeClass('hide-overflow');
+		screenCover.addClass('hide');
 
         jQuery('ul', nav).css({
             'display': ''
@@ -83,8 +83,8 @@ function ResizeFallback() {
 	} else {
         
 		if (nav.hasClass('main-nav-is-active')) {
-			screenCover.show();
-			page.addClass('remove-scroll');
+			page.addClass('hide-overflow');
+			screenCover.removeClass('hide');
 		}
         
 	}

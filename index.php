@@ -14,7 +14,7 @@
 
 <body>
 	
-    <div class="screen-cover fixed full-width hide"></div>
+    <div class="screen-cover fixed full-size hide"></div>
 
     <!--============================ HEADER ============================-->
     <header class="bg-darker text-white">
@@ -25,15 +25,15 @@
                     <small>1.9.0</small>
                 </div><!--
                 AVOID DISPLAY INLINE LINE BREAK
-                --><div class="col-6 vcenter align-right">
+                --><div class="col-6 vcenter">
                 
                     <!--============================ NAVIGATION ============================-->
-                    <nav class="main-nav inline-block align-left">
+                    <nav class="main-nav fright">
                         <ul>
                             <li><a href="#">Home</a></li>
                             <li class="menu-item-has-children">
                                 <a href="#">About</a>
-                                <ul>
+								<ul>
                                     <li class="menu-item-has-children">
 										<a href="#">Lorem Ipsum</a>
                                         <ul>
@@ -41,20 +41,20 @@
                                             <li><a href="#">Lorem Ipsum</a></li>
                                         </ul>
                                     </li>
-                                <li class="menu-item-has-children">
-									<a href="#">Dolor Sit Amet</a>
-                                    <ul>
-                                        <li><a href="#">Lorem Ipsum</a></li>
-                                        <li><a href="#">Dolor Sit</a></li>
-                                        <li> <a href="#">In Faucibus</a></li>
-                                        <li><a href="#">Velit Semper</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
+									<li class="menu-item-has-children">
+										<a href="#">Dolor Sit Amet</a>
+										<ul>
+											<li><a href="#">Lorem Ipsum</a></li>
+											<li><a href="#">Dolor Sit</a></li>
+											<li> <a href="#">In Faucibus</a></li>
+											<li><a href="#">Velit Semper</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li><a href="#">Services</a></li>
+							<li><a href="#">Contact</a></li>
+						</ul>
                     </nav>
                     <!--============================ /NAVIGATION ============================-->
                 
