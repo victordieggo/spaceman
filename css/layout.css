@@ -4,7 +4,7 @@
 
 /*============================== MAIN COLORS ==================================*/
 
-.bg-primary, .nav-highlight                      {background-color: #0d6788;}
+.bg-primary, .menu-item-is-active                {background-color: #0d6788;}
 
 .bg-white                                        {background-color: #fff;}
 .bg-lightgrey, hr                                {background-color: #e3e3e3;}

@@ -3,7 +3,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Spaceman 1.9</title>
+    <title>Spaceman 1.9.0</title>
     <link rel="icon" href="img/icon.png" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="css/global-styles.css" type="text/css" media="screen" />

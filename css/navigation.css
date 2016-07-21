@@ -50,21 +50,20 @@
 		
 		background-color: #1d1d1d;
 		
-		-webkit-transition: all .3s;
-        -moz-transition: all .3s;
-        -o-transition: all .3s;
-        transition: all .3s;
+		-webkit-transition: all 0.25s;
+        -moz-transition: all 0.25s;
+        -o-transition: all 0.25s;
+        transition: all 0.25s;
 	}
 	
 	.main-nav ul                                 {white-space: normal;}
 	
-	.main-nav li ul                              {position: relative; display: none;}
-	.main-nav li ul ul, .main-nav-active         {left: 0 !important}
-    
+	.main-nav li ul                              {position: relative;}
+	.main-nav li ul ul, .main-nav-is-active      {left: 0 !important}
 	.main-nav a                                  {padding: 1.5em;}
 
 	.menu-item-has-children > a:after            {float: right; font-family: 'FontAwesome'; content: "\f107";}
-	.menu-item-has-children .nav-highlight:after {content: "\f106";}
+	.menu-item-has-children .menu-item-is-active:after {content: "\f106";}
 	
 }
 

@@ -21,7 +21,7 @@ function MobileNavigation() {
 	
 	jQuery('.nav-btn').click(function () {
 		jQuery(this).blur();
-		nav.toggleClass('main-nav-active');
+		nav.toggleClass('main-nav-is-active');
 		screenCover.show();
 		page.addClass('remove-scroll');
 	});
@@ -35,7 +35,7 @@ function MobileNavigation() {
 		jQuery(this).click(function () {
 			if (window.innerWidth <= 992) {
 				jQuery('ul:first', this).slideToggle(400);
-				jQuery('a:first', this).toggleClass('nav-highlight');
+				jQuery('a:first', this).toggleClass('menu-item-is-active');
 				jQuery('ul', this).children().click(function (event) {
 					event.stopPropagation();
 				});
@@ -54,7 +54,7 @@ function CloseNavigation() {
 	'use strict';
 
 	if ((window.innerWidth <= 992) && (nav.is(':visible'))) {
-		nav.removeClass('main-nav-active');
+		nav.removeClass('main-nav-is-active');
 		screenCover.hide();
 		page.removeClass('remove-scroll');
 	}
@@ -78,11 +78,11 @@ function ResizeFallback() {
             'display': ''
         });
         
-		jQuery('a', nav).removeClass('nav-highlight');
+		jQuery('a', nav).removeClass('menu-item-is-active');
         
 	} else {
         
-		if (nav.hasClass('main-nav-active')) {
+		if (nav.hasClass('main-nav-is-active')) {
 			screenCover.show();
 			page.addClass('remove-scroll');
 		}
