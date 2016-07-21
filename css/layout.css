@@ -54,7 +54,7 @@ button:focus, input:focus, select:focus, textarea:focus {
 }
 
 select {
-	background: url('../img/select-arrow.svg') no-repeat right #fff;
+	background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDE2IDUiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwYXRoIGQ9Ik04LjUgMC44YzAgMC4xIDAgMC4xLTAuMSAwLjJsLTQgNEM0LjQgNSA0LjMgNSA0LjMgNSA0LjIgNSA0LjEgNSA0LjEgNC45bC00LTRDMC4xIDAuOSAwIDAuOSAwIDAuOGMwLTAuMSAwLTAuMSAwLjEtMC4ybDAuNC0wLjRjMC4xLTAuMSAwLjEtMC4xIDAuMi0wLjFzMC4xIDAgMC4yIDAuMWwzLjMgMy4zIDMuMy0zLjNjMC4xLTAuMSAwLjEtMC4xIDAuMi0wLjEgMC4xIDAgMC4xIDAgMC4yIDAuMWwwLjQgMC40QzguNSAwLjYgOC41IDAuNyA4LjUgMC44eiIvPjwvc3ZnPg==) no-repeat right;
 	background-size: 1.3em;
 	padding-right: 2em;
 }
@@ -91,6 +91,6 @@ select {
 
 @media only screen and (max-width: 480px) {
 
-    .main-nav                                    {left: -75%; width: 75%;}
-
+	
+	
 }
