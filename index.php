@@ -84,7 +84,7 @@
 			<div class="row">
 				<div class="col-md-8">
 					<h5>
-						<i class="fa fa-rocket" aria-hidden="true"></i>
+						<i class="fa fa-rocket fa-fw" aria-hidden="true"></i>
 						HTML/CSS boilerplate from outerspace
 					</h5>
 					<hr class="bg-dark spacer-10">
@@ -94,7 +94,7 @@
 				<div class="col-md-4">
 					<blockquote class="bg-lightgrey pad-15">
 						<p class="spacer-bottom-05"><i>"The path of a cosmonaut is not an easy, triumphant march to glory. You have to get to know the meaning not just of joy but also of grief, before being allowed in the spacecraft cabin."</i></p>
-						<i class="text-small">Major Tom - CEO</i>
+						<small><i>Major Tom - CEO</i></small>
 					</blockquote>
 				</div>
 			</div>
@@ -107,7 +107,7 @@
         <div class="wrapper">
             <div class="row">
                 <div class="col-12 pad-05 align-center">
-                    <small>Spaceman Framework 1.9.0 - Desenvolvido por <a class="no-underline" href="" target="_blank">V.</a></small>
+                    <small>Spaceman Framework 1.9.0 - Desenvolvido por <a class="no-underline" href="http://victordiego.com/" target="_blank">V.</a></small>
                 </div>
             </div>
         </div>
