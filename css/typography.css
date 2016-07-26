@@ -11,7 +11,7 @@ body, .btn, input, select, textarea             {font-family: 'Open Sans', sans-
 body, .btn, input, select, textarea             {font-size: 1em;}
 small, .btn-small, .text-small, .input-small    {font-size: 0.8em;}
 h6                                              {font-size: 1.1em;}
-h5, .btn-large, .input-large                    {font-size: 1.3em;}
+h5, .btn-large, .text-large, .input-large       {font-size: 1.3em;}
 h4                                              {font-size: 1.6em;}
 h3                                              {font-size: 1.9em;}
 h2                                              {font-size: 2.2em;}

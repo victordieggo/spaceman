@@ -19,7 +19,7 @@
 
 .block                                           {display: block;}
 .inline                                          {display: inline;}
-.inline-block, .vcenter, .btn                    {display: inline-block;}
+.inline-block, .vcenter, .btn, .label            {display: inline-block;}
 .hide, .show-md, .show-sm, .show-xs              {display: none;}
 
 /*================================= SPACERS ===================================*/
