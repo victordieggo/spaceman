@@ -10,7 +10,7 @@
 
 .row                                            {padding: 1%;}
 .row:after                                      {content: ""; display: table; clear: both;}
-[class*='col-']                                 {float: left; vertical-align: top; margin: 1%;}
+[class*='col-']                                 {float: left; vertical-align: top; min-height: 1px; margin: 1%;}
 
 /*=================================== COLUNAS =================================*/
 
