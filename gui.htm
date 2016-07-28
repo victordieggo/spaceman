@@ -1,59 +1,128 @@
+<!--============================ GUI ============================-->
 <section class="wrapper">
 	<div class="row">
 
-		<div class="col-md-7">
-			<h1>h1 <strong>lorem</strong> ipsum dolor sit amet</h1>
-			<h2>h2 lorem ipsum dolor sit amet</h2>
-			<h3>h3 lorem ipsum dolor sit amet</h3>
-			<h4>h4 lorem ipsum dolor sit amet</h4>
-			<h5>h5 lorem ipsum dolor sit amet</h5>
-			<h6>h6 lorem ipsum dolor sit amet</h6>
-		</div>
-
-		<div class="col-md-5">
-			<p>p lorem ipsum dolor sit amet</p>
-			<p><strong>p strong lorem ipsum dolor sit amet</strong></p>
-			<p><i>p italic lorem ipsum dolor sit amet</i></p>
-			<p><small>p small lorem ipsum dolor sit amet</small></p>
-			<hr class="bg-dark spacer-10">
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et enim dui. Nunc accumsan tortor sit amet risus malesuada, eu viverra eros hendrerit. Sed nec ipsum eu tellus viverra finibus ut eget justo.</p>
-		</div>
-
-		<div class="col-12">
+		<div class="col-md-8">
+			<!--============================ HEADING TAGS ============================-->
+			
+			<strong class="text-main text-uppercase">Headings</strong>
+			
+			<h1>h1 ground control to major tom</h1>
+			<h2>h2 ground control to major tom</h2>
+			<h3>h3 ground control to major tom</h3>
+			<h4>h4 ground control to major tom</h4>
+			<h5>h5 ground control to major tom</h5>
+			<h6>h6 ground control to major tom</h6>
+			
+			<hr class="bg-grey spacer-10">
+			<!--============================ /HEADING TAGS ============================-->
+			
+			<!--============================ BUTTONS ============================-->
+			<strong class="block text-main text-uppercase spacer-bottom-10">Buttons</strong>
+			
+			<!-- SMALL BUTTONS -->
 			<a class="btn btn-small">btn</a>
 			<a class="btn btn-small btn-sucess">btn sucess</a>
 			<button class="btn btn-small btn-info">btn info</button>
 			<input class="btn btn-small btn-warning" type="button" value="btn warning" />
 			<input class="btn btn-small btn-danger" type="submit" value="btn danger" />
-			<input class="input-small auto-width" type="text" placeholder="lorem ipsum" />
-			<select class="input-small auto-width">
-				<option>opção</option>
-			</select>
-		</div>
-
-		<div class="col-12 spacer-bottom-10">
+			
+			<div class="pad-05"></div>
+			
+			<!-- MEDIUM BUTTONS -->
 			<a class="btn">btn</a>
 			<a class="btn btn-sucess">btn sucess</a>
 			<button class="btn btn-info">btn info</button>
 			<input class="btn btn-warning" type="button" value="btn warning" />
 			<input class="btn btn-danger" type="submit" value="btn danger" />
-			<input class="auto-width" type="text" placeholder="lorem ipsum" />
-			<select class="auto-width">
-				<option>opção</option>
-			</select>
-		</div>
-
-		<div class="col-12 spacer-bottom-10">
+			
+			<div class="pad-05"></div>
+			
+			<!-- LARGE BUTTONS -->
 			<a class="btn btn-large">btn</a>
 			<a class="btn btn-large btn-sucess">btn sucess</a>
 			<button class="btn btn-large btn-info">btn info</button>
 			<input class="btn btn-large btn-warning" type="button" value="btn warning" />
 			<input class="btn btn-large btn-danger" type="submit" value="btn danger" />
+			
+			<hr class="bg-grey spacer-10">
+			<!--============================ /BUTTONS ============================-->
+			
+			<!--============================ FORM ELEMENTS ============================-->
+			<strong class="block text-main text-uppercase spacer-bottom-10">Form Elements</strong>
+			
+			<!-- SMALL ELEMENTS -->
+			<input class="input-small auto-width" type="text" placeholder="lorem ipsum" />
+			<select class="input-small auto-width">
+				<option>opção</option>
+			</select>
+			
+			<input class="hide" id="bike-checkbox" type="checkbox" name="vehicle" value="Bike">
+			<label class="label-checkbox text-small" for="bike-checkbox">I have a bike</label>
+
+			<input class="hide" id="bike" type="radio" name="vehicle" value="Bike">
+			<label class="label-radio text-small" for="bike">I have a bike</label>
+			
+			<div class="pad-05"></div>
+			
+			<!-- MEDIUM ELEMENTS -->
+			<input class="auto-width" type="text" placeholder="lorem ipsum" />
+			<select class="auto-width">
+				<option>opção</option>
+			</select>
+			
+			<input class="hide" id="car-checkbox" type="checkbox" name="vehicle" value="Car">
+			<label class="label-checkbox" for="car-checkbox">I have a car</label>
+
+			<input class="hide" id="car" type="radio" name="vehicle" value="Car">
+			<label class="label-radio" for="car">I have a car</label>
+			
+			<div class="pad-05"></div>
+			
+			<!-- LARGE ELEMENTS -->
 			<input class="input-large auto-width" type="text" placeholder="lorem ipsum" />
 			<select class="input-large auto-width">
 				<option>opção</option>
 			</select>
+			
+			<input class="hide" id="walk-checkbox" type="checkbox" name="vehicle" value="walk">
+			<label class="label-checkbox text-large" for="walk-checkbox">I like to walk</label>
+
+			<input class="hide" id="walk" type="radio" name="vehicle" value="walk">
+			<label class="label-radio text-large" for="walk">I like to walk</label>
+
+			<!--============================ /FORM ELEMENTS ============================-->
+		</div>
+		
+		<div class="col-md-4">
+			<!--============================ TYPOGRAPHY ============================-->
+			<strong class="block text-main text-uppercase spacer-bottom-05">Typography</strong>
+			<p>ground control to major tom</p>
+			<p class="text-uppercase">ground control to major tom</p>
+			<p><strong>ground control to major tom</strong></p>
+			<p><i>ground control to major tom</i></p>
+			<p><small>ground control to major tom</small></p>
+			<blockquote class="pad-10 bg-lightgrey spacer-top-05"><i>"The path of a cosmonaut is not an easy, triumphant march to glory. You have to get to know the meaning not just of joy but also of grief, before being allowed in the spacecraft cabin."</i></blockquote>
+			<!--============================ /TYPOGRAPHY ============================-->
+			
+			<hr class="bg-grey spacer-10">
+			
+			<!--============================ BACKGROUNDS ============================-->
+			<strong class="block text-main text-uppercase spacer-bottom-05">Backgrounds/Color Pallete</strong>
+			<div class="align-center">
+				<div class="pad-20 inline-block circle bg-lightgrey"></div>
+				<div class="pad-20 inline-block circle bg-grey"></div>
+				<div class="pad-20 inline-block circle bg-dark"></div>
+				<div class="pad-20 inline-block circle bg-darker"></div>
+				<div class="pad-20 inline-block circle bg-main"></div>
+				<div class="pad-20 inline-block circle bg-sucess"></div>
+				<div class="pad-20 inline-block circle bg-info"></div>
+				<div class="pad-20 inline-block circle bg-warning"></div>
+				<div class="pad-20 inline-block circle bg-danger"></div>
+			</div>
+			<!--============================ /BACKGROUNDS ============================-->
 		</div>
 
 	</div>
 </section>
+<!--============================ /GUI ============================-->

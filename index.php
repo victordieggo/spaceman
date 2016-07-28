@@ -76,31 +76,7 @@
     </div>
     <!--============================ /SLIDER ============================-->
 
-	<?php // include 'gui.htm'; ?>
-	
-	<!--============================ MAIN CONTENT ============================--> 
-	<section class="main-content spacer-10">
-		<div class="wrapper">
-			<div class="row">
-				<div class="col-md-8">
-					<h5>
-						<i class="fa fa-rocket fa-fw" aria-hidden="true"></i>
-						HTML/CSS boilerplate from outerspace
-					</h5>
-					<hr class="bg-dark spacer-10">
-					<p>Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds, to seek out new life and new civilizations, to boldly go where no man has gone before. We want to explore. We’re curious people. Look back over history, people have put their lives at stake to go out and explore… We believe in what we’re doing. Now it’s time to go.</p><br/><p>-Houston, Tranquillity Base here. The Eagle has landed.</p>
-				</div>
-				<div class="clear show-md pad-05"></div>
-				<div class="col-md-4">
-					<blockquote class="bg-lightgrey pad-15">
-						<p class="spacer-bottom-05"><i>"The path of a cosmonaut is not an easy, triumphant march to glory. You have to get to know the meaning not just of joy but also of grief, before being allowed in the spacecraft cabin."</i></p>
-						<small><i>Major Tom - CEO</i></small>
-					</blockquote>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!--============================ /MAIN CONTENT ============================-->
+	<?php include 'gui.htm'; ?>
 	
     <!--============================ FOOTER ============================-->
     <footer class="bg-darker text-white">

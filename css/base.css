@@ -88,22 +88,22 @@ input, select, textarea, button                  {-webkit-appearance: none; -moz
 
 /*=================================== SIZING ==================================*/
 
-.auto-size, .auto-width, .btn                   {width: auto;}
-.auto-size, .auto-height                        {height: auto;}
+.auto-size, .auto-width, .btn                    {width: auto;}
+.auto-size, .auto-height                         {height: auto;}
 
 .full-size, .full-width, input, select, textarea {width: 100%;}
 .full-size, .full-height                         {height: 100%;}
 
 /*==================================== MISC ===================================*/
 
-.centered, .wrapper                             {margin: 0 auto;}
-img                                             {max-width: 100%;}
-hr                                              {border: 0; height: 1px;}
-.hide-overflow                                  {overflow: hidden;}
+.centered, .wrapper                              {margin: 0 auto;}
+img                                              {max-width: 100%;}
+hr                                               {border: 0; height: 1px;}
+.hide-overflow                                   {overflow: hidden;}
 
-.vcenter, input, select, textarea, .btn, .label {vertical-align: middle;}
+.vcenter, input, select, textarea, .btn, .label  {vertical-align: middle;}
 
-.circle                                         {border-radius: 50%;}
+.circle, .label-radio:before                     {border-radius: 50%;}
 
 .screen-cover {
 	background-color: rgb(29, 29, 29);
