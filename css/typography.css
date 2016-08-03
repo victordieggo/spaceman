@@ -30,7 +30,7 @@ a                                               {color: inherit;}
 
 /*=========================== ALINHAMENTOS/EFEITOS =============================*/
 
-blockquote                          {line-height: 160%;}
+blockquote, .text-block                         {line-height: 160%;}
 
 .align-center, .btn                             {text-align: center;}
 .align-left                                     {text-align: left;}
