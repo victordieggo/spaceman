@@ -23,21 +23,21 @@ gulp.task('buildCSS', function () {
     'use strict';
 	
 	gulp.src([
-		'css/reset.css',
-		'css/grid.css',
-		'css/typography.css',
-		'css/base.css',
-		'css/form.css',
-		'css/navigation.css',
-		'css/layout.css',
-		'css/flexslider.css',
-		'css/font-awesome.css'
+		'assets/css/src/reset.css',
+		'assets/css/src/grid.css',
+		'assets/css/src/typography.css',
+		'assets/css/src/base.css',
+		'assets/css/src/form.css',
+		'assets/css/src/navigation.css',
+		'assets/css/src/layout.css',
+		'assets/css/src/flexslider.css',
+		'assets/css/src/font-awesome.css'
 	])
 	
 		.pipe(concat('global-styles.css'))
 		.pipe(combineMq())
 		.pipe(cssmin())
-		.pipe(gulp.dest('css'))
+		.pipe(gulp.dest('assets/css/dist'))
 		.pipe(livereload());
 	
 });
@@ -51,27 +51,26 @@ gulp.task('buildJS', function () {
     'use strict';
 	
 	gulp.src([
-		'js/*.js',
-		'!js/global-js.js*',
-		'!js/jquery.min*'
+		'assets/js/src/*.js'
 	])
 		.pipe(concat('global-js.js'))
 		.pipe(uglify())
-		.pipe(gulp.dest('js'))
+		.pipe(gulp.dest('assets/js/dist'))
         .pipe(livereload());
 });
 
 //-------------------------------------------------------------------
 // GULP WATCH+DEFAULT
 //-------------------------------------------------------------------
+
 gulp.task('watch', function () {
 	
     'use strict';
 	
     livereload.listen();
 	
-	gulp.watch(['js/*.js', '!js/global-js.js*'], ['buildJS']);
-	gulp.watch(['css/*.css', '!css/global-styles.css*'], ['buildCSS']);
+	gulp.watch(['assets/js/src/*.js'], ['buildJS']);
+	gulp.watch(['assets/css/src/*.css'], ['buildCSS']);
     gulp.watch(['*.php', '*.htm', '*.jpg', '*.png', '*.svg'], livereload.reload);
 	
 });

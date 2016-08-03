@@ -6,7 +6,7 @@
     <title>Spaceman 1.9.0</title>
     <link rel="icon" href="img/icon.png" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="css/global-styles.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="assets/css/dist/global-styles.css" type="text/css" media="screen" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="">
     <meta name="keywords" content="">
@@ -71,7 +71,7 @@
     <!--============================ SLIDER ============================-->
     <div class="flexslider">
         <ul class="slides">
-            <li><img src="img/slide.jpg" alt=""></li>
+            <li><img src="assets/img/slide.jpg" alt=""></li>
         </ul>
     </div>
     <!--============================ /SLIDER ============================-->
@@ -91,8 +91,8 @@
     <!--============================ /FOOTER ============================-->
 
     <!--============================ SCRIPTS ============================-->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/global-js.js"></script>
+    <script src="assets/js/dist/jquery.min.js"></script>
+    <script src="assets/js/dist/global-js.js"></script>
     <script type="text/javascript">
         $(window).load(function() {
             $('.flexslider').flexslider({
