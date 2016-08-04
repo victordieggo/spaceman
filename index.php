@@ -76,7 +76,55 @@
     </div>
     <!--============================ /SLIDER ============================-->
 
-	<?php include 'gui.htm'; ?>
+	<?php // include 'gui.htm'; ?>
+	
+	<section>
+		<div class="wrapper">
+			<div class="row">
+				<div class="col-4 md-12 pad-05">
+					<h6 class="text-uppercase">
+						<i class="fa fa-rocket fa-fw" aria-hidden="true"></i>
+						Spaceman 1.9.0
+					</h6>
+					<hr class="bg-grey spacer-10">
+					<p class="text-block">Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds, to seek out new life and new civilizations.</p>
+					<br/>
+					<a class="btn btn-sucess text-white">Send a message</a>
+				</div>
+				<div class="col-4 md-6 sm-12 pad-05">
+					<h6 class="text-uppercase">
+						<i class="fa fa-code fa-fw" aria-hidden="true"></i>
+						HTML/CSS boilerplate
+					</h6>
+					<hr class="bg-grey spacer-10">
+					<p class="text-block">We want to explore. We’re curious people. Look back over history, people have put their lives at stake to go out and explore… We believe in what we’re doing. Now it’s time to go.</p>
+					<br/>
+					<a class="btn btn-info text-white">Send a message</a>
+				</div>
+				<div class="col-4 md-6 sm-12 pad-05">
+					<h6 class="text-uppercase">
+						<i class="fa fa-paper-plane fa-fw" aria-hidden="true"></i>
+						Far above the moon
+					</h6>
+					<hr class="bg-grey spacer-10">
+					<p class="text-block">As I stand out here in the wonders of the unknown at Hadley, I sort of realize there’s a fundamental truth to our nature, Man must explore... and this is exploration at its greatest.</p>
+					<br/>
+					<a class="btn btn-danger text-white">Send a message</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<section class="bg-main pad-20 align-center text-white">
+		<div class="wrapper">
+			<div class="row">
+				<div class="col-9 md-12 vcenter text-block">
+					<blockquote class="spacer-bottom-05"><i>"The path of a cosmonaut is not an easy, triumphant march to glory. You have to get to know the meaning not just of joy but also of grief, before being allowed in the spacecraft cabin."</i></blockquote>
+					<small>Yuri Gagarin, the first man to fly into space</small>
+				</div>
+			</div>
+		</div>
+	</section>
 	
     <!--============================ FOOTER ============================-->
     <footer class="bg-darker text-white">
