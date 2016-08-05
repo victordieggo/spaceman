@@ -12,15 +12,16 @@
 /*================================ POSITION ===================================*/
 
 .relative                                        {position: relative;}
-.absolute                                        {position: absolute;}
+.absolute, .hide, .show-md, .show-sm, .show-xs   {position: absolute;}
 .fixed, .screen-cover                            {position: fixed;}
+
+.hide, .show-md, .show-sm, .show-xs              {left: -9999px; top: -9999px; visibility: hidden;}
 
 /*================================= DISPLAY ===================================*/
 
 .block                                           {display: block;}
 .inline                                          {display: inline;}
 .inline-block, .vcenter, .btn, .label            {display: inline-block;}
-.hide, .show-md, .show-sm, .show-xs              {display: none;}
 
 /*================================= SPACERS ===================================*/
 
@@ -125,8 +126,8 @@ hr                                               {border: 0; height: 1px;}
 
 @media only screen and (max-width: 992px) {
     
-	.show-md                                        {display: block;}
-    .hide-md                                        {display: none;}
+	.show-md                                        {position: static; left: 0; top: 0; visibility: visible;}
+    .hide-md                                        {position: absolute; left: -9999px; top: -9999px; visibility: hidden;}
 	
 }
 
@@ -134,8 +135,8 @@ hr                                               {border: 0; height: 1px;}
 
 @media only screen and (max-width: 768px) {
     
-	.show-sm                                        {display: block;}
-    .hide-sm                                        {display: none;}
+	.show-sm                                        {position: static; left: 0; top: 0; visibility: visible;}
+    .hide-sm                                        {position: absolute; left: -9999px; top: -9999px; visibility: hidden;}
 	
 }
 
@@ -143,7 +144,7 @@ hr                                               {border: 0; height: 1px;}
 
 @media only screen and (max-width: 480px) {
     
-	.show-xs                                        {display: block;}
-    .hide-xs                                        {display: none;}
+	.show-xs                                        {position: static; left: 0; top: 0; visibility: visible;}
+    .hide-xs                                        {position: absolute; left: -9999px; top: -9999px; visibility: hidden;}
 	
 }
