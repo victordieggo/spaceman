@@ -13,7 +13,7 @@
 
 .relative                                        {position: relative;}
 .absolute, .hide, .show-md, .show-sm, .show-xs   {position: absolute;}
-.fixed, .screen-cover                            {position: fixed;}
+.fixed                                           {position: fixed;}
 
 .hide, .show-md, .show-sm, .show-xs              {left: -9999px; top: -9999px; visibility: hidden;}
 
