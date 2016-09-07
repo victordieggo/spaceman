@@ -40,17 +40,17 @@ button, .bg-none                                 {background-color: transparent;
 /*========================= LARGE/LG RESOLUTIONS ============================*/
 
 @media only screen and (min-width: 993px) {
-	
-	
-	
+
+
+
 }
 
 /*========================= MEDIUM/MD RESOLUTIONS ============================*/
 
 @media only screen and (max-width: 992px) {
-	
-	
-	
+
+
+
 }
 
 /*========================= SMALL/SM RESOLUTIONS =============================*/
@@ -58,13 +58,13 @@ button, .bg-none                                 {background-color: transparent;
 @media only screen and (max-width: 768px) {
 
     body                                         {font-size: 0.8em;}
-    
+
 }
 
 /*====================== EXTRA SMALL/XS RESOLUTIONS ==========================*/
 
 @media only screen and (max-width: 480px) {
 
-	
-	
+
+
 }

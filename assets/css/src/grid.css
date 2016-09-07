@@ -42,7 +42,7 @@
 .row-no-padding .col-10                         {width: 83.33333333333333%;}
 .row-no-padding .col-11                         {width: 91.66666666666666%;}
 .row-no-padding .col-12                         {width: 100%;}
-	
+
 /* ====================================================================================================================
  * GRID MEDIA QUERIES
  * ====================================================================================================================*/
@@ -50,7 +50,7 @@
 /*========================= MEDIUM/MD RESOLUTIONS ============================*/
 
 @media only screen and (max-width: 992px) {
-	
+
 	.md-1                                       {width: 6.333333333333333%;}
 	.md-2                                       {width: 14.66666666666667%;}
 	.md-3                                       {width: 23%;}
@@ -63,7 +63,7 @@
 	.md-10                                      {width: 81.33333333333333%;}
 	.md-11                                      {width: 89.66666666666666%;}
 	.md-12                                      {width: 98%;}
-	
+
 	.row-no-padding .md-1                       {width: 8.333333333333333%;}
 	.row-no-padding .md-2                       {width: 16.66666666666667%;}
 	.row-no-padding .md-3                       {width: 25%;}
@@ -76,15 +76,15 @@
 	.row-no-padding .md-10                      {width: 83.33333333333333%;}
 	.row-no-padding .md-11                      {width: 91.66666666666666%;}
 	.row-no-padding .md-12                      {width: 100%;}
-	
+
 }
 
 /*========================= SMALL/SM RESOLUTIONS =============================*/
 
 @media only screen and (max-width: 768px) {
-	
+
     .row                                        {padding: 2%;}
-	
+
 	.sm-1                                       {width: 6.333333333333333%;}
 	.sm-2                                       {width: 14.66666666666667%;}
 	.sm-3                                       {width: 23%;}
@@ -97,7 +97,7 @@
 	.sm-10                                      {width: 81.33333333333333%;}
 	.sm-11                                      {width: 89.66666666666666%;}
 	.sm-12                                      {width: 98%;}
-	
+
 	.row-no-padding .sm-1                       {width: 8.333333333333333%;}
 	.row-no-padding .sm-2                       {width: 16.66666666666667%;}
 	.row-no-padding .sm-3                       {width: 25%;}
@@ -116,13 +116,13 @@
 /*====================== EXTRA SMALL/XS RESOLUTIONS ==========================*/
 
 @media only screen and (max-width: 480px) {
-	
+
 	.row                                        {padding: 3%;}
-	
+
 	.xs-1                                       {width: 6.333333333333333%;}
 	.xs-2                                       {width: 14.66666666666667%;}
 	.xs-3                                       {width: 23%;}
-	.xs-4                                       {width: 31.33333333333333%;}	
+	.xs-4                                       {width: 31.33333333333333%;}
 	.xs-5                                       {width: 39.66666666666667%;}
 	.xs-6                                       {width: 48%;}
 	.xs-7                                       {width: 56.33333333333333%;}
@@ -131,7 +131,7 @@
 	.xs-10                                      {width: 81.33333333333333%;}
 	.xs-11                                      {width: 89.66666666666666%;}
 	.xs-12                                      {width: 98%;}
-	
+
 	.row-no-padding .xs-1                       {width: 8.333333333333333%;}
 	.row-no-padding .xs-2                       {width: 16.66666666666667%;}
 	.row-no-padding .xs-3                       {width: 25%;}
@@ -144,5 +144,5 @@
 	.row-no-padding .xs-10                      {width: 83.33333333333333%;}
 	.row-no-padding .xs-11                      {width: 91.66666666666666%;}
 	.row-no-padding .xs-12                      {width: 100%;}
-	
+
 }

@@ -13,7 +13,7 @@
 </head>
 
 <body>
-	
+
     <div class="screen-cover fixed full-size hide"></div>
 
     <!--============================ HEADER ============================-->
@@ -26,7 +26,7 @@
                 </div><!--
                 AVOID DISPLAY INLINE LINE BREAK
                 --><div class="col-6 vcenter">
-                
+
                     <!--============================ NAVIGATION ============================-->
                     <nav class="main-nav fright">
                         <ul>
@@ -57,11 +57,11 @@
 						</ul>
                     </nav>
                     <!--============================ /NAVIGATION ============================-->
-                
-                    <button class="nav-btn show-md text-white fright"> 
-                        <i class="fa fa-bars fa-2x"></i> 
+
+                    <button class="nav-btn show-md text-white fright">
+                        <i class="fa fa-bars fa-2x"></i>
                     </button>
-                
+
                 </div>
             </div>
         </div>
@@ -77,7 +77,7 @@
     <!--============================ /SLIDER ============================-->
 
 	<?php // include 'gui.htm'; ?>
-	
+
 	<section>
 		<div class="wrapper">
 			<div class="row">
@@ -114,7 +114,7 @@
 			</div>
 		</div>
 	</section>
-	
+
 	<section class="bg-main pad-20 align-center text-white">
 		<div class="wrapper">
 			<div class="row">
@@ -125,7 +125,7 @@
 			</div>
 		</div>
 	</section>
-	
+
     <!--============================ FOOTER ============================-->
     <footer class="bg-darker text-white">
         <div class="wrapper">
