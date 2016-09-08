@@ -70,7 +70,7 @@ gulp.task('watch', function () {
 
     gulp.watch(['assets/js/src/*.js'], ['buildJS']);
     gulp.watch(['assets/css/src/*.css'], ['buildCSS']);
-    gulp.watch(['*.php', '*.htm', '*.jpg', '*.png', '*.svg'], livereload.reload);
+    gulp.watch(['./**/*.php', './**/*.htm'], livereload.reload);
 
 });
 
