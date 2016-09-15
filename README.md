@@ -12,7 +12,7 @@ To run Spaceman, you´ll need both NodeJS and GulpJS (installed globally). The w
 
 Clone this repository:
 
-    $ git clone https://victordieggo@bitbucket.org/victordieggo/spaceman.git
+    $ git clone https://github.com/victordieggo/spaceman.git
     $ cd spaceman
 
 Install dev dependencies:
