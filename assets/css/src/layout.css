@@ -1,0 +1,70 @@
+/* ====================================================================================================================
+ * BACKGROUND-COLOR
+ * ====================================================================================================================*/
+
+/*============================== MAIN COLORS ==================================*/
+
+.bg-main, .menu-item-is-active                   {background-color: #0d6788;}
+
+.bg-white                                        {background-color: #fff;}
+.bg-lightgrey, hr                                {background-color: #e3e3e3;}
+.bg-grey, .btn                                   {background-color: #afafaf;}
+
+.bg-dark, .main-nav li ul                        {background-color: #222;}
+
+.bg-darker                                       {background-color: #121212;}
+
+button, .bg-none                                 {background-color: transparent;}
+
+/*================================ ALERTS =====================================*/
+
+.bg-sucess, .btn-sucess                          {background-color: #5cb85c;}
+.btn-sucess:hover                                {background-color: #449d44;}
+
+.bg-warning, .btn-warning                        {background-color: #f0ad4e;}
+.btn-warning:hover                               {background-color: #ec971f;}
+
+.bg-danger, .btn-danger                          {background-color: #d9534f;}
+.btn-danger:hover                                {background-color: #c9302c;}
+
+.bg-info, .btn-info                              {background-color: #49a0d7;}
+.btn-info:hover                                  {background-color: #3586b9;}
+
+.bg-mute, .btn-mute                              {background-color: #b9b9b9;}
+.btn-mute:hover                                  {background-color: #9d9d9d;}
+
+/* ====================================================================================================================
+ * LAYOUT MEDIA QUERIES
+ * ====================================================================================================================*/
+
+/*========================= LARGE/LG RESOLUTIONS ============================*/
+
+@media only screen and (min-width: 993px) {
+
+
+
+}
+
+/*========================= MEDIUM/MD RESOLUTIONS ============================*/
+
+@media only screen and (max-width: 992px) {
+
+
+
+}
+
+/*========================= SMALL/SM RESOLUTIONS =============================*/
+
+@media only screen and (max-width: 768px) {
+
+    body                                         {font-size: 0.8em;}
+
+}
+
+/*====================== EXTRA SMALL/XS RESOLUTIONS ==========================*/
+
+@media only screen and (max-width: 480px) {
+
+
+
+}
