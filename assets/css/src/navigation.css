@@ -1,92 +1,126 @@
-/* ====================================================================================================================
- * NAVIGATION
- * ====================================================================================================================*/
+/* =====================================================================
+ * MAIN NAVIGATION
+ * ===================================================================*/
 
-.main-nav li ul                                  {position: absolute; display: none;}
+/*============================ BASE STYLES ===========================*/
 
-.main-nav li ul li                               {position: relative;}
-.main-nav li ul ul                               {top: 0; left: 100%;}
+.main-nav li ul {
+    position: absolute;
+    display: none;
+}
 
-.main-nav a                                      {display: block; padding: 0.7em 1em;}
+.main-nav li ul li {
+    position: relative;
+}
 
-.main-nav ul                                     {white-space: nowrap;}
+.main-nav li ul ul {
+    top: 0;
+    left: 100%;
+}
 
-/*========================= LARGE/LG RESOLUTIONS ============================*/
+.main-nav a {
+    display: block;
+    padding: 0.7em 1em;
+}
+
+.main-nav ul {
+    white-space: nowrap;
+}
+
+/*======================== LARGE/LG RESOLUTIONS ======================*/
 
 @media only screen and (min-width: 993px) {
 
-    .main-nav > ul > li                          {display: inline-block;}
-    .main-nav li:hover > ul                      {display: block;}
-    .main-nav li:hover > a                       {background-color: #0d6788;}
+    .main-nav > ul > li {
+        display: inline-block;
+    }
+
+    .main-nav li:hover > ul {
+        display: block;
+    }
+
+    .main-nav li:hover > a {
+        background-color: #0d6788;
+    }
 
 }
 
-/*========================= MEDIUM/MD RESOLUTIONS ============================*/
+/*======================= MEDIUM/MD RESOLUTIONS ======================*/
 
 @media only screen and (max-width: 992px) {
 
-	.main-nav {
+    .main-nav {
         position: fixed;
+        top: 0;
+        left: -100%;
 
-		top: 0;
-		left: -100%;
+        min-height: 100%;
+        height: 100%;
 
-		min-height: 100%;
-		height: 100%;
+        width: 18em;
 
-		width: 18em;
+        overflow-y: auto;
+        overflow-x: hidden;
 
-		overflow-y: auto;
-		overflow-x: hidden;
+        text-transform: uppercase;
 
-		text-transform: uppercase;
+        background-color: #1d1d1d;
 
-		background-color: #1d1d1d;
-
-		-webkit-transition: all 0.25s;
+        -webkit-transition: all 0.25s;
         -moz-transition: all 0.25s;
         -o-transition: all 0.25s;
         transition: all 0.25s;
-	}
+    }
 
-	.main-nav ul                                 {white-space: normal;}
+    .main-nav ul {
+        white-space: normal;
+    }
 
-	.main-nav li ul                              {position: relative;}
-	.main-nav li ul ul, .main-nav-is-active      {left: 0;}
-	.main-nav a                                  {padding: 1.5em;}
+    .main-nav li ul {
+        position: relative;
+    }
 
-	.menu-item-has-children a {
-		position: relative;
-		padding-right: 3.5em;
-	}
+    .main-nav li ul ul,
+    .main-nav-is-active {
+        left: 0;
+    }
 
-	.menu-item-has-children > a:after {
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		right: 1.5em;
+    .main-nav a {
+        padding: 1.5em;
+    }
 
-		content: "";
-		padding: 0.8em;
+    .menu-item-has-children a {
+        position: relative;
+        padding-right: 3.5em;
+    }
 
-		background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkNhbWFkYV8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDEwOC43IDUzLjUiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDEwOC43IDUzLjUiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik05Ni44LDEuNmMtNy4zLDUuNC0xNCwxMS43LTIwLjksMTcuNGMtNy4yLDYtMTQuMywxMi0yMS41LDE3LjljLTE0LTExLjgtMjcuNy0yNC4xLTQyLjItMzUuMkM3LjctMS42LDAuNy0wLjEsMCw2LjFjLTAuNCw0LjEsMi41LDYuMiw1LjIsOC41YzksNy41LDE4LjEsMTUuMSwyNy4xLDIyLjZjNC42LDMuOSw5LjMsNy43LDEzLjksMTEuNmMzLjgsMy4xLDcuMSw2LjEsMTIuMiwzLjFjMC4yLTAuMSwwLjQtMC4zLDAuNi0wLjRDNzQsMzkuMSw4OC45LDI2LjcsMTAzLjgsMTQuM2MyLjUtMi4xLDUtMy45LDQuOS03LjZDMTA4LjQsMC4zLDEwMS40LTEuOCw5Ni44LDEuNnoiLz48L3N2Zz4=) no-repeat right;
-		background-size: 1em;
-	}
+    .menu-item-has-children>a:after {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 1.5em;
+        content: "";
+        padding: 0.8em;
+        background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkNhbWFkYV8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDEwOC43IDUzLjUiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDEwOC43IDUzLjUiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik05Ni44LDEuNmMtNy4zLDUuNC0xNCwxMS43LTIwLjksMTcuNGMtNy4yLDYtMTQuMywxMi0yMS41LDE3LjljLTE0LTExLjgtMjcuNy0yNC4xLTQyLjItMzUuMkM3LjctMS42LDAuNy0wLjEsMCw2LjFjLTAuNCw0LjEsMi41LDYuMiw1LjIsOC41YzksNy41LDE4LjEsMTUuMSwyNy4xLDIyLjZjNC42LDMuOSw5LjMsNy43LDEzLjksMTEuNmMzLjgsMy4xLDcuMSw2LjEsMTIuMiwzLjFjMC4yLTAuMSwwLjQtMC4zLDAuNi0wLjRDNzQsMzkuMSw4OC45LDI2LjcsMTAzLjgsMTQuM2MyLjUtMi4xLDUtMy45LDQuOS03LjZDMTA4LjQsMC4zLDEwMS40LTEuOCw5Ni44LDEuNnoiLz48L3N2Zz4=) no-repeat right;
+        background-size: 1em;
+    }
 
-	.menu-item-is-active:after {
-		-webkit-transform: rotateX(180deg);
-		-moz-transform: rotateX(180deg);
-		-ms-transform: rotateX(180deg);
-		-o-transform: rotateX(180deg);
-		transform: rotateX(180deg);
-	}
-
+    .menu-item-is-active:after {
+        -webkit-transform: rotateX(180deg);
+        -moz-transform: rotateX(180deg);
+        -ms-transform: rotateX(180deg);
+        -o-transform: rotateX(180deg);
+        transform: rotateX(180deg);
+    }
 }
 
-/*====================== EXTRA SMALL/XS RESOLUTIONS ==========================*/
+
+/*==================== EXTRA SMALL/XS RESOLUTIONS ====================*/
 
 @media only screen and (max-width: 480px) {
 
-    .main-nav                                    {width: 75%;}
+    .main-nav {
+        width: 75%;
+    }
 
 }

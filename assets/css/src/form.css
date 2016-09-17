@@ -1,76 +1,85 @@
-/* ====================================================================================================================
+/* =====================================================================
  * FORM ELEMENTS/BUTTONS
- * ====================================================================================================================*/
+ * ===================================================================*/
 
-/*=============================== MAIN STYLES ===============================*/
+/*============================ MAIN STYLES ===========================*/
 
-.btn, input, select, textarea, .label, .label-checkbox:before {
-	padding: 0.7em 1em;
-	border-radius: 0.2em;
+.btn,
+input,
+select,
+textarea,
+.label,
+.label-checkbox:before {
+    padding: 0.7em 1em;
+    border-radius: 0.2em;
 }
 
-.btn, .btn:focus, input.btn {
-	box-shadow: none;
-	white-space: normal;
+.btn,
+.btn:focus,
+input.btn {
+    box-shadow: none;
+    white-space: normal;
 }
 
 .label {
-	padding: 0.4em;
+    padding: 0.4em;
 }
 
-input, select, textarea {
-	-webkit-box-shadow: inset 0 0 0 1px #cecece;
-	   -moz-box-shadow: inset 0 0 0 1px #cecece;
-	        box-shadow: inset 0 0 0 1px #cecece;
+input,
+select,
+textarea {
+    -webkit-box-shadow: inset 0 0 0 1px #cecece;
+    -moz-box-shadow: inset 0 0 0 1px #cecece;
+    box-shadow: inset 0 0 0 1px #cecece;
 }
 
-button:focus, input:focus, select:focus, textarea:focus {
-	outline: none;
-	-webkit-box-shadow: inset 0 0 0 1px #909090;
-	   -moz-box-shadow: inset 0 0 0 1px #909090;
-	        box-shadow: inset 0 0 0 1px #909090;
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    -webkit-box-shadow: inset 0 0 0 1px #909090;
+    -moz-box-shadow: inset 0 0 0 1px #909090;
+    box-shadow: inset 0 0 0 1px #909090;
 }
 
-/*========================= CUSTOM SELECT ARROW =============================*/
+/*======================== CUSTOM SELECT ARROW =======================*/
 
 select {
-	background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDE5Mi4xIDUzLjUiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDE5Mi4xIDUzLjUiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwYXRoIGZpbGw9IiMwMTAyMDIiIGQ9Ik05Ni44IDEuNmMtNy4zIDUuNC0xNCAxMS43LTIwLjkgMTcuNCAtNy4yIDYtMTQuMyAxMi0yMS41IDE3LjkgLTE0LTExLjgtMjcuNy0yNC4xLTQyLjItMzUuMkM3LjctMS42IDAuNy0wLjEgMCA2LjFjLTAuNCA0LjEgMi41IDYuMiA1LjIgOC41IDkgNy41IDE4LjEgMTUuMSAyNy4xIDIyLjYgNC42IDMuOSA5LjMgNy43IDEzLjkgMTEuNiAzLjggMy4xIDcuMSA2LjEgMTIuMiAzLjEgMC4yLTAuMSAwLjQtMC4zIDAuNi0wLjRDNzQgMzkuMSA4OC45IDI2LjcgMTAzLjggMTQuM2MyLjUtMi4xIDUtMy45IDQuOS03LjZDMTA4LjQgMC4zIDEwMS40LTEuOCA5Ni44IDEuNnoiLz48L3N2Zz4=) #fff no-repeat right;
-	padding-right: 1.8em;
-	background-size: 1.2em;
+    background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDE5Mi4xIDUzLjUiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDE5Mi4xIDUzLjUiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwYXRoIGZpbGw9IiMwMTAyMDIiIGQ9Ik05Ni44IDEuNmMtNy4zIDUuNC0xNCAxMS43LTIwLjkgMTcuNCAtNy4yIDYtMTQuMyAxMi0yMS41IDE3LjkgLTE0LTExLjgtMjcuNy0yNC4xLTQyLjItMzUuMkM3LjctMS42IDAuNy0wLjEgMCA2LjFjLTAuNCA0LjEgMi41IDYuMiA1LjIgOC41IDkgNy41IDE4LjEgMTUuMSAyNy4xIDIyLjYgNC42IDMuOSA5LjMgNy43IDEzLjkgMTEuNiAzLjggMy4xIDcuMSA2LjEgMTIuMiAzLjEgMC4yLTAuMSAwLjQtMC4zIDAuNi0wLjRDNzQgMzkuMSA4OC45IDI2LjcgMTAzLjggMTQuM2MyLjUtMi4xIDUtMy45IDQuOS03LjZDMTA4LjQgMC4zIDEwMS40LTEuOCA5Ni44IDEuNnoiLz48L3N2Zz4=) #fff no-repeat right;
+    padding-right: 1.8em;
+    background-size: 1.2em;
 }
 
-/*======================== CUSTOM CHECKBOX/RADIO ============================*/
+/*======================= CUSTOM CHECKBOX/RADIO ======================*/
 
-.label-checkbox:before, .label-radio:before {
-	content: '';
-
-	display: inline-block;
-	vertical-align: middle;
-
-	margin-right: 0.5em;
-
-	background-color: #fff;
-
-	-webkit-box-shadow: 0 0 0 1px #cecece;
-	   -moz-box-shadow: 0 0 0 1px #cecece;
-	        box-shadow: 0 0 0 1px #cecece;
+.label-checkbox:before,
+.label-radio:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0.5em;
+    background-color: #fff;
+    -webkit-box-shadow: 0 0 0 1px #cecece;
+    -moz-box-shadow: 0 0 0 1px #cecece;
+    box-shadow: 0 0 0 1px #cecece;
 }
 
 .label-checkbox:before {
-	padding: 0.4em;
-	border: 0.2em solid #fff;
+    padding: 0.4em;
+    border: 0.2em solid #fff;
 }
 
-:checked + .label-checkbox:before {
-	background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDE4MCAxODAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDE4MCAxODAiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwYXRoIGZpbGw9IiMwMTAyMDIiIGQ9Ik01Ni4xIDE0OS43YzIuNCAyLjQgNy4xIDQuOCAxMC43IDQuOHM3LjEtMS4yIDEwLjctNC44bDk1LjItOTUuMmM2LTYgNi0xNS41IDAtMjEuNCAtNi02LTE1LjUtNi0yMS40IDBsLTg0LjUgODQuNUwyOS45IDgwLjdjLTYtNi0xNS41LTYtMjEuNCAwcy02IDE1LjUgMCAyMS40TDU2LjEgMTQ5Ljd6Ii8+PC9zdmc+) #fff no-repeat;
-	background-size: cover;
+:checked+.label-checkbox:before {
+    background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDE4MCAxODAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDE4MCAxODAiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwYXRoIGZpbGw9IiMwMTAyMDIiIGQ9Ik01Ni4xIDE0OS43YzIuNCAyLjQgNy4xIDQuOCAxMC43IDQuOHM3LjEtMS4yIDEwLjctNC44bDk1LjItOTUuMmM2LTYgNi0xNS41IDAtMjEuNCAtNi02LTE1LjUtNi0yMS40IDBsLTg0LjUgODQuNUwyOS45IDgwLjdjLTYtNi0xNS41LTYtMjEuNCAwcy02IDE1LjUgMCAyMS40TDU2LjEgMTQ5Ljd6Ii8+PC9zdmc+) #fff no-repeat;
+    background-size: cover;
 }
 
 .label-radio:before {
-	padding: 0.19em;
-	border: 0.4em solid #fff;
+    padding: 0.19em;
+    border: 0.4em solid #fff;
 }
 
-:checked + .label-radio:before {
-	background-color: #222;
+:checked+.label-radio:before {
+    background-color: #222;
 }
