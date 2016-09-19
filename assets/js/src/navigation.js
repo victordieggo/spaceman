@@ -1,6 +1,6 @@
-/* ====================================================================================================================
+/* =====================================================================
  * SPACEMAN MOBILE NAVIGATION 1.9.0
- * ====================================================================================================================*/
+ * ===================================================================*/
 /*global $, jQuery, window, document*/
 
 //-------------------------------------------------------------------
@@ -12,37 +12,37 @@ var screenCover = jQuery('.screen-cover'),
     page        = jQuery('html, body');
 
 //-------------------------------------------------------------------
-// FUNCTION: MOBILE NAVIGATION CORE
+// FUNCTION: OPEN MOBILE NAVIGATION
 //-------------------------------------------------------------------
 
-function MobileNavigation() {
+function OpenNavigation() {
 
     'use strict';
 
-    jQuery('.nav-btn').click(function () {
-        jQuery(this).blur();
-        nav.addClass('main-nav-is-active');
-        page.addClass('hide-overflow');
-        screenCover.removeClass('hide');
-    });
+    jQuery(this).blur();
+    nav.addClass('main-nav-is-active');
+    page.addClass('hide-overflow');
+    screenCover.removeClass('hide');
 
-    jQuery('.menu-item-has-children').each(function () {
+}
 
-        jQuery('a:first', this).click(function (e) {
-            e.preventDefault();
+//-------------------------------------------------------------------
+// FUNCTION: OPEN/CLOSE NAVIGATION SUB ITEMS
+//-------------------------------------------------------------------
+
+function OpenSubitem(e) {
+
+    'use strict';
+
+    e.preventDefault();
+
+    if (window.innerWidth <= 992) {
+        jQuery('ul:first', this).slideToggle(400);
+        jQuery('a:first', this).toggleClass('menu-item-is-active');
+        jQuery('ul', this).children().click(function (event) {
+            event.stopPropagation();
         });
-
-        jQuery(this).click(function () {
-            if (window.innerWidth <= 992) {
-                jQuery('ul:first', this).slideToggle(400);
-                jQuery('a:first', this).toggleClass('menu-item-is-active');
-                jQuery('ul', this).children().click(function (event) {
-                    event.stopPropagation();
-                });
-            }
-        });
-
-    });
+    }
 }
 
 //-------------------------------------------------------------------
@@ -94,7 +94,8 @@ function ResizeFallback() {
 // CALL FUNCTIONS
 //-------------------------------------------------------------------
 
-jQuery(document).ready(MobileNavigation);
 jQuery(window).resize(ResizeFallback);
+jQuery('.nav-btn').on('click', OpenNavigation);
+jQuery('.menu-item-has-children').on('click', OpenSubitem);
 jQuery(nav).on('swipeleft', CloseNavigation);
 jQuery(screenCover).on('swipeleft click', CloseNavigation);

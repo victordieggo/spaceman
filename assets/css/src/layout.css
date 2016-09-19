@@ -1,70 +1,105 @@
-/* ====================================================================================================================
+/* =====================================================================
  * BACKGROUND-COLOR
- * ====================================================================================================================*/
+ * ===================================================================*/
 
-/*============================== MAIN COLORS ==================================*/
+/*============================ MAIN COLORS ===========================*/
 
-.bg-main, .menu-item-is-active                   {background-color: #0d6788;}
+.bg-main,
+.menu-item-is-active {
+    background-color: #0d6788;
+}
 
-.bg-white                                        {background-color: #fff;}
-.bg-lightgrey, hr                                {background-color: #e3e3e3;}
-.bg-grey, .btn                                   {background-color: #afafaf;}
+.bg-white {
+    background-color: #fff;
+}
 
-.bg-dark, .main-nav li ul                        {background-color: #222;}
+.bg-lightgrey,
+hr {
+    background-color: #e3e3e3;
+}
 
-.bg-darker                                       {background-color: #121212;}
+.bg-grey,
+.btn {
+    background-color: #afafaf;
+}
 
-button, .bg-none                                 {background-color: transparent;}
+.bg-dark,
+.main-nav li ul {
+    background-color: #222;
+}
 
-/*================================ ALERTS =====================================*/
+.bg-darker {
+    background-color: #121212;
+}
 
-.bg-sucess, .btn-sucess                          {background-color: #5cb85c;}
-.btn-sucess:hover                                {background-color: #449d44;}
+button,
+.bg-none {
+    background-color: transparent;
+}
 
-.bg-warning, .btn-warning                        {background-color: #f0ad4e;}
-.btn-warning:hover                               {background-color: #ec971f;}
+/*=============================== ALERTS =============================*/
 
-.bg-danger, .btn-danger                          {background-color: #d9534f;}
-.btn-danger:hover                                {background-color: #c9302c;}
+.bg-sucess,
+.btn-sucess {
+    background-color: #5cb85c;
+}
 
-.bg-info, .btn-info                              {background-color: #49a0d7;}
-.btn-info:hover                                  {background-color: #3586b9;}
+.btn-sucess:hover {
+    background-color: #449d44;
+}
 
-.bg-mute, .btn-mute                              {background-color: #b9b9b9;}
-.btn-mute:hover                                  {background-color: #9d9d9d;}
+.bg-warning,
+.btn-warning {
+    background-color: #f0ad4e;
+}
 
-/* ====================================================================================================================
+.btn-warning:hover {
+    background-color: #ec971f;
+}
+
+.bg-danger,
+.btn-danger {
+    background-color: #d9534f;
+}
+
+.btn-danger:hover {
+    background-color: #c9302c;
+}
+
+.bg-info,
+.btn-info {
+    background-color: #49a0d7;
+}
+
+.btn-info:hover {
+    background-color: #3586b9;
+}
+
+.bg-mute,
+.btn-mute {
+    background-color: #b9b9b9;
+}
+
+.btn-mute:hover {
+    background-color: #9d9d9d;
+}
+
+/* =====================================================================
  * LAYOUT MEDIA QUERIES
- * ====================================================================================================================*/
+ * ===================================================================*/
 
-/*========================= LARGE/LG RESOLUTIONS ============================*/
+/*======================== LARGE/LG RESOLUTIONS ======================*/
 
-@media only screen and (min-width: 993px) {
+@media only screen and (min-width: 993px) {}
 
+/*======================= MEDIUM/MD RESOLUTIONS ======================*/
 
+@media only screen and (max-width: 992px) {}
 
-}
+/*======================= SMALL/SM RESOLUTIONS =======================*/
 
-/*========================= MEDIUM/MD RESOLUTIONS ============================*/
+@media only screen and (max-width: 768px) {}
 
-@media only screen and (max-width: 992px) {
+/*==================== EXTRA SMALL/XS RESOLUTIONS ====================*/
 
-
-
-}
-
-/*========================= SMALL/SM RESOLUTIONS =============================*/
-
-@media only screen and (max-width: 768px) {
-
-    body                                         {font-size: 0.8em;}
-
-}
-
-/*====================== EXTRA SMALL/XS RESOLUTIONS ==========================*/
-
-@media only screen and (max-width: 480px) {
-
-
-
-}
+@media only screen and (max-width: 480px) {}

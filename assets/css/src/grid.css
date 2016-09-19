@@ -1,148 +1,452 @@
-/* ====================================================================================================================
+/* =====================================================================
  * SPACEMAN GRID 1.9.0
- * ====================================================================================================================*/
+ * ===================================================================*/
 
-/*================================ GRID WRAPPER ===============================*/
+/*============================ GRID WRAPPER ==========================*/
 
-.wrapper                                        {max-width: 1240px;}
+.wrapper {
+    max-width: 1240px;
+}
 
-/*================================== GRID CORE ================================*/
+/*============================== GRID CORE ===========================*/
 
-.row                                            {padding: 1%;}
-.row-no-padding                                 {padding: 0;}
-.row:after, .row-no-padding:after               {content: ""; display: table; clear: both;}
+.row {
+    padding: 1%;
+}
 
-[class*='col-']                                 {float: left; vertical-align: top; min-height: 1px; margin: 1%;}
-.row-no-padding [class*='col-']                 {margin: 0;}
+.row-no-padding {
+    padding: 0;
+}
 
-/*=================================== COLUNAS =================================*/
+.row:after,
+.row-no-padding:after {
+    content: "";
+    display: table;
+    clear: both;
+}
 
-.col-1                                          {width: 6.333333333333333%;}
-.col-2                                          {width: 14.66666666666667%;}
-.col-3                                          {width: 23%;}
-.col-4                                          {width: 31.33333333333333%;}
-.col-5                                          {width: 39.66666666666667%;}
-.col-6                                          {width: 48%;}
-.col-7                                          {width: 56.33333333333333%;}
-.col-8                                          {width: 64.66666666666666%;}
-.col-9                                          {width: 73%;}
-.col-10                                         {width: 81.33333333333333%;}
-.col-11                                         {width: 89.66666666666666%;}
-.col-12                                         {width: 98%;}
+[class*='col-'] {
+    float: left;
+    vertical-align: top;
+    min-height: 1px;
+    margin: 1%;
+}
 
-.row-no-padding .col-1                          {width: 8.333333333333333%;}
-.row-no-padding .col-2                          {width: 16.66666666666667%;}
-.row-no-padding .col-3                          {width: 25%;}
-.row-no-padding .col-4                          {width: 33.33333333333333%;}
-.row-no-padding .col-5                          {width: 41.66666666666667%;}
-.row-no-padding .col-6                          {width: 50%;}
-.row-no-padding .col-7                          {width: 58.33333333333333%;}
-.row-no-padding .col-8                          {width: 66.66666666666666%;}
-.row-no-padding .col-9                          {width: 75%;}
-.row-no-padding .col-10                         {width: 83.33333333333333%;}
-.row-no-padding .col-11                         {width: 91.66666666666666%;}
-.row-no-padding .col-12                         {width: 100%;}
+.row-no-padding [class*='col-'] {
+    margin: 0;
+}
 
-/* ====================================================================================================================
+/*=============================== COLUNAS ============================*/
+
+.col-1 {
+    width: 6.333333333333333%;
+}
+
+.col-2 {
+    width: 14.66666666666667%;
+}
+
+.col-3 {
+    width: 23%;
+}
+
+.col-4 {
+    width: 31.33333333333333%;
+}
+
+.col-5 {
+    width: 39.66666666666667%;
+}
+
+.col-6 {
+    width: 48%;
+}
+
+.col-7 {
+    width: 56.33333333333333%;
+}
+
+.col-8 {
+    width: 64.66666666666666%;
+}
+
+.col-9 {
+    width: 73%;
+}
+
+.col-10 {
+    width: 81.33333333333333%;
+}
+
+.col-11 {
+    width: 89.66666666666666%;
+}
+
+.col-12 {
+    width: 98%;
+}
+
+.row-no-padding .col-1 {
+    width: 8.333333333333333%;
+}
+
+.row-no-padding .col-2 {
+    width: 16.66666666666667%;
+}
+
+.row-no-padding .col-3 {
+    width: 25%;
+}
+
+.row-no-padding .col-4 {
+    width: 33.33333333333333%;
+}
+
+.row-no-padding .col-5 {
+    width: 41.66666666666667%;
+}
+
+.row-no-padding .col-6 {
+    width: 50%;
+}
+
+.row-no-padding .col-7 {
+    width: 58.33333333333333%;
+}
+
+.row-no-padding .col-8 {
+    width: 66.66666666666666%;
+}
+
+.row-no-padding .col-9 {
+    width: 75%;
+}
+
+.row-no-padding .col-10 {
+    width: 83.33333333333333%;
+}
+
+.row-no-padding .col-11 {
+    width: 91.66666666666666%;
+}
+
+.row-no-padding .col-12 {
+    width: 100%;
+}
+
+/* =====================================================================
  * GRID MEDIA QUERIES
- * ====================================================================================================================*/
+ * ===================================================================*/
 
-/*========================= MEDIUM/MD RESOLUTIONS ============================*/
+/*======================= MEDIUM/MD RESOLUTIONS ======================*/
 
 @media only screen and (max-width: 992px) {
 
-	.md-1                                       {width: 6.333333333333333%;}
-	.md-2                                       {width: 14.66666666666667%;}
-	.md-3                                       {width: 23%;}
-	.md-4                                       {width: 31.33333333333333%;}
-	.md-5                                       {width: 39.66666666666667%;}
-	.md-6                                       {width: 48%;}
-	.md-7                                       {width: 56.33333333333333%;}
-	.md-8                                       {width: 64.66666666666666%;}
-	.md-9                                       {width: 73%;}
-	.md-10                                      {width: 81.33333333333333%;}
-	.md-11                                      {width: 89.66666666666666%;}
-	.md-12                                      {width: 98%;}
+    .md-1 {
+        width: 6.333333333333333%;
+    }
 
-	.row-no-padding .md-1                       {width: 8.333333333333333%;}
-	.row-no-padding .md-2                       {width: 16.66666666666667%;}
-	.row-no-padding .md-3                       {width: 25%;}
-	.row-no-padding .md-4                       {width: 33.33333333333333%;}
-	.row-no-padding .md-5                       {width: 41.66666666666667%;}
-	.row-no-padding .md-6                       {width: 50%;}
-	.row-no-padding .md-7                       {width: 58.33333333333333%;}
-	.row-no-padding .md-8                       {width: 66.66666666666666%;}
-	.row-no-padding .md-9                       {width: 75%;}
-	.row-no-padding .md-10                      {width: 83.33333333333333%;}
-	.row-no-padding .md-11                      {width: 91.66666666666666%;}
-	.row-no-padding .md-12                      {width: 100%;}
+    .md-2 {
+        width: 14.66666666666667%;
+    }
 
+    .md-3 {
+        width: 23%;
+    }
+
+    .md-4 {
+        width: 31.33333333333333%;
+    }
+
+    .md-5 {
+        width: 39.66666666666667%;
+    }
+
+    .md-6 {
+        width: 48%;
+    }
+
+    .md-7 {
+        width: 56.33333333333333%;
+    }
+
+    .md-8 {
+        width: 64.66666666666666%;
+    }
+
+    .md-9 {
+        width: 73%;
+    }
+
+    .md-10 {
+        width: 81.33333333333333%;
+    }
+
+    .md-11 {
+        width: 89.66666666666666%;
+    }
+
+    .md-12 {
+        width: 98%;
+    }
+
+    .row-no-padding .md-1 {
+        width: 8.333333333333333%;
+    }
+
+    .row-no-padding .md-2 {
+        width: 16.66666666666667%;
+    }
+
+    .row-no-padding .md-3 {
+        width: 25%;
+    }
+
+    .row-no-padding .md-4 {
+        width: 33.33333333333333%;
+    }
+
+    .row-no-padding .md-5 {
+        width: 41.66666666666667%;
+    }
+
+    .row-no-padding .md-6 {
+        width: 50%;
+    }
+
+    .row-no-padding .md-7 {
+        width: 58.33333333333333%;
+    }
+
+    .row-no-padding .md-8 {
+        width: 66.66666666666666%;
+    }
+
+    .row-no-padding .md-9 {
+        width: 75%;
+    }
+
+    .row-no-padding .md-10 {
+        width: 83.33333333333333%;
+    }
+
+    .row-no-padding .md-11 {
+        width: 91.66666666666666%;
+    }
+
+    .row-no-padding .md-12 {
+        width: 100%;
+    }
 }
 
-/*========================= SMALL/SM RESOLUTIONS =============================*/
+/*======================= SMALL/SM RESOLUTIONS =======================*/
 
 @media only screen and (max-width: 768px) {
 
-    .row                                        {padding: 2%;}
+    .row {
+        padding: 2%;
+    }
 
-	.sm-1                                       {width: 6.333333333333333%;}
-	.sm-2                                       {width: 14.66666666666667%;}
-	.sm-3                                       {width: 23%;}
-	.sm-4                                       {width: 31.33333333333333%;}
-	.sm-5                                       {width: 39.66666666666667%;}
-	.sm-6                                       {width: 48%;}
-	.sm-7                                       {width: 56.33333333333333%;}
-	.sm-8                                       {width: 64.66666666666666%;}
-	.sm-9                                       {width: 73%;}
-	.sm-10                                      {width: 81.33333333333333%;}
-	.sm-11                                      {width: 89.66666666666666%;}
-	.sm-12                                      {width: 98%;}
+    .sm-1 {
+        width: 6.333333333333333%;
+    }
 
-	.row-no-padding .sm-1                       {width: 8.333333333333333%;}
-	.row-no-padding .sm-2                       {width: 16.66666666666667%;}
-	.row-no-padding .sm-3                       {width: 25%;}
-	.row-no-padding .sm-4                       {width: 33.33333333333333%;}
-	.row-no-padding .sm-5                       {width: 41.66666666666667%;}
-	.row-no-padding .sm-6                       {width: 50%;}
-	.row-no-padding .sm-7                       {width: 58.33333333333333%;}
-	.row-no-padding .sm-8                       {width: 66.66666666666666%;}
-	.row-no-padding .sm-9                       {width: 75%;}
-	.row-no-padding .sm-10                      {width: 83.33333333333333%;}
-	.row-no-padding .sm-11                      {width: 91.66666666666666%;}
-	.row-no-padding .sm-12                      {width: 100%;}
+    .sm-2 {
+        width: 14.66666666666667%;
+    }
+
+    .sm-3 {
+        width: 23%;
+    }
+
+    .sm-4 {
+        width: 31.33333333333333%;
+    }
+
+    .sm-5 {
+        width: 39.66666666666667%;
+    }
+
+    .sm-6 {
+        width: 48%;
+    }
+
+    .sm-7 {
+        width: 56.33333333333333%;
+    }
+
+    .sm-8 {
+        width: 64.66666666666666%;
+    }
+
+    .sm-9 {
+        width: 73%;
+    }
+
+    .sm-10 {
+        width: 81.33333333333333%;
+    }
+
+    .sm-11 {
+        width: 89.66666666666666%;
+    }
+
+    .sm-12 {
+        width: 98%;
+    }
+
+    .row-no-padding .sm-1 {
+        width: 8.333333333333333%;
+    }
+
+    .row-no-padding .sm-2 {
+        width: 16.66666666666667%;
+    }
+
+    .row-no-padding .sm-3 {
+        width: 25%;
+    }
+
+    .row-no-padding .sm-4 {
+        width: 33.33333333333333%;
+    }
+
+    .row-no-padding .sm-5 {
+        width: 41.66666666666667%;
+    }
+
+    .row-no-padding .sm-6 {
+        width: 50%;
+    }
+
+    .row-no-padding .sm-7 {
+        width: 58.33333333333333%;
+    }
+
+    .row-no-padding .sm-8 {
+        width: 66.66666666666666%;
+    }
+
+    .row-no-padding .sm-9 {
+        width: 75%;
+    }
+
+    .row-no-padding .sm-10 {
+        width: 83.33333333333333%;
+    }
+
+    .row-no-padding .sm-11 {
+        width: 91.66666666666666%;
+    }
+
+    .row-no-padding .sm-12 {
+        width: 100%;
+    }
 
 }
 
-/*====================== EXTRA SMALL/XS RESOLUTIONS ==========================*/
+/*==================== EXTRA SMALL/XS RESOLUTIONS ====================*/
 
 @media only screen and (max-width: 480px) {
 
-	.row                                        {padding: 3%;}
+    .row {
+        padding: 3%;
+    }
 
-	.xs-1                                       {width: 6.333333333333333%;}
-	.xs-2                                       {width: 14.66666666666667%;}
-	.xs-3                                       {width: 23%;}
-	.xs-4                                       {width: 31.33333333333333%;}
-	.xs-5                                       {width: 39.66666666666667%;}
-	.xs-6                                       {width: 48%;}
-	.xs-7                                       {width: 56.33333333333333%;}
-	.xs-8                                       {width: 64.66666666666666%;}
-	.xs-9                                       {width: 73%;}
-	.xs-10                                      {width: 81.33333333333333%;}
-	.xs-11                                      {width: 89.66666666666666%;}
-	.xs-12                                      {width: 98%;}
+    .xs-1 {
+        width: 6.333333333333333%;
+    }
 
-	.row-no-padding .xs-1                       {width: 8.333333333333333%;}
-	.row-no-padding .xs-2                       {width: 16.66666666666667%;}
-	.row-no-padding .xs-3                       {width: 25%;}
-	.row-no-padding .xs-4                       {width: 33.33333333333333%;}
-	.row-no-padding .xs-5                       {width: 41.66666666666667%;}
-	.row-no-padding .xs-6                       {width: 50%;}
-	.row-no-padding .xs-7                       {width: 58.33333333333333%;}
-	.row-no-padding .xs-8                       {width: 66.66666666666666%;}
-	.row-no-padding .xs-9                       {width: 75%;}
-	.row-no-padding .xs-10                      {width: 83.33333333333333%;}
-	.row-no-padding .xs-11                      {width: 91.66666666666666%;}
-	.row-no-padding .xs-12                      {width: 100%;}
+    .xs-2 {
+        width: 14.66666666666667%;
+    }
 
+    .xs-3 {
+        width: 23%;
+    }
+
+    .xs-4 {
+        width: 31.33333333333333%;
+    }
+
+    .xs-5 {
+        width: 39.66666666666667%;
+    }
+
+    .xs-6 {
+        width: 48%;
+    }
+
+    .xs-7 {
+        width: 56.33333333333333%;
+    }
+
+    .xs-8 {
+        width: 64.66666666666666%;
+    }
+
+    .xs-9 {
+        width: 73%;
+    }
+
+    .xs-10 {
+        width: 81.33333333333333%;
+    }
+
+    .xs-11 {
+        width: 89.66666666666666%;
+    }
+
+    .xs-12 {
+        width: 98%;
+    }
+
+    .row-no-padding .xs-1 {
+        width: 8.333333333333333%;
+    }
+
+    .row-no-padding .xs-2 {
+        width: 16.66666666666667%;
+    }
+
+    .row-no-padding .xs-3 {
+        width: 25%;
+    }
+
+    .row-no-padding .xs-4 {
+        width: 33.33333333333333%;
+    }
+
+    .row-no-padding .xs-5 {
+        width: 41.66666666666667%;
+    }
+
+    .row-no-padding .xs-6 {
+        width: 50%;
+    }
+
+    .row-no-padding .xs-7 {
+        width: 58.33333333333333%;
+    }
+
+    .row-no-padding .xs-8 {
+        width: 66.66666666666666%;
+    }
+
+    .row-no-padding .xs-9 {
+        width: 75%;
+    }
+
+    .row-no-padding .xs-10 {
+        width: 83.33333333333333%;
+    }
+
+    .row-no-padding .xs-11 {
+        width: 91.66666666666666%;
+    }
+
+    .row-no-padding .xs-12 {
+        width: 100%;
+    }
+	
 }
