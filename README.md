@@ -30,10 +30,10 @@ $ gulp
 
 ### Tasks ###
 
-- `gulp` : run all tasks and watch files for changes
-- `gulp buildCSS` : combine all css source files/media queries and minify the generated file
-- `gulp buildJS` : combine all js source files and minify the generated file
-- `gulp watch` : call for watch files
+- `gulp`: run all tasks and watch files for changes
+- `gulp buildCSS`: combine all css source files/media queries and minify the generated file
+- `gulp buildJS`: combine all js source files and minify the generated file
+- `gulp watch`: call for watch files
 
 ### License ###
 
