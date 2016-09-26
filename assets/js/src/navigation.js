@@ -9,17 +9,17 @@
 
 var screenCover = jQuery('.screen-cover'),
     nav         = jQuery('.main-nav'),
-    page        = jQuery('html, body');
+    navBtn      = jQuery('.nav-btn'),
+    page        = jQuery('html, body'),
+    parentItem  = jQuery('.menu-item-has-children');
 
 //-------------------------------------------------------------------
 // FUNCTION: OPEN MOBILE NAVIGATION
 //-------------------------------------------------------------------
 
-function OpenNavigation() {
+function openNavigation() {
 
     'use strict';
-
-    jQuery(this).blur();
     nav.addClass('main-nav-is-active');
     page.addClass('hide-overflow');
     screenCover.removeClass('hide');
@@ -30,34 +30,30 @@ function OpenNavigation() {
 // FUNCTION: OPEN/CLOSE NAVIGATION SUB ITEMS
 //-------------------------------------------------------------------
 
-function OpenSubitem(e) {
+jQuery(parentItem).on('click', function (event) {
 
     'use strict';
 
-    e.preventDefault();
+    event.preventDefault();
 
     if (window.innerWidth <= 992) {
-        jQuery('ul:first', this).slideToggle(400);
-        jQuery('a:first', this).toggleClass('menu-item-is-active');
+        jQuery(this).toggleClass('menu-item-is-active');
         jQuery('ul', this).children().click(function (event) {
             event.stopPropagation();
         });
     }
-}
+});
 
 //-------------------------------------------------------------------
 // FUNCTION: CLOSE MOBILE NAVIGATION
 //-------------------------------------------------------------------
 
-function CloseNavigation() {
+function closeNavigation() {
 
     'use strict';
-
-    if ((window.innerWidth <= 992) && (nav.is(':visible'))) {
-        nav.removeClass('main-nav-is-active');
-        page.removeClass('hide-overflow');
-        screenCover.addClass('hide');
-    }
+    nav.removeClass('main-nav-is-active');
+    page.removeClass('hide-overflow');
+    screenCover.addClass('hide');
 
 }
 
@@ -65,7 +61,7 @@ function CloseNavigation() {
 // FUNCTION: MOBILE NAVIGATION RESIZE FALLBACK
 //-------------------------------------------------------------------
 
-function ResizeFallback() {
+function resizeFallback() {
 
     'use strict';
 
@@ -77,8 +73,6 @@ function ResizeFallback() {
         jQuery('ul', nav).css({
             'display': ''
         });
-
-        jQuery('a', nav).removeClass('menu-item-is-active');
 
     } else {
 
@@ -94,8 +88,11 @@ function ResizeFallback() {
 // CALL FUNCTIONS
 //-------------------------------------------------------------------
 
-jQuery(window).resize(ResizeFallback);
-jQuery('.nav-btn').on('click', OpenNavigation);
-jQuery('.menu-item-has-children').on('click', OpenSubitem);
-jQuery(nav).on('swipeleft', CloseNavigation);
-jQuery(screenCover).on('swipeleft click', CloseNavigation);
+jQuery(navBtn).on('click', function () {
+    'use strict';
+    this.blur();
+    openNavigation();
+});
+jQuery(nav).on('swipeleft', closeNavigation);
+jQuery(screenCover).on('swipeleft click', closeNavigation);
+jQuery(window).on('resize', resizeFallback);

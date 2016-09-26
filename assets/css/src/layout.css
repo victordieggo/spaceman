@@ -4,8 +4,7 @@
 
 /*============================ MAIN COLORS ===========================*/
 
-.bg-main,
-.menu-item-is-active {
+.bg-main {
     background-color: #0d6788;
 }
 

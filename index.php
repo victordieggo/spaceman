@@ -28,7 +28,7 @@
                 --><div class="col-6 vcenter">
 
                     <!--============================ NAVIGATION ============================-->
-                    <nav class="main-nav fright">
+                    <nav class="main-nav fright smooth-transition">
                         <ul>
                             <li><a href="#">Home</a></li>
                             <li class="menu-item-has-children">
@@ -58,9 +58,7 @@
                     </nav>
                     <!--============================ /NAVIGATION ============================-->
 
-                    <button class="nav-btn show-md text-white fright">
-                        <i class="fa fa-bars fa-2x"></i>
-                    </button>
+                    <button class="nav-btn show-md text-white fright"></button>
 
                 </div>
             </div>
@@ -83,7 +81,6 @@
 			<div class="row">
 				<div class="col-4 md-12 pad-05">
 					<h6 class="text-uppercase">
-						<i class="fa fa-rocket fa-fw" aria-hidden="true"></i>
 						Spaceman 1.9.0
 					</h6>
 					<hr class="bg-grey spacer-10">
@@ -93,7 +90,6 @@
 				</div>
 				<div class="col-4 md-6 sm-12 pad-05">
 					<h6 class="text-uppercase">
-						<i class="fa fa-code fa-fw" aria-hidden="true"></i>
 						HTML/CSS boilerplate
 					</h6>
 					<hr class="bg-grey spacer-10">
@@ -103,7 +99,6 @@
 				</div>
 				<div class="col-4 md-6 sm-12 pad-05">
 					<h6 class="text-uppercase">
-						<i class="fa fa-paper-plane fa-fw" aria-hidden="true"></i>
 						Far above the moon
 					</h6>
 					<hr class="bg-grey spacer-10">
