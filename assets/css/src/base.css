@@ -65,6 +65,14 @@
     display: inline-block;
 }
 
+.table {
+    display: table;
+}
+
+.table-cell {
+    display: table-cell;
+}
+
 /*============================= SPACERS ==============================*/
 
 .spacer-05 {
