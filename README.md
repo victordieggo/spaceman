@@ -28,7 +28,7 @@ You´re all set! Now run gulp and engage into hyperspace with Spaceman:
 $ gulp
 ```
 
-### Tasks ###
+### Gulp Tasks ###
 
 - `gulp`: run all tasks and watch files for changes
 - `gulp buildCSS`: combine all css source files/media queries and minify the generated file
