@@ -30,18 +30,22 @@ function openNavigation() {
 // FUNCTION: OPEN/CLOSE NAVIGATION SUB ITEMS
 //-------------------------------------------------------------------
 
-jQuery(parentItem).on('click', function (event) {
+jQuery(parentItem).each(function () {
 
     'use strict';
 
-    event.preventDefault();
+    jQuery('a:first', this).click(function (e) {
+        e.preventDefault();
+    });
 
-    if (window.innerWidth <= 992) {
-        jQuery(this).toggleClass('menu-item-is-active');
-        jQuery('ul', this).children().click(function (event) {
-            event.stopPropagation();
-        });
-    }
+    jQuery(this).click(function () {
+        if (window.innerWidth <= 992) {
+            jQuery(this).toggleClass('menu-item-is-active');
+            jQuery('ul', this).children().click(function (event) {
+                event.stopPropagation();
+            });
+        }
+    });
 });
 
 //-------------------------------------------------------------------
