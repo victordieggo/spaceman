@@ -4,8 +4,8 @@
 
 /*======================== FONT-FAMILY/HEIGHT ========================*/
 
-body,
 .btn,
+body,
 input,
 select,
 textarea {
@@ -14,12 +14,8 @@ textarea {
 
 /*============================ FONT-SIZE =============================*/
 
-html {
-    font-size: 100%;
-}
-
-body,
 .btn,
+body,
 input,
 select,
 textarea {
@@ -104,14 +100,14 @@ a {
 
 /*=============================== MISC ===============================*/
 
-blockquote,
 article,
+blockquote,
 .text-block {
     line-height: 160%;
 }
 
-.align-center,
-.btn {
+.btn,
+.align-center {
     text-align: center;
 }
 
@@ -124,8 +120,8 @@ article,
 }
 
 a,
-nav a:hover,
 .btn:hover,
+.main-nav a:hover,
 .no-underline:hover {
     text-decoration: none;
 }
