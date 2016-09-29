@@ -73,6 +73,11 @@
     display: table-cell;
 }
 
+input[type=radio],
+input[type=checkbox] {
+    display: none;
+}
+
 /*============================= SPACERS ==============================*/
 
 .spacer-05 {
@@ -329,16 +334,21 @@ textarea,
     background-color: rgba(29, 29, 29, 0.7);
 }
 
-.smooth-transition,
 .btn,
 input,
 select,
 textarea,
-.main-nav a {
+.main-nav a,
+.smooth-transition {
     -webkit-transition: all .3s;
     -moz-transition: all .3s;
     -o-transition: all .3s;
     transition: all .3s;
+}
+
+.label {
+    padding: 0.4em 0.6em;
+    border-radius: 0.2em;
 }
 
 /* =====================================================================

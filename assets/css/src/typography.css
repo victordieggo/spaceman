@@ -14,6 +14,10 @@ textarea {
 
 /*============================ FONT-SIZE =============================*/
 
+html {
+    font-size: 100%;
+}
+
 body,
 .btn,
 input,
@@ -141,5 +145,5 @@ a:hover {
     body {
         font-size: 0.8em;
     }
-    
+
 }

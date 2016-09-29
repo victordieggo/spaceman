@@ -29,9 +29,15 @@ body {
 }
 
 input,
+input:focus,
 textarea,
+textarea:focus,
 button,
+button:focus,
 select,
-a {
+select:focus,
+a,
+a:active {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    outline: none;
 }
