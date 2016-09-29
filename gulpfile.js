@@ -30,8 +30,7 @@ gulp.task('buildCSS', function () {
         'assets/css/src/form.css',
         'assets/css/src/buttons.css',
         'assets/css/src/navigation.css',
-        'assets/css/src/layout.css',
-        'assets/css/src/flexslider.css'
+        'assets/css/src/layout.css'
     ])
         .pipe(concat('global-styles.css'))
         .pipe(combineMq())
@@ -70,7 +69,7 @@ gulp.task('watch', function () {
 
     gulp.watch(['assets/js/src/*.js'], ['buildJS']);
     gulp.watch(['assets/css/src/*.css'], ['buildCSS']);
-    gulp.watch(['./**/*.php', './**/*.htm'], livereload.reload);
+    gulp.watch(['./**/*.php', './**/*.html'], livereload.reload);
 
 });
 
