@@ -28,6 +28,7 @@ gulp.task('buildCSS', function () {
         'assets/css/src/typography.css',
         'assets/css/src/base.css',
         'assets/css/src/form.css',
+        'assets/css/src/buttons.css',
         'assets/css/src/navigation.css',
         'assets/css/src/layout.css',
         'assets/css/src/flexslider.css'

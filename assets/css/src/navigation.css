@@ -99,7 +99,7 @@
         content: "";
         padding: 0.8em;
         background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDguNyA1My41Ij48cGF0aCBmaWxsPSIjZmZmIiBkPSJNOTYuOCAxLjZDODkuNSA3IDgyLjggMTMuMyA3NS45IDE5Yy03LjIgNi0xNC4zIDEyLTIxLjUgMTcuOS0xNC0xMS44LTI3LjctMjQuMS00Mi4yLTM1LjJDNy43LTEuNi43LS4xIDAgNi4xYy0uNCA0LjEgMi41IDYuMiA1LjIgOC41IDkgNy41IDE4LjEgMTUuMSAyNy4xIDIyLjYgNC42IDMuOSA5LjMgNy43IDEzLjkgMTEuNiAzLjggMy4xIDcuMSA2LjEgMTIuMiAzLjEuMi0uMS40LS4zLjYtLjQgMTUtMTIuNCAyOS45LTI0LjggNDQuOC0zNy4yIDIuNS0yLjEgNS0zLjkgNC45LTcuNi0uMy02LjQtNy4zLTguNS0xMS45LTUuMXoiLz48L3N2Zz4=) no-repeat right;
-        background-size: 1em;
+        background-size: 65%;
     }
 
     .menu-item-is-active > a:after {
@@ -110,9 +110,8 @@
         transform: rotateX(180deg);
     }
 
-    .nav-btn:before {
-        content: "";
-        padding: 1em;
+    .nav-btn {
+        padding: 0.8em;
         background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjEgNy45IDE1Ny4zIDExOS4xIj48ZyBmaWxsPSIjZmZmIj48cGF0aCBkPSJNMTUwIDI0LjlIMTBjLTQuNyAwLTguNS0zLjgtOC41LTguNVM1LjMgNy45IDEwIDcuOWgxNDBjNC43IDAgOC41IDMuOCA4LjUgOC41cy00IDguNS04IDguNXpNMTUwIDEyN0gxMGMtNC43IDAtOC41LTMuOC04LjUtOC41UzUuMyAxMTAgMTAgMTEwaDE0MGM0LjcgMCA4LjUgMy44IDguNSA4LjUgMCA1LTQgOS04IDl6TTE1MCA3NkgxMGMtNS4yIDAtOS0zLjgtOS04LjVTNC44IDU5IDkuNSA1OWgxNDBjNC43IDAgOC41IDMuOCA4LjUgOC41cy00IDguNS04IDguNXoiLz48L2c+PC9zdmc+) no-repeat center;
         background-size: 100%;
     }

@@ -45,6 +45,15 @@
 			<input class="btn btn-large btn-warning" type="button" value="btn warning" />
 			<input class="btn btn-large btn-danger" type="submit" value="btn danger" />
 
+			<div class="pad-05"></div>
+
+			<!-- OUTLINE BUTTONS -->
+			<a class="btn btn-outline btn-large">btn</a>
+			<a class="btn btn-outline btn-large btn-sucess">btn sucess</a>
+			<button class="btn btn-outline btn-large btn-info">btn info</button>
+			<input class="btn btn-outline btn-large btn-warning" type="button" value="btn warning" />
+			<input class="btn btn-outline btn-large btn-danger" type="submit" value="btn danger" />
+
 			<hr class="bg-grey spacer-10">
 			<!--============================ /BUTTONS ============================-->
 
@@ -57,10 +66,10 @@
 				<option>opção</option>
 			</select>
 
-			<input class="hide" id="bike-checkbox" type="checkbox" name="vehicle" value="Bike">
+			<input id="bike-checkbox" type="checkbox" name="vehicle" value="Bike">
 			<label class="label-checkbox text-small" for="bike-checkbox">I have a bike</label>
 
-			<input class="hide" id="bike" type="radio" name="vehicle" value="Bike">
+			<input id="bike" type="radio" name="vehicle" value="Bike">
 			<label class="label-radio text-small" for="bike">I have a bike</label>
 
 			<div class="pad-05"></div>
@@ -71,10 +80,10 @@
 				<option>opção</option>
 			</select>
 
-			<input class="hide" id="car-checkbox" type="checkbox" name="vehicle" value="Car">
+			<input id="car-checkbox" type="checkbox" name="vehicle" value="Car">
 			<label class="label-checkbox" for="car-checkbox">I have a car</label>
 
-			<input class="hide" id="car" type="radio" name="vehicle" value="Car">
+			<input id="car" type="radio" name="vehicle" value="Car">
 			<label class="label-radio" for="car">I have a car</label>
 
 			<div class="pad-05"></div>
@@ -85,10 +94,10 @@
 				<option>opção</option>
 			</select>
 
-			<input class="hide" id="walk-checkbox" type="checkbox" name="vehicle" value="walk">
+			<input id="walk-checkbox" type="checkbox" name="vehicle" value="walk">
 			<label class="label-checkbox text-large" for="walk-checkbox">I like to walk</label>
 
-			<input class="hide" id="walk" type="radio" name="vehicle" value="walk">
+			<input id="walk" type="radio" name="vehicle" value="walk">
 			<label class="label-radio text-large" for="walk">I like to walk</label>
 
 			<!--============================ /FORM ELEMENTS ============================-->
@@ -105,22 +114,13 @@
 			<blockquote class="pad-10 bg-lightgrey spacer-top-05"><i>"The path of a cosmonaut is not an easy, triumphant march to glory. You have to get to know the meaning not just of joy but also of grief, before being allowed in the spacecraft cabin."</i></blockquote>
 			<!--============================ /TYPOGRAPHY ============================-->
 
+			<!--============================ LABELS ============================-->
 			<hr class="bg-grey spacer-10">
-
-			<!--============================ BACKGROUNDS ============================-->
-			<strong class="block text-main text-uppercase spacer-bottom-05">Backgrounds/Color Pallete</strong>
-			<div class="align-center">
-				<div class="pad-20 inline-block circle bg-lightgrey"></div>
-				<div class="pad-20 inline-block circle bg-grey"></div>
-				<div class="pad-20 inline-block circle bg-dark"></div>
-				<div class="pad-20 inline-block circle bg-darker"></div>
-				<div class="pad-20 inline-block circle bg-main"></div>
-				<div class="pad-20 inline-block circle bg-sucess"></div>
-				<div class="pad-20 inline-block circle bg-info"></div>
-				<div class="pad-20 inline-block circle bg-warning"></div>
-				<div class="pad-20 inline-block circle bg-danger"></div>
-			</div>
-			<!--============================ /BACKGROUNDS ============================-->
+			<strong class="block text-main text-uppercase spacer-bottom-10">Labels</strong>
+			<p class="label bg-lightgrey text-large">Lorem</p>
+			<p class="label bg-lightgrey">Lorem</p>
+			<p class="label bg-lightgrey text-small">Lorem</p>
+			<!--============================ /LABELS ============================-->
 		</div>
 
 		<div class="col-12">
@@ -128,7 +128,9 @@
 			<hr class="bg-grey">
 			<div class="show-xs pad-05"></div>
 		</div>
-		<div class="col-12"><strong class="text-main text-uppercase">Default Grid</strong></div>
+		<div class="col-12">
+			<strong class="text-main text-uppercase">Default Grid</strong>
+		</div>
 
 		<div class="col-1 bg-main pad-05"></div>
 		<div class="col-11 bg-main pad-05"></div>
@@ -153,19 +155,19 @@
 
 		<div class="col-12">
 			<div class="row-no-padding">
-				<div class="col-1 md-4 xs-6 bg-main pad-05"></div>
-				<div class="col-11 md-8 xs-6 bg-danger pad-05"></div>
-				<div class="col-2 bg-main pad-05"></div>
-				<div class="col-10 bg-danger pad-05"></div>
-				<div class="col-3 bg-main pad-05"></div>
-				<div class="col-9 bg-danger pad-05"></div>
-				<div class="col-4 bg-main pad-05"></div>
-				<div class="col-8 bg-danger pad-05"></div>
-				<div class="col-5 bg-main pad-05"></div>
-				<div class="col-7 bg-danger pad-05"></div>
-				<div class="col-6 bg-main pad-05"></div>
-				<div class="col-6 bg-danger pad-05"></div>
-				<div class="col-12 bg-main pad-05"></div>
+				<div class="col-1 md-4 xs-6 bg-lightgrey pad-05"></div>
+				<div class="col-11 md-8 xs-6 bg-grey pad-05"></div>
+				<div class="col-2 bg-lightgrey pad-05"></div>
+				<div class="col-10 bg-grey pad-05"></div>
+				<div class="col-3 bg-lightgrey pad-05"></div>
+				<div class="col-9 bg-grey pad-05"></div>
+				<div class="col-4 bg-lightgrey pad-05"></div>
+				<div class="col-8 bg-grey pad-05"></div>
+				<div class="col-5 bg-lightgrey pad-05"></div>
+				<div class="col-7 bg-grey pad-05"></div>
+				<div class="col-6 bg-lightgrey pad-05"></div>
+				<div class="col-6 bg-grey pad-05"></div>
+				<div class="col-12 bg-lightgrey pad-05"></div>
 			</div>
 		</div>
 	</div>
