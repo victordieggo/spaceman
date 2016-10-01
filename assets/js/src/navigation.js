@@ -18,12 +18,10 @@ var screenCover = jQuery('.screen-cover'),
 //-------------------------------------------------------------------
 
 function openNavigation() {
-
     'use strict';
     nav.addClass('main-nav-is-active');
     page.addClass('hide-overflow');
     screenCover.removeClass('hide');
-
 }
 
 //-------------------------------------------------------------------
@@ -31,13 +29,10 @@ function openNavigation() {
 //-------------------------------------------------------------------
 
 jQuery(parentItem).each(function () {
-
     'use strict';
-
-    jQuery('a:first', this).click(function (e) {
-        e.preventDefault();
+    jQuery('a:first', this).click(function (event) {
+        event.preventDefault();
     });
-
     jQuery(this).click(function () {
         if (window.innerWidth <= 992) {
             jQuery(this).toggleClass('menu-item-is-active');
@@ -53,12 +48,10 @@ jQuery(parentItem).each(function () {
 //-------------------------------------------------------------------
 
 function closeNavigation() {
-
     'use strict';
     nav.removeClass('main-nav-is-active');
     page.removeClass('hide-overflow');
     screenCover.addClass('hide');
-
 }
 
 //-------------------------------------------------------------------
@@ -66,25 +59,18 @@ function closeNavigation() {
 //-------------------------------------------------------------------
 
 function resizeFallback() {
-
     'use strict';
-
     if (window.innerWidth > 992) {
-
         page.removeClass('hide-overflow');
         screenCover.addClass('hide');
-
         jQuery('ul', nav).css({
             'display': ''
         });
-
     } else {
-
         if (nav.hasClass('main-nav-is-active')) {
             page.addClass('hide-overflow');
             screenCover.removeClass('hide');
         }
-
     }
 }
 
