@@ -1,27 +1,26 @@
 /* =====================================================================
- * GULPFILE FOR SPACEMAN 1.9.0
+ * GULPFILE FOR SPACEMAN
  * ===================================================================*/
-/*global require*/
+/*jslint node: true */
+'use strict';
 
 //-------------------------------------------------------------------
 // SET VARIABLES
 //-------------------------------------------------------------------
 
-var gulp       = require('gulp'),
-    concat     = require('gulp-concat'),
-    cssmin     = require('gulp-cssmin'),
-    uglify     = require('gulp-uglify'),
-    livereload = require('gulp-livereload'),
-    combineMq  = require('gulp-combine-mq');
+var gulp        = require('gulp'),
+    concat      = require('gulp-concat'),
+    cssmin      = require('gulp-cssmin'),
+    uglify      = require('gulp-uglify'),
+    combineMq   = require('gulp-combine-mq'),
+    browserSync = require('browser-sync').create(),
+    path        = require('path');
 
 //-------------------------------------------------------------------
 // BUILD CSS
 //-------------------------------------------------------------------
 
-gulp.task('buildCSS', function () {
-
-    'use strict';
-
+gulp.task('css', function () {
     gulp.src([
         'assets/css/src/reset.css',
         'assets/css/src/grid.css',
@@ -32,29 +31,25 @@ gulp.task('buildCSS', function () {
         'assets/css/src/navigation.css',
         'assets/css/src/layout.css'
     ])
-        .pipe(concat('global-styles.css'))
+        .pipe(concat('style.css'))
         .pipe(combineMq())
         .pipe(cssmin())
         .pipe(gulp.dest('assets/css/dist'))
-        .pipe(livereload());
-
+        .pipe(browserSync.stream());
 });
 
 //-------------------------------------------------------------------
 // BUILD JS
 //-------------------------------------------------------------------
 
-gulp.task('buildJS', function () {
-
-    'use strict';
-
+gulp.task('js', function () {
     gulp.src([
         'assets/js/src/*.js'
     ])
-        .pipe(concat('global-js.js'))
+        .pipe(concat('main.js'))
         .pipe(uglify())
         .pipe(gulp.dest('assets/js/dist'))
-        .pipe(livereload());
+        .pipe(browserSync.stream());
 });
 
 //-------------------------------------------------------------------
@@ -62,15 +57,12 @@ gulp.task('buildJS', function () {
 //-------------------------------------------------------------------
 
 gulp.task('watch', function () {
-
-    'use strict';
-
-    livereload.listen();
-
-    gulp.watch(['assets/js/src/*.js'], ['buildJS']);
-    gulp.watch(['assets/css/src/*.css'], ['buildCSS']);
-    gulp.watch(['./**/*.php', './**/*.html'], livereload.reload);
-
+    browserSync.init({
+        proxy: 'localhost/' + path.basename(__dirname)
+    });
+    gulp.watch(['assets/js/src/*.js'], ['js']);
+    gulp.watch(['assets/css/src/*.css'], ['css']);
+    gulp.watch(['./**/*.html', './**/*.php'], browserSync.reload);
 });
 
-gulp.task('default', ['watch']);
+gulp.task('default', ['js', 'css', 'watch']);
