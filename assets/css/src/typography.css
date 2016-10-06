@@ -78,22 +78,6 @@ body,
     color: #5cb85c;
 }
 
-.text-warning {
-    color: #f0ad4e;
-}
-
-.text-danger {
-    color: #d9534f;
-}
-
-.text-info {
-    color: #49a0d7;
-}
-
-.text-main {
-    color: #0d6788;
-}
-
 a {
     color: inherit;
 }

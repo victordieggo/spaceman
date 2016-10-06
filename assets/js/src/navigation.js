@@ -63,9 +63,6 @@ function resizeFallback() {
     if (window.innerWidth > 992) {
         page.removeClass('hide-overflow');
         screenCover.addClass('hide');
-        jQuery('ul', nav).css({
-            'display': ''
-        });
     } else {
         if (nav.hasClass('main-nav-is-active')) {
             page.addClass('hide-overflow');
