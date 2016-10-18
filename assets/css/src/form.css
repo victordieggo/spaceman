@@ -4,33 +4,28 @@
 
 /*============================ MAIN STYLES ===========================*/
 
-input:not(.btn),
 select,
 textarea,
+input:not(.btn),
 .label-checkbox:before {
     border-radius: 0.2em;
 }
 
-input:not(.btn),
 select,
-textarea {
+textarea,
+input:not(.btn) {
     border: solid 1px #cecece;
+    padding: 0 0.6em;
 }
 
-input:not(.btn):focus,
 select:focus,
-textarea:focus {
+textarea:focus,
+input:not(.btn):focus {
     border-color: #909090;
 }
 
-input:not(.btn),
-select {
-    height: 2.6em;
-    padding: 0 1em;
-}
-
 textarea {
-    padding: 1em;
+    padding: 0.6em;
 }
 
 /*======================== CUSTOM SELECT ARROW =======================*/
