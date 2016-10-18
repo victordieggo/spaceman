@@ -27,11 +27,11 @@
     position: relative;
 }
 
-.absolute,
 .hide,
 .show-md,
 .show-sm,
-.show-xs {
+.show-xs,
+.absolute {
     position: absolute;
 }
 
@@ -58,10 +58,10 @@
     display: inline;
 }
 
-.inline-block,
-.vcenter,
 .btn,
-.label {
+.label,
+.vcenter,
+.inline-block {
     display: inline-block;
 }
 
@@ -231,11 +231,11 @@ input[type=checkbox] {
  * ===================================================================*/
 
 a,
+label,
 input,
 select,
-textarea,
 button,
-label {
+textarea {
     cursor: pointer;
 }
 
@@ -256,13 +256,20 @@ textarea {
     color: #888;
 }
 
+.btn,
 input,
+button,
 select,
-textarea,
-button {
+textarea {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+    height: 2.7em;
+}
+
+a.btn {
+    vertical-align: top;
+    line-height: calc(2.7em - 4px);
 }
 
 /* =====================================================================
@@ -271,9 +278,9 @@ button {
 
 /*============================== SIZING ==============================*/
 
+.btn,
 .auto-size,
-.auto-width,
-.btn {
+.auto-width {
     width: auto;
 }
 
@@ -282,14 +289,15 @@ button {
     height: auto;
 }
 
-.full-size,
-.full-width,
 input,
 select,
-textarea {
+textarea,
+.full-size,
+.full-width {
     width: 100%;
 }
 
+textarea,
 .full-size,
 .full-height {
     height: 100%;
@@ -297,8 +305,8 @@ textarea {
 
 /*=============================== MISC ===============================*/
 
-.centered,
-.wrapper {
+.wrapper,
+.centered {
     margin: 0 auto;
 }
 
@@ -315,12 +323,8 @@ hr {
     overflow: hidden;
 }
 
-.vcenter,
-input,
-select,
-textarea,
-.btn,
-.label {
+.label,
+.vcenter {
     vertical-align: middle;
 }
 
