@@ -6,13 +6,6 @@
 
 select,
 textarea,
-input:not(.btn),
-.label-checkbox:before {
-    border-radius: 0.2em;
-}
-
-select,
-textarea,
 input:not(.btn) {
     border: solid 1px #cecece;
     padding: 0 0.6em;
@@ -53,6 +46,7 @@ select {
 .label-checkbox:before {
     padding: 0.4em;
     border: 0.2em solid #fff;
+    border-radius: 0.2em;
 }
 
 :checked+.label-checkbox:before {
