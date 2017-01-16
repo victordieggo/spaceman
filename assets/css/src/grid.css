@@ -142,6 +142,10 @@
 
 @media only screen and (max-width: 992px) {
 
+    .row > [class*='col-'] {
+      padding: 0.5em;
+    }
+
     .md-1 {
         width: 6.333333333333333%;
     }
@@ -448,5 +452,5 @@
     .row-no-padding .xs-12 {
         width: 100%;
     }
-	
+
 }
