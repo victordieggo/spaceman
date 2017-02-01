@@ -13,7 +13,8 @@
 }
 
 .fnone,
-.vcenter {
+.vcenter,
+.centered {
     float: none;
 }
 
@@ -335,11 +336,6 @@ hr {
     border-radius: 50%;
 }
 
-.screen-cover {
-    background-color: rgb(29, 29, 29);
-    background-color: rgba(29, 29, 29, 0.7);
-}
-
 .btn,
 input,
 select,
@@ -378,6 +374,7 @@ textarea,
         top: -9999px;
         visibility: hidden;
     }
+
 }
 
 /*======================= SMALL/SM RESOLUTIONS =======================*/
