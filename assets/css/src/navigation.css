@@ -43,6 +43,14 @@
         background-color: #0d6788;
     }
 
+    html.hide-overflow {
+        overflow: auto;
+    }
+
+    .screen-cover {
+        display: none;
+    }
+
 }
 
 /*======================= MEDIUM/MD RESOLUTIONS ======================*/
@@ -111,10 +119,17 @@
     }
 
     .nav-btn {
-        padding: 0.8em;
         background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjEgNy45IDE1Ny4zIDExOS4xIj48ZyBmaWxsPSIjZmZmIj48cGF0aCBkPSJNMTUwIDI0LjlIMTBjLTQuNyAwLTguNS0zLjgtOC41LTguNVM1LjMgNy45IDEwIDcuOWgxNDBjNC43IDAgOC41IDMuOCA4LjUgOC41cy00IDguNS04IDguNXpNMTUwIDEyN0gxMGMtNC43IDAtOC41LTMuOC04LjUtOC41UzUuMyAxMTAgMTAgMTEwaDE0MGM0LjcgMCA4LjUgMy44IDguNSA4LjUgMCA1LTQgOS04IDl6TTE1MCA3NkgxMGMtNS4yIDAtOS0zLjgtOS04LjVTNC44IDU5IDkuNSA1OWgxNDBjNC43IDAgOC41IDMuOCA4LjUgOC41cy00IDguNS04IDguNXoiLz48L2c+PC9zdmc+) no-repeat center;
         background-size: 100%;
+        height: 1.5em;
+        width: 1.5em;
     }
+
+    .screen-cover {
+        background-color: rgb(29, 29, 29);
+        background-color: rgba(29, 29, 29, 0.7);
+    }
+
 }
 
 /*==================== EXTRA SMALL/XS RESOLUTIONS ====================*/

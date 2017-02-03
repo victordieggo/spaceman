@@ -13,7 +13,8 @@
 }
 
 .fnone,
-.vcenter {
+.vcenter,
+.centered {
     float: none;
 }
 
@@ -269,7 +270,7 @@ textarea {
     height: 2.7em;
 }
 
-a.btn {
+.btn {
     vertical-align: top;
     line-height: calc(2.7em - 4px);
 }
@@ -307,11 +308,6 @@ textarea,
 
 /*=============================== MISC ===============================*/
 
-.wrapper,
-.centered {
-    margin: 0 auto;
-}
-
 img {
     max-width: 100%;
 }
@@ -333,11 +329,6 @@ hr {
 .circle,
 .label-radio:before {
     border-radius: 50%;
-}
-
-.screen-cover {
-    background-color: rgb(29, 29, 29);
-    background-color: rgba(29, 29, 29, 0.7);
 }
 
 .btn,
@@ -378,6 +369,7 @@ textarea,
         top: -9999px;
         visibility: hidden;
     }
+
 }
 
 /*======================= SMALL/SM RESOLUTIONS =======================*/

@@ -1,85 +1,44 @@
 /* =====================================================================
- * SPACEMAN MOBILE NAVIGATION 1.9.0
+ * SPACEMAN MOBILE NAVIGATION
  * ===================================================================*/
-/*global $, jQuery, window, document*/
+/*global $, window, document*/
 
-//-------------------------------------------------------------------
-// SET VARIABLES
-//-------------------------------------------------------------------
+$(document).ready(function () {
 
-var screenCover = jQuery('.screen-cover'),
-    nav         = jQuery('.main-nav'),
-    navBtn      = jQuery('.nav-btn'),
-    page        = jQuery('html, body'),
-    parentItem  = jQuery('.menu-item-has-children');
-
-//-------------------------------------------------------------------
-// FUNCTION: OPEN MOBILE NAVIGATION
-//-------------------------------------------------------------------
-
-function openNavigation() {
     'use strict';
-    nav.addClass('main-nav-is-active');
-    page.addClass('hide-overflow');
-    screenCover.removeClass('hide');
-}
 
-//-------------------------------------------------------------------
-// FUNCTION: OPEN/CLOSE NAVIGATION SUB ITEMS
-//-------------------------------------------------------------------
+    // set variables
+    var screenCover = $('.screen-cover'),
+        nav         = $('.main-nav'),
+        navBtn      = $('.nav-btn'),
+        page        = $('html'),
+        parentItem  = $('.menu-item-has-children');
 
-jQuery(parentItem).each(function () {
-    'use strict';
-    jQuery('a:first', this).click(function (event) {
-        event.preventDefault();
-    });
-    jQuery(this).click(function () {
-        if (window.innerWidth <= 992) {
-            jQuery(this).toggleClass('menu-item-is-active');
-            jQuery('ul', this).children().click(function (event) {
-                event.stopPropagation();
-            });
-        }
-    });
-});
-
-//-------------------------------------------------------------------
-// FUNCTION: CLOSE MOBILE NAVIGATION
-//-------------------------------------------------------------------
-
-function closeNavigation() {
-    'use strict';
-    nav.removeClass('main-nav-is-active');
-    page.removeClass('hide-overflow');
-    screenCover.addClass('hide');
-}
-
-//-------------------------------------------------------------------
-// FUNCTION: MOBILE NAVIGATION RESIZE FALLBACK
-//-------------------------------------------------------------------
-
-function resizeFallback() {
-    'use strict';
-    if (window.innerWidth > 992) {
-        page.removeClass('hide-overflow');
-        screenCover.addClass('hide');
-    } else {
-        if (nav.hasClass('main-nav-is-active')) {
-            page.addClass('hide-overflow');
-            screenCover.removeClass('hide');
-        }
+    // main navigation
+    function mobileNavigation() {
+        nav.toggleClass('main-nav-is-active');
+        page.toggleClass('hide-overflow');
+        screenCover.toggleClass('hide');
     }
-}
 
-//-------------------------------------------------------------------
-// CALL FUNCTIONS
-//-------------------------------------------------------------------
+    // navigation sub-items
+    parentItem.each(function () {
+        $('a:first', this).click(function (event) {
+            event.preventDefault();
+        });
+        $(this).click(function () {
+            if (window.innerWidth <= 992) {
+                $(this).toggleClass('menu-item-is-active');
+                $('ul', this).children().click(function (event) {
+                    event.stopPropagation();
+                });
+            }
+        });
+    });
 
-jQuery(navBtn).on('click', function () {
-    'use strict';
-    this.blur();
-    openNavigation();
+    // call functions
+    navBtn.on('click', mobileNavigation);
+    nav.on('swipeleft', mobileNavigation);
+    screenCover.on('swipeleft click', mobileNavigation);
+
 });
-jQuery(nav).on('swipeleft', closeNavigation);
-jQuery(screenCover).on('swipeleft click', closeNavigation);
-jQuery(window).on('resize', resizeFallback);
