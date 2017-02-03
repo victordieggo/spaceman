@@ -55,7 +55,6 @@
 .row-centered > [class*='col-'] {
     float: none;
     display: inline-block;
-    margin: 1% calc(1% - 2px);
 }
 
 /*=============================== COLUMNS ============================*/
