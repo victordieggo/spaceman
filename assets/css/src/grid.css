@@ -1,11 +1,12 @@
 /* =====================================================================
- * SPACEMAN GRID 1.9.0
+ * SPACEMAN GRID
  * ===================================================================*/
 
 /*============================ GRID WRAPPER ==========================*/
 
 .wrapper {
     max-width: 1240px;
+    margin: 0 auto;
 }
 
 /*============================== GRID CORE ===========================*/
@@ -21,22 +22,43 @@
 .row:after,
 .row-no-padding:after {
     content: "";
-    display: table;
     clear: both;
+    display: table;
 }
 
 [class*='col-'] {
     float: left;
-    vertical-align: top;
-    min-height: 1px;
     margin: 1%;
+    min-height: 1px;
+    text-align: left;
+    vertical-align: top;
 }
 
-.row-no-padding [class*='col-'] {
+.row-no-padding > [class*='col-']:not(.centered) {
     margin: 0;
 }
 
-/*=============================== COLUNAS ============================*/
+/*=========================== CENTERED COLUMNS =======================*/
+
+.row > .centered {
+    margin: 1% auto;
+}
+
+.row-no-padding > .centered {
+    margin: 0 auto;
+}
+
+.row-centered {
+    text-align: center;
+}
+
+.row-centered > [class*='col-'] {
+    float: none;
+    display: inline-block;
+    margin: 1% calc(1% - 2px);
+}
+
+/*=============================== COLUMNS ============================*/
 
 .col-1 {
     width: 6.333333333333333%;
@@ -86,51 +108,51 @@
     width: 98%;
 }
 
-.row-no-padding .col-1 {
+.row-no-padding > .col-1 {
     width: 8.333333333333333%;
 }
 
-.row-no-padding .col-2 {
+.row-no-padding > .col-2 {
     width: 16.66666666666667%;
 }
 
-.row-no-padding .col-3 {
+.row-no-padding > .col-3 {
     width: 25%;
 }
 
-.row-no-padding .col-4 {
+.row-no-padding > .col-4 {
     width: 33.33333333333333%;
 }
 
-.row-no-padding .col-5 {
+.row-no-padding > .col-5 {
     width: 41.66666666666667%;
 }
 
-.row-no-padding .col-6 {
+.row-no-padding > .col-6 {
     width: 50%;
 }
 
-.row-no-padding .col-7 {
+.row-no-padding > .col-7 {
     width: 58.33333333333333%;
 }
 
-.row-no-padding .col-8 {
+.row-no-padding > .col-8 {
     width: 66.66666666666666%;
 }
 
-.row-no-padding .col-9 {
+.row-no-padding > .col-9 {
     width: 75%;
 }
 
-.row-no-padding .col-10 {
+.row-no-padding > .col-10 {
     width: 83.33333333333333%;
 }
 
-.row-no-padding .col-11 {
+.row-no-padding > .col-11 {
     width: 91.66666666666666%;
 }
 
-.row-no-padding .col-12 {
+.row-no-padding > .col-12 {
     width: 100%;
 }
 
@@ -194,51 +216,51 @@
         width: 98%;
     }
 
-    .row-no-padding .md-1 {
+    .row-no-padding > .md-1 {
         width: 8.333333333333333%;
     }
 
-    .row-no-padding .md-2 {
+    .row-no-padding > .md-2 {
         width: 16.66666666666667%;
     }
 
-    .row-no-padding .md-3 {
+    .row-no-padding > .md-3 {
         width: 25%;
     }
 
-    .row-no-padding .md-4 {
+    .row-no-padding > .md-4 {
         width: 33.33333333333333%;
     }
 
-    .row-no-padding .md-5 {
+    .row-no-padding > .md-5 {
         width: 41.66666666666667%;
     }
 
-    .row-no-padding .md-6 {
+    .row-no-padding > .md-6 {
         width: 50%;
     }
 
-    .row-no-padding .md-7 {
+    .row-no-padding > .md-7 {
         width: 58.33333333333333%;
     }
 
-    .row-no-padding .md-8 {
+    .row-no-padding > .md-8 {
         width: 66.66666666666666%;
     }
 
-    .row-no-padding .md-9 {
+    .row-no-padding > .md-9 {
         width: 75%;
     }
 
-    .row-no-padding .md-10 {
+    .row-no-padding > .md-10 {
         width: 83.33333333333333%;
     }
 
-    .row-no-padding .md-11 {
+    .row-no-padding > .md-11 {
         width: 91.66666666666666%;
     }
 
-    .row-no-padding .md-12 {
+    .row-no-padding > .md-12 {
         width: 100%;
     }
 }
@@ -299,51 +321,51 @@
         width: 98%;
     }
 
-    .row-no-padding .sm-1 {
+    .row-no-padding > .sm-1 {
         width: 8.333333333333333%;
     }
 
-    .row-no-padding .sm-2 {
+    .row-no-padding > .sm-2 {
         width: 16.66666666666667%;
     }
 
-    .row-no-padding .sm-3 {
+    .row-no-padding > .sm-3 {
         width: 25%;
     }
 
-    .row-no-padding .sm-4 {
+    .row-no-padding > .sm-4 {
         width: 33.33333333333333%;
     }
 
-    .row-no-padding .sm-5 {
+    .row-no-padding > .sm-5 {
         width: 41.66666666666667%;
     }
 
-    .row-no-padding .sm-6 {
+    .row-no-padding > .sm-6 {
         width: 50%;
     }
 
-    .row-no-padding .sm-7 {
+    .row-no-padding > .sm-7 {
         width: 58.33333333333333%;
     }
 
-    .row-no-padding .sm-8 {
+    .row-no-padding > .sm-8 {
         width: 66.66666666666666%;
     }
 
-    .row-no-padding .sm-9 {
+    .row-no-padding > .sm-9 {
         width: 75%;
     }
 
-    .row-no-padding .sm-10 {
+    .row-no-padding > .sm-10 {
         width: 83.33333333333333%;
     }
 
-    .row-no-padding .sm-11 {
+    .row-no-padding > .sm-11 {
         width: 91.66666666666666%;
     }
 
-    .row-no-padding .sm-12 {
+    .row-no-padding > .sm-12 {
         width: 100%;
     }
 
@@ -405,51 +427,51 @@
         width: 98%;
     }
 
-    .row-no-padding .xs-1 {
+    .row-no-padding > .xs-1 {
         width: 8.333333333333333%;
     }
 
-    .row-no-padding .xs-2 {
+    .row-no-padding > .xs-2 {
         width: 16.66666666666667%;
     }
 
-    .row-no-padding .xs-3 {
+    .row-no-padding > .xs-3 {
         width: 25%;
     }
 
-    .row-no-padding .xs-4 {
+    .row-no-padding > .xs-4 {
         width: 33.33333333333333%;
     }
 
-    .row-no-padding .xs-5 {
+    .row-no-padding > .xs-5 {
         width: 41.66666666666667%;
     }
 
-    .row-no-padding .xs-6 {
+    .row-no-padding > .xs-6 {
         width: 50%;
     }
 
-    .row-no-padding .xs-7 {
+    .row-no-padding > .xs-7 {
         width: 58.33333333333333%;
     }
 
-    .row-no-padding .xs-8 {
+    .row-no-padding > .xs-8 {
         width: 66.66666666666666%;
     }
 
-    .row-no-padding .xs-9 {
+    .row-no-padding > .xs-9 {
         width: 75%;
     }
 
-    .row-no-padding .xs-10 {
+    .row-no-padding > .xs-10 {
         width: 83.33333333333333%;
     }
 
-    .row-no-padding .xs-11 {
+    .row-no-padding > .xs-11 {
         width: 91.66666666666666%;
     }
 
-    .row-no-padding .xs-12 {
+    .row-no-padding > .xs-12 {
         width: 100%;
     }
 

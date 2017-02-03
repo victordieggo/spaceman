@@ -15,14 +15,14 @@ $(document).ready(function () {
         parentItem  = $('.menu-item-has-children');
 
     // main navigation
-    function openNavigation() {
+    function mobileNavigation() {
         nav.toggleClass('main-nav-is-active');
         page.toggleClass('hide-overflow');
         screenCover.toggleClass('hide');
     }
 
     // navigation sub-items
-    $(parentItem).each(function () {
+    parentItem.each(function () {
         $('a:first', this).click(function (event) {
             event.preventDefault();
         });
@@ -37,8 +37,8 @@ $(document).ready(function () {
     });
 
     // call functions
-    $(navBtn).on('click', openNavigation);
-    $(nav).on('swipeleft', openNavigation);
-    $(screenCover).on('swipeleft click', openNavigation);
+    navBtn.on('click', mobileNavigation);
+    nav.on('swipeleft', mobileNavigation);
+    screenCover.on('swipeleft click', mobileNavigation);
 
 });
