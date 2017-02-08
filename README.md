@@ -5,7 +5,7 @@ easily customizable HTML/CSS boilerplate. It has a 12-column fluid grid and come
 
 ### Getting Started ###
 
-Spaceman uses Gulp and Browsersync, that run on NodeJS. You might wanna know about them before we start:
+Spaceman uses Gulp and Browsersync, which run throught NodeJS. You might wanna know about them before we start:
 
 - [NodeJS](https://nodejs.org/en/)
 - [Gulp](http://gulpjs.com/)
@@ -34,36 +34,9 @@ $ gulp
 - `gulp js`: combine all js files and minify the generated file
 - `gulp watch`: start browsersync
 
-### Folders and Files ###
+### Browser Support ###
 
-```
-spaceman
-├── assets
-│   ├── css
-│   │   ├── dist
-│   │   │   └── style.css
-│   │   └── src
-│   │       ├── base.css
-│   │       ├── buttons.css
-│   │       ├── form.css
-│   │       ├── grid.css
-│   │       ├── layout.css
-│   │       ├── navigation.css
-│   │       ├── reset.css
-│   │       └── typography.css
-│   ├── img/
-│   └── js
-│       ├── dist
-│       │   ├── jquery.min.js
-│       │   └── main.js
-│       └── src
-│           └── navigation.js
-├── gui.html
-├── gulpfile.js
-├── index.html
-├── package.json
-└── README.md
-```
+Chrome 29+, IE 10+, Firefox 22+, Safari 6.1+, Opera 12+
 
 ### License ###
 
