@@ -21,7 +21,7 @@
 
 .row:not(.no-gutter),
 .row:not(.no-gutter) > [class*='col-'] {
-  padding: 0.5em;
+  padding: 0.7em;
 }
 
 .row-centered {
