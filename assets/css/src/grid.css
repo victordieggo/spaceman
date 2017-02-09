@@ -12,9 +12,9 @@
 /*================================= ROW ==============================*/
 
 .row {
-	display: -webkit-flex;
+  display: -webkit-flex;
   display: -ms-flexbox;
-	display: flex;
+  display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
 }
