@@ -3,63 +3,63 @@
  * ===================================================================*/
 
 .btn {
-    background-color: #afafaf;
-    border: solid 2px #afafaf;
-    padding: 0 1em;
-    white-space: normal;
+  background-color: #afafaf;
+  border: solid 2px #afafaf;
+  padding: 0 1em;
+  white-space: normal;
 }
 
 /*============================== SUCESS ==============================*/
 
 .btn-sucess {
-    background-color: #5cb85c;
-    border-color: #5cb85c;
+  background-color: #5cb85c;
+  border-color: #5cb85c;
 }
 
 .btn-sucess:hover {
-    background-color: #449d44;
-    border-color: #449d44;
+  background-color: #449d44;
+  border-color: #449d44;
 }
 
 /*=============================== INFO ===============================*/
 
 .btn-info {
-    background-color: #49a0d7;
-    border-color: #49a0d7;
+  background-color: #49a0d7;
+  border-color: #49a0d7;
 }
 
 .btn-info:hover {
-    background-color: #3586b9;
-    border-color: #3586b9;
+  background-color: #3586b9;
+  border-color: #3586b9;
 }
 
 /*============================= WARNING ==============================*/
 
 .btn-warning {
-    background-color: #f0ad4e;
-    border-color: #f0ad4e;
+  background-color: #f0ad4e;
+  border-color: #f0ad4e;
 }
 
 .btn-warning:hover {
-    background-color: #ec971f;
-    border-color: #ec971f;
+  background-color: #ec971f;
+  border-color: #ec971f;
 }
 
 /*============================== DANGER ==============================*/
 
 .btn-danger {
-    background-color: #d9534f;
-    border-color: #d9534f;
+  background-color: #d9534f;
+  border-color: #d9534f;
 }
 
 .btn-danger:hover {
-    background-color: #c9302c;
-    border-color: #c9302c;
+  background-color: #c9302c;
+  border-color: #c9302c;
 }
 
 /*========================== OUTLINE BUTTONS =========================*/
 
 button,
 .btn-outline {
-    background-color: transparent;
+  background-color: transparent;
 }
