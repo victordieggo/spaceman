@@ -5,26 +5,26 @@
 /*============================ BASE STYLES ===========================*/
 
 .main-nav li ul {
-    position: absolute;
-    display: none;
+  position: absolute;
+  display: none;
 }
 
 .main-nav li ul li {
-    position: relative;
+  position: relative;
 }
 
 .main-nav li ul ul {
-    top: 0;
-    left: 100%;
+  top: 0;
+  left: 100%;
 }
 
 .main-nav a {
-    display: block;
-    padding: 0.7em 1em;
+  display: block;
+  padding: 0.7em 1em;
 }
 
 .main-nav ul {
-    white-space: nowrap;
+  white-space: nowrap;
 }
 
 /*======================== LARGE/LG RESOLUTIONS ======================*/
@@ -32,23 +32,23 @@
 @media only screen and (min-width: 993px) {
 
     .main-nav > ul > li {
-        display: inline-block;
+      display: inline-block;
     }
 
     .main-nav li:hover > ul {
-        display: block;
+      display: block;
     }
 
     .main-nav li:hover > a {
-        background-color: #0d6788;
+      background-color: #0d6788;
     }
 
     html.hide-overflow {
-        overflow: auto;
+      overflow: auto;
     }
 
     .screen-cover {
-        display: none;
+      display: none;
     }
 
 }
@@ -58,76 +58,76 @@
 @media only screen and (max-width: 992px) {
 
     .main-nav {
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        left: -100%;
-        width: 18em;
-        overflow-y: auto;
-        overflow-x: hidden;
-        text-transform: uppercase;
-        background-color: #1d1d1d;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: -100%;
+      width: 18em;
+      overflow-y: auto;
+      overflow-x: hidden;
+      text-transform: uppercase;
+      background-color: #1d1d1d;
     }
 
     .main-nav ul {
-        white-space: normal;
+      white-space: normal;
     }
 
     .main-nav a {
-        padding: 1.5em;
+      padding: 1.5em;
     }
 
     .main-nav li ul ul,
     .main-nav-is-active {
-        left: 0;
+      left: 0;
     }
 
     .main-nav li ul,
     .menu-item-has-children a {
-        position: relative;
+      position: relative;
     }
 
     .main-nav .menu-item-is-active > ul {
-        display: block;
+      display: block;
     }
 
     .menu-item-is-active > a {
-        background-color: #0d6788;
+      background-color: #0d6788;
     }
 
     .menu-item-has-children a {
-        padding-right: 3.5em;
+      padding-right: 3.5em;
     }
 
     .menu-item-has-children > a:after {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: 1.5em;
-        content: "";
-        padding: 0.8em;
-        background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDguNyA1My41Ij48cGF0aCBmaWxsPSIjZmZmIiBkPSJNOTYuOCAxLjZDODkuNSA3IDgyLjggMTMuMyA3NS45IDE5Yy03LjIgNi0xNC4zIDEyLTIxLjUgMTcuOS0xNC0xMS44LTI3LjctMjQuMS00Mi4yLTM1LjJDNy43LTEuNi43LS4xIDAgNi4xYy0uNCA0LjEgMi41IDYuMiA1LjIgOC41IDkgNy41IDE4LjEgMTUuMSAyNy4xIDIyLjYgNC42IDMuOSA5LjMgNy43IDEzLjkgMTEuNiAzLjggMy4xIDcuMSA2LjEgMTIuMiAzLjEuMi0uMS40LS4zLjYtLjQgMTUtMTIuNCAyOS45LTI0LjggNDQuOC0zNy4yIDIuNS0yLjEgNS0zLjkgNC45LTcuNi0uMy02LjQtNy4zLTguNS0xMS45LTUuMXoiLz48L3N2Zz4=) no-repeat right;
-        background-size: 65%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 1.5em;
+      content: "";
+      padding: 0.8em;
+      background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDguNyA1My41Ij48cGF0aCBmaWxsPSIjZmZmIiBkPSJNOTYuOCAxLjZDODkuNSA3IDgyLjggMTMuMyA3NS45IDE5Yy03LjIgNi0xNC4zIDEyLTIxLjUgMTcuOS0xNC0xMS44LTI3LjctMjQuMS00Mi4yLTM1LjJDNy43LTEuNi43LS4xIDAgNi4xYy0uNCA0LjEgMi41IDYuMiA1LjIgOC41IDkgNy41IDE4LjEgMTUuMSAyNy4xIDIyLjYgNC42IDMuOSA5LjMgNy43IDEzLjkgMTEuNiAzLjggMy4xIDcuMSA2LjEgMTIuMiAzLjEuMi0uMS40LS4zLjYtLjQgMTUtMTIuNCAyOS45LTI0LjggNDQuOC0zNy4yIDIuNS0yLjEgNS0zLjkgNC45LTcuNi0uMy02LjQtNy4zLTguNS0xMS45LTUuMXoiLz48L3N2Zz4=) no-repeat right;
+      background-size: 65%;
     }
 
     .menu-item-is-active > a:after {
-        -webkit-transform: rotateX(180deg);
-        -moz-transform: rotateX(180deg);
-        -ms-transform: rotateX(180deg);
-        -o-transform: rotateX(180deg);
-        transform: rotateX(180deg);
+      -webkit-transform: rotateX(180deg);
+      -moz-transform: rotateX(180deg);
+      -ms-transform: rotateX(180deg);
+      -o-transform: rotateX(180deg);
+      transform: rotateX(180deg);
     }
 
     .nav-btn {
-        background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjEgNy45IDE1Ny4zIDExOS4xIj48ZyBmaWxsPSIjZmZmIj48cGF0aCBkPSJNMTUwIDI0LjlIMTBjLTQuNyAwLTguNS0zLjgtOC41LTguNVM1LjMgNy45IDEwIDcuOWgxNDBjNC43IDAgOC41IDMuOCA4LjUgOC41cy00IDguNS04IDguNXpNMTUwIDEyN0gxMGMtNC43IDAtOC41LTMuOC04LjUtOC41UzUuMyAxMTAgMTAgMTEwaDE0MGM0LjcgMCA4LjUgMy44IDguNSA4LjUgMCA1LTQgOS04IDl6TTE1MCA3NkgxMGMtNS4yIDAtOS0zLjgtOS04LjVTNC44IDU5IDkuNSA1OWgxNDBjNC43IDAgOC41IDMuOCA4LjUgOC41cy00IDguNS04IDguNXoiLz48L2c+PC9zdmc+) no-repeat center;
-        background-size: 100%;
-        height: 1.5em;
-        width: 1.5em;
+      background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjEgNy45IDE1Ny4zIDExOS4xIj48ZyBmaWxsPSIjZmZmIj48cGF0aCBkPSJNMTUwIDI0LjlIMTBjLTQuNyAwLTguNS0zLjgtOC41LTguNVM1LjMgNy45IDEwIDcuOWgxNDBjNC43IDAgOC41IDMuOCA4LjUgOC41cy00IDguNS04IDguNXpNMTUwIDEyN0gxMGMtNC43IDAtOC41LTMuOC04LjUtOC41UzUuMyAxMTAgMTAgMTEwaDE0MGM0LjcgMCA4LjUgMy44IDguNSA4LjUgMCA1LTQgOS04IDl6TTE1MCA3NkgxMGMtNS4yIDAtOS0zLjgtOS04LjVTNC44IDU5IDkuNSA1OWgxNDBjNC43IDAgOC41IDMuOCA4LjUgOC41cy00IDguNS04IDguNXoiLz48L2c+PC9zdmc+) no-repeat center;
+      background-size: 100%;
+      height: 1.5em;
+      width: 1.5em;
     }
 
     .screen-cover {
-        background-color: rgb(29, 29, 29);
-        background-color: rgba(29, 29, 29, 0.7);
+      background-color: rgb(29, 29, 29);
+      background-color: rgba(29, 29, 29, 0.7);
     }
 
 }
@@ -137,7 +137,7 @@
 @media only screen and (max-width: 480px) {
 
     .main-nav {
-        width: 75%;
+      width: 75%;
     }
 
 }
