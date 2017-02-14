@@ -1,7 +1,13 @@
 # Spaceman #
 
-Spaceman is a simple and
-easily customizable HTML/CSS boilerplate. It has a 12-column fluid grid and comes with a basic starter theme.
+Spaceman is a simple and easily customizable HTML/CSS boilerplate. It has a 12-column fluid grid and comes with a basic starter theme.
+
+### What's in the box? ###
+
+- A 12-column fluid grid based on flexbox
+- Pre-set styles for buttons, forms, typography and basic elements
+- CSS helper classes to speed up development
+- jQuery v2.2.4 and jQuery Mobile v1.4.5
 
 ### Getting Started ###
 
