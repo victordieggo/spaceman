@@ -17,7 +17,7 @@ Spaceman uses Gulp and Browsersync, which run throught NodeJS. You might wanna k
 - [Gulp](http://gulpjs.com/)
 - [Browsersync](https://www.browsersync.io/)
 
-[Download Spaceman](https://github.com/victordieggo/spaceman/archive/master.zip) to your project directory then get on the command line:
+[Download Spaceman](https://github.com/victordieggo/spaceman/releases/latest) to your project directory then get on the command line:
 
 ```
 # install gulp globally
