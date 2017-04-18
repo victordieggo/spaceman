@@ -3,7 +3,7 @@
  * ===================================================================*/
 /*global $, window, document*/
 
-$(document).ready(function () {
+$(function () {
 
     'use strict';
 
