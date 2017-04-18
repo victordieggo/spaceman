@@ -2,7 +2,7 @@
  * SPACEMAN GRID
  * ===================================================================*/
 
- /*============================ GRID WRAPPER ==========================*/
+/*============================ GRID WRAPPER ==========================*/
 
 .wrapper {
   max-width: 1240px;
@@ -105,11 +105,6 @@
 /*==================== EXTRA SMALL/XS RESOLUTIONS ====================*/
 
 @media only screen and (max-width: 480px) {
-
-  .row:not(.no-gutter),
-  .row:not(.no-gutter) > [class*='col-'] {
-    padding: 0.5em;
-  }
 
   .row > .xs-1 {width: 8.333333333333333%;}
   .row > .xs-2 {width: 16.66666666666667%;}
