@@ -5,7 +5,13 @@
 .btn {
   background-color: #afafaf;
   border: solid 2px #afafaf;
+  border-radius: 4px;
+  display: inline-block;
+  height: 2.7em;
+  width: auto;
+  line-height: calc(2.7em - 3px);
   padding: 0 1em;
+  vertical-align: middle;
   white-space: normal;
 }
 

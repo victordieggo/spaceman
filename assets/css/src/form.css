@@ -8,7 +8,21 @@ select,
 textarea,
 input:not(.btn) {
   border: solid 1px #cecece;
+  border-radius: 4px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+select,
+input:not(.btn) {
   padding: 0 0.6em;
+  height: 2.7em;
+}
+
+textarea {
+  padding: 0.6em;
+  overflow-y: auto;
+  resize: none;
 }
 
 select:focus,
@@ -17,11 +31,19 @@ input:not(.btn):focus {
   border-color: #909090;
 }
 
-textarea {
-  padding: 0.6em;
+::-webkit-input-placeholder {
+  color: #888;
+}
+
+:-ms-input-placeholder {
+  color: #888;
 }
 
 /*======================== CUSTOM SELECT ARROW =======================*/
+
+select::-ms-expand {
+  display: none;
+}
 
 select {
   background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOTIuMSA1My41Ij48cGF0aCBmaWxsPSIjMDEwMjAyIiBkPSJNOTYuOCAxLjZDODkuNSA3IDgyLjggMTMuMyA3NS45IDE5Yy03LjIgNi0xNC4zIDEyLTIxLjUgMTcuOS0xNC0xMS44LTI3LjctMjQuMS00Mi4yLTM1LjJDNy43LTEuNi43LS4xIDAgNi4xYy0uNCA0LjEgMi41IDYuMiA1LjIgOC41IDkgNy41IDE4LjEgMTUuMSAyNy4xIDIyLjYgNC42IDMuOSA5LjMgNy43IDEzLjkgMTEuNiAzLjggMy4xIDcuMSA2LjEgMTIuMiAzLjEuMi0uMS40LS4zLjYtLjQgMTUtMTIuNCAyOS45LTI0LjggNDQuOC0zNy4yIDIuNS0yLjEgNS0zLjkgNC45LTcuNi0uMy02LjQtNy4zLTguNS0xMS45LTUuMXoiLz48L3N2Zz4=) #fff no-repeat right;
@@ -54,8 +76,8 @@ input[type=checkbox] {
   border-radius: 0.2em;
 }
 
-:checked+.label-checkbox:before {
-  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxODAgMTgwIj48cGF0aCBmaWxsPSIjMDEwMjAyIiBkPSJNNTYuMSAxNDkuN2MyLjQgMi40IDcuMSA0LjggMTAuNyA0LjhzNy4xLTEuMiAxMC43LTQuOGw5NS4yLTk1LjJjNi02IDYtMTUuNSAwLTIxLjQtNi02LTE1LjUtNi0yMS40IDBsLTg0LjUgODQuNS0zNi45LTM2LjljLTYtNi0xNS41LTYtMjEuNCAwcy02IDE1LjUgMCAyMS40bDQ3LjYgNDcuNnoiLz48L3N2Zz4=) #fff no-repeat;
+:checked + .label-checkbox:before {
+  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxODAgMTgwIj48cGF0aCBmaWxsPSIjMDEwMjAyIiBkPSJNNTYuMSAxNDkuN2MyLjQgMi40IDcuMSA0LjggMTAuNyA0LjhzNy4xLTEuMiAxMC43LTQuOGw5NS4yLTk1LjJjNi02IDYtMTUuNSAwLTIxLjQtNi02LTE1LjUtNi0yMS40IDBsLTg0LjUgODQuNS0zNi45LTM2LjljLTYtNi0xNS41LTYtMjEuNCAwcy02IDE1LjUgMCAyMS40bDQ3LjYgNDcuNnoiLz48L3N2Zz4=) #fff no-repeat center;
   background-size: 100%;
 }
 
@@ -64,6 +86,6 @@ input[type=checkbox] {
   border: 0.4em solid #fff;
 }
 
-:checked+.label-radio:before {
+:checked + .label-radio:before {
   background-color: #222;
 }

@@ -50,8 +50,7 @@
 
 /*============================== DISPLAY =============================*/
 
-.block,
-textarea {
+.block {
   display: block;
 }
 
@@ -59,7 +58,6 @@ textarea {
   display: inline;
 }
 
-.btn,
 .label,
 .vcenter,
 .inline-block {
@@ -121,59 +119,11 @@ textarea {
 .pad-bottom-30 {padding-bottom: 3.0em;}
 
 /* =====================================================================
- * FORM ELEMENTS/BUTTONS
- * ===================================================================*/
-
-a,
-label,
-input,
-select,
-button,
-textarea {
-  cursor: pointer;
-}
-
-select::-ms-expand {
-  display: none;
-}
-
-textarea {
-  resize: none;
-  overflow-y: auto;
-}
-
-::-webkit-input-placeholder {
-  color: #888;
-}
-
-:-ms-input-placeholder {
-  color: #888;
-}
-
-.btn,
-input,
-button,
-select,
-textarea {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border-radius: 0.2em;
-  height: 2.7em;
-}
-
-.btn {
-  vertical-align: top;
-  line-height: calc(2.7em - 4px);
-}
-
-/* =====================================================================
  * SIZING/MISC
  * ===================================================================*/
 
 /*============================== SIZING ==============================*/
 
-.btn,
 .auto-size,
 .auto-width {
   width: auto;
@@ -184,15 +134,11 @@ textarea {
   height: auto;
 }
 
-input,
-select,
-textarea,
 .full-size,
 .full-width {
   width: 100%;
 }
 
-textarea,
 .full-size,
 .full-height {
   height: 100%;
@@ -238,6 +184,15 @@ textarea,
 .label {
   padding: 0.4em 0.6em;
   border-radius: 0.2em;
+}
+
+a,
+label,
+input,
+select,
+button,
+textarea {
+  cursor: pointer;
 }
 
 /* =====================================================================
