@@ -6,7 +6,7 @@
 
 select,
 textarea,
-input:not(.btn) {
+input {
   border: solid 1px #cecece;
   border-radius: 4px;
   vertical-align: middle;
@@ -14,7 +14,7 @@ input:not(.btn) {
 }
 
 select,
-input:not(.btn) {
+input {
   padding: 0 0.6em;
   height: 2.7em;
 }
@@ -46,7 +46,7 @@ select::-ms-expand {
 }
 
 select {
-  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOTIuMSA1My41Ij48cGF0aCBmaWxsPSIjMDEwMjAyIiBkPSJNOTYuOCAxLjZDODkuNSA3IDgyLjggMTMuMyA3NS45IDE5Yy03LjIgNi0xNC4zIDEyLTIxLjUgMTcuOS0xNC0xMS44LTI3LjctMjQuMS00Mi4yLTM1LjJDNy43LTEuNi43LS4xIDAgNi4xYy0uNCA0LjEgMi41IDYuMiA1LjIgOC41IDkgNy41IDE4LjEgMTUuMSAyNy4xIDIyLjYgNC42IDMuOSA5LjMgNy43IDEzLjkgMTEuNiAzLjggMy4xIDcuMSA2LjEgMTIuMiAzLjEuMi0uMS40LS4zLjYtLjQgMTUtMTIuNCAyOS45LTI0LjggNDQuOC0zNy4yIDIuNS0yLjEgNS0zLjkgNC45LTcuNi0uMy02LjQtNy4zLTguNS0xMS45LTUuMXoiLz48L3N2Zz4=) #fff no-repeat right;
+  background: url('../../svg/icon-arrow-alt.svg') #fff no-repeat right;
   background-size: 1.2em;
   padding-right: 1.8em;
 }
@@ -77,7 +77,7 @@ input[type=checkbox] {
 }
 
 :checked + .label-checkbox:before {
-  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxODAgMTgwIj48cGF0aCBmaWxsPSIjMDEwMjAyIiBkPSJNNTYuMSAxNDkuN2MyLjQgMi40IDcuMSA0LjggMTAuNyA0LjhzNy4xLTEuMiAxMC43LTQuOGw5NS4yLTk1LjJjNi02IDYtMTUuNSAwLTIxLjQtNi02LTE1LjUtNi0yMS40IDBsLTg0LjUgODQuNS0zNi45LTM2LjljLTYtNi0xNS41LTYtMjEuNCAwcy02IDE1LjUgMCAyMS40bDQ3LjYgNDcuNnoiLz48L3N2Zz4=) #fff no-repeat center;
+  background: url('../../svg/icon-check.svg') #fff no-repeat center;
   background-size: 100%;
 }
 
