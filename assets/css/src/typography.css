@@ -65,17 +65,12 @@ h1,
 
 /*============================ FONT-COLOR ============================*/
 
-body,
-.btn {
+body {
   color: #222;
 }
 
 .text-white {
   color: #fff;
-}
-
-.text-sucess {
-  color: #5cb85c;
 }
 
 a {
@@ -122,8 +117,8 @@ a:hover {
 
 @media only screen and (max-width: 768px) {
 
-    body {
-      font-size: 0.8em;
-    }
+  body {
+    font-size: 0.8em;
+  }
 
 }
