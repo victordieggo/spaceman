@@ -53,7 +53,11 @@ select {
 
 input[type=radio],
 input[type=checkbox] {
-  display: none;
+  height:0;
+  width: 0;
+  border: 0;
+  padding: 0;
+  opacity: 0;
 }
 
 .label-checkbox:before,
@@ -67,6 +71,13 @@ input[type=checkbox] {
   box-shadow: 0 0 0 1px #cecece;
 }
 
+:focus + .label-checkbox:before,
+:focus + .label-radio:before {
+  -webkit-box-shadow: 0 0 0 1px #909090;
+  -moz-box-shadow: 0 0 0 1px #909090;
+  box-shadow: 0 0 0 1px #909090;
+}
+
 .label-checkbox:before {
   padding: 0.4em;
   border: 0.2em solid #fff;
@@ -75,7 +86,7 @@ input[type=checkbox] {
 
 :checked + .label-checkbox:before {
   background: url('../../svg/icon-check.svg') #fff no-repeat center;
-  background-size: 100%;
+  background-size: 100% 100%;
 }
 
 .label-radio:before {
