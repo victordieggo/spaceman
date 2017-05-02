@@ -8,8 +8,7 @@
   border-radius: 4px;
   display: inline-block;
   height: 2.7em;
-  width: auto;
-  line-height: calc(2.7em - 3px);
+  line-height: 2.5;
   padding: 0 1em;
   vertical-align: middle;
   white-space: normal;

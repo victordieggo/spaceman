@@ -6,22 +6,20 @@
 
 select,
 textarea,
-input {
+input:not(.btn) {
   border: solid 1px #cecece;
   border-radius: 4px;
-  vertical-align: middle;
-  width: 100%;
 }
 
 select,
-input {
-  padding: 0 0.6em;
+input:not(.btn) {
   height: 2.7em;
+  padding: 0 0.6em;
 }
 
 textarea {
-  padding: 0.6em;
   overflow-y: auto;
+  padding: 0.6em;
   resize: none;
 }
 
@@ -62,9 +60,8 @@ input[type=checkbox] {
 .label-radio:before {
   content: '';
   display: inline-block;
-  vertical-align: middle;
-  margin-right: 0.5em;
   background-color: #fff;
+  margin: 0 0.5em -0.2em 0;
   -webkit-box-shadow: 0 0 0 1px #cecece;
   -moz-box-shadow: 0 0 0 1px #cecece;
   box-shadow: 0 0 0 1px #cecece;

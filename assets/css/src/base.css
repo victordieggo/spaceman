@@ -124,6 +124,7 @@
 
 /*============================== SIZING ==============================*/
 
+.btn,
 .auto-size,
 .auto-width {
   width: auto;
@@ -134,6 +135,9 @@
   height: auto;
 }
 
+input,
+select,
+textarea,
 .full-size,
 .full-width {
   width: 100%;
