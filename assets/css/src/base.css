@@ -207,19 +207,19 @@ textarea {
 
 @media only screen and (max-width: 992px) {
 
-    .show-md {
-      position: static;
-      left: 0;
-      top: 0;
-      visibility: visible;
-    }
+  .show-md {
+    position: static;
+    left: 0;
+    top: 0;
+    visibility: visible;
+  }
 
-    .hide-md {
-      position: absolute;
-      left: -9999px;
-      top: -9999px;
-      visibility: hidden;
-    }
+  .hide-md {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+    visibility: hidden;
+  }
 
 }
 
@@ -227,19 +227,19 @@ textarea {
 
 @media only screen and (max-width: 768px) {
 
-    .show-sm {
-      position: static;
-      left: 0;
-      top: 0;
-      visibility: visible;
-    }
+  .show-sm {
+    position: static;
+    left: 0;
+    top: 0;
+    visibility: visible;
+  }
 
-    .hide-sm {
-      position: absolute;
-      left: -9999px;
-      top: -9999px;
-      visibility: hidden;
-    }
+  .hide-sm {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+    visibility: hidden;
+  }
 
 }
 
@@ -247,18 +247,18 @@ textarea {
 
 @media only screen and (max-width: 480px) {
 
-    .show-xs {
-      position: static;
-      left: 0;
-      top: 0;
-      visibility: visible;
-    }
-
-    .hide-xs {
-      position: absolute;
-      left: -9999px;
-      top: -9999px;
-      visibility: hidden;
-    }
+  .show-xs {
+    position: static;
+    left: 0;
+    top: 0;
+    visibility: visible;
+  }
+  
+  .hide-xs {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+    visibility: hidden;
+  }
 
 }
