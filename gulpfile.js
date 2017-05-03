@@ -67,10 +67,10 @@ gulp.task('js', function () {
 
 gulp.task('img', function () {
     gulp.src(srcPath.img)
-        .pipe(imagemin({verbose: true}, [
+        .pipe(imagemin([
             mozjpeg({quality: 89}),
             pngquant({quality: 70})
-        ]))
+        ], {verbose: true}))
         .pipe(gulp.dest(distPath.img))
         .pipe(browserSync.stream());
 });
