@@ -113,7 +113,7 @@ header .col-6:last-child {
     right: 1.5em;
     content: '';
     padding: 0.8em;
-    background: url('../../svg/dist/icon-arrow.svg') no-repeat right;
+    background: url('../../dist/svg/icon-arrow.svg') no-repeat right;
     background-size: 65%;
   }
 
@@ -126,7 +126,7 @@ header .col-6:last-child {
   }
 
   .nav-btn {
-    background: url('../../svg/dist/icon-menu.svg') no-repeat center;
+    background: url('../../dist/svg/icon-menu.svg') no-repeat center;
     background-size: 100%;
     position: relative;
     z-index: 9;
@@ -135,7 +135,7 @@ header .col-6:last-child {
   }
 
   .main-nav-is-active + .nav-btn {
-    background-image: url('../../svg/dist/icon-close.svg');
+    background-image: url('../../dist/svg/icon-close.svg');
   }
 
   .screen-cover {

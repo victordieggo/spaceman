@@ -18,17 +18,21 @@ var gulp        = require('gulp'),
     mozjpeg     = require('imagemin-mozjpeg'),
     pngquant    = require('imagemin-pngquant'),
     path        = require('path'),
+    basePath = {
+        src:  'assets/src/',
+        dist: 'assets/dist/'
+    },
     srcPath = {
-        css: 'assets/css/src/*.css',
-        js:  'assets/js/src/*.js',
-        img: 'assets/img/src/*.{png,gif,jpg}',
-        svg: 'assets/svg/src/*.svg',
+        css: basePath.src + 'css/*.css',
+        js:  basePath.src + 'js/*.js',
+        img: basePath.src + 'img/*.{png,gif,jpg}',
+        svg: basePath.src + 'svg/*.svg',
     },
     distPath = {
-        css: 'assets/css/dist',
-        js:  'assets/js/dist',
-        img: 'assets/img/dist',
-        svg: 'assets/svg/dist',
+        css: basePath.dist + 'css',
+        js:  basePath.dist + 'js',
+        img: basePath.dist + 'img',
+        svg: basePath.dist + 'svg',
     },
     bsReload = ['./**/*.{html,php}', srcPath.svg];
 
@@ -63,7 +67,7 @@ gulp.task('js', function () {
 
 gulp.task('img', function () {
     gulp.src(srcPath.img)
-        .pipe(imagemin([
+        .pipe(imagemin({verbose: true}, [
             mozjpeg({quality: 89}),
             pngquant({quality: 70})
         ]))
@@ -77,9 +81,8 @@ gulp.task('img', function () {
 
 gulp.task('svg', function () {
     gulp.src(srcPath.svg)
-        .pipe(imagemin())
-        .pipe(gulp.dest(distPath.svg))
-        .pipe(browserSync.stream());
+        .pipe(imagemin({verbose: true}))
+        .pipe(gulp.dest(distPath.svg));
 });
 
 //-------------------------------------------------------------------
