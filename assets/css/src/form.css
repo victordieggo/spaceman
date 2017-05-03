@@ -44,7 +44,7 @@ select::-ms-expand {
 }
 
 select {
-  background: url('../../svg/icon-arrow-alt.svg') #fff no-repeat right;
+  background: url('../../svg/dist/icon-arrow-alt.svg') #fff no-repeat right;
   background-size: 1.2em;
   padding-right: 1.8em;
 }
@@ -85,7 +85,7 @@ input[type=checkbox] {
 }
 
 :checked + .label-checkbox:before {
-  background: url('../../svg/icon-check.svg') #fff no-repeat center;
+  background: url('../../svg/dist/icon-check.svg') #fff no-repeat center;
   background-size: 100% 100%;
 }
 
