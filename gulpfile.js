@@ -14,27 +14,38 @@ var gulp        = require('gulp'),
     uglify      = require('gulp-uglify'),
     combineMq   = require('gulp-combine-mq'),
     browserSync = require('browser-sync').create(),
-    path        = require('path');
+    imagemin    = require('gulp-imagemin'),
+    mozjpeg     = require('imagemin-mozjpeg'),
+    pngquant    = require('imagemin-pngquant'),
+    path        = require('path'),
+    basePath = {
+        src:  'assets/src/',
+        dist: 'assets/dist/'
+    },
+    srcPath = {
+        css: basePath.src + 'css/*.css',
+        js:  basePath.src + 'js/*.js',
+        img: basePath.src + 'img/*.{png,gif,jpg}',
+        svg: basePath.src + 'svg/*.svg',
+    },
+    distPath = {
+        css: basePath.dist + 'css',
+        js:  basePath.dist + 'js',
+        img: basePath.dist + 'img',
+        svg: basePath.dist + 'svg',
+    },
+    bsReload = ['./**/*.{html,php}', srcPath.svg];
 
 //-------------------------------------------------------------------
 // BUILD CSS
 //-------------------------------------------------------------------
 
 gulp.task('css', function () {
-    gulp.src([
-        'assets/css/src/reset.css',
-        'assets/css/src/grid.css',
-        'assets/css/src/typography.css',
-        'assets/css/src/base.css',
-        'assets/css/src/form.css',
-        'assets/css/src/buttons.css',
-        'assets/css/src/navigation.css',
-        'assets/css/src/layout.css'
-    ])
+    gulp.src(srcPath.css)
         .pipe(concat('style.css'))
         .pipe(combineMq())
         .pipe(cssmin())
-        .pipe(gulp.dest('assets/css/dist'))
+        .pipe(gulp.dest(distPath.css))
         .pipe(browserSync.stream());
 });
 
@@ -43,26 +54,50 @@ gulp.task('css', function () {
 //-------------------------------------------------------------------
 
 gulp.task('js', function () {
-    gulp.src([
-        'assets/js/src/*.js'
-    ])
+    gulp.src(srcPath.js)
         .pipe(concat('main.js'))
         .pipe(uglify())
-        .pipe(gulp.dest('assets/js/dist'))
+        .pipe(gulp.dest(distPath.js))
         .pipe(browserSync.stream());
 });
 
 //-------------------------------------------------------------------
-// GULP WATCH+DEFAULT
+// MINIFY IMAGES
+//-------------------------------------------------------------------
+
+gulp.task('img', function () {
+    gulp.src(srcPath.img)
+        .pipe(imagemin([
+            mozjpeg({quality: 89}),
+            pngquant({quality: 70})
+        ], {verbose: true}))
+        .pipe(gulp.dest(distPath.img))
+        .pipe(browserSync.stream());
+});
+
+//-------------------------------------------------------------------
+// MINIFY SVG
+//-------------------------------------------------------------------
+
+gulp.task('svg', function () {
+    gulp.src(srcPath.svg)
+        .pipe(imagemin({verbose: true}))
+        .pipe(gulp.dest(distPath.svg));
+});
+
+//-------------------------------------------------------------------
+// WATCH + DEFAULT
 //-------------------------------------------------------------------
 
 gulp.task('watch', function () {
     browserSync.init({
         proxy: 'localhost/' + path.basename(__dirname)
     });
-    gulp.watch(['assets/js/src/*.js'], ['js']);
-    gulp.watch(['assets/css/src/*.css'], ['css']);
-    gulp.watch(['./**/*.html', './**/*.php'], browserSync.reload);
+    gulp.watch(srcPath.js, ['js']);
+    gulp.watch(srcPath.css, ['css']);
+    gulp.watch(srcPath.img, ['img']);
+    gulp.watch(srcPath.svg, ['svg']);
+    gulp.watch(bsReload, browserSync.reload);
 });
 
-gulp.task('default', ['js', 'css', 'watch']);
+gulp.task('default', ['js', 'css', 'img', 'svg', 'watch']);
