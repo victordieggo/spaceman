@@ -168,11 +168,6 @@ hr {
   vertical-align: middle;
 }
 
-.circle,
-.label-radio:before {
-  border-radius: 50%;
-}
-
 .btn,
 input,
 select,
@@ -188,15 +183,6 @@ textarea,
 .label {
   padding: 0.4em 0.6em;
   border-radius: 0.2em;
-}
-
-a,
-label,
-input,
-select,
-button,
-textarea {
-  cursor: pointer;
 }
 
 /* =====================================================================
@@ -253,7 +239,7 @@ textarea {
     top: 0;
     visibility: visible;
   }
-  
+
   .hide-xs {
     position: absolute;
     left: -9999px;
