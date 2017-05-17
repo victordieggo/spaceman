@@ -51,9 +51,10 @@ select::-ms-expand {
 }
 
 select {
-  background: url('../../dist/svg/icon-arrow-alt.svg') no-repeat right;
-  background-size: 1.2em;
-  padding-right: 1.8em;
+  background: url('../../dist/svg/icon-arrow-alt.svg') no-repeat;
+  background-position: right 0.5em center;
+  background-size: 1em;
+  padding-right: 2em;
 }
 
 /*======================= CUSTOM CHECKBOX/RADIO ======================*/
@@ -71,7 +72,7 @@ input[type=checkbox] {
 .label-checkbox:before {
   content: '';
   margin-right: 0.5em;
-  padding: 0.7em;
+  padding: 0.65em;
 }
 
 .label-radio:before {
