@@ -7,21 +7,20 @@ $(function () {
 
     'use strict';
 
-    // set variables
     var screenCover = $('.screen-cover'),
+        navWrapper  = $('.main-nav-wrapper'),
         nav         = $('.main-nav'),
         navBtn      = $('.nav-btn'),
         page        = $('html'),
         parentItem  = $('.menu-item-has-children');
 
-    // main navigation
     function mobileNavigation() {
+        navWrapper.toggleClass('z-index-6');
         nav.toggleClass('main-nav-is-active');
         page.toggleClass('hide-overflow');
         screenCover.toggleClass('hide');
     }
 
-    // navigation sub-items
     parentItem.each(function () {
         $('a:first', this).click(function (event) {
             event.preventDefault();
@@ -36,8 +35,22 @@ $(function () {
         });
     });
 
-    // call functions
+    function resizeFallback() {
+        if (nav.hasClass('main-nav-is-active')) {
+            if (window.innerWidth <= 992) {
+                screenCover.removeClass('hide');
+                page.addClass('hide-overflow');
+                navWrapper.addClass('z-index-6');
+            } else {
+                screenCover.addClass('hide');
+                page.removeClass('hide-overflow');
+                navWrapper.removeClass('z-index-6');
+            }
+        }
+    }
+
     navBtn.on('click', mobileNavigation);
+    $(window).on('resize', resizeFallback);
     nav.on('swipeleft', mobileNavigation);
     screenCover.on('swipeleft click', mobileNavigation);
 
