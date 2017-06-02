@@ -47,25 +47,12 @@ HELPERS
   position: relative;
 }
 
-.hide,
-.show-md,
-.show-sm,
-.show-xs,
 .absolute {
   position: absolute;
 }
 
 .fixed {
   position: fixed;
-}
-
-.hide,
-.show-md,
-.show-sm,
-.show-xs {
-  left: -9999px;
-  top: -9999px;
-  visibility: hidden;
 }
 
 /*
@@ -210,10 +197,7 @@ select,
 textarea,
 .main-nav a,
 .smooth-transition {
-  -webkit-transition: all .3s;
-  -moz-transition: all .3s;
-  -o-transition: all .3s;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .label {
@@ -261,6 +245,16 @@ textarea,
 9. Hide/Show
 -------------------------------------------------------
 */
+
+.hide,
+.show-md,
+.show-sm,
+.show-xs {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+  visibility: hidden;
+}
 
 @media only screen and (max-width: 992px) {
 
