@@ -21,7 +21,7 @@
         screenCover.classList.toggle('hide');
     }
 
-    parentItem.forEach(function (element) {
+    Array.prototype.forEach.call(parentItem, function (element) {
         element.querySelector('a').addEventListener('click', function (event) {
             event.preventDefault();
         });
