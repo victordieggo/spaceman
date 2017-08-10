@@ -7,18 +7,21 @@
 
     'use strict';
 
-    var screenCover = document.querySelector('.screen-cover'),
-        navWrapper  = document.querySelector('.main-nav-wrapper'),
-        nav         = document.querySelector('.main-nav'),
+    var page        = document.documentElement,
+        screenCover = document.createElement('div'),
         navBtn      = document.querySelector('.nav-btn'),
-        page        = document.querySelector('html'),
+        nav         = document.querySelector('.main-nav'),
         parentItem  = document.querySelectorAll('.menu-item-has-children');
 
     function mobileNavigation() {
         nav.classList.toggle('main-nav-is-active');
-        navWrapper.classList.toggle('z-index-6');
         page.classList.toggle('hide-overflow');
-        screenCover.classList.toggle('hide');
+        if (document.querySelector('.screen-cover')) {
+            page.removeChild(screenCover);
+        } else {
+            screenCover.setAttribute('class', 'screen-cover fixed full-size');
+            page.appendChild(screenCover);
+        }
     }
 
     Array.prototype.forEach.call(parentItem, function (element) {
@@ -38,13 +41,9 @@
     function resizeFallback() {
         if (nav.classList.contains('main-nav-is-active')) {
             if (window.innerWidth <= 992) {
-                screenCover.classList.remove('hide');
-                page.classList.add('hide-overflow');
-                navWrapper.classList.add('z-index-6');
+                page.appendChild(screenCover).classList.add('hide-overflow');
             } else {
-                screenCover.classList.add('hide');
-                page.classList.remove('hide-overflow');
-                navWrapper.classList.remove('z-index-6');
+                page.removeChild(screenCover).classList.remove('hide-overflow');
             }
         }
     }
