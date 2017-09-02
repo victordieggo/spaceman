@@ -51,7 +51,8 @@ HELPERS
   position: absolute;
 }
 
-.fixed {
+.fixed,
+.screen-cover {
   position: fixed;
 }
 
@@ -158,14 +159,16 @@ input,
 select,
 textarea,
 .full-size,
-.full-width {
+.full-width,
+.screen-cover {
   left: 0;
   right: 0;
   width: 100%;
 }
 
 .full-size,
-.full-height {
+.full-height,
+.screen-cover {
   top: 0;
   bottom: 0;
   height: 100%;
