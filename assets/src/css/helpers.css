@@ -143,7 +143,6 @@ HELPERS
 -------------------------------------------------------
 */
 
-.btn,
 .auto-size,
 .auto-width {
   width: auto;
@@ -154,9 +153,6 @@ HELPERS
   height: auto;
 }
 
-input,
-select,
-textarea,
 .full-size,
 .full-width {
   width: 100%;
