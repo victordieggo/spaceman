@@ -156,6 +156,16 @@ MAIN NAVIGATION
     transform: rotate(180deg);
   }
 
+  .screen-cover {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    background-color: rgb(29, 29, 29);
+    background-color: rgba(29, 29, 29, 0.7);
+  }
+
 }
 
 @media only screen and (max-width: 480px) {

@@ -26,6 +26,12 @@ input:not(.btn),
   vertical-align: middle;
 }
 
+input,
+select,
+textarea {
+  width: 100%;
+}
+
 select,
 input:not(.btn) {
   height: 2.7em;

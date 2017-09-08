@@ -51,8 +51,7 @@ HELPERS
   position: absolute;
 }
 
-.fixed,
-.screen-cover {
+.fixed {
   position: fixed;
 }
 
@@ -144,7 +143,6 @@ HELPERS
 -------------------------------------------------------
 */
 
-.btn,
 .auto-size,
 .auto-width {
   width: auto;
@@ -155,22 +153,13 @@ HELPERS
   height: auto;
 }
 
-input,
-select,
-textarea,
 .full-size,
-.full-width,
-.screen-cover {
-  left: 0;
-  right: 0;
+.full-width {
   width: 100%;
 }
 
 .full-size,
-.full-height,
-.screen-cover {
-  top: 0;
-  bottom: 0;
+.full-height {
   height: 100%;
 }
 
@@ -210,11 +199,6 @@ textarea,
 .label {
   padding: 0.4em 0.6em;
   border-radius: 0.2em;
-}
-
-.screen-cover {
-  background-color: rgb(29, 29, 29);
-  background-color: rgba(29, 29, 29, 0.7);
 }
 
 /*

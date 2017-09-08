@@ -26,6 +26,7 @@ BUTTONS
   line-height: 2.5;
   padding: 0 1em;
   vertical-align: middle;
+  width: auto;
   white-space: normal;
 }
 
