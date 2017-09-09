@@ -3,6 +3,7 @@
 LAYOUT
 =======================================================
 1. Background Colors
+2. Demo Layout
 =======================================================
 */
 
@@ -13,24 +14,23 @@ LAYOUT
 */
 
 .bg-main {
-  background-color: #0d6788;
+  background-color: #343a40;
 }
 
 .bg-white {
   background-color: #fff;
 }
 
-.bg-lightgrey,
-hr {
+.bg-lightgrey {
   background-color: #e3e3e3;
 }
 
+hr,
 .bg-grey {
   background-color: #afafaf;
 }
 
-.bg-dark,
-.main-nav li ul {
+.bg-dark {
   background-color: #222;
 }
 
@@ -38,6 +38,22 @@ hr {
   background-color: #121212;
 }
 
+.bg-image {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .bg-none {
   background-color: transparent;
+}
+
+/*
+-------------------------------------------------------
+2. Demo Layout
+-------------------------------------------------------
+*/
+
+.bg-image .row {
+  height: 65vh;
 }

@@ -60,6 +60,7 @@ MAIN NAVIGATION
   }
 
   .main-nav li ul {
+    background-color: #222;
     position: absolute;
     text-align: left;
     white-space: nowrap;
