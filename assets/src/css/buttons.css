@@ -18,9 +18,7 @@ BUTTONS
   border: solid 2px #007bff;
   border-radius: 4px;
   display: inline-block;
-  height: 2.7em;
-  line-height: calc(2.7em - 4px);
-  padding: 0 1em;
+  padding: 0.55rem 1rem;
   vertical-align: middle;
   width: auto;
   white-space: normal;
