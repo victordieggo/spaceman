@@ -3,7 +3,7 @@
 LAYOUT
 =======================================================
 1. Background Colors
-2. Demo Layout
+2. Hero Image
 =======================================================
 */
 
@@ -38,7 +38,8 @@ hr,
   background-color: #121212;
 }
 
-.bg-image {
+.bg-image,
+.hero-image {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -50,10 +51,10 @@ hr,
 
 /*
 -------------------------------------------------------
-2. Demo Layout
+2. Hero Image
 -------------------------------------------------------
 */
 
-.bg-image .row {
+.hero-image .row {
   height: 65vh;
 }
