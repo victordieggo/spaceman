@@ -23,10 +23,6 @@ MAIN NAVIGATION
   display: none;
 }
 
-.main-nav li li:not(:last-child) a {
-  border-bottom: 1px solid #dfdfdf;
-}
-
 .main-nav a {
   display: block;
 }
@@ -69,8 +65,15 @@ MAIN NAVIGATION
     cursor: pointer;
   }
 
-  .main-nav li:hover {
-    color: #777;
+  .main-nav li:hover > a {
+    opacity: 0.5;
+  }
+
+  .main-nav li li:not(:last-child):after {
+    content: '';
+    height: 1px;
+    display: block;
+    background-color: #dfdfdf;
   }
 
   .main-nav li ul {
@@ -92,7 +95,7 @@ MAIN NAVIGATION
     color: #222;
     border-radius: 6px;
     background-color: #fff;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.20), 0 1px 1px rgba(0,0,0,0.20);
+    box-shadow: 0 0 2px rgba(0,0,0,0.20);
   }
 
   .main-nav li li a {
