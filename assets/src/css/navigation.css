@@ -167,10 +167,6 @@ MAIN NAVIGATION
     border-bottom: 1px solid #dfdfdf;
   }
 
-  .main-nav .menu-item-is-active > a {
-    border-color: #495159;
-  }
-
   .main-nav a {
     padding: 1.7em;
   }
@@ -188,8 +184,9 @@ MAIN NAVIGATION
     display: block;
   }
 
-  .menu-item-is-active > a {
+  .main-nav .menu-item-is-active > a {
     background-color: #343a40;
+    border-color: #495159;
     color: #fff;
   }
 
@@ -198,7 +195,7 @@ MAIN NAVIGATION
   }
 
   .menu-item-has-children:not(.menu-item-is-active) > a:after {
-    background: url('../../dist/svg/icon-arrow-alt.svg') no-repeat right;
+    background-image: url('../../dist/svg/icon-arrow-alt.svg');
   }
 
   .screen-cover {
