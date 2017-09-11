@@ -65,7 +65,7 @@ MAIN NAVIGATION
   }
 
   .main-nav li:hover > a {
-    opacity: 0.5;
+    color: #afafaf;
   }
 
   .main-nav li:hover > ul {
