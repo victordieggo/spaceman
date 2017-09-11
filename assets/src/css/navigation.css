@@ -62,28 +62,37 @@ MAIN NAVIGATION
 
   .main-nav li {
     position: relative;
-    cursor: pointer;
   }
 
   .main-nav li:hover > a {
     opacity: 0.5;
   }
 
-  .main-nav li li:not(:last-child):after {
-    content: '';
-    height: 1px;
+  .main-nav li:hover > ul {
     display: block;
-    background-color: #dfdfdf;
   }
 
   .main-nav li ul {
     text-align: left;
     position: absolute;
+    border-radius: 6px;
+    background-color: #fff;
+    box-shadow: 0 0 2px rgba(0,0,0,0.20);
     white-space: nowrap;
   }
 
-  .main-nav li:hover > ul {
+  .main-nav li li:not(:last-child):after {
+    content: '';
+    height: 1px;
     display: block;
+    margin: 0 0.65em;
+    background-color: #dfdfdf;
+  }
+
+  .main-nav li ul a {
+    color: #222;
+    font-size: 90%;
+    padding: 0.7em;
   }
 
   .main-nav li ul ul {
@@ -91,27 +100,12 @@ MAIN NAVIGATION
     left: 100%;
   }
 
-  .main-nav ul ul {
-    color: #222;
-    border-radius: 6px;
-    background-color: #fff;
-    box-shadow: 0 0 2px rgba(0,0,0,0.20);
+  .main-nav li .menu-item-has-children > a {
+    padding-right: 2em;
   }
 
-  .main-nav li li a {
-    font-size: 90%;
-    padding: 0.7em 0;
-  }
-
-  .main-nav li li {
-    padding: 0 0.7em;
-  }
-
-  li ul .menu-item-has-children > a {
-    padding-right: 1.5em;
-  }
-
-  li .menu-item-has-children > a:after {
+  .main-nav li .menu-item-has-children > a:after {
+    right: 0.7em;
     transform: rotate(-90deg);
     background-image: url('../../dist/svg/icon-arrow-alt.svg');
   }
