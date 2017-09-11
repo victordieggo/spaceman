@@ -34,7 +34,8 @@ textarea {
 
 select,
 input:not(.btn) {
-  padding: 0.6rem;
+  height: 2.7em;
+  padding: 0 0.6em;
 }
 
 textarea {
@@ -72,7 +73,7 @@ select::-ms-expand {
 select {
   background: #fff url('../../dist/svg/icon-arrow-alt.svg') no-repeat;
   background-position: right 0.5em center;
-  background-size: 16%;
+  background-size: 0.8em;
   padding-right: 2em;
 }
 
