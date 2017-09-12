@@ -50,6 +50,7 @@ input:not(.btn):focus,
 :focus + .label-radio:before,
 :focus + .label-checkbox:before {
   border-color: #909090;
+  box-shadow: 0 0 1px #909090;
 }
 
 ::-webkit-input-placeholder {
