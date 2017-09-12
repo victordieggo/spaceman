@@ -19,7 +19,7 @@ MAIN NAVIGATION
   text-align: right;
 }
 
-.main-nav li ul {
+.main-nav .sub-menu {
   display: none;
 }
 
@@ -50,29 +50,29 @@ MAIN NAVIGATION
 
 @media only screen and (min-width: 993px) {
 
-  .main-nav > ul > li {
+  .main-nav .menu > .menu-item {
     display: inline-block;
     margin-left: 1.5em;
   }
 
-  .main-nav > ul > .menu-item-has-children > a {
+  .main-nav .menu > .menu-item-has-children > a {
     padding-top: 0.5em;
     padding-bottom: 0.5em;
   }
 
-  .main-nav li {
+  .menu-item {
     position: relative;
   }
 
-  .main-nav li:hover > a {
+  .main-nav .menu-item:hover > a {
     color: #afafaf;
   }
 
-  .main-nav li:hover > ul {
+  .main-nav .menu-item:hover > .sub-menu {
     display: block;
   }
 
-  .main-nav li ul {
+  .main-nav .sub-menu {
     text-align: left;
     position: absolute;
     border-radius: 6px;
@@ -81,7 +81,7 @@ MAIN NAVIGATION
     white-space: nowrap;
   }
 
-  .main-nav li li:not(:last-child):after {
+  .main-nav .sub-menu .menu-item:not(:last-child):after {
     content: '';
     height: 1px;
     display: block;
@@ -89,22 +89,22 @@ MAIN NAVIGATION
     background-color: #dfdfdf;
   }
 
-  .main-nav li ul a {
+  .main-nav .sub-menu a {
     color: #222;
     font-size: 90%;
     padding: 0.7em;
   }
 
-  .main-nav li ul ul {
+  .main-nav .sub-menu .sub-menu {
     top: 0;
     left: 100%;
   }
 
-  .main-nav li .menu-item-has-children > a {
+  .main-nav .menu-item .menu-item-has-children > a {
     padding-right: 2em;
   }
 
-  .main-nav li .menu-item-has-children > a:after {
+  .main-nav .menu-item .menu-item-has-children > a:after {
     right: 0.7em;
     transform: rotate(-90deg);
     background-image: url('../../dist/svg/icon-arrow-alt.svg');
@@ -152,7 +152,6 @@ MAIN NAVIGATION
     left: -100%;
     width: 18em;
     overflow-y: auto;
-    overflow-x: hidden;
     text-align: left;
     text-transform: uppercase;
     background-color: #fff;
@@ -170,6 +169,10 @@ MAIN NAVIGATION
 
   .main-nav-is-active {
     left: 0;
+  }
+
+  .menu-item-has-children a {
+    padding-right: 4em;
   }
 
   .menu-item-has-children > a:after {
