@@ -44,3 +44,7 @@ select:focus {
   outline: none;
   cursor: pointer;
 }
+
+button {
+  background-color: transparent;
+}

@@ -15,7 +15,7 @@
 
     function lockScreen() {
         body.classList.toggle('hide-overflow');
-        if (body.querySelector('.screen-cover')) {
+        if (body.contains(screenCover)) {
             body.removeChild(screenCover);
         } else {
             screenCover = document.createElement('div');
@@ -34,12 +34,10 @@
             event.preventDefault();
         });
         element.addEventListener('click', function () {
-            if (window.innerWidth <= 992) {
-                element.classList.toggle('menu-item-is-active');
-                element.querySelector('ul').addEventListener('click', function (event) {
-                    event.stopPropagation();
-                });
-            }
+            element.classList.toggle('menu-item-is-active');
+            element.querySelector('ul').addEventListener('click', function (event) {
+                event.stopPropagation();
+            });
         });
     }
 

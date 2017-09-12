@@ -3,11 +3,7 @@
 BUTTONS
 =======================================================
 1. Base Styles
-2. Sucess Buttons
-3. Info Buttons
-4. Warning Buttons
-5. Danger Buttons
-6. Outline Buttons
+2. Outline Buttons
 =======================================================
 */
 
@@ -18,89 +14,36 @@ BUTTONS
 */
 
 .btn {
-  background-color: #afafaf;
-  border: solid 2px #afafaf;
+  background-color: #007bff;
+  border: solid 2px #007bff;
   border-radius: 4px;
   display: inline-block;
   height: 2.7em;
-  line-height: 2.5;
-  padding: 0 1em;
-  vertical-align: middle;
   width: auto;
+  padding: 0 1em;
+  line-height: 2.5;
+  vertical-align: middle;
   white-space: normal;
 }
 
-/*
--------------------------------------------------------
-2. Sucess Buttons
--------------------------------------------------------
-*/
-
-.btn-sucess {
-  background-color: #5cb85c;
-  border-color: #5cb85c;
+.btn:hover,
+.btn:focus,
+.btn:not(.btn-outline) {
+  color: #fff;
 }
 
-.btn-sucess:hover {
-  background-color: #449d44;
-  border-color: #449d44;
+.btn:focus,
+.btn:hover {
+  background-color: #0069d9;
+  border-color: #0069d9;
 }
 
 /*
 -------------------------------------------------------
-3. Info Buttons
+2. Outline Buttons
 -------------------------------------------------------
 */
 
-.btn-info {
-  background-color: #49a0d7;
-  border-color: #49a0d7;
-}
-
-.btn-info:hover {
-  background-color: #3586b9;
-  border-color: #3586b9;
-}
-
-/*
--------------------------------------------------------
-4. Warning Buttons
--------------------------------------------------------
-*/
-
-.btn-warning {
-  background-color: #f0ad4e;
-  border-color: #f0ad4e;
-}
-
-.btn-warning:hover {
-  background-color: #ec971f;
-  border-color: #ec971f;
-}
-
-/*
--------------------------------------------------------
-5. Danger Buttons
--------------------------------------------------------
-*/
-
-.btn-danger {
-  background-color: #d9534f;
-  border-color: #d9534f;
-}
-
-.btn-danger:hover {
-  background-color: #c9302c;
-  border-color: #c9302c;
-}
-
-/*
--------------------------------------------------------
-6. Outline Buttons
--------------------------------------------------------
-*/
-
-button,
-.btn-outline {
+.btn-outline:not(:hover):not(:focus) {
   background-color: transparent;
 }

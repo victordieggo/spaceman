@@ -50,6 +50,7 @@ input:not(.btn):focus,
 :focus + .label-radio:before,
 :focus + .label-checkbox:before {
   border-color: #909090;
+  box-shadow: 0 0 1px #909090;
 }
 
 ::-webkit-input-placeholder {
@@ -71,9 +72,10 @@ select::-ms-expand {
 }
 
 select {
-  background: url('../../dist/svg/icon-arrow-alt.svg') no-repeat;
+  background-image: url('../../dist/svg/icon-arrow-alt.svg');
   background-position: right 0.5em center;
-  background-size: 1em;
+  background-repeat: no-repeat;
+  background-size: 0.8em;
   padding-right: 2em;
 }
 
@@ -105,7 +107,7 @@ input[type=checkbox] {
 
 :checked + .label-checkbox:before {
   background: url('../../dist/svg/icon-check.svg') no-repeat center;
-  background-size: 70%;
+  background-size: 60%;
 }
 
 :checked + .label-radio:before {

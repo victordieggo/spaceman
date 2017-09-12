@@ -25,21 +25,20 @@ MAIN NAVIGATION
 
 .main-nav a {
   display: block;
-  padding: 0.6em 1em;
 }
 
 .menu-item-has-children > a {
-  padding-right: 3em;
+  padding-right: 1.5em;
   position: relative;
 }
 
 .menu-item-has-children > a:after {
-  position: absolute;
   top: 0;
+  right: 0;
   bottom: 0;
-  right: 1em;
   content: '';
   padding: 0.35em;
+  position: absolute;
   background: url('../../dist/svg/icon-arrow.svg') no-repeat right;
 }
 
@@ -53,16 +52,47 @@ MAIN NAVIGATION
 
   .main-nav > ul > li {
     display: inline-block;
+    margin-left: 1.5em;
+  }
+
+  .main-nav > ul > .menu-item-has-children > a {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
   }
 
   .main-nav li {
     position: relative;
   }
 
+  .main-nav li:hover > a {
+    color: #afafaf;
+  }
+
+  .main-nav li:hover > ul {
+    display: block;
+  }
+
   .main-nav li ul {
-    position: absolute;
     text-align: left;
+    position: absolute;
+    border-radius: 6px;
+    background-color: #fff;
+    box-shadow: 0 0 2px rgba(0,0,0,0.20);
     white-space: nowrap;
+  }
+
+  .main-nav li li:not(:last-child):after {
+    content: '';
+    height: 1px;
+    display: block;
+    margin: 0 0.65em;
+    background-color: #dfdfdf;
+  }
+
+  .main-nav li ul a {
+    color: #222;
+    font-size: 90%;
+    padding: 0.7em;
   }
 
   .main-nav li ul ul {
@@ -70,16 +100,14 @@ MAIN NAVIGATION
     left: 100%;
   }
 
-  .main-nav li:hover > ul {
-    display: block;
+  .main-nav li .menu-item-has-children > a {
+    padding-right: 2em;
   }
 
-  .main-nav li:hover > a {
-    background-color: #0d6788;
-  }
-
-  li .menu-item-has-children > a:after {
+  .main-nav li .menu-item-has-children > a:after {
+    right: 0.7em;
     transform: rotate(-90deg);
+    background-image: url('../../dist/svg/icon-arrow-alt.svg');
   }
 
 }
@@ -127,12 +155,17 @@ MAIN NAVIGATION
     overflow-x: hidden;
     text-align: left;
     text-transform: uppercase;
-    background-color: #1d1d1d;
+    background-color: #fff;
+    color: #222;
     z-index: 3;
   }
 
+  .main-nav :not(:last-child) a {
+    border-bottom: 1px solid #dfdfdf;
+  }
+
   .main-nav a {
-    padding: 1.5em;
+    padding: 1.7em;
   }
 
   .main-nav-is-active {
@@ -148,12 +181,18 @@ MAIN NAVIGATION
     display: block;
   }
 
-  .menu-item-is-active > a {
-    background-color: #0d6788;
+  .main-nav .menu-item-is-active > a {
+    background-color: #343a40;
+    border-color: #495159;
+    color: #fff;
   }
 
   .menu-item-is-active > a:after {
     transform: rotate(180deg);
+  }
+
+  .menu-item-has-children:not(.menu-item-is-active) > a:after {
+    background-image: url('../../dist/svg/icon-arrow-alt.svg');
   }
 
   .screen-cover {
