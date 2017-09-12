@@ -21,21 +21,17 @@ LAYOUT
   background-color: #fff;
 }
 
-.bg-lightgrey {
-  background-color: #e3e3e3;
-}
-
 hr,
 .bg-grey {
   background-color: #afafaf;
 }
 
-.bg-dark {
-  background-color: #222;
+.bg-grey-light {
+  background-color: #e3e3e3;
 }
 
-.bg-darker {
-  background-color: #121212;
+.bg-grey-dark {
+  background-color: #222;
 }
 
 .bg-image,
