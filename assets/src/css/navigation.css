@@ -20,7 +20,8 @@ MAIN NAVIGATION
 }
 
 .main-nav .sub-menu {
-  display: none;
+  height: 0;
+  overflow: hidden;
 }
 
 .main-nav a {
@@ -69,7 +70,8 @@ MAIN NAVIGATION
   }
 
   .main-nav .menu-item:hover > .sub-menu {
-    display: block;
+    height: auto;
+    overflow: visible;
   }
 
   .main-nav .sub-menu {
@@ -181,7 +183,8 @@ MAIN NAVIGATION
   }
 
   .main-nav .menu-item-is-active > ul {
-    display: block;
+    height: auto;
+    overflow: visible;
   }
 
   .main-nav .menu-item-is-active > a {
