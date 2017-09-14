@@ -154,6 +154,7 @@ MAIN NAVIGATION
     left: -100%;
     width: 18em;
     overflow-y: auto;
+    overflow-x: hidden;
     text-align: left;
     text-transform: uppercase;
     background-color: #fff;
