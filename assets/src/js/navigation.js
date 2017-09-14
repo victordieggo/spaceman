@@ -32,12 +32,7 @@
     function navigationSubmenu(element) {
         element.querySelector('a').addEventListener('click', function (event) {
             event.preventDefault();
-        });
-        element.addEventListener('click', function () {
             element.classList.toggle('menu-item-is-active');
-            element.querySelector('ul').addEventListener('click', function (event) {
-                event.stopPropagation();
-            });
         });
     }
 
