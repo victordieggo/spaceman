@@ -20,8 +20,11 @@ MAIN NAVIGATION
 }
 
 .main-nav .sub-menu {
-  height: 0;
-  overflow: hidden;
+  display: none;
+}
+
+.menu-item-is-active > .sub-menu {
+  display: block;
 }
 
 .main-nav a {
@@ -65,13 +68,10 @@ MAIN NAVIGATION
     position: relative;
   }
 
+  .menu-item-is-active > a,
+  .main-nav .menu-item > a:focus,
   .main-nav .menu-item:hover > a {
     color: #afafaf;
-  }
-
-  .main-nav .menu-item:hover > .sub-menu {
-    height: auto;
-    overflow: visible;
   }
 
   .main-nav .sub-menu {
@@ -181,11 +181,6 @@ MAIN NAVIGATION
   .menu-item-has-children > a:after {
     right: 1.5em;
     padding: 0.5em;
-  }
-
-  .main-nav .menu-item-is-active > ul {
-    height: auto;
-    overflow: visible;
   }
 
   .main-nav .menu-item-is-active > a {
