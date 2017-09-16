@@ -1,7 +1,7 @@
 /* =====================================================================
  * SPACEMAN MOBILE NAVIGATION
  * ===================================================================*/
-/*global window, document*/
+/*global window, document, console, Event*/
 
 (function () {
 
@@ -29,15 +29,16 @@
         lockScreen();
     }
 
-    function navigationSubmenu(element) {
+    function toggleSubmenu(element) {
         element.querySelector('a').addEventListener('click', function (event) {
             event.preventDefault();
-        });
-        element.addEventListener('click', function () {
+            if (window.innerWidth > 992) {
+                var activeItem = nav.querySelector('.sub-menu').querySelector('.menu-item-is-active');
+                if (activeItem && activeItem.contains(element) === false) {
+                    activeItem.classList.remove('menu-item-is-active');
+                }
+            }
             element.classList.toggle('menu-item-is-active');
-            element.querySelector('ul').addEventListener('click', function (event) {
-                event.stopPropagation();
-            });
         });
     }
 
@@ -51,15 +52,35 @@
         }
     }
 
-    body.addEventListener('click', function (event) {
-        var target = event.target;
-        if (target === navBtn || target === screenCover) {
-            mobileNavigation();
-        }
+    Array.prototype.forEach.call(['click', 'keyup'], function (event) {
+        body.addEventListener(event, function (event) {
+            var target = event.target,
+                key = event.keyCode,
+                type = event.type,
+                focusedElement = nav.querySelector(':focus'),
+                activeItems = nav.querySelectorAll('.menu-item-is-active');
+            if (type === 'click') {
+                if (target === navBtn || target === screenCover) {
+                    mobileNavigation();
+                }
+            }
+            Array.prototype.forEach.call(activeItems, function (activeItem) {
+                if (type === 'click' && window.innerWidth > 992) {
+                    if (!activeItem.contains(target)) {
+                        activeItem.classList.remove('menu-item-is-active');
+                    }
+                }
+                if (type === 'keyup') {
+                    if (key === 27 || (key === 9 && !activeItem.contains(focusedElement))) {
+                        activeItem.classList.remove('menu-item-is-active');
+                    }
+                }
+            });
+        });
     });
 
     Array.prototype.forEach.call(parentItem, function (element) {
-        navigationSubmenu(element);
+        toggleSubmenu(element);
     });
 
     window.addEventListener('resize', resizeFallback);
