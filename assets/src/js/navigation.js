@@ -78,7 +78,6 @@
                 previous,
                 parent,
                 menu;
-
             if (type === 'click') {
                 if (target === navBtn || target === screenCover) {
                     mobileNavigation();
@@ -124,7 +123,7 @@
                     if (key === 37) {
                         if (parent.classList.contains(isActive)) {
                             onFocus.click();
-                        } else {
+                        } else if (!getParent(menu, 2).classList.contains('menu')) {
                             previous();
                         }
                     }
@@ -134,14 +133,17 @@
                         }
                         if (parent.previousElementSibling !== null) {
                             parent.previousElementSibling.querySelector('a').focus();
-                        } else if (getParent(onFocus, 3).classList.contains(isActive)) {
+                        } else if (getParent(onFocus, 3).classList.contains(isActive) &&
+                                !getParent(menu, 2).classList.contains('sub-menu')) {
                             previous();
                         }
                     }
                     if (key === 39) {
                         event.preventDefault();
-                        if (parent.classList.contains(hasChildren)) {
+                        if (parent.classList.contains(hasChildren) &&
+                                 !parent.classList.contains(isActive)) {
                             onFocus.click();
+                        } else if (onFocus.nextElementSibling !== null) {
                             onFocus = onFocus.nextElementSibling.querySelector('a');
                             onFocus.focus();
                         }
