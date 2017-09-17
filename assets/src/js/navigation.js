@@ -36,9 +36,15 @@
                 var activeItem = nav.querySelector('.sub-menu').querySelector('.menu-item-is-active');
                 if (activeItem && activeItem.contains(element) === false) {
                     activeItem.classList.remove('menu-item-is-active');
+                    activeItem.querySelector('a').setAttribute('aria-expanded', 'false');
                 }
             }
             element.classList.toggle('menu-item-is-active');
+            if (this.getAttribute('aria-expanded') === 'false') {
+                this.setAttribute('aria-expanded', 'true');
+            } else {
+                this.setAttribute('aria-expanded', 'false');
+            }
         });
     }
 
@@ -68,6 +74,7 @@
                 if (type === 'click' && window.innerWidth > 992) {
                     if (!activeItem.contains(target)) {
                         activeItem.classList.remove('menu-item-is-active');
+                        activeItem.querySelector('a').setAttribute('aria-expanded', 'false');
                     }
                 }
                 if (type === 'keyup') {
