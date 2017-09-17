@@ -20,13 +20,11 @@ MAIN NAVIGATION
 }
 
 .main-nav .sub-menu {
-  height: 0;
-  overflow: hidden;
+  display: none;
 }
 
 .menu-item-is-active > .sub-menu {
-  height: auto;
-  overflow: visible;
+  display: block;
 }
 
 .main-nav a {
