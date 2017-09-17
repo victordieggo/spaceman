@@ -150,10 +150,10 @@
                     }
                     if (key === 40) {
                         event.preventDefault();
-                        if (parent.classList.contains(isActive)) {
-                            onFocus.click();
-                        }
                         if (parent.nextElementSibling !== null) {
+                            if (parent.classList.contains(isActive)) {
+                                onFocus.click();
+                            }
                             parent.nextElementSibling.querySelector('a').focus();
                         }
                     }
