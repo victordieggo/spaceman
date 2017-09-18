@@ -36,7 +36,7 @@ MAIN NAVIGATION
   position: relative;
 }
 
-.menu-item-has-children > a:after {
+.menu-item-has-children > a::after {
   top: 0;
   right: 0;
   bottom: 0;
@@ -53,7 +53,6 @@ MAIN NAVIGATION
 */
 
 @media only screen and (min-width: 993px) {
-
   .main-nav .menu > .menu-item {
     display: inline-block;
     margin-left: 1.5em;
@@ -79,11 +78,11 @@ MAIN NAVIGATION
     position: absolute;
     border-radius: 6px;
     background-color: #fff;
-    box-shadow: 0 0 2px rgba(0,0,0,0.20);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
     white-space: nowrap;
   }
 
-  .main-nav .sub-menu .menu-item:not(:last-child):after {
+  .main-nav .sub-menu .menu-item:not(:last-child)::after {
     content: '';
     height: 1px;
     display: block;
@@ -106,12 +105,11 @@ MAIN NAVIGATION
     padding-right: 2em;
   }
 
-  .main-nav .menu-item .menu-item-has-children > a:after {
+  .main-nav .menu-item .menu-item-has-children > a::after {
     right: 0.7em;
     transform: rotate(-90deg);
     background-image: url('../../dist/svg/icon-arrow-alt.svg');
   }
-
 }
 
 /*
@@ -131,12 +129,10 @@ MAIN NAVIGATION
 }
 
 @media only screen and (max-width: 992px) {
-
   .main-nav-is-active + .nav-btn {
     position: relative;
     z-index: 2;
   }
-
 }
 
 /*
@@ -146,7 +142,6 @@ MAIN NAVIGATION
 */
 
 @media only screen and (max-width: 992px) {
-
   .main-nav {
     position: fixed;
     top: 0;
@@ -178,7 +173,7 @@ MAIN NAVIGATION
     padding-right: 4em;
   }
 
-  .menu-item-has-children > a:after {
+  .menu-item-has-children > a::after {
     right: 1.5em;
     padding: 0.5em;
   }
@@ -189,11 +184,11 @@ MAIN NAVIGATION
     color: #fff;
   }
 
-  .menu-item-is-active > a:after {
+  .menu-item-is-active > a::after {
     transform: rotate(180deg);
   }
 
-  .menu-item-has-children:not(.menu-item-is-active) > a:after {
+  .menu-item-has-children:not(.menu-item-is-active) > a::after {
     background-image: url('../../dist/svg/icon-arrow-alt.svg');
   }
 
@@ -206,13 +201,10 @@ MAIN NAVIGATION
     background-color: rgb(29, 29, 29);
     background-color: rgba(29, 29, 29, 0.7);
   }
-
 }
 
 @media only screen and (max-width: 480px) {
-
   .main-nav {
     width: 75%;
   }
-
 }
