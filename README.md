@@ -16,7 +16,7 @@ $ cd myproject
 # install dev dependencies:
 $ npm install
 
-# initialize gulp and engage into hyperspace:
+# initialize gulp and browsersync:
 $ gulp
 ```
 
