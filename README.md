@@ -27,7 +27,7 @@ $ gulp
 - `gulp js`: compile js files
 - `gulp img`: compress images
 - `gulp svg`: minify svg files
-- `gulp watch`: inicialize browsersync
+- `gulp watch`: start browsersync
 
 ### Browser Support ###
 
