@@ -75,7 +75,8 @@
                 type = event.type,
                 onFocus = nav.querySelector(':focus'),
                 activeItems = nav.querySelectorAll('.' + isActive),
-                previous,
+                previousLink,
+                nextLink,
                 parent,
                 menu;
             if (type === 'click') {
@@ -108,23 +109,26 @@
                         event.preventDefault();
                         if (!parent.classList.contains(isActive)) {
                             onFocus.click();
-                        } else {
-                            onFocus = parent.querySelector('.sub-menu a');
-                            onFocus.focus();
                         }
+                        onFocus = parent.querySelector('.sub-menu a');
+                        onFocus.focus();
                     }
                 }
                 if (menu.classList.contains('sub-menu')) {
-                    previous = function () {
+                    previousLink = function () {
                         onFocus = getParent(onFocus, 3).querySelector('a');
                         onFocus.click();
+                        onFocus.focus();
+                    };
+                    nextLink = function () {
+                        onFocus = onFocus.nextElementSibling.querySelector('a');
                         onFocus.focus();
                     };
                     if (key === 37) {
                         if (parent.classList.contains(isActive)) {
                             onFocus.click();
                         } else if (!getParent(menu, 2).classList.contains('menu')) {
-                            previous();
+                            previousLink();
                         }
                     }
                     if (key === 38) {
@@ -135,7 +139,7 @@
                             parent.previousElementSibling.querySelector('a').focus();
                         } else if (getParent(onFocus, 3).classList.contains(isActive) &&
                                 !getParent(menu, 2).classList.contains('sub-menu')) {
-                            previous();
+                            previousLink();
                         }
                     }
                     if (key === 39) {
@@ -143,9 +147,9 @@
                         if (parent.classList.contains(hasChildren) &&
                                  !parent.classList.contains(isActive)) {
                             onFocus.click();
+                            nextLink();
                         } else if (onFocus.nextElementSibling !== null) {
-                            onFocus = onFocus.nextElementSibling.querySelector('a');
-                            onFocus.focus();
+                            nextLink();
                         }
                     }
                     if (key === 40) {
