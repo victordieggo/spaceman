@@ -23,11 +23,11 @@ $ gulp
 ### Gulp Tasks ###
 
 - `gulp`: run all tasks and start browsersync
-- `gulp css`: combine all css files/media queries and minify the generated file
-- `gulp js`: combine all js files and minify the generated file
+- `gulp css`: compile css files
+- `gulp js`: compile js files
 - `gulp img`: compress images
 - `gulp svg`: minify svg files
-- `gulp watch`: start browsersync
+- `gulp watch`: inicialize browsersync
 
 ### Browser Support ###
 
