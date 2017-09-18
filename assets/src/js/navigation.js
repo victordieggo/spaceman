@@ -56,6 +56,7 @@
         if (nav.classList.contains('main-nav-is-active')) {
             if ((!cover && browserWidth <= 992) || (cover && browserWidth > 992)) {
                 lockScreen();
+                nav.click();
             }
         }
     }
