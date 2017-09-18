@@ -1,16 +1,10 @@
 # Spaceman #
 
-Spaceman is a simple and easily customizable HTML/CSS boilerplate to build websites and apps. It provides a flexbox based responsive layout system, pre-set styles for buttons, forms, typography and other elements, CSS utilities and small components while maintaing best practices and accesibility.
+Spaceman is a simple and easily customizable HTML/CSS boilerplate to build websites and apps. It provides a flexbox based responsive layout system, pre-set styles for basic UI elements and a few CSS utilities and components.
 
 ### Getting Started ###
 
-Spaceman uses Gulp and Browsersync, which run throught NodeJS. You might wanna know about them before we start:
-
-- [NodeJS](https://nodejs.org/en/)
-- [Gulp](http://gulpjs.com/)
-- [Browsersync](https://www.browsersync.io/)
-
-[Download Spaceman](https://github.com/victordieggo/spaceman/releases/latest) to your project directory then get on the command line:
+Spaceman uses [Gulp](http://gulpjs.com/) and [Browsersync](https://www.browsersync.io/), so you'll need [Node.JS](https://nodejs.org/en/). Once you have set it up, [download Spaceman](https://github.com/victordieggo/spaceman/releases/latest) to your project directory and access the terminal:
 
 ```
 # install gulp globally
@@ -22,7 +16,7 @@ $ cd myproject
 # install dev dependencies:
 $ npm install
 
-# run gulp and engage into hyperspace:
+# initialize gulp and engage into hyperspace:
 $ gulp
 ```
 
