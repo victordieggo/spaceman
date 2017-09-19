@@ -155,6 +155,7 @@ MAIN NAVIGATION
     color: #222;
     z-index: 2;
     text-align: left;
+    visibility: hidden;
   }
 
   .main-nav :not(:last-child) a {
@@ -167,6 +168,7 @@ MAIN NAVIGATION
 
   .main-nav-is-active > .menu {
     left: 0;
+    visibility: visible;
   }
 
   .menu-item-has-children a {
