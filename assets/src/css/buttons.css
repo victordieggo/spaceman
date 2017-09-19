@@ -30,6 +30,7 @@ BUTTONS
 .btn:focus,
 .btn:not(.btn-outline) {
   color: #fff;
+  outline: none;
 }
 
 .btn:focus,

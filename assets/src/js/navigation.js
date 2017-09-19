@@ -8,12 +8,13 @@
     'use strict';
 
     var screenCover,
-        isActive    = 'menu-item-is-active',
-        hasChildren = 'menu-item-has-children',
-        body        = document.body,
-        navBtn      = body.querySelector('.nav-btn'),
-        nav         = body.querySelector('.main-nav'),
-        parentItem  = body.querySelectorAll('.' + hasChildren);
+        navIsActive  = 'main-nav-is-active',
+        itemIsActive = 'menu-item-is-active',
+        hasChildren  = 'menu-item-has-children',
+        body         = document.body,
+        navBtn       = body.querySelector('.nav-btn'),
+        nav          = body.querySelector('.main-nav'),
+        parentItem   = body.querySelectorAll('.' + hasChildren);
 
     function lockScreen() {
         body.classList.toggle('hide-overflow');
@@ -26,8 +27,17 @@
         }
     }
 
+    function toggleExpanded(element) {
+        if (element.getAttribute('aria-expanded') === 'false') {
+            element.setAttribute('aria-expanded', 'true');
+        } else {
+            element.setAttribute('aria-expanded', 'false');
+        }
+    }
+
     function mobileNavigation() {
-        nav.classList.toggle('main-nav-is-active');
+        nav.classList.toggle(navIsActive);
+        toggleExpanded(navBtn);
         lockScreen();
     }
 
@@ -35,133 +45,56 @@
         element.querySelector('a').addEventListener('click', function (event) {
             event.preventDefault();
             if (window.innerWidth > 992) {
-                var activeItem = nav.querySelector('.sub-menu').querySelector('.' + isActive);
+                var activeItem = nav.querySelector('.sub-menu').querySelector('.' + itemIsActive);
                 if (activeItem && activeItem.contains(element) === false) {
-                    activeItem.classList.remove(isActive);
+                    activeItem.classList.remove(itemIsActive);
                     activeItem.querySelector('a').setAttribute('aria-expanded', 'false');
                 }
             }
-            element.classList.toggle(isActive);
-            if (this.getAttribute('aria-expanded') === 'false') {
-                this.setAttribute('aria-expanded', 'true');
-            } else {
-                this.setAttribute('aria-expanded', 'false');
-            }
+            element.classList.toggle(itemIsActive);
+            toggleExpanded(this);
         });
     }
 
     function resizeFallback() {
         var cover = body.contains(screenCover),
             browserWidth = window.innerWidth;
-        if (nav.classList.contains('main-nav-is-active')) {
+        if (nav.classList.contains(navIsActive)) {
             if ((!cover && browserWidth <= 992) || (cover && browserWidth > 992)) {
                 lockScreen();
+                nav.click();
             }
+        } else if (nav.querySelector('.' + itemIsActive) && browserWidth > 992) {
+            nav.click();
         }
     }
 
-    function getParent(element, num) {
-        var i;
-        for (i = 0; i < num; i += 1) {
-            element = element.parentElement;
-        }
-        return element;
-    }
-
-    Array.prototype.forEach.call(['click', 'keyup', 'keydown'], function (event) {
+    Array.prototype.forEach.call(['click', 'keyup'], function (event) {
         body.addEventListener(event, function (event) {
-            var target = event.target,
+            var type = event.type,
                 key = event.keyCode,
-                type = event.type,
+                target = event.target,
                 onFocus = nav.querySelector(':focus'),
-                activeItems = nav.querySelectorAll('.' + isActive),
-                previousLink,
-                nextLink,
-                parent,
-                menu;
+                activeItems = nav.querySelectorAll('.' + itemIsActive);
             if (type === 'click') {
                 if (target === navBtn || target === screenCover) {
                     mobileNavigation();
                 }
             }
-            Array.prototype.forEach.call(activeItems, function (activeItem) {
-                if (type === 'click' && window.innerWidth > 992) {
-                    if (!activeItem.contains(target)) {
-                        activeItem.classList.remove(isActive);
-                        activeItem.querySelector('a').setAttribute('aria-expanded', 'false');
-                    }
-                }
-                if (type === 'keyup') {
-                    if (key === 27 || (key === 9 && !activeItem.contains(onFocus))) {
-                        activeItem.classList.remove(isActive);
-                    }
-                }
-            });
-            if (onFocus && type === 'keydown') {
-                parent = getParent(onFocus, 1);
-                menu = getParent(onFocus, 2);
-                if (menu.classList.contains('menu') && parent.classList.contains(hasChildren)) {
-                    if (key === 38 && parent.classList.contains(isActive)) {
-                        event.preventDefault();
-                        onFocus.click();
-                    }
-                    if (key === 40) {
-                        event.preventDefault();
-                        if (!parent.classList.contains(isActive)) {
-                            onFocus.click();
-                        }
-                        onFocus = parent.querySelector('.sub-menu a');
-                        onFocus.focus();
-                    }
-                }
-                if (menu.classList.contains('sub-menu')) {
-                    previousLink = function () {
-                        onFocus = getParent(onFocus, 3).querySelector('a');
-                        onFocus.click();
-                        onFocus.focus();
-                    };
-                    nextLink = function () {
-                        onFocus = onFocus.nextElementSibling.querySelector('a');
-                        onFocus.focus();
-                    };
-                    if (key === 37) {
-                        if (parent.classList.contains(isActive)) {
-                            onFocus.click();
-                        } else if (!getParent(menu, 2).classList.contains('menu')) {
-                            previousLink();
+            if (window.innerWidth > 992) {
+                Array.prototype.forEach.call(activeItems, function (activeItem) {
+                    if (type === 'click') {
+                        if (!activeItem.contains(target)) {
+                            activeItem.classList.remove(itemIsActive);
+                            toggleExpanded(activeItem);
                         }
                     }
-                    if (key === 38) {
-                        if (parent.classList.contains(isActive)) {
-                            onFocus.click();
-                        }
-                        if (parent.previousElementSibling !== null) {
-                            parent.previousElementSibling.querySelector('a').focus();
-                        } else if (getParent(onFocus, 3).classList.contains(isActive) &&
-                                !getParent(menu, 2).classList.contains('sub-menu')) {
-                            previousLink();
+                    if (type === 'keyup') {
+                        if (key === 27 || (key === 9 && !activeItem.contains(onFocus))) {
+                            activeItem.classList.remove(itemIsActive);
                         }
                     }
-                    if (key === 39) {
-                        event.preventDefault();
-                        if (parent.classList.contains(hasChildren) &&
-                                 !parent.classList.contains(isActive)) {
-                            onFocus.click();
-                            nextLink();
-                        } else if (onFocus.nextElementSibling !== null) {
-                            nextLink();
-                        }
-                    }
-                    if (key === 40) {
-                        event.preventDefault();
-                        if (parent.nextElementSibling !== null) {
-                            if (parent.classList.contains(isActive)) {
-                                onFocus.click();
-                            }
-                            parent.nextElementSibling.querySelector('a').focus();
-                        }
-                    }
-                }
+                });
             }
         });
     });

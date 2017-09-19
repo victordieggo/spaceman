@@ -15,11 +15,12 @@ MAIN NAVIGATION
 -------------------------------------------------------
 */
 
-.main-nav-wrapper {
+.main-nav {
   text-align: right;
 }
 
 .main-nav .sub-menu {
+  text-align: left;
   display: none;
 }
 
@@ -74,7 +75,6 @@ MAIN NAVIGATION
   }
 
   .main-nav .sub-menu {
-    text-align: left;
     position: absolute;
     border-radius: 6px;
     background-color: #fff;
@@ -124,12 +124,12 @@ MAIN NAVIGATION
   width: 1.5em;
 }
 
-.main-nav-is-active + .nav-btn {
+.main-nav-is-active .nav-btn {
   background-image: url('../../dist/svg/icon-close.svg');
 }
 
 @media only screen and (max-width: 992px) {
-  .main-nav-is-active + .nav-btn {
+  .main-nav-is-active .nav-btn {
     position: relative;
     z-index: 2;
   }
@@ -142,7 +142,7 @@ MAIN NAVIGATION
 */
 
 @media only screen and (max-width: 992px) {
-  .main-nav {
+  .main-nav > .menu {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -150,11 +150,12 @@ MAIN NAVIGATION
     width: 18em;
     overflow-y: auto;
     overflow-x: hidden;
-    text-align: left;
     text-transform: uppercase;
     background-color: #fff;
     color: #222;
-    z-index: 3;
+    z-index: 2;
+    text-align: left;
+    visibility: hidden;
   }
 
   .main-nav :not(:last-child) a {
@@ -165,8 +166,9 @@ MAIN NAVIGATION
     padding: 1.7em;
   }
 
-  .main-nav-is-active {
+  .main-nav-is-active > .menu {
     left: 0;
+    visibility: visible;
   }
 
   .menu-item-has-children a {
@@ -204,7 +206,7 @@ MAIN NAVIGATION
 }
 
 @media only screen and (max-width: 480px) {
-  .main-nav {
+  .main-nav > .menu {
     width: 75%;
   }
 }
