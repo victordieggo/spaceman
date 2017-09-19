@@ -294,6 +294,7 @@ input,
 select,
 textarea,
 .main-nav a,
+.main-nav > .menu,
 .smooth-transition {
   transition: all 0.3s;
 }
