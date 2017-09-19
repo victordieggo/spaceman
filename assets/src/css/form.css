@@ -49,7 +49,6 @@ textarea:focus,
 input:not(.btn):focus,
 :focus + .label-radio::before,
 :focus + .label-checkbox::before {
-  outline: none;
   border-color: #909090;
   box-shadow: 0 0 1px #909090;
 }

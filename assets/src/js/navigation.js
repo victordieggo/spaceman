@@ -10,11 +10,10 @@
     var screenCover,
         navIsActive  = 'main-nav-is-active',
         itemIsActive = 'menu-item-is-active',
-        hasChildren  = 'menu-item-has-children',
         body         = document.body,
         navBtn       = body.querySelector('.nav-btn'),
         nav          = body.querySelector('.main-nav'),
-        parentItem   = body.querySelectorAll('.' + hasChildren);
+        parentItem   = body.querySelectorAll('.menu-item-has-children');
 
     function lockScreen() {
         body.classList.toggle('hide-overflow');
