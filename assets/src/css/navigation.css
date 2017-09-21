@@ -131,13 +131,6 @@ MAIN NAVIGATION
   background-image: url('../../dist/svg/icon-close.svg');
 }
 
-@media only screen and (max-width: 992px) {
-  .main-nav-is-active .nav-btn {
-    position: relative;
-    z-index: 2;
-  }
-}
-
 /*
 -------------------------------------------------------
 4. Mobile Navigation
@@ -151,18 +144,22 @@ MAIN NAVIGATION
     bottom: 0;
     left: -100%;
     width: 18em;
+    color: #222;
+    text-align: left;
     overflow-y: auto;
     overflow-x: hidden;
+    visibility: hidden;
     text-transform: uppercase;
     background-color: #fff;
-    color: #222;
-    z-index: 2;
-    text-align: left;
-    visibility: hidden;
   }
 
   .main-nav :not(:last-child) a {
     border-bottom: 1px solid #dfdfdf;
+  }
+
+  .main-nav {
+    position: relative;
+    z-index: 1;
   }
 
   .main-nav a {
@@ -202,6 +199,7 @@ MAIN NAVIGATION
     left: 0;
     right: 0;
     bottom: 0;
+    z-index: -1;
     position: fixed;
     background-color: rgb(29, 29, 29);
     background-color: rgba(29, 29, 29, 0.7);
