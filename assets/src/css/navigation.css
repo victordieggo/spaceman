@@ -90,8 +90,11 @@ MAIN NAVIGATION
     background-color: #dfdfdf;
   }
 
-  .main-nav .sub-menu a {
+  .sub-menu :not(.menu-item-is-active) a {
     color: #222;
+  }
+
+  .main-nav .sub-menu a {
     font-size: 90%;
     padding: 0.7em;
   }
