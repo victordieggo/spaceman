@@ -17,12 +17,12 @@
 
     function lockScreen() {
         body.classList.toggle('hide-overflow');
-        if (body.contains(screenCover)) {
-            body.removeChild(screenCover);
+        if (nav.contains(screenCover)) {
+            nav.removeChild(screenCover);
         } else {
             screenCover = document.createElement('div');
             screenCover.className = 'screen-cover';
-            body.appendChild(screenCover);
+            nav.appendChild(screenCover);
         }
     }
 
@@ -46,7 +46,7 @@
     }
 
     function resizeFallback() {
-        var cover = body.contains(screenCover),
+        var cover = nav.contains(screenCover),
             browserWidth = window.innerWidth;
         if (nav.classList.contains(navIsActive)) {
             if ((!cover && browserWidth <= 992) || (cover && browserWidth > 992)) {
