@@ -27,14 +27,11 @@
     }
 
     function toggleExpanded(element) {
-        if (element.getAttribute('aria-expanded') === 'false') {
-            element.setAttribute('aria-expanded', 'true');
-        } else {
-            element.setAttribute('aria-expanded', 'false');
-        }
+        var ariaExpanded = element.getAttribute('aria-expanded');
+        element.setAttribute('aria-expanded', ariaExpanded === 'false' ? 'true' : 'false');
     }
 
-    function mobileNavigation() {
+    function toggleNavigation() {
         nav.classList.toggle(navIsActive);
         toggleExpanded(navBtn);
         lockScreen();
@@ -43,13 +40,6 @@
     function toggleSubmenu(element) {
         element.querySelector('a').addEventListener('click', function (event) {
             event.preventDefault();
-            if (window.innerWidth > 992) {
-                var activeItem = nav.querySelector('.sub-menu').querySelector('.' + itemIsActive);
-                if (activeItem && activeItem.contains(element) === false) {
-                    activeItem.classList.remove(itemIsActive);
-                    activeItem.querySelector('a').setAttribute('aria-expanded', 'false');
-                }
-            }
             element.classList.toggle(itemIsActive);
             toggleExpanded(this);
         });
@@ -74,23 +64,24 @@
                 key = event.keyCode,
                 target = event.target,
                 onFocus = nav.querySelector(':focus'),
-                activeItems = nav.querySelectorAll('.' + itemIsActive);
+                activeItems = nav.querySelectorAll('.' + itemIsActive),
+                closeActiveItem = function (activeItem) {
+                    activeItem.classList.remove(itemIsActive);
+                    toggleExpanded(activeItem.querySelector('a'));
+                };
             if (type === 'click') {
                 if (target === navBtn || target === screenCover) {
-                    mobileNavigation();
+                    toggleNavigation();
                 }
             }
             if (window.innerWidth > 992) {
                 Array.prototype.forEach.call(activeItems, function (activeItem) {
-                    if (type === 'click') {
-                        if (!activeItem.contains(target)) {
-                            activeItem.classList.remove(itemIsActive);
-                            toggleExpanded(activeItem);
-                        }
+                    if (type === 'click' && !activeItem.contains(target)) {
+                        closeActiveItem(activeItem);
                     }
                     if (type === 'keyup') {
                         if (key === 27 || (key === 9 && !activeItem.contains(onFocus))) {
-                            activeItem.classList.remove(itemIsActive);
+                            closeActiveItem(activeItem);
                         }
                     }
                 });
