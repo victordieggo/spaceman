@@ -19,25 +19,17 @@ MAIN NAVIGATION
   text-align: right;
 }
 
-.main-nav .sub-menu {
-  text-align: left;
-  display: none;
-}
-
-.menu-item-is-active > .sub-menu {
+.main-nav a,
+.main-nav .menu-item-is-active > .sub-menu {
   display: block;
 }
 
-.main-nav a {
-  display: block;
-}
-
-.menu-item-has-children > a {
+.main-nav .menu-item-has-children > a {
   padding-right: 1.5em;
   position: relative;
 }
 
-.menu-item-has-children > a::after {
+.main-nav .menu-item-has-children > a::after {
   top: 0;
   right: 0;
   bottom: 0;
@@ -47,6 +39,11 @@ MAIN NAVIGATION
   background: url('../../dist/svg/icon-arrow.svg') no-repeat right;
 }
 
+.main-nav .sub-menu {
+  text-align: left;
+  display: none;
+}
+
 /*
 -------------------------------------------------------
 2. Main Navigation
@@ -54,6 +51,10 @@ MAIN NAVIGATION
 */
 
 @media only screen and (min-width: 993px) {
+  .main-nav .menu-item {
+    position: relative;
+  }
+
   .main-nav .menu > .menu-item {
     display: inline-block;
     margin-left: 1.5em;
@@ -64,10 +65,6 @@ MAIN NAVIGATION
     padding-bottom: 0.5em;
   }
 
-  .menu-item {
-    position: relative;
-  }
-
   .menu-item-is-active > a,
   .main-nav .menu-item > a:focus,
   .main-nav .menu-item:hover > a {
@@ -75,11 +72,12 @@ MAIN NAVIGATION
   }
 
   .main-nav .sub-menu {
+    color: #222;
     position: absolute;
     border-radius: 6px;
+    white-space: nowrap;
     background-color: #fff;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
-    white-space: nowrap;
   }
 
   .main-nav .sub-menu .menu-item:not(:last-child)::after {
@@ -90,28 +88,24 @@ MAIN NAVIGATION
     background-color: #dfdfdf;
   }
 
-  .sub-menu :not(.menu-item-is-active) a {
-    color: #222;
-  }
-
   .main-nav .sub-menu a {
     font-size: 90%;
     padding: 0.7em;
   }
 
-  .main-nav .sub-menu .sub-menu {
-    top: 0;
-    left: 100%;
-  }
-
-  .main-nav .menu-item .menu-item-has-children > a {
+  .main-nav .sub-menu .menu-item-has-children > a {
     padding-right: 2em;
   }
 
-  .main-nav .menu-item .menu-item-has-children > a::after {
+  .main-nav .sub-menu .menu-item-has-children > a::after {
     right: 0.7em;
     transform: rotate(-90deg);
     background-image: url('../../dist/svg/icon-arrow-alt.svg');
+  }
+
+  .main-nav .sub-menu .sub-menu {
+    top: 0;
+    left: 100%;
   }
 }
 
@@ -138,32 +132,28 @@ MAIN NAVIGATION
 */
 
 @media only screen and (max-width: 992px) {
+  .nav-hide-overflow {
+    overflow: hidden;
+  }
+
+  .main-nav {
+    z-index: 1;
+    position: relative;
+  }
+
   .main-nav > .menu {
-    position: fixed;
     top: 0;
     bottom: 0;
     left: -100%;
     width: 18em;
     color: #222;
+    position: fixed;
     text-align: left;
     overflow-y: auto;
     overflow-x: hidden;
     visibility: hidden;
-    text-transform: uppercase;
     background-color: #fff;
-  }
-
-  .main-nav :not(:last-child) a {
-    border-bottom: 1px solid #dfdfdf;
-  }
-
-  .main-nav {
-    position: relative;
-    z-index: 1;
-  }
-
-  .main-nav a {
-    padding: 1.7em;
+    text-transform: uppercase;
   }
 
   .main-nav-is-active > .menu {
@@ -171,16 +161,29 @@ MAIN NAVIGATION
     visibility: visible;
   }
 
-  .menu-item-has-children a {
+  .main-nav a {
+    padding: 1.7em;
+    border-bottom: 1px solid #dfdfdf;
+  }
+
+  .main-nav > .menu > .menu-item:last-child > a {
+    border: none;
+  }
+
+  .main-nav .menu-item-has-children a {
     padding-right: 4em;
   }
 
-  .menu-item-has-children > a::after {
+  .main-nav .menu-item-has-children > a::after {
     right: 1.5em;
     padding: 0.5em;
   }
 
-  .main-nav .menu-item-is-active > a {
+  .main-nav .menu-item-has-children:not(.menu-item-is-active) > a::after {
+    background-image: url('../../dist/svg/icon-arrow-alt.svg');
+  }
+
+  .menu-item-is-active > a {
     background-color: #343a40;
     border-color: #495159;
     color: #fff;
@@ -188,10 +191,6 @@ MAIN NAVIGATION
 
   .menu-item-is-active > a::after {
     transform: rotate(180deg);
-  }
-
-  .menu-item-has-children:not(.menu-item-is-active) > a::after {
-    background-image: url('../../dist/svg/icon-arrow-alt.svg');
   }
 
   .screen-cover {
