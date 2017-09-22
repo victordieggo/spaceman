@@ -16,7 +16,7 @@
         parentItem   = body.querySelectorAll('.menu-item-has-children');
 
     function lockScreen() {
-        body.classList.toggle('hide-overflow');
+        body.classList.toggle('nav-hide-overflow');
         if (nav.contains(screenCover)) {
             nav.removeChild(screenCover);
         } else {
@@ -45,19 +45,6 @@
         });
     }
 
-    function resizeFallback() {
-        var cover = nav.contains(screenCover),
-            browserWidth = window.innerWidth;
-        if (nav.classList.contains(navIsActive)) {
-            if ((!cover && browserWidth <= 992) || (cover && browserWidth > 992)) {
-                lockScreen();
-                nav.click();
-            }
-        } else if (nav.querySelector('.' + itemIsActive) && browserWidth > 992) {
-            nav.click();
-        }
-    }
-
     Array.prototype.forEach.call(['click', 'keyup'], function (event) {
         body.addEventListener(event, function (event) {
             var type = event.type,
@@ -74,25 +61,27 @@
                     toggleNavigation();
                 }
             }
-            if (window.innerWidth > 992) {
-                Array.prototype.forEach.call(activeItems, function (activeItem) {
-                    if (type === 'click' && !activeItem.contains(target)) {
+            Array.prototype.forEach.call(activeItems, function (activeItem) {
+                if (type === 'click' && !activeItem.contains(target)) {
+                    if (window.innerWidth > 992) {
                         closeActiveItem(activeItem);
-                    }
-                    if (type === 'keyup') {
-                        if (key === 27 || (key === 9 && !activeItem.contains(onFocus))) {
+                    } else {
+                        if ([nav.querySelector('.menu'), screenCover, navBtn].indexOf(target) === -1) {
                             closeActiveItem(activeItem);
                         }
                     }
-                });
-            }
+                }
+                if (type === 'keyup') {
+                    if (key === 27 || (key === 9 && !activeItem.contains(onFocus))) {
+                        closeActiveItem(activeItem);
+                    }
+                }
+            });
         });
     });
 
     Array.prototype.forEach.call(parentItem, function (element) {
         toggleSubmenu(element);
     });
-
-    window.addEventListener('resize', resizeFallback);
 
 }());

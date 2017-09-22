@@ -132,6 +132,10 @@ MAIN NAVIGATION
 */
 
 @media only screen and (max-width: 992px) {
+  .nav-hide-overflow {
+    overflow: hidden;
+  }
+
   .main-nav {
     z-index: 1;
     position: relative;
@@ -160,6 +164,10 @@ MAIN NAVIGATION
   .main-nav a {
     padding: 1.7em;
     border-bottom: 1px solid #dfdfdf;
+  }
+
+  .main-nav > .menu > .menu-item:last-child > a {
+    border: none;
   }
 
   .main-nav .menu-item-has-children a {
