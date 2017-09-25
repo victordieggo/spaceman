@@ -37,6 +37,7 @@ MAIN NAVIGATION
   padding: 0.35em;
   position: absolute;
   background: url('../../dist/svg/icon-arrow.svg') no-repeat right;
+  background-size: 100% 100%;
 }
 
 .main-nav .sub-menu {
@@ -82,10 +83,9 @@ MAIN NAVIGATION
 
   .main-nav .sub-menu .menu-item:not(:last-child)::after {
     content: '';
-    height: 1px;
     display: block;
     margin: 0 0.65em;
-    background-color: #dfdfdf;
+    border-bottom: 1px solid #dfdfdf;
   }
 
   .main-nav .sub-menu a {
