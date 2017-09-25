@@ -55,7 +55,12 @@
                 closeActiveItem = function (activeItem) {
                     activeItem.classList.remove(itemIsActive);
                     toggleExpanded(activeItem.querySelector('a'));
-                };
+                },
+                clickExceptions = [
+                    nav.querySelector('.menu'),
+                    screenCover,
+                    navBtn
+                ];
             if (type === 'click') {
                 if (target === navBtn || target === screenCover) {
                     toggleNavigation();
@@ -66,7 +71,7 @@
                     if (window.innerWidth > 992) {
                         closeActiveItem(activeItem);
                     } else {
-                        if ([nav.querySelector('.menu'), screenCover, navBtn].indexOf(target) === -1) {
+                        if (clickExceptions.indexOf(target) === -1 && nav.classList.contains(navIsActive)) {
                             closeActiveItem(activeItem);
                         }
                     }
