@@ -68,12 +68,11 @@
             }
             Array.prototype.forEach.call(activeItems, function (activeItem) {
                 if (type === 'click' && !activeItem.contains(target)) {
-                    if (window.innerWidth > 992) {
+                    var activeNav = nav.contains(screenCover),
+                        browserWidth = window.innerWidth,
+                        exceptions = clickExceptions.indexOf(target) === -1;
+                    if (browserWidth > 992 || (browserWidth <= 992 && exceptions && activeNav)) {
                         closeActiveItem(activeItem);
-                    } else {
-                        if (clickExceptions.indexOf(target) === -1 && nav.classList.contains(navIsActive)) {
-                            closeActiveItem(activeItem);
-                        }
                     }
                 }
                 if (type === 'keyup') {
