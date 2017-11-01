@@ -280,10 +280,6 @@ HELPERS
   vertical-align: middle;
 }
 
-.btn,
-input,
-select,
-textarea,
 .smooth-transition {
   transition: all 0.3s;
 }

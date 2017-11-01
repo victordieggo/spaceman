@@ -24,6 +24,8 @@ input:not(.btn),
   border-radius: 4px;
   display: inline-block;
   vertical-align: middle;
+  -webkit-transition: border 0.3s, box-shadow 0.3s;
+  transition: border 0.3s, box-shadow 0.3s;
 }
 
 input,
