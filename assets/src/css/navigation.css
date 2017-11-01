@@ -143,8 +143,8 @@ MAIN NAVIGATION
 
   .main-nav > .menu {
     top: 0;
+    left: 0;
     bottom: 0;
-    left: -100%;
     width: 18em;
     color: #222;
     position: fixed;
@@ -154,11 +154,16 @@ MAIN NAVIGATION
     visibility: hidden;
     background-color: #fff;
     text-transform: uppercase;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
   }
 
   .main-nav-is-active > .menu {
-    left: 0;
     visibility: visible;
+    transform: translateX(0%);
+    -webkit-transform: translateX(0%);
   }
 
   .main-nav a {

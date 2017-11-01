@@ -51,3 +51,13 @@ select:focus {
 button {
   background-color: transparent;
 }
+
+img {
+  max-width: 100%;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-color: #afafaf;
+}

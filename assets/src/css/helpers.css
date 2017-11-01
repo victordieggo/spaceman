@@ -271,15 +271,6 @@ HELPERS
 -------------------------------------------------------
 */
 
-img {
-  max-width: 100%;
-}
-
-hr {
-  border: 0;
-  height: 1px;
-}
-
 .hide-overflow {
   overflow: hidden;
 }
@@ -289,11 +280,6 @@ hr {
   vertical-align: middle;
 }
 
-.btn,
-input,
-select,
-textarea,
-.main-nav > .menu,
 .smooth-transition {
   transition: all 0.3s;
 }
