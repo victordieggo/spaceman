@@ -271,15 +271,6 @@ HELPERS
 -------------------------------------------------------
 */
 
-img {
-  max-width: 100%;
-}
-
-hr {
-  border: 0;
-  height: 1px;
-}
-
 .hide-overflow {
   overflow: hidden;
 }
