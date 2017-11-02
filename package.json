@@ -1,7 +1,7 @@
 {
   "name": "spaceman",
   "version": "1.3.1",
-  "description": "Simple HTML/CSS boilerplate from outer space.",
+  "description": "Simple HTML/CSS boilerplate to build websites and apps.",
   "main": "gulpfile.js",
   "dependencies": {},
   "devDependencies": {
@@ -26,6 +26,7 @@
   "keywords": [
     "html",
     "css",
+    "spaceman",
     "frontend",
     "boilerplate"
   ],
