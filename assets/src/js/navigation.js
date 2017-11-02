@@ -15,7 +15,7 @@
         nav          = body.querySelector('.main-nav'),
         parentItem   = body.querySelectorAll('.menu-item-has-children');
 
-    function lockScreen() {
+    function toggleScroll() {
         body.classList.toggle('nav-hide-overflow');
         if (nav.contains(screenCover)) {
             nav.removeChild(screenCover);
@@ -34,14 +34,14 @@
     function toggleNavigation() {
         nav.classList.toggle(navIsActive);
         toggleExpanded(navBtn);
-        lockScreen();
+        toggleScroll();
     }
 
     function toggleSubmenu(element) {
         element.querySelector('a').addEventListener('click', function (event) {
             event.preventDefault();
             element.classList.toggle(itemIsActive);
-            toggleExpanded(this);
+            toggleExpanded(element);
         });
     }
 
