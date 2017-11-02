@@ -9,6 +9,7 @@
 //-------------------------------------------------------------------
 
 var gulp        = require('gulp'),
+    autoprefix  = require('gulp-autoprefixer'),
     concat      = require('gulp-concat'),
     cssmin      = require('gulp-cssmin'),
     uglify      = require('gulp-uglify'),
@@ -43,6 +44,7 @@ var gulp        = require('gulp'),
 gulp.task('css', function () {
     gulp.src(srcPath.css)
         .pipe(concat('style.css'))
+        .pipe(autoprefix())
         .pipe(combineMq())
         .pipe(cssmin())
         .pipe(gulp.dest(distPath.css))

@@ -150,20 +150,17 @@ MAIN NAVIGATION
     position: fixed;
     text-align: left;
     overflow-y: auto;
+    transition: 0.3s;
     overflow-x: hidden;
     visibility: hidden;
     background-color: #fff;
     text-transform: uppercase;
-    transition: 0.3s;
-    -webkit-transition: 0.3s;
     transform: translateX(-100%);
-    -webkit-transform: translateX(-100%);
   }
 
   .main-nav-is-active > .menu {
     visibility: visible;
     transform: translateX(0%);
-    -webkit-transform: translateX(0%);
   }
 
   .main-nav a {

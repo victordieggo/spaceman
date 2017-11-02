@@ -18,13 +18,12 @@ BUTTONS
   border: solid 2px #007bff;
   border-radius: 4px;
   display: inline-block;
-  height: 2.7em;
+  height: 2.75em;
   width: auto;
   padding: 0 1em;
   line-height: 2.5;
   vertical-align: middle;
   white-space: normal;
-  -webkit-transition: background 0.3s, border 0.3s, color 0.3s;
   transition: background 0.3s, border 0.3s, color 0.3s;
 }
 
