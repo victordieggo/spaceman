@@ -16,7 +16,7 @@ Typography
 */
 
 body,
-:--formElements {
+:--form-elements {
   font-family: sans-serif;
   font-weight: normal;
 }
@@ -32,7 +32,7 @@ body,
 */
 
 body,
-:--formElements {
+:--form-elements {
   font-size: 1em;
 }
 

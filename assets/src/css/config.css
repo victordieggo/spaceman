@@ -34,7 +34,7 @@ CSS CONFIG
 */
 
 @custom-selector :--headings h1, h2, h3, h4, h5, h6;
-@custom-selector :--formElements .btn, input, select, textarea;
+@custom-selector :--form-elements .btn, input, select, textarea;
 
 /*
 -------------------------------------------------------

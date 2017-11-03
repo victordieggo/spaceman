@@ -15,6 +15,7 @@ var browserSync = require('browser-sync').create(),
     cssmin      = require('gulp-cssmin'),
     imagemin    = require('gulp-imagemin'),
     postcss     = require('gulp-postcss'),
+    stylelint   = require('gulp-stylelint'),
     uglify      = require('gulp-uglify'),
     mozjpeg     = require('imagemin-mozjpeg'),
     pngquant    = require('imagemin-pngquant'),
@@ -50,6 +51,12 @@ gulp.task('css', function () {
         cssNext()
     ];
     gulp.src([srcPath.cfg, srcPath.css])
+        .pipe(stylelint({
+            failAfterError: false,
+            reporters: [
+                {formatter: 'string', console: true}
+            ]
+        }))
         .pipe(concat('style.css'))
         .pipe(postcss(plugins))
         .pipe(combineMq())

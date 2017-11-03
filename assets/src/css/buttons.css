@@ -25,9 +25,9 @@ BUTTONS
 */
 
 .btn {
+  @mixin vcenter;
   width: auto;
   padding: 0 1em;
-  @mixin vcenter;
   white-space: normal;
   height: var(--fe-height);
   background-color: var(--btnMain);
