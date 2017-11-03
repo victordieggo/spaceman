@@ -88,7 +88,7 @@ h1,
   font-size: 2.5em;
 }
 
-@media only screen and (max-width: 768px) {
+@media (--max-sm) {
   body {
     font-size: 85%;
   }

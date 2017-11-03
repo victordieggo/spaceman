@@ -19,11 +19,10 @@ textarea,
 input:not(.btn),
 .label-radio::before,
 .label-checkbox::before {
+  @include vcenter;
   background-color: #fff;
   border: solid 1px #cecece;
-  border-radius: 4px;
-  display: inline-block;
-  vertical-align: middle;
+  border-radius: var(--fe-borderRadius);
   transition: border 0.3s, box-shadow 0.3s;
 }
 
@@ -35,7 +34,7 @@ textarea {
 
 select,
 input:not(.btn) {
-  height: 2.75em;
+  height: var(--fe-height);
   padding: 0 0.6em;
 }
 

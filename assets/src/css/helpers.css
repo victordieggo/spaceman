@@ -329,56 +329,35 @@ HELPERS
 .show-md,
 .show-sm,
 .show-xs {
-  position: absolute;
-  left: -9999px;
-  top: -9999px;
-  visibility: hidden;
+  @include hideElement;
 }
 
-@media only screen and (max-width: 992px) {
+@media (--max-md) {
   .show-md {
-    position: static;
-    left: 0;
-    top: 0;
-    visibility: visible;
+    @include showElement;
   }
 
   .hide-md {
-    position: absolute;
-    left: -9999px;
-    top: -9999px;
-    visibility: hidden;
+    @include hideElement;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media (--max-sm) {
   .show-sm {
-    position: static;
-    left: 0;
-    top: 0;
-    visibility: visible;
+    @include showElement;
   }
 
   .hide-sm {
-    position: absolute;
-    left: -9999px;
-    top: -9999px;
-    visibility: hidden;
+    @include hideElement;
   }
 }
 
-@media only screen and (max-width: 480px) {
+@media (--max-xs) {
   .show-xs {
-    position: static;
-    left: 0;
-    top: 0;
-    visibility: visible;
+    @include showElement;
   }
 
   .hide-xs {
-    position: absolute;
-    left: -9999px;
-    top: -9999px;
-    visibility: hidden;
+    @include hideElement;
   }
 }

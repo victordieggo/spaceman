@@ -2,28 +2,38 @@
 =======================================================
 BUTTONS
 =======================================================
-1. Base Styles
-2. Outline Buttons
+1. Config
+2. Base Styles
+3. Outline Buttons
 =======================================================
 */
 
 /*
 -------------------------------------------------------
-1. Base Styles
+1. Config
+-------------------------------------------------------
+*/
+
+:root {
+  --btnMain: #007bff;
+}
+
+/*
+-------------------------------------------------------
+2. Base Styles
 -------------------------------------------------------
 */
 
 .btn {
-  background-color: #007bff;
-  border: solid 2px #007bff;
-  border-radius: 4px;
-  display: inline-block;
-  height: 2.75em;
   width: auto;
   padding: 0 1em;
-  line-height: 2.5;
-  vertical-align: middle;
+  @include vcenter;
   white-space: normal;
+  height: var(--fe-height);
+  background-color: var(--btnMain);
+  border: solid 2px var(--btnMain);
+  line-height: var(--fe-lineHeight);
+  border-radius: var(--fe-borderRadius);
   transition: background 0.3s, border 0.3s, color 0.3s;
 }
 
@@ -35,16 +45,16 @@ BUTTONS
 
 .btn:focus,
 .btn:hover {
-  background-color: #0069d9;
-  border-color: #0069d9;
+  background-color: color(var(--btnMain) blackness(20%));
+  border-color: color(var(--btnMain) blackness(20%));
 }
 
 /*
 -------------------------------------------------------
-2. Outline Buttons
+3. Outline Buttons
 -------------------------------------------------------
 */
 
-.btn-outline:not(:hover):not(:focus) {
+.btn-outline:not(:hover, :focus) {
   background-color: transparent;
 }

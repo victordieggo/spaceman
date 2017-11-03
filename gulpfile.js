@@ -9,7 +9,6 @@
 //-------------------------------------------------------------------
 
 var gulp        = require('gulp'),
-    autoprefix  = require('gulp-autoprefixer'),
     concat      = require('gulp-concat'),
     cssmin      = require('gulp-cssmin'),
     uglify      = require('gulp-uglify'),
@@ -19,6 +18,9 @@ var gulp        = require('gulp'),
     mozjpeg     = require('imagemin-mozjpeg'),
     pngquant    = require('imagemin-pngquant'),
     path        = require('path'),
+    postcss     = require('gulp-postcss'),
+    cssNext     = require('postcss-cssnext'),
+    mixins      = require('postcss-sassy-mixins'),
     basePath = {
         src:  'assets/src/',
         dist: 'assets/dist/'
@@ -42,9 +44,13 @@ var gulp        = require('gulp'),
 //-------------------------------------------------------------------
 
 gulp.task('css', function () {
+    var plugins = [
+        cssNext(),
+        mixins()
+    ];
     gulp.src(srcPath.css)
         .pipe(concat('style.css'))
-        .pipe(autoprefix())
+        .pipe(postcss(plugins))
         .pipe(combineMq())
         .pipe(cssmin())
         .pipe(gulp.dest(distPath.css))

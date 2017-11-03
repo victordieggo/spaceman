@@ -51,7 +51,7 @@ MAIN NAVIGATION
 -------------------------------------------------------
 */
 
-@media only screen and (min-width: 993px) {
+@media (--min-md) {
   .main-nav .menu-item {
     position: relative;
   }
@@ -73,11 +73,11 @@ MAIN NAVIGATION
   }
 
   .main-nav .sub-menu {
-    color: #222;
+    color: var(--greyColor);
     position: absolute;
     border-radius: 6px;
     white-space: nowrap;
-    background-color: #fff;
+    background-color: var(--lightColor);
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
   }
 
@@ -85,7 +85,7 @@ MAIN NAVIGATION
     content: '';
     display: block;
     margin: 0 0.65em;
-    border-bottom: 1px solid #dfdfdf;
+    border-bottom: 1px solid color(var(--greyColor) lightness(85%));
   }
 
   .main-nav .sub-menu a {
@@ -131,7 +131,7 @@ MAIN NAVIGATION
 -------------------------------------------------------
 */
 
-@media only screen and (max-width: 992px) {
+@media (--max-md) {
   .nav-hide-overflow {
     overflow: hidden;
   }
@@ -186,9 +186,9 @@ MAIN NAVIGATION
   }
 
   .menu-item-is-active > a {
-    background-color: #343a40;
-    border-color: #495159;
-    color: #fff;
+    background-color: var(--mainColor);
+    border-color: color(var(--mainColor) lightness(35%));
+    color: var(--lightColor);
   }
 
   .menu-item-is-active > a::after {
@@ -207,7 +207,7 @@ MAIN NAVIGATION
   }
 }
 
-@media only screen and (max-width: 480px) {
+@media (--max-xs) {
   .main-nav > .menu {
     width: 75%;
   }

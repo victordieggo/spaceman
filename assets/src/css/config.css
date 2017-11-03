@@ -1,0 +1,66 @@
+/*
+=======================================================
+CSS CONFIG
+=======================================================
+1. Colors
+2. Utilities/Mixins
+3. Media Queries
+=======================================================
+*/
+
+/*
+-------------------------------------------------------
+1. Colors
+-------------------------------------------------------
+*/
+
+:root {
+  --mainColor: #343a40;
+  --lightColor: #fff;
+  --greyColor: #222;
+}
+
+/*
+-------------------------------------------------------
+2. Utilities/Mixins
+-------------------------------------------------------
+*/
+
+:root {
+  /* form elements/buttons */
+  --fe-height: 2.75em;
+  --fe-lineHeight: 2.5;
+  --fe-borderRadius: 0.3rem;
+}
+
+@mixin vcenter {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@mixin hideElement {
+  top: -9999px;
+  left: -9999px;
+  position: absolute;
+  visibility: hidden;
+}
+
+@mixin showElement {
+  top: 0;
+  left: 0;
+  position: static;
+  visibility: visible;
+}
+
+/*
+-------------------------------------------------------
+3. Media Queries
+-------------------------------------------------------
+*/
+
+@custom-media --max-xs only screen and (max-width: 480px);
+@custom-media --min-xs only screen and (min-width: 481px);
+@custom-media --max-sm only screen and (max-width: 768px);
+@custom-media --min-sm only screen and (min-width: 769px);
+@custom-media --max-md only screen and (max-width: 992px);
+@custom-media --min-md only screen and (min-width: 993px);
