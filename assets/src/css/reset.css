@@ -61,3 +61,12 @@ hr {
   height: 1px;
   background-color: #afafaf;
 }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

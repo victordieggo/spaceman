@@ -97,10 +97,6 @@ body {
   color: #fff;
 }
 
-a {
-  color: inherit;
-}
-
 /*
 -------------------------------------------------------
 4. Misc/Effects
@@ -126,15 +122,10 @@ blockquote,
   text-align: right;
 }
 
-a,
 .btn:hover,
 .main-nav a:hover,
 .no-underline:hover {
   text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
 }
 
 .text-uppercase {
