@@ -42,6 +42,11 @@ CSS CONFIG
 -------------------------------------------------------
 */
 
+@define-mixin wrapper $size {
+  max-width: $(size);
+  margin: 0 auto;
+}
+
 @define-mixin vcenter {
   display: inline-block;
   vertical-align: middle;

@@ -41,8 +41,7 @@ GRID
 */
 
 .wrapper {
-  max-width: 1240px;
-  margin: 0 auto;
+  @mixin wrapper 1240px;
 }
 
 /*
