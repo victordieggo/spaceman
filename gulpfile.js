@@ -8,19 +8,19 @@
 // SET VARIABLES
 //-------------------------------------------------------------------
 
-var gulp        = require('gulp'),
+var browserSync = require('browser-sync').create(),
+    gulp        = require('gulp'),
+    combineMq   = require('gulp-combine-mq'),
     concat      = require('gulp-concat'),
     cssmin      = require('gulp-cssmin'),
-    uglify      = require('gulp-uglify'),
-    combineMq   = require('gulp-combine-mq'),
-    browserSync = require('browser-sync').create(),
     imagemin    = require('gulp-imagemin'),
+    postcss     = require('gulp-postcss'),
+    uglify      = require('gulp-uglify'),
     mozjpeg     = require('imagemin-mozjpeg'),
     pngquant    = require('imagemin-pngquant'),
-    path        = require('path'),
-    postcss     = require('gulp-postcss'),
     cssNext     = require('postcss-cssnext'),
     mixins      = require('postcss-sassy-mixins'),
+    path        = require('path'),
     basePath = {
         src:  'assets/src/',
         dist: 'assets/dist/'
