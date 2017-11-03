@@ -20,7 +20,7 @@ var browserSync = require('browser-sync').create(),
     mozjpeg     = require('imagemin-mozjpeg'),
     pngquant    = require('imagemin-pngquant'),
     cssNext     = require('postcss-cssnext'),
-    mixins      = require('postcss-mixins'),
+    precss      = require('precss'),
     path        = require('path'),
     basePath = {
         src:  'assets/src/',
@@ -47,7 +47,7 @@ var browserSync = require('browser-sync').create(),
 
 gulp.task('css', function () {
     var plugins = [
-        mixins(),
+        precss(),
         cssNext()
     ];
     gulp.src([srcPath.cfg, srcPath.css])
