@@ -329,35 +329,35 @@ HELPERS
 .show-md,
 .show-sm,
 .show-xs {
-  @include hideElement;
+  @mixin hideElement;
 }
 
 @media (--max-md) {
   .show-md {
-    @include showElement;
+    @mixin showElement;
   }
 
   .hide-md {
-    @include hideElement;
+    @mixin hideElement;
   }
 }
 
 @media (--max-sm) {
   .show-sm {
-    @include showElement;
+    @mixin showElement;
   }
 
   .hide-sm {
-    @include hideElement;
+    @mixin hideElement;
   }
 }
 
 @media (--max-xs) {
   .show-xs {
-    @include showElement;
+    @mixin showElement;
   }
 
   .hide-xs {
-    @include hideElement;
+    @mixin hideElement;
   }
 }

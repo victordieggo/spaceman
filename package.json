@@ -16,7 +16,7 @@
     "imagemin-mozjpeg": "^6.0.0",
     "imagemin-pngquant": "^5.0.1",
     "postcss-cssnext": "^3.0.2",
-    "postcss-sassy-mixins": "^2.1.0"
+    "postcss-mixins": "^6.2.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

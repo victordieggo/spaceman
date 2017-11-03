@@ -19,14 +19,15 @@ var browserSync = require('browser-sync').create(),
     mozjpeg     = require('imagemin-mozjpeg'),
     pngquant    = require('imagemin-pngquant'),
     cssNext     = require('postcss-cssnext'),
-    mixins      = require('postcss-sassy-mixins'),
+    mixins      = require('postcss-mixins'),
     path        = require('path'),
     basePath = {
         src:  'assets/src/',
         dist: 'assets/dist/'
     },
     srcPath = {
-        css: basePath.src + 'css/*.css',
+        cfg: basePath.src + 'css/config.css',
+        css: basePath.src + 'css/!(config.css)*.css',
         js:  basePath.src + 'js/*.js',
         img: basePath.src + 'img/*.{png,gif,jpg}',
         svg: basePath.src + 'svg/*.svg',
@@ -45,10 +46,10 @@ var browserSync = require('browser-sync').create(),
 
 gulp.task('css', function () {
     var plugins = [
-        cssNext(),
-        mixins()
+        mixins(),
+        cssNext()
     ];
-    gulp.src(srcPath.css)
+    gulp.src([srcPath.cfg, srcPath.css])
         .pipe(concat('style.css'))
         .pipe(postcss(plugins))
         .pipe(combineMq())

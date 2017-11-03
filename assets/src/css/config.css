@@ -42,19 +42,19 @@ CSS CONFIG
 -------------------------------------------------------
 */
 
-@mixin vcenter {
+@define-mixin vcenter {
   display: inline-block;
   vertical-align: middle;
 }
 
-@mixin hideElement {
+@define-mixin hideElement {
   top: -9999px;
   left: -9999px;
   position: absolute;
   visibility: hidden;
 }
 
-@mixin showElement {
+@define-mixin showElement {
   top: 0;
   left: 0;
   position: static;
