@@ -22,7 +22,7 @@ LAYOUT
 }
 
 .bg-grey {
-  background-color: var(--greyColor);
+  background-color: var(--darkColor);
 }
 
 .bg-image,

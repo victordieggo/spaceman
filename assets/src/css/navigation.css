@@ -73,7 +73,7 @@ MAIN NAVIGATION
   }
 
   .main-nav .sub-menu {
-    color: var(--greyColor);
+    color: var(--darkColor);
     position: absolute;
     border-radius: 6px;
     white-space: nowrap;
@@ -85,7 +85,7 @@ MAIN NAVIGATION
     content: '';
     display: block;
     margin: 0 0.65em;
-    border-bottom: 1px solid color(var(--greyColor) lightness(85%));
+    border-bottom: 1px solid color(var(--darkColor) lightness(85%));
   }
 
   .main-nav .sub-menu a {
