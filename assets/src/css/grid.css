@@ -2,37 +2,12 @@
 =======================================================
 GRID
 =======================================================
-1. Grid Config
 1. Grid Wrapper
 2. Row
 3. Columns Vertical Align
 4. Columns Sizing
-5. Medium/MD Resolutions (max. 992px)
-6. Small/SM Resolutions (max. 768px)
-7. Extra Small/XS Resolutions (max. 480px)
 =======================================================
 */
-
-/*
--------------------------------------------------------
-1. Grid Config
--------------------------------------------------------
-*/
-
-:root {
-  --col-1: 8.333333333333333%;
-  --col-2: 16.66666666666667%;
-  --col-3: 25%;
-  --col-4: 33.3333333333333%;
-  --col-5: 41.66666666666667%;
-  --col-6: 50%;
-  --col-7: 58.3333333333333%;
-  --col-8: 66.66666666666666%;
-  --col-9: 75%;
-  --col-10: 83.33333333333333%;
-  --col-11: 91.66666666666666%;
-  --col-12: 100%;
-}
 
 /*
 -------------------------------------------------------
@@ -57,7 +32,7 @@ GRID
 }
 
 .row:not(.no-gutter),
-.row:not(.no-gutter) > [class*='col-'] {
+.row:not(.no-gutter) > * {
   padding: 0.7em;
 }
 
@@ -89,218 +64,16 @@ GRID
 -------------------------------------------------------
 */
 
-.col-1 {
-  width: var(--col-1);
-}
-
-.col-2 {
-  width: var(--col-2);
-}
-
-.col-3 {
-  width: var(--col-3);
-}
-
-.col-4 {
-  width: var(--col-4);
-}
-
-.col-5 {
-  width: var(--col-5);
-}
-
-.col-6 {
-  width: var(--col-6);
-}
-
-.col-7 {
-  width: var(--col-7);
-}
-
-.col-8 {
-  width: var(--col-8);
-}
-
-.col-9 {
-  width: var(--col-9);
-}
-
-.col-10 {
-  width: var(--col-10);
-}
-
-.col-11 {
-  width: var(--col-11);
-}
-
-.col-12 {
-  width: var(--col-12);
-}
-
-/*
--------------------------------------------------------
-5. Medium/MD Resolutions (max. 992px)
--------------------------------------------------------
-*/
+@mixin grid col;
 
 @media (--max-md) {
-  .md-1 {
-    width: var(--col-1);
-  }
-
-  .md-2 {
-    width: var(--col-2);
-  }
-
-  .md-3 {
-    width: var(--col-3);
-  }
-
-  .md-4 {
-    width: var(--col-4);
-  }
-
-  .md-5 {
-    width: var(--col-5);
-  }
-
-  .md-6 {
-    width: var(--col-6);
-  }
-
-  .md-7 {
-    width: var(--col-7);
-  }
-
-  .md-8 {
-    width: var(--col-8);
-  }
-
-  .md-9 {
-    width: var(--col-9);
-  }
-
-  .md-10 {
-    width: var(--col-10);
-  }
-
-  .md-11 {
-    width: var(--col-11);
-  }
-
-  .md-12 {
-    width: var(--col-12);
-  }
+  @mixin grid md;
 }
-
-/*
--------------------------------------------------------
-6. Small/SM Resolutions (max. 768px)
--------------------------------------------------------
-*/
 
 @media (--max-sm) {
-  .sm-1 {
-    width: var(--col-1);
-  }
-
-  .sm-2 {
-    width: var(--col-2);
-  }
-
-  .sm-3 {
-    width: var(--col-3);
-  }
-
-  .sm-4 {
-    width: var(--col-4);
-  }
-
-  .sm-5 {
-    width: var(--col-5);
-  }
-
-  .sm-6 {
-    width: var(--col-6);
-  }
-
-  .sm-7 {
-    width: var(--col-7);
-  }
-
-  .sm-8 {
-    width: var(--col-8);
-  }
-
-  .sm-9 {
-    width: var(--col-9);
-  }
-
-  .sm-10 {
-    width: var(--col-10);
-  }
-
-  .sm-11 {
-    width: var(--col-11);
-  }
-
-  .sm-12 {
-    width: var(--col-12);
-  }
+  @mixin grid sm;
 }
 
-/*
--------------------------------------------------------
-7. Extra Small/XS Resolutions (max. 480px)
--------------------------------------------------------
-*/
-
 @media (--max-xs) {
-  .xs-1 {
-    width: var(--col-1);
-  }
-
-  .xs-2 {
-    width: var(--col-2);
-  }
-
-  .xs-3 {
-    width: var(--col-3);
-  }
-
-  .xs-4 {
-    width: var(--col-4);
-  }
-
-  .xs-5 {
-    width: var(--col-5);
-  }
-
-  .xs-6 {
-    width: var(--col-6);
-  }
-
-  .xs-7 {
-    width: var(--col-7);
-  }
-
-  .xs-8 {
-    width: var(--col-8);
-  }
-
-  .xs-9 {
-    width: var(--col-9);
-  }
-
-  .xs-10 {
-    width: var(--col-10);
-  }
-
-  .xs-11 {
-    width: var(--col-11);
-  }
-
-  .xs-12 {
-    width: var(--col-12);
-  }
+  @mixin grid xs;
 }

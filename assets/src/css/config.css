@@ -85,6 +85,14 @@ CSS CONFIG
   }
 }
 
+@define-mixin grid $name {
+  @for $i from 1 to 12 {
+    .$(name)-$i {
+      width: calc($i/12 * 100%);
+    }
+  }
+}
+
 /*
 -------------------------------------------------------
 4. Media Queries
