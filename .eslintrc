@@ -1,0 +1,13 @@
+{
+  "extends": "eslint:recommended",
+  "rules": {
+    "indent": ["error", 2],
+    "semi": ["error", "always"],
+    "quotes": ["error", "single"],
+    "strict": ["error", "function"]
+  },
+  "globals": {
+    "document",
+    "window"
+  }
+}

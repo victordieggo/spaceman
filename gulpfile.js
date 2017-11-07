@@ -13,6 +13,7 @@ var browserSync = require('browser-sync').create(),
     combineMq   = require('gulp-combine-mq'),
     concat      = require('gulp-concat'),
     cssmin      = require('gulp-cssmin'),
+    eslint      = require('gulp-eslint'),
     imagemin    = require('gulp-imagemin'),
     postcss     = require('gulp-postcss'),
     stylelint   = require('gulp-stylelint'),
@@ -71,6 +72,8 @@ gulp.task('css', function () {
 
 gulp.task('js', function () {
     gulp.src(srcPath.js)
+        .pipe(eslint())
+        .pipe(eslint.format())
         .pipe(concat('main.js'))
         .pipe(uglify())
         .pipe(gulp.dest(distPath.js))
