@@ -93,6 +93,14 @@ CSS CONFIG
   }
 }
 
+@define-mixin stackOrder $name, $min, $max {
+  @for $i from $min to $max {
+    .$(name)-$i {
+      z-index: $i;
+    }
+  }
+}
+
 /*
 -------------------------------------------------------
 4. Media Queries
