@@ -1,30 +1,31 @@
 'use strict';
 
-var gulp = require('gulp');
-var concat = require('gulp-concat');
-var stylelint = require('gulp-stylelint');
-var combineMq = require('gulp-combine-mq');
-var cssmin = require('gulp-cssmin');
-var postcss = require('gulp-postcss');
-var eslint = require('gulp-eslint');
-var uglify = require('gulp-uglify');
-var imagemin = require('gulp-imagemin');
-var mozjpeg = require('imagemin-mozjpeg');
-var pngquant = require('imagemin-pngquant');
-var browserSync = require('browser-sync').create();
-var path = require('path');
+const gulp = require('gulp');
+const babel = require('gulp-babel');
+const concat = require('gulp-concat');
+const stylelint = require('gulp-stylelint');
+const combineMq = require('gulp-combine-mq');
+const cssmin = require('gulp-cssmin');
+const postcss = require('gulp-postcss');
+const eslint = require('gulp-eslint');
+const uglify = require('gulp-uglify');
+const imagemin = require('gulp-imagemin');
+const mozjpeg = require('imagemin-mozjpeg');
+const pngquant = require('imagemin-pngquant');
+const browserSync = require('browser-sync').create();
+const path = require('path');
 
-var postcssPlugins = [
+const postcssPlugins = [
   require('precss'),
   require('postcss-cssnext')
 ];
 
-var basePath = {
+const basePath = {
   src:  'assets/src/',
   dist: 'assets/dist/'
 };
 
-var srcPath = {
+const srcPath = {
   cfg: basePath.src + 'css/config.css',
   css: basePath.src + 'css/*.css',
   js:  basePath.src + 'js/*.js',
@@ -32,14 +33,17 @@ var srcPath = {
   svg: basePath.src + 'svg/*.svg',
 };
 
-var distPath = {
+const distPath = {
   css: basePath.dist + 'css',
   js:  basePath.dist + 'js',
   img: basePath.dist + 'img',
   svg: basePath.dist + 'svg',
 };
 
-var bsReload = ['./**/*.{html,php}', srcPath.svg];
+const bsReload = [
+  './**/*.{html,php}',
+  srcPath.svg
+];
 
 gulp.task('css', function () {
   gulp.src([srcPath.cfg, srcPath.css])
@@ -61,6 +65,9 @@ gulp.task('js', function () {
   gulp.src(srcPath.js)
     .pipe(eslint())
     .pipe(eslint.format())
+    .pipe(babel({
+      presets: ['env']
+    }))
     .pipe(concat('main.js'))
     .pipe(uglify())
     .pipe(gulp.dest(distPath.js))

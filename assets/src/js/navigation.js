@@ -6,13 +6,13 @@
 
   'use strict';
 
-  var screenCover;
-  var navIsActive = 'main-nav-is-active';
-  var itemIsActive = 'menu-item-is-active';
-  var body = document.body;
-  var navBtn = body.querySelector('.nav-btn');
-  var nav = body.querySelector('.main-nav');
-  var parentItem = body.querySelectorAll('.menu-item-has-children');
+  let screenCover;
+  const body = document.body;
+  const navIsActive = 'main-nav-is-active';
+  const itemIsActive = 'menu-item-is-active';
+  const nav = body.querySelector('.main-nav');
+  const navBtn = nav.querySelector('.nav-btn');
+  const parentItem = nav.querySelectorAll('.menu-item-has-children');
 
   function toggleScroll() {
     body.classList.toggle('nav-hide-overflow');
@@ -26,7 +26,7 @@
   }
 
   function toggleExpanded(element) {
-    var ariaExpanded = element.getAttribute('aria-expanded');
+    const ariaExpanded = element.getAttribute('aria-expanded');
     element.setAttribute('aria-expanded', ariaExpanded === 'false' ? 'true' : 'false');
   }
 
@@ -46,16 +46,16 @@
 
   Array.prototype.forEach.call(['click', 'keyup'], function (event) {
     body.addEventListener(event, function (event) {
-      var type = event.type;
-      var key = event.keyCode;
-      var target = event.target;
-      var onFocus = nav.querySelector(':focus');
-      var activeItems = nav.querySelectorAll('.' + itemIsActive);
-      var closeActiveItem = function (activeItem) {
+      const type = event.type;
+      const key = event.keyCode;
+      const target = event.target;
+      const onFocus = nav.querySelector(':focus');
+      const activeItems = nav.querySelectorAll('.' + itemIsActive);
+      const closeActiveItem = function (activeItem) {
         activeItem.classList.remove(itemIsActive);
         toggleExpanded(activeItem.querySelector('a'));
       };
-      var clickExceptions = [
+      const clickExceptions = [
         nav.querySelector('.menu'),
         screenCover,
         navBtn
@@ -67,9 +67,9 @@
       }
       Array.prototype.forEach.call(activeItems, function (activeItem) {
         if (type === 'click' && !activeItem.contains(target)) {
-          var activeNav = nav.contains(screenCover);
-          var browserWidth = window.innerWidth;
-          var exceptions = clickExceptions.indexOf(target) === -1;
+          const activeNav = nav.contains(screenCover);
+          const browserWidth = window.innerWidth;
+          const exceptions = clickExceptions.indexOf(target) === -1;
           if (browserWidth > 992 || (browserWidth <= 992 && exceptions && activeNav)) {
             closeActiveItem(activeItem);
           }
