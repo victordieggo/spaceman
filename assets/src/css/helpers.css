@@ -174,7 +174,7 @@ HELPERS
   @mixin hideElement;
 }
 
-@media (--viewport-md) {
+@media $viewport-md {
   .show-md {
     @mixin showElement;
   }
@@ -184,7 +184,7 @@ HELPERS
   }
 }
 
-@media (--viewport-sm) {
+@media $viewport-sm {
   .show-sm {
     @mixin showElement;
   }
@@ -194,7 +194,7 @@ HELPERS
   }
 }
 
-@media (--viewport-xs) {
+@media $viewport-xs {
   .show-xs {
     @mixin showElement;
   }

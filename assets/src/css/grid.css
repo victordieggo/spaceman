@@ -66,14 +66,14 @@ GRID
 
 @mixin grid col;
 
-@media (--viewport-md) {
+@media $viewport-md {
   @mixin grid md;
 }
 
-@media (--viewport-sm) {
+@media $viewport-sm {
   @mixin grid sm;
 }
 
-@media (--viewport-xs) {
+@media $viewport-xs {
   @mixin grid xs;
 }
