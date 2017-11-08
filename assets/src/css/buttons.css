@@ -14,9 +14,7 @@ BUTTONS
 -------------------------------------------------------
 */
 
-:root {
-  --btnMain: #007bff;
-}
+$btnMain: #007bff;
 
 /*
 -------------------------------------------------------
@@ -29,11 +27,11 @@ BUTTONS
   width: auto;
   padding: 0 1em;
   white-space: normal;
-  height: var(--fe-height);
-  background-color: var(--btnMain);
-  border: solid 2px var(--btnMain);
-  line-height: var(--fe-lineHeight);
-  border-radius: var(--fe-borderRadius);
+  height: $fe-height;
+  background-color: $btnMain;
+  border: solid 2px $btnMain;
+  line-height: $fe-lineHeight;
+  border-radius: $fe-borderRadius;
   transition: background 0.3s, border 0.3s, color 0.3s;
 }
 
@@ -45,8 +43,8 @@ BUTTONS
 
 .btn:focus,
 .btn:hover {
-  background-color: color(var(--btnMain) blackness(20%));
-  border-color: color(var(--btnMain) blackness(20%));
+  background-color: color($btnMain blackness(20%));
+  border-color: color($btnMain blackness(20%));
 }
 
 /*

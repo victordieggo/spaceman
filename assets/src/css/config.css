@@ -15,17 +15,15 @@ CSS CONFIG
 -------------------------------------------------------
 */
 
-:root {
-  /* colors */
-  --mainColor: #343a40;
-  --lightColor: #fff;
-  --darkColor: #222;
+/* colors */
+$mainColor: #343a40;
+$lightColor: #fff;
+$darkColor: #222;
 
-  /* form elements/buttons */
-  --fe-height: 2.75em;
-  --fe-lineHeight: 2.5;
-  --fe-borderRadius: 0.3rem;
-}
+/* form elements/buttons */
+$fe-height: 2.75em;
+$fe-lineHeight: 2.5;
+$fe-borderRadius: 0.3rem;
 
 /*
 -------------------------------------------------------

@@ -22,7 +22,7 @@ input:not(.btn),
   @mixin vcenter;
   background-color: #fff;
   border: solid 1px #cecece;
-  border-radius: var(--fe-borderRadius);
+  border-radius: $fe-borderRadius;
   transition: border 0.3s, box-shadow 0.3s;
 }
 
@@ -34,7 +34,7 @@ textarea {
 
 select,
 input:not(.btn) {
-  height: var(--fe-height);
+  height: $fe-height;
   padding: 0 0.6em;
 }
 

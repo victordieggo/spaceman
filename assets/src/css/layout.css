@@ -14,15 +14,15 @@ LAYOUT
 */
 
 .bg-main {
-  background-color: var(--mainColor);
+  background-color: $mainColor;
 }
 
 .bg-light {
-  background-color: var(--lightColor);
+  background-color: $lightColor;
 }
 
 .bg-grey {
-  background-color: var(--darkColor);
+  background-color: $darkColor;
 }
 
 .bg-image,
