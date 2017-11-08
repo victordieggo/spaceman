@@ -174,7 +174,7 @@ HELPERS
   @mixin hideElement;
 }
 
-@media (--max-md) {
+@media (--viewport-md) {
   .show-md {
     @mixin showElement;
   }
@@ -184,7 +184,7 @@ HELPERS
   }
 }
 
-@media (--max-sm) {
+@media (--viewport-sm) {
   .show-sm {
     @mixin showElement;
   }
@@ -194,7 +194,7 @@ HELPERS
   }
 }
 
-@media (--max-xs) {
+@media (--viewport-xs) {
   .show-xs {
     @mixin showElement;
   }

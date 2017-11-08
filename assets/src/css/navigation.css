@@ -46,7 +46,7 @@ MAIN NAVIGATION
     }
   }
 
-  @media (--max-xs) {
+  @media (--viewport-xs) {
     > .menu {
       width: 75%;
     }
@@ -59,7 +59,7 @@ MAIN NAVIGATION
 -------------------------------------------------------
 */
 
-@media (--min-md) {
+@media (--viewport-md--up) {
   .menu-item-is-active > a {
     color: #afafaf;
   }
@@ -147,7 +147,7 @@ MAIN NAVIGATION
 -------------------------------------------------------
 */
 
-@media (--max-md) {
+@media (--viewport-md) {
   .nav-hide-overflow {
     overflow: hidden;
   }

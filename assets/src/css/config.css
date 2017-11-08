@@ -107,9 +107,9 @@ CSS CONFIG
 -------------------------------------------------------
 */
 
-@custom-media --max-xs only screen and (max-width: 480px);
-@custom-media --min-xs only screen and (min-width: 481px);
-@custom-media --max-sm only screen and (max-width: 768px);
-@custom-media --min-sm only screen and (min-width: 769px);
-@custom-media --max-md only screen and (max-width: 992px);
-@custom-media --min-md only screen and (min-width: 993px);
+@custom-media --viewport-xs     only screen and (max-width: 480px);
+@custom-media --viewport-xs--up only screen and (min-width: 481px);
+@custom-media --viewport-sm     only screen and (max-width: 768px);
+@custom-media --viewport-sm--up only screen and (min-width: 769px);
+@custom-media --viewport-md     only screen and (max-width: 992px);
+@custom-media --viewport-md--up only screen and (min-width: 993px);
