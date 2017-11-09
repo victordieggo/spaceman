@@ -26,8 +26,8 @@ const basePath = {
 };
 
 const srcPath = {
-  cfg: basePath.src + 'css/config.css',
-  css: basePath.src + 'css/*.css',
+  stl: basePath.src + 'css/main.css',
+  css: basePath.src + 'css/**/*.css',
   js:  basePath.src + 'js/*.js',
   img: basePath.src + 'img/*.{png,gif,jpg}',
   svg: basePath.src + 'svg/*.svg',
@@ -45,15 +45,18 @@ const bsReload = [
   srcPath.svg
 ];
 
+gulp.task('lint-css', function () {
+  gulp.src(srcPath.css)
+  .pipe(stylelint({
+    failAfterError: false,
+    reporters: [
+      {formatter: 'string', console: true}
+    ]
+  }))
+});
+
 gulp.task('css', function () {
-  gulp.src([srcPath.cfg, srcPath.css])
-    .pipe(stylelint({
-      failAfterError: false,
-      reporters: [
-        {formatter: 'string', console: true}
-      ]
-    }))
-    .pipe(concat('style.css'))
+  gulp.src(srcPath.stl)
     .pipe(postcss(postcssPlugins))
     .pipe(combineMq())
     .pipe(cssmin())
@@ -96,10 +99,10 @@ gulp.task('watch', function () {
     open: false,
   });
   gulp.watch(srcPath.js, ['js']);
-  gulp.watch(srcPath.css, ['css']);
+  gulp.watch(srcPath.css, ['lint-css', 'css']);
   gulp.watch(srcPath.img, ['img']);
   gulp.watch(srcPath.svg, ['svg']);
   gulp.watch(bsReload, browserSync.reload);
 });
 
-gulp.task('default', ['js', 'css', 'img', 'svg', 'watch']);
+gulp.task('default', ['js', 'lint-css', 'css', 'img', 'svg', 'watch']);
