@@ -1,63 +1,23 @@
 /*
 =======================================================
-HELPERS
+Helpers
 =======================================================
-1. Floating
-2. Position
-3. Display
-4. Spacers
+1. Display
+2. Floating
+3. Hide/Show
+4. Misc
 5. Padding
-6. Sizing
-7. Misc
-8. Z-Index
-9. Hide/Show
+6. Position
+7. Sizing
+8. Spacers
+9. Wrappers
+10. Z-Index
 =======================================================
 */
 
 /*
 -------------------------------------------------------
-1. Floating
--------------------------------------------------------
-*/
-
-.fleft {
-  float: left;
-}
-
-.fright {
-  float: right;
-}
-
-.fnone,
-.vcenter {
-  float: none;
-}
-
-.clear {
-  clear: both;
-}
-
-/*
--------------------------------------------------------
-2. Position
--------------------------------------------------------
-*/
-
-.relative {
-  position: relative;
-}
-
-.absolute {
-  position: absolute;
-}
-
-.fixed {
-  position: fixed;
-}
-
-/*
--------------------------------------------------------
-3. Display
+1. Display
 -------------------------------------------------------
 */
 
@@ -85,85 +45,30 @@ HELPERS
 
 /*
 -------------------------------------------------------
-4. Spacers
+2. Floating
 -------------------------------------------------------
 */
 
-@mixin spacing spacer, margin, 0;
-@mixin spacing spacer-top, margin-top;
-@mixin spacing spacer-bottom, margin-bottom;
-
-/*
--------------------------------------------------------
-5. Padding
--------------------------------------------------------
-*/
-
-@mixin spacing pad, padding;
-@mixin spacing pad-top, padding-top;
-@mixin spacing pad-bottom, padding-bottom;
-
-/*
--------------------------------------------------------
-6. Sizing
--------------------------------------------------------
-*/
-
-.auto-size,
-.auto-width {
-  width: auto;
+.fleft {
+  float: left;
 }
 
-.auto-size,
-.auto-height {
-  height: auto;
+.fright {
+  float: right;
 }
 
-.full-size,
-.full-width {
-  width: 100%;
-}
-
-.full-size,
-.full-height {
-  height: 100%;
-}
-
-/*
--------------------------------------------------------
-7. Misc
--------------------------------------------------------
-*/
-
-.hide-overflow {
-  overflow: hidden;
-}
-
-.label,
+.fnone,
 .vcenter {
-  vertical-align: middle;
+  float: none;
 }
 
-.smooth-transition {
-  transition: all 0.3s;
-}
-
-.label {
-  padding: 0.4em 0.6em;
-  border-radius: 0.2em;
+.clear {
+  clear: both;
 }
 
 /*
 -------------------------------------------------------
-8. Z-Index
--------------------------------------------------------
-*/
-
-@mixin stackOrder z-index, 1, 6;
-
-/*
--------------------------------------------------------
-9. Hide/Show
+3. Hide/Show
 -------------------------------------------------------
 */
 
@@ -203,3 +108,109 @@ HELPERS
     @mixin hideElement;
   }
 }
+
+/*
+-------------------------------------------------------
+4. Misc
+-------------------------------------------------------
+*/
+
+.hide-overflow {
+  overflow: hidden;
+}
+
+.label,
+.vcenter {
+  vertical-align: middle;
+}
+
+.smooth-transition {
+  transition: all 0.3s;
+}
+
+.label {
+  padding: 0.4em 0.6em;
+  border-radius: 0.2em;
+}
+
+/*
+-------------------------------------------------------
+5. Padding
+-------------------------------------------------------
+*/
+
+@mixin spacing pad, padding;
+@mixin spacing pad-top, padding-top;
+@mixin spacing pad-bottom, padding-bottom;
+
+/*
+-------------------------------------------------------
+6. Position
+-------------------------------------------------------
+*/
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.fixed {
+  position: fixed;
+}
+
+/*
+-------------------------------------------------------
+7. Sizing
+-------------------------------------------------------
+*/
+
+.auto-size,
+.auto-width {
+  width: auto;
+}
+
+.auto-size,
+.auto-height {
+  height: auto;
+}
+
+.full-size,
+.full-width {
+  width: 100%;
+}
+
+.full-size,
+.full-height {
+  height: 100%;
+}
+
+/*
+-------------------------------------------------------
+8. Spacers
+-------------------------------------------------------
+*/
+
+@mixin spacing spacer, margin, 0;
+@mixin spacing spacer-top, margin-top;
+@mixin spacing spacer-bottom, margin-bottom;
+
+/*
+-------------------------------------------------------
+9. Wrappers
+-------------------------------------------------------
+*/
+
+.wrapper {
+  @mixin wrapper 1240px;
+}
+
+/*
+-------------------------------------------------------
+10. Z-Index
+-------------------------------------------------------
+*/
+
+@mixin stackOrder z-index, 1, 6;

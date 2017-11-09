@@ -1,0 +1,100 @@
+/*
+=======================================================
+Mixins
+=======================================================
+1. Grid
+2. Spacing
+3. Utilities
+4. Wrapper
+5. Z-Index
+=======================================================
+*/
+
+/*
+-------------------------------------------------------
+1. Grid
+-------------------------------------------------------
+*/
+
+@define-mixin grid $name {
+  @for $i from 1 to 12 {
+    .$(name)-$i {
+      width: calc($i/12 * 100%);
+    }
+  }
+}
+
+/*
+-------------------------------------------------------
+2. Spacing
+-------------------------------------------------------
+*/
+
+@define-mixin spacing $name, $property, $zero {
+  @for $i from 5 to 30 by 5 {
+    $result: calc($i / 10);
+    $result: $(result)em $(zero);
+
+    @if $i > 4 {
+      .$(name)-0$i {
+        $(property): $result;
+      }
+    }
+
+    @else {
+      .$(name)-$i {
+        $(property): $result;
+      }
+    }
+  }
+}
+
+/*
+-------------------------------------------------------
+3. Utilities
+-------------------------------------------------------
+*/
+
+@define-mixin vcenter {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@define-mixin hideElement {
+  top: -9999px;
+  left: -9999px;
+  position: absolute;
+  visibility: hidden;
+}
+
+@define-mixin showElement {
+  top: 0;
+  left: 0;
+  position: static;
+  visibility: visible;
+}
+
+/*
+-------------------------------------------------------
+4. Wrapper
+-------------------------------------------------------
+*/
+
+@define-mixin wrapper $size {
+  max-width: $(size);
+  margin: 0 auto;
+}
+
+/*
+-------------------------------------------------------
+5. Z-Index
+-------------------------------------------------------
+*/
+
+@define-mixin stackOrder $name, $min, $max {
+  @for $i from $min to $max {
+    .$(name)-$i {
+      z-index: $i;
+    }
+  }
+}
