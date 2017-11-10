@@ -15,13 +15,13 @@ Typography
 -------------------------------------------------------
 */
 
-.btn,
 body,
+.btn,
 input,
 select,
 textarea {
   font-family: sans-serif;
-  font-weight: 400;
+  font-weight: normal;
 }
 
 h1,
@@ -39,8 +39,8 @@ h6 {
 -------------------------------------------------------
 */
 
-.btn,
 body,
+.btn,
 input,
 select,
 textarea {
@@ -88,7 +88,7 @@ h1,
   font-size: 2.5em;
 }
 
-@media only screen and (max-width: 768px) {
+@media #{$viewport-sm} {
   body {
     font-size: 85%;
   }
@@ -101,15 +101,11 @@ h1,
 */
 
 body {
-  color: #222;
+  color: $darkColor;
 }
 
 .text-white {
-  color: #fff;
-}
-
-a {
-  color: inherit;
+  color: $lightColor;
 }
 
 /*
@@ -137,15 +133,10 @@ blockquote,
   text-align: right;
 }
 
-a,
 .btn:hover,
 .main-nav a:hover,
 .no-underline:hover {
   text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
 }
 
 .text-uppercase {

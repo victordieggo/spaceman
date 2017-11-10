@@ -1,0 +1,216 @@
+/*
+=======================================================
+Helpers
+=======================================================
+1. Display
+2. Floating
+3. Hide/Show
+4. Misc
+5. Padding
+6. Position
+7. Sizing
+8. Spacers
+9. Wrappers
+10. Z-Index
+=======================================================
+*/
+
+/*
+-------------------------------------------------------
+1. Display
+-------------------------------------------------------
+*/
+
+.block {
+  display: block;
+}
+
+.inline {
+  display: inline;
+}
+
+.label,
+.vcenter,
+.inline-block {
+  display: inline-block;
+}
+
+.table {
+  display: table;
+}
+
+.table-cell {
+  display: table-cell;
+}
+
+/*
+-------------------------------------------------------
+2. Floating
+-------------------------------------------------------
+*/
+
+.fleft {
+  float: left;
+}
+
+.fright {
+  float: right;
+}
+
+.fnone,
+.vcenter {
+  float: none;
+}
+
+.clear {
+  clear: both;
+}
+
+/*
+-------------------------------------------------------
+3. Hide/Show
+-------------------------------------------------------
+*/
+
+.hide,
+.show-md,
+.show-sm,
+.show-xs {
+  @include hideElement;
+}
+
+@media #{$viewport-md} {
+  .show-md {
+    @include showElement;
+  }
+
+  .hide-md {
+    @include hideElement;
+  }
+}
+
+@media #{$viewport-sm} {
+  .show-sm {
+    @include showElement;
+  }
+
+  .hide-sm {
+    @include hideElement;
+  }
+}
+
+@media #{$viewport-xs} {
+  .show-xs {
+    @include showElement;
+  }
+
+  .hide-xs {
+    @include hideElement;
+  }
+}
+
+/*
+-------------------------------------------------------
+4. Misc
+-------------------------------------------------------
+*/
+
+.hide-overflow {
+  overflow: hidden;
+}
+
+.label,
+.vcenter {
+  vertical-align: middle;
+}
+
+.smooth-transition {
+  transition: all 0.3s;
+}
+
+.label {
+  padding: 0.4em 0.6em;
+  border-radius: 0.2em;
+}
+
+/*
+-------------------------------------------------------
+5. Padding
+-------------------------------------------------------
+*/
+
+@include spacing(pad, padding);
+@include spacing(pad-top, padding-top);
+@include spacing(pad-bottom, padding-bottom);
+
+/*
+-------------------------------------------------------
+6. Position
+-------------------------------------------------------
+*/
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.fixed {
+  position: fixed;
+}
+
+/*
+-------------------------------------------------------
+7. Sizing
+-------------------------------------------------------
+*/
+
+.auto-size,
+.auto-width {
+  width: auto;
+}
+
+.auto-size,
+.auto-height {
+  height: auto;
+}
+
+.full-size,
+.full-width {
+  width: 100%;
+}
+
+.full-size,
+.full-height {
+  height: 100%;
+}
+
+/*
+-------------------------------------------------------
+8. Spacers
+-------------------------------------------------------
+*/
+
+@include spacing(spacer, margin, true);
+@include spacing(spacer-top, margin-top);
+@include spacing(spacer-bottom, margin-bottom);
+
+/*
+-------------------------------------------------------
+9. Wrappers
+-------------------------------------------------------
+*/
+
+.wrapper {
+  @include wrapper(1240px);
+}
+
+/*
+-------------------------------------------------------
+10. Z-Index
+-------------------------------------------------------
+*/
+
+@include stackOrder(z-index, 1, 6);

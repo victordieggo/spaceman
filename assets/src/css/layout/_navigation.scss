@@ -1,0 +1,230 @@
+/*
+=======================================================
+Navigation
+=======================================================
+1. Base Styles
+2. Main Navigation
+3. Navigation Button
+4. Mobile Navigation
+=======================================================
+*/
+
+/*
+-------------------------------------------------------
+1. Base Styles
+-------------------------------------------------------
+*/
+
+.main-nav {
+  text-align: right;
+
+  a,
+  .menu-item-is-active > .sub-menu {
+    display: block;
+  }
+
+  .sub-menu {
+    text-align: left;
+    display: none;
+  }
+
+  .menu-item-has-children {
+    > a {
+      padding-right: 1.5em;
+      position: relative;
+    }
+
+    > a::after {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      content: '';
+      padding: 0.35em;
+      position: absolute;
+      background: url('../../dist/svg/icon-arrow.svg') no-repeat right;
+      background-size: 100% 100%;
+    }
+  }
+
+  @media #{$viewport-xs} {
+    > .menu {
+      width: 75%;
+    }
+  }
+}
+
+/*
+-------------------------------------------------------
+2. Main Navigation
+-------------------------------------------------------
+*/
+
+@media #{$viewport-md--up} {
+  .menu-item-is-active > a {
+    color: #afafaf;
+  }
+
+  .main-nav {
+    .menu-item {
+      position: relative;
+
+      &:hover {
+        color: #afafaf;
+      }
+    }
+
+    .menu {
+      > .menu-item {
+        display: inline-block;
+        margin-left: 1.5em;
+      }
+
+      > .menu-item-has-children > a {
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+      }
+    }
+
+    .sub-menu {
+      color: $darkColor;
+      position: absolute;
+      border-radius: 6px;
+      white-space: nowrap;
+      background-color: $lightColor;
+      box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+
+      a {
+        font-size: 90%;
+        padding: 0.7em;
+      }
+
+      .menu-item:not(:last-child)::after {
+        content: '';
+        display: block;
+        margin: 0 0.65em;
+        border-bottom: 1px solid $darkColor;
+        border-bottom: 1px solid lighten($darkColor, 70%);
+      }
+
+      .menu-item-has-children {
+        > a {
+          padding-right: 2em;
+        }
+
+        > a::after {
+          right: 0.7em;
+          transform: rotate(-90deg);
+          background-image: url('../../dist/svg/icon-arrow-alt.svg');
+        }
+      }
+
+      .sub-menu {
+        top: 0;
+        left: 100%;
+      }
+    }
+  }
+}
+
+/*
+-------------------------------------------------------
+3. Navigation Button
+-------------------------------------------------------
+*/
+
+.nav-btn {
+  background: url('../../dist/svg/icon-menu.svg') no-repeat center;
+  height: 1.5em;
+  width: 1.5em;
+}
+
+.main-nav-is-active .nav-btn {
+  background-image: url('../../dist/svg/icon-close.svg');
+}
+
+/*
+-------------------------------------------------------
+4. Mobile Navigation
+-------------------------------------------------------
+*/
+
+@media #{$viewport-md} {
+  .nav-hide-overflow {
+    overflow: hidden;
+  }
+
+  .main-nav {
+    z-index: 1;
+    position: relative;
+
+    > .menu {
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 18em;
+      color: #222;
+      position: fixed;
+      text-align: left;
+      overflow-y: auto;
+      transition: 0.3s;
+      overflow-x: hidden;
+      visibility: hidden;
+      background-color: #fff;
+      text-transform: uppercase;
+      transform: translateX(-100%);
+
+      > .menu-item:last-child > a {
+        border: none;
+      }
+    }
+
+    a {
+      padding: 1.7em;
+      border-bottom: 1px solid #dfdfdf;
+    }
+
+    .menu-item-has-children {
+      a {
+        padding-right: 4em;
+      }
+
+      > a::after {
+        right: 1.5em;
+        padding: 0.5em;
+      }
+
+      &:not(.menu-item-is-active) > a::after {
+        background-image: url('../../dist/svg/icon-arrow-alt.svg');
+      }
+    }
+  }
+
+  .main-nav-is-active > .menu {
+    visibility: visible;
+    transform: translateX(0%);
+  }
+
+  .menu-item-is-active {
+    > a {
+      background-color: $mainColor;
+      border-color: $mainColor;
+      border-color: lighten($mainColor, 10%);
+      color: $lightColor;
+    }
+
+    > a::after {
+      transform: rotate(180deg);
+    }
+  }
+
+  .screen-cover {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    position: fixed;
+    background-color: rgb(29, 29, 29);
+    background-color: rgba(29, 29, 29, 0.7);
+  }
+}

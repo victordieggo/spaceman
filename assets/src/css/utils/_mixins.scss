@@ -1,0 +1,105 @@
+/*
+=======================================================
+Mixins
+=======================================================
+1. Grid
+2. Spacing
+3. Utilities
+4. Wrapper
+5. Z-Index
+=======================================================
+*/
+
+/*
+-------------------------------------------------------
+1. Grid
+-------------------------------------------------------
+*/
+
+@mixin grid($name) {
+  @for $i from 1 through 12 {
+    .#{$name}-#{$i} {
+      width: $i/12*100%;
+    }
+  }
+}
+
+/*
+-------------------------------------------------------
+2. Spacing
+-------------------------------------------------------
+*/
+
+@mixin spacing($name, $property, $zero: false) {
+  $i: 5;
+
+  @while $i < 35 {
+    $result: $i/10;
+    $result: #{$result}em;
+    $class: #{$name}-#{$i};
+
+    @if $zero == true {
+      $result: #{$result} 0;
+    }
+
+    @if $i < 10 {
+      $class: #{$name}-0#{$i};
+    }
+
+    .#{$class} {
+      #{$property}: #{$result};
+    }
+
+    $i: $i + 5;
+  }
+}
+
+/*
+-------------------------------------------------------
+3. Utilities
+-------------------------------------------------------
+*/
+
+@mixin vcenter {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@mixin hideElement {
+  top: -9999px;
+  left: -9999px;
+  position: absolute;
+  visibility: hidden;
+}
+
+@mixin showElement {
+  top: 0;
+  left: 0;
+  position: static;
+  visibility: visible;
+}
+
+/*
+-------------------------------------------------------
+4. Wrapper
+-------------------------------------------------------
+*/
+
+@mixin wrapper($size) {
+  max-width: #{$size};
+  margin: 0 auto;
+}
+
+/*
+-------------------------------------------------------
+5. Z-Index
+-------------------------------------------------------
+*/
+
+@mixin stackOrder($name, $min, $max) {
+  @for $i from $min through $max {
+    .#{$name}-#{$i} {
+      z-index: #{$i};
+    }
+  }
+}

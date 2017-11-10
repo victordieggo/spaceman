@@ -1,106 +1,105 @@
-/* =====================================================================
- * GULPFILE FOR SPACEMAN
- * ===================================================================*/
-/*jslint node: true */
 'use strict';
 
-//-------------------------------------------------------------------
-// SET VARIABLES
-//-------------------------------------------------------------------
+const gulp = require('gulp');
+const autoprefixer = require('gulp-autoprefixer');
+const babel = require('gulp-babel');
+const concat = require('gulp-concat');
+const stylelint = require('gulp-stylelint');
+const combineMq = require('gulp-combine-mq');
+const cssmin = require('gulp-cssmin');
+const sass = require('gulp-sass');
+const eslint = require('gulp-eslint');
+const uglify = require('gulp-uglify');
+const imagemin = require('gulp-imagemin');
+const mozjpeg = require('imagemin-mozjpeg');
+const pngquant = require('imagemin-pngquant');
+const browserSync = require('browser-sync').create();
+const path = require('path');
 
-var gulp        = require('gulp'),
-    autoprefix  = require('gulp-autoprefixer'),
-    concat      = require('gulp-concat'),
-    cssmin      = require('gulp-cssmin'),
-    uglify      = require('gulp-uglify'),
-    combineMq   = require('gulp-combine-mq'),
-    browserSync = require('browser-sync').create(),
-    imagemin    = require('gulp-imagemin'),
-    mozjpeg     = require('imagemin-mozjpeg'),
-    pngquant    = require('imagemin-pngquant'),
-    path        = require('path'),
-    basePath = {
-        src:  'assets/src/',
-        dist: 'assets/dist/'
-    },
-    srcPath = {
-        css: basePath.src + 'css/*.css',
-        js:  basePath.src + 'js/*.js',
-        img: basePath.src + 'img/*.{png,gif,jpg}',
-        svg: basePath.src + 'svg/*.svg',
-    },
-    distPath = {
-        css: basePath.dist + 'css',
-        js:  basePath.dist + 'js',
-        img: basePath.dist + 'img',
-        svg: basePath.dist + 'svg',
-    },
-    bsReload = ['./**/*.{html,php}', srcPath.svg];
+const basePath = {
+  src:  'assets/src/',
+  dist: 'assets/dist/'
+};
 
-//-------------------------------------------------------------------
-// BUILD CSS
-//-------------------------------------------------------------------
+const srcPath = {
+  stl: basePath.src + 'css/main.scss',
+  css: basePath.src + 'css/**/*.scss',
+  js:  basePath.src + 'js/*.js',
+  img: basePath.src + 'img/*.{png,gif,jpg}',
+  svg: basePath.src + 'svg/*.svg',
+};
+
+const distPath = {
+  css: basePath.dist + 'css',
+  js:  basePath.dist + 'js',
+  img: basePath.dist + 'img',
+  svg: basePath.dist + 'svg',
+};
+
+const bsReload = [
+  './**/*.{html,php}',
+  srcPath.svg
+];
+
+gulp.task('lint-css', function () {
+  gulp.src(srcPath.css)
+  .pipe(stylelint({
+    failAfterError: false,
+    reporters: [
+      {formatter: 'string', console: true}
+    ]
+  }))
+});
 
 gulp.task('css', function () {
-    gulp.src(srcPath.css)
-        .pipe(concat('style.css'))
-        .pipe(autoprefix())
-        .pipe(combineMq())
-        .pipe(cssmin())
-        .pipe(gulp.dest(distPath.css))
-        .pipe(browserSync.stream());
+  gulp.src(srcPath.stl)
+    .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefixer())
+    .pipe(combineMq())
+    .pipe(cssmin())
+    .pipe(gulp.dest(distPath.css))
+    .pipe(browserSync.stream());
 });
-
-//-------------------------------------------------------------------
-// BUILD JS
-//-------------------------------------------------------------------
 
 gulp.task('js', function () {
-    gulp.src(srcPath.js)
-        .pipe(concat('main.js'))
-        .pipe(uglify())
-        .pipe(gulp.dest(distPath.js))
-        .pipe(browserSync.stream());
+  gulp.src(srcPath.js)
+    .pipe(eslint())
+    .pipe(eslint.format())
+    .pipe(babel({
+      presets: ['env']
+    }))
+    .pipe(concat('main.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest(distPath.js))
+    .pipe(browserSync.stream());
 });
-
-//-------------------------------------------------------------------
-// MINIFY IMAGES
-//-------------------------------------------------------------------
 
 gulp.task('img', function () {
-    gulp.src(srcPath.img)
-        .pipe(imagemin([
-            mozjpeg({quality: 89}),
-            pngquant({quality: 70})
-        ], {verbose: true}))
-        .pipe(gulp.dest(distPath.img))
-        .pipe(browserSync.stream());
+  gulp.src(srcPath.img)
+    .pipe(imagemin([
+      mozjpeg({quality: 89}),
+      pngquant({quality: 70})
+    ], {verbose: true}))
+    .pipe(gulp.dest(distPath.img))
+    .pipe(browserSync.stream());
 });
-
-//-------------------------------------------------------------------
-// MINIFY SVG
-//-------------------------------------------------------------------
 
 gulp.task('svg', function () {
-    gulp.src(srcPath.svg)
-        .pipe(imagemin({verbose: true}))
-        .pipe(gulp.dest(distPath.svg));
+  gulp.src(srcPath.svg)
+    .pipe(imagemin({verbose: true}))
+    .pipe(gulp.dest(distPath.svg));
 });
-
-//-------------------------------------------------------------------
-// WATCH + DEFAULT
-//-------------------------------------------------------------------
 
 gulp.task('watch', function () {
-    browserSync.init({
-        proxy: 'localhost/' + path.basename(__dirname),
-        open: false,
-    });
-    gulp.watch(srcPath.js, ['js']);
-    gulp.watch(srcPath.css, ['css']);
-    gulp.watch(srcPath.img, ['img']);
-    gulp.watch(srcPath.svg, ['svg']);
-    gulp.watch(bsReload, browserSync.reload);
+  browserSync.init({
+    proxy: 'localhost/' + path.basename(__dirname),
+    open: false,
+  });
+  gulp.watch(srcPath.js, ['js']);
+  gulp.watch(srcPath.css, ['lint-css', 'css']);
+  gulp.watch(srcPath.img, ['img']);
+  gulp.watch(srcPath.svg, ['svg']);
+  gulp.watch(bsReload, browserSync.reload);
 });
 
-gulp.task('default', ['js', 'css', 'img', 'svg', 'watch']);
+gulp.task('default', ['js', 'lint-css', 'css', 'img', 'svg', 'watch']);

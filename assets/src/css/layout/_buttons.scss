@@ -1,6 +1,6 @@
 /*
 =======================================================
-BUTTONS
+Buttons
 =======================================================
 1. Base Styles
 2. Outline Buttons
@@ -14,16 +14,15 @@ BUTTONS
 */
 
 .btn {
-  background-color: #007bff;
-  border: solid 2px #007bff;
-  border-radius: 4px;
-  display: inline-block;
-  height: 2.75em;
+  @include vcenter;
   width: auto;
   padding: 0 1em;
-  line-height: 2.5;
-  vertical-align: middle;
   white-space: normal;
+  height: $fe-height;
+  background-color: $btnMain;
+  border: solid 2px $btnMain;
+  line-height: $fe-lineHeight;
+  border-radius: $fe-borderRadius;
   transition: background 0.3s, border 0.3s, color 0.3s;
 }
 
@@ -35,8 +34,8 @@ BUTTONS
 
 .btn:focus,
 .btn:hover {
-  background-color: #0069d9;
-  border-color: #0069d9;
+  background-color: darken($btnMain, 10%);
+  border-color: darken($btnMain, 10%);
 }
 
 /*
