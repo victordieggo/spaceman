@@ -4,7 +4,7 @@ Spaceman is a simple and easily customizable HTML/CSS boilerplate to build websi
 
 ### Getting Started ###
 
-Spaceman uses [Gulp](http://gulpjs.com/), [PostCSS](http://postcss.org) and [Browsersync](https://www.browsersync.io/), so you'll need [Node.JS](https://nodejs.org/en/). Once you have set it up, [download Spaceman](https://github.com/victordieggo/spaceman/releases/latest) to your project directory and access the terminal:
+Spaceman uses [Gulp](http://gulpjs.com/) and [Browsersync](https://www.browsersync.io/), so you'll need [Node.JS](https://nodejs.org/en/). Once you have set it up, [download Spaceman](https://github.com/victordieggo/spaceman/releases/latest) to your project directory and access the terminal:
 
 ```
 # install gulp globally
