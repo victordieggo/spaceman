@@ -44,6 +44,6 @@ Buttons
 -------------------------------------------------------
 */
 
-.btn-outline:not(:hover, :focus) {
+.btn-outline:not(:hover):not(:focus) {
   background-color: transparent;
 }
