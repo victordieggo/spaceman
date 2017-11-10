@@ -1,12 +1,13 @@
 'use strict';
 
 const gulp = require('gulp');
+const autoprefixer = require('gulp-autoprefixer');
 const babel = require('gulp-babel');
 const concat = require('gulp-concat');
 const stylelint = require('gulp-stylelint');
 const combineMq = require('gulp-combine-mq');
 const cssmin = require('gulp-cssmin');
-const postcss = require('gulp-postcss');
+const sass = require('gulp-sass');
 const eslint = require('gulp-eslint');
 const uglify = require('gulp-uglify');
 const imagemin = require('gulp-imagemin');
@@ -15,19 +16,14 @@ const pngquant = require('imagemin-pngquant');
 const browserSync = require('browser-sync').create();
 const path = require('path');
 
-const postcssPlugins = [
-  require('precss'),
-  require('postcss-cssnext')
-];
-
 const basePath = {
   src:  'assets/src/',
   dist: 'assets/dist/'
 };
 
 const srcPath = {
-  stl: basePath.src + 'css/main.css',
-  css: basePath.src + 'css/**/*.css',
+  stl: basePath.src + 'css/main.scss',
+  css: basePath.src + 'css/**/*.scss',
   js:  basePath.src + 'js/*.js',
   img: basePath.src + 'img/*.{png,gif,jpg}',
   svg: basePath.src + 'svg/*.svg',
@@ -57,7 +53,8 @@ gulp.task('lint-css', function () {
 
 gulp.task('css', function () {
   gulp.src(srcPath.stl)
-    .pipe(postcss(postcssPlugins))
+    .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefixer())
     .pipe(combineMq())
     .pipe(cssmin())
     .pipe(gulp.dest(distPath.css))
