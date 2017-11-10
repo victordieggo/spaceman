@@ -14,7 +14,7 @@ Buttons
 */
 
 .btn {
-  @mixin vcenter;
+  @include vcenter;
   width: auto;
   padding: 0 1em;
   white-space: normal;
@@ -34,8 +34,8 @@ Buttons
 
 .btn:focus,
 .btn:hover {
-  background-color: color($btnMain blackness(20%));
-  border-color: color($btnMain blackness(20%));
+  background-color: darken($btnMain, 10%);
+  border-color: darken($btnMain, 10%);
 }
 
 /*

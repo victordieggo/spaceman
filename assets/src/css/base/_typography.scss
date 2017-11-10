@@ -16,12 +16,20 @@ Typography
 */
 
 body,
-:--form-elements {
+.btn,
+input,
+select,
+textarea {
   font-family: sans-serif;
   font-weight: normal;
 }
 
-:--headings {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: inherit;
 }
 
@@ -32,7 +40,10 @@ body,
 */
 
 body,
-:--form-elements {
+.btn,
+input,
+select,
+textarea {
   font-size: 1em;
 }
 
@@ -77,7 +88,7 @@ h1,
   font-size: 2.5em;
 }
 
-@media $viewport-sm {
+@media #{$viewport-sm} {
   body {
     font-size: 85%;
   }

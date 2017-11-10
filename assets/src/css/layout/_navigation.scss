@@ -46,7 +46,7 @@ Navigation
     }
   }
 
-  @media $viewport-xs {
+  @media #{$viewport-xs} {
     > .menu {
       width: 75%;
     }
@@ -59,7 +59,7 @@ Navigation
 -------------------------------------------------------
 */
 
-@media $viewport-md--up {
+@media #{$viewport-md--up} {
   .menu-item-is-active > a {
     color: #afafaf;
   }
@@ -102,7 +102,8 @@ Navigation
         content: '';
         display: block;
         margin: 0 0.65em;
-        border-bottom: 1px solid color($darkColor lightness(85%));
+        border-bottom: 1px solid $darkColor;
+        border-bottom: 1px solid lighten($darkColor, 70%);
       }
 
       .menu-item-has-children {
@@ -147,7 +148,7 @@ Navigation
 -------------------------------------------------------
 */
 
-@media $viewport-md {
+@media #{$viewport-md} {
   .nav-hide-overflow {
     overflow: hidden;
   }
@@ -206,7 +207,8 @@ Navigation
   .menu-item-is-active {
     > a {
       background-color: $mainColor;
-      border-color: color($mainColor lightness(35%));
+      border-color: $mainColor;
+      border-color: lighten($mainColor, 10%);
       color: $lightColor;
     }
 

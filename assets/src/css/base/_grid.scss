@@ -53,16 +53,16 @@ Grid
 -------------------------------------------------------
 */
 
-@mixin grid col;
+@include grid(col);
 
-@media $viewport-md {
-  @mixin grid md;
+@media #{$viewport-md} {
+  @include grid(md);
 }
 
-@media $viewport-sm {
-  @mixin grid sm;
+@media #{$viewport-sm} {
+  @include grid(sm);
 }
 
-@media $viewport-xs {
-  @mixin grid xs;
+@media #{$viewport-xs} {
+  @include grid(xs);
 }

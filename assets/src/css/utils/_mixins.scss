@@ -16,10 +16,10 @@ Mixins
 -------------------------------------------------------
 */
 
-@define-mixin grid $name {
-  @for $i from 1 to 12 {
-    .$(name)-$i {
-      width: calc($i/12 * 100%);
+@mixin grid($name) {
+  @for $i from 1 through 12 {
+    .#{$name}-#{$i} {
+      width: $i/12*100%;
     }
   }
 }
@@ -30,22 +30,27 @@ Mixins
 -------------------------------------------------------
 */
 
-@define-mixin spacing $name, $property, $zero {
-  @for $i from 5 to 30 by 5 {
-    $result: calc($i / 10);
-    $result: $(result)em $(zero);
+@mixin spacing($name, $property, $zero: false) {
+  $i: 5;
 
-    @if $i > 4 {
-      .$(name)-0$i {
-        $(property): $result;
-      }
+  @while $i < 35 {
+    $result: $i/10;
+    $result: #{$result}em;
+    $class: #{$name}-#{$i};
+
+    @if $zero == true {
+      $result: #{$result} 0;
     }
 
-    @else {
-      .$(name)-$i {
-        $(property): $result;
-      }
+    @if $i < 10 {
+      $class: #{$name}-0#{$i};
     }
+
+    .#{$class} {
+      #{$property}: #{$result};
+    }
+
+    $i: $i + 5;
   }
 }
 
@@ -55,19 +60,19 @@ Mixins
 -------------------------------------------------------
 */
 
-@define-mixin vcenter {
+@mixin vcenter {
   display: inline-block;
   vertical-align: middle;
 }
 
-@define-mixin hideElement {
+@mixin hideElement {
   top: -9999px;
   left: -9999px;
   position: absolute;
   visibility: hidden;
 }
 
-@define-mixin showElement {
+@mixin showElement {
   top: 0;
   left: 0;
   position: static;
@@ -80,8 +85,8 @@ Mixins
 -------------------------------------------------------
 */
 
-@define-mixin wrapper $size {
-  max-width: $(size);
+@mixin wrapper($size) {
+  max-width: #{$size};
   margin: 0 auto;
 }
 
@@ -91,10 +96,10 @@ Mixins
 -------------------------------------------------------
 */
 
-@define-mixin stackOrder $name, $min, $max {
-  @for $i from $min to $max {
-    .$(name)-$i {
-      z-index: $i;
+@mixin stackOrder($name, $min, $max) {
+  @for $i from $min through $max {
+    .#{$name}-#{$i} {
+      z-index: #{$i};
     }
   }
 }

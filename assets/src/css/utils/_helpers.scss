@@ -76,36 +76,36 @@ Helpers
 .show-md,
 .show-sm,
 .show-xs {
-  @mixin hideElement;
+  @include hideElement;
 }
 
-@media $viewport-md {
+@media #{$viewport-md} {
   .show-md {
-    @mixin showElement;
+    @include showElement;
   }
 
   .hide-md {
-    @mixin hideElement;
+    @include hideElement;
   }
 }
 
-@media $viewport-sm {
+@media #{$viewport-sm} {
   .show-sm {
-    @mixin showElement;
+    @include showElement;
   }
 
   .hide-sm {
-    @mixin hideElement;
+    @include hideElement;
   }
 }
 
-@media $viewport-xs {
+@media #{$viewport-xs} {
   .show-xs {
-    @mixin showElement;
+    @include showElement;
   }
 
   .hide-xs {
-    @mixin hideElement;
+    @include hideElement;
   }
 }
 
@@ -139,9 +139,9 @@ Helpers
 -------------------------------------------------------
 */
 
-@mixin spacing pad, padding;
-@mixin spacing pad-top, padding-top;
-@mixin spacing pad-bottom, padding-bottom;
+@include spacing(pad, padding);
+@include spacing(pad-top, padding-top);
+@include spacing(pad-bottom, padding-bottom);
 
 /*
 -------------------------------------------------------
@@ -193,9 +193,9 @@ Helpers
 -------------------------------------------------------
 */
 
-@mixin spacing spacer, margin, 0;
-@mixin spacing spacer-top, margin-top;
-@mixin spacing spacer-bottom, margin-bottom;
+@include spacing(spacer, margin, true);
+@include spacing(spacer-top, margin-top);
+@include spacing(spacer-bottom, margin-bottom);
 
 /*
 -------------------------------------------------------
@@ -204,7 +204,7 @@ Helpers
 */
 
 .wrapper {
-  @mixin wrapper 1240px;
+  @include wrapper(1240px);
 }
 
 /*
@@ -213,4 +213,4 @@ Helpers
 -------------------------------------------------------
 */
 
-@mixin stackOrder z-index, 1, 6;
+@include stackOrder(z-index, 1, 6);
