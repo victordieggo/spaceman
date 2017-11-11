@@ -55,14 +55,8 @@ Grid
 
 @include grid(col);
 
-@media #{$viewport-md} {
-  @include grid(md);
-}
-
-@media #{$viewport-sm} {
-  @include grid(sm);
-}
-
-@media #{$viewport-xs} {
-  @include grid(xs);
+@each $class, $viewport in $viewports {
+  @media #{$viewport} {
+    @include grid(#{$class});
+  }
 }
