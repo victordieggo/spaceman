@@ -79,33 +79,15 @@ Helpers
   @include hideElement;
 }
 
-@media #{$viewport-md} {
-  .show-md {
-    @include showElement;
-  }
+@each $class, $viewport in $viewports {
+  @media #{$viewport} {
+    .show-#{$class} {
+      @include showElement;
+    }
 
-  .hide-md {
-    @include hideElement;
-  }
-}
-
-@media #{$viewport-sm} {
-  .show-sm {
-    @include showElement;
-  }
-
-  .hide-sm {
-    @include hideElement;
-  }
-}
-
-@media #{$viewport-xs} {
-  .show-xs {
-    @include showElement;
-  }
-
-  .hide-xs {
-    @include hideElement;
+    .hide-#{$class} {
+      @include hideElement;
+    }
   }
 }
 
