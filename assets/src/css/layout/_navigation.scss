@@ -46,7 +46,7 @@ Navigation
     }
   }
 
-  @media #{$viewport-xs} {
+  @include viewport($xsmall) {
     > .menu {
       width: 75%;
     }
@@ -59,7 +59,7 @@ Navigation
 -------------------------------------------------------
 */
 
-@media #{$viewport-md--up} {
+@include viewport($medium, min) {
   .menu-item-is-active > a {
     color: #afafaf;
   }
@@ -148,7 +148,7 @@ Navigation
 -------------------------------------------------------
 */
 
-@media #{$viewport-md} {
+@include viewport($medium) {
   .nav-hide-overflow {
     overflow: hidden;
   }

@@ -49,7 +49,7 @@ Grid
 @include grid(col);
 
 @each $class, $viewport in $viewports {
-  @media #{$viewport} {
+  @include viewport($viewport) {
     @include grid(#{$class});
   }
 }

@@ -22,7 +22,7 @@ Helpers
 */
 
 .container {
-  @include container(1240px);
+  @include container(1280px);
 }
 
 /*
@@ -90,7 +90,7 @@ Helpers
 }
 
 @each $class, $viewport in $viewports {
-  @media #{$viewport} {
+  @include viewport($viewport) {
     .show-#{$class} {
       @include showElement;
     }
