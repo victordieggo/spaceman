@@ -207,7 +207,6 @@ Navigation
   .menu-item-is-active {
     > a {
       background-color: $mainColor;
-      border-color: $mainColor;
       border-color: lighten($mainColor, 10%);
       color: $lightColor;
     }
