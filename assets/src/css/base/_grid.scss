@@ -29,6 +29,10 @@ Grid
   justify-content: center;
 }
 
+.row-inverted {
+  justify-content: flex-end;
+}
+
 /*
 -------------------------------------------------------
 2. Columns Vertical Align
@@ -45,6 +49,18 @@ Grid
 
 .col-stretch {
   align-self: stretch;
+}
+
+.col-mx-auto {
+  margin: 0 auto;
+}
+
+.col-ml-auto {
+  margin-left: auto;
+}
+
+.col-mr-auto {
+  margin-right: auto;
 }
 
 /*

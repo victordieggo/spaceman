@@ -27,10 +27,10 @@ Mixins
 -------------------------------------------------------
 */
 
-@mixin grid($name) {
-  @for $i from 1 through 12 {
+@mixin grid($name, $cols: 12) {
+  @for $i from 1 through $cols {
     .#{$name}-#{$i} {
-      width: $i/12*100%;
+      width: $i/$cols*100%;
     }
   }
 }
