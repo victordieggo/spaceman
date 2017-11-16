@@ -3,8 +3,9 @@
 Grid
 =======================================================
 1. Row
-2. Columns Vertical Align
-3. Columns Sizing
+2. Row Options
+3. Columns
+4. Columns Options
 =======================================================
 */
 
@@ -25,6 +26,12 @@ Grid
   padding: 0.7em;
 }
 
+/*
+-------------------------------------------------------
+2. Row Options
+-------------------------------------------------------
+*/
+
 .row-centered {
   justify-content: center;
 }
@@ -35,7 +42,21 @@ Grid
 
 /*
 -------------------------------------------------------
-2. Columns Vertical Align
+3. Columns
+-------------------------------------------------------
+*/
+
+@include grid(col);
+
+@each $class, $viewport in $viewports {
+  @include viewport($viewport) {
+    @include grid(#{$class});
+  }
+}
+
+/*
+-------------------------------------------------------
+4. Columns Options
 -------------------------------------------------------
 */
 
@@ -61,18 +82,4 @@ Grid
 
 .col-mr-auto {
   margin-right: auto;
-}
-
-/*
--------------------------------------------------------
-3. Columns Sizing
--------------------------------------------------------
-*/
-
-@include grid(col);
-
-@each $class, $viewport in $viewports {
-  @media #{$viewport} {
-    @include grid(#{$class});
-  }
 }

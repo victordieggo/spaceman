@@ -8,6 +8,7 @@
 
   let screenCover;
   const body = document.body;
+  const mediumViewport = '840';
   const navIsActive = 'main-nav-is-active';
   const itemIsActive = 'menu-item-is-active';
   const nav = body.querySelector('.main-nav');
@@ -70,7 +71,7 @@
           const activeNav = nav.contains(screenCover);
           const browserWidth = window.innerWidth;
           const exceptions = clickExceptions.indexOf(target) === -1;
-          if (browserWidth > 992 || (browserWidth <= 992 && exceptions && activeNav)) {
+          if (browserWidth > mediumViewport || (browserWidth <= mediumViewport && exceptions && activeNav)) {
             closeActiveItem(activeItem);
           }
         }
