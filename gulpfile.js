@@ -17,23 +17,23 @@ const browserSync = require('browser-sync').create();
 const path = require('path');
 
 const basePath = {
-  src:  'assets/src/',
+  src:'assets/src/',
   dist: 'assets/dist/'
 };
 
 const srcPath = {
-  stl: basePath.src + 'css/main.scss',
+  js: basePath.src + 'js/**/*.js',
   css: basePath.src + 'css/**/*.scss',
-  js:  basePath.src + 'js/*.js',
+  scss: basePath.src + 'css/main.scss',
   img: basePath.src + 'img/*.{png,gif,jpg}',
-  svg: basePath.src + 'svg/*.svg',
+  svg: basePath.src + 'svg/*.svg'
 };
 
 const distPath = {
-  css: basePath.dist + 'css',
   js:  basePath.dist + 'js',
+  css: basePath.dist + 'css',
   img: basePath.dist + 'img',
-  svg: basePath.dist + 'svg',
+  svg: basePath.dist + 'svg'
 };
 
 const bsReload = [
@@ -51,8 +51,8 @@ gulp.task('lint-css', function () {
   }))
 });
 
-gulp.task('css', function () {
-  gulp.src(srcPath.stl)
+gulp.task('build-css', function () {
+  gulp.src(srcPath.scss)
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer())
     .pipe(combineMq())
@@ -61,7 +61,15 @@ gulp.task('css', function () {
     .pipe(browserSync.stream());
 });
 
-gulp.task('js', function () {
+gulp.task('css', ['lint-css', 'build-css']);
+
+gulp.task('lint-js', function () {
+  gulp.src(srcPath.js)
+    .pipe(eslint())
+    .pipe(eslint.format())
+});
+
+gulp.task('build-js', function () {
   gulp.src(srcPath.js)
     .pipe(eslint())
     .pipe(eslint.format())
@@ -73,6 +81,8 @@ gulp.task('js', function () {
     .pipe(gulp.dest(distPath.js))
     .pipe(browserSync.stream());
 });
+
+gulp.task('js', ['lint-js', 'build-js']);
 
 gulp.task('img', function () {
   gulp.src(srcPath.img)
@@ -96,10 +106,12 @@ gulp.task('watch', function () {
     open: false,
   });
   gulp.watch(srcPath.js, ['js']);
-  gulp.watch(srcPath.css, ['lint-css', 'css']);
+  gulp.watch(srcPath.css, ['css']);
   gulp.watch(srcPath.img, ['img']);
   gulp.watch(srcPath.svg, ['svg']);
   gulp.watch(bsReload, browserSync.reload);
 });
 
-gulp.task('default', ['js', 'lint-css', 'css', 'img', 'svg', 'watch']);
+gulp.task('build', ['js', 'css', 'img', 'svg']);
+
+gulp.task('default', ['build', 'watch']);
