@@ -19,8 +19,8 @@ Buttons
   padding: 0 1em;
   white-space: normal;
   height: $fe-height;
-  background-color: $btnMain;
-  border: solid 2px $btnMain;
+  background-color: $colorAlt;
+  border: solid 2px $colorAlt;
   line-height: $fe-lineHeight;
   border-radius: $fe-borderRadius;
   transition: background 0.3s, border 0.3s, color 0.3s;
@@ -34,8 +34,8 @@ Buttons
 
 .btn:focus,
 .btn:hover {
-  background-color: darken($btnMain, 10%);
-  border-color: darken($btnMain, 10%);
+  background-color: darken($colorAlt, 10%);
+  border-color: darken($colorAlt, 10%);
 }
 
 /*
