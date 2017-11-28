@@ -17,6 +17,24 @@ Helpers
 
 /*
 -------------------------------------------------------
+1. Background
+-------------------------------------------------------
+*/
+
+@each $class, $color in $colors {
+  .bg-#{$class} {
+    background-color: $color;
+  }
+}
+
+.bg-image {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/*
+-------------------------------------------------------
 1. Container
 -------------------------------------------------------
 */
