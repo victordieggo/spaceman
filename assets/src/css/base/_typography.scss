@@ -104,8 +104,10 @@ body {
   color: $colorDark;
 }
 
-.text-white {
-  color: $colorLight;
+@each $class, $color in $colors {
+  .text-#{$class} {
+    color: $color;
+  }
 }
 
 /*
