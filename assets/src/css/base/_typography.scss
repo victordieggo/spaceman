@@ -88,7 +88,7 @@ h1,
   font-size: 2.5em;
 }
 
-@include viewport($small) {
+@include breakpoint($small) {
   body {
     font-size: 85%;
   }
@@ -101,11 +101,13 @@ h1,
 */
 
 body {
-  color: $darkColor;
+  color: $colorDark;
 }
 
-.text-white {
-  color: $lightColor;
+@each $class, $color in $colors {
+  .text-#{$class} {
+    color: $color;
+  }
 }
 
 /*
