@@ -15,6 +15,8 @@ const mozjpeg = require('imagemin-mozjpeg');
 const pngquant = require('imagemin-pngquant');
 const browserSync = require('browser-sync').create();
 const path = require('path');
+const task = process.argv[2];
+const args = process.argv[3];
 
 const basePath = {
   src:'assets/src/',
@@ -41,36 +43,37 @@ const bsReload = [
   srcPath.svg
 ];
 
-gulp.task('css-lint', function () {
-  gulp.src(srcPath.css)
+const returnTasks = function () {
+  const regex = /[^a-zA-Z]+/g;
+  if (args) {
+    return task + args.replace(regex, '');
+  }
+  return lint, build;
+};
+
+gulp.task('css', function () {
+  const lint = gulp.src(srcPath.css)
   .pipe(stylelint({
     failAfterError: false,
     reporters: [
       {formatter: 'string', console: true}
     ]
-  }))
-});
-
-gulp.task('css-build', function () {
-  gulp.src(srcPath.scss)
+  }));
+  const build = gulp.src(srcPath.scss)
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer())
     .pipe(combineMq())
     .pipe(cssmin())
     .pipe(gulp.dest(distPath.css))
     .pipe(browserSync.stream());
+  returnTasks;
 });
 
-gulp.task('css', ['css-lint', 'css-build']);
-
-gulp.task('js-lint', function () {
-  gulp.src(srcPath.js)
+gulp.task('js', function () {
+  const lint = gulp.src(srcPath.js)
     .pipe(eslint())
-    .pipe(eslint.format())
-});
-
-gulp.task('js-build', function () {
-  gulp.src(srcPath.js)
+    .pipe(eslint.format());
+  const build = gulp.src(srcPath.js)
     .pipe(eslint())
     .pipe(eslint.format())
     .pipe(babel({
@@ -80,9 +83,8 @@ gulp.task('js-build', function () {
     .pipe(uglify())
     .pipe(gulp.dest(distPath.js))
     .pipe(browserSync.stream());
+  returnTasks;
 });
-
-gulp.task('js', ['js-lint', 'js-build']);
 
 gulp.task('img', function () {
   gulp.src(srcPath.img)
