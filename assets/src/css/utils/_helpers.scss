@@ -109,7 +109,7 @@ Helpers
 }
 
 @each $class, $viewport in $viewports {
-  @include viewport($viewport) {
+  @include breakpoint($viewport) {
     .show-#{$class} {
       @include showElement;
     }
