@@ -27,12 +27,12 @@ $ gulp
 - `gulp`: run all tasks, start browsersync and watch files
 - `gulp img`: compress images
 - `gulp svg`: compress svg files
-- `gulp js`: lint/build js files
-- `gulp lint-js`: lint js files (eslint)
-- `gulp build-js`: build (compile/minify) js files
-- `gulp css`: lint/build css files
-- `gulp lint-css`: build (compile/minify) css files
-- `gulp build-css`: compile and minify css files
+- `gulp js`: lint/build js
+- `gulp js-lint`: lint js (eslint)
+- `gulp js-build`: build js (compile/minify)
+- `gulp css`: lint/build css
+- `gulp css-lint`: lint css (stylelint)
+- `gulp css-build`: build css (compile/minify)
 - `gulp watch`: start browsersync and watch files
 - `gulp build`: build js/css and compress images and svg files
 
