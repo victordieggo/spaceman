@@ -20,7 +20,7 @@ $medium: 840px;
 $large:  960px;
 $xlarge: 1280px;
 
-$viewports: (
+$breakpoints: (
   ('xs', $xsmall),
   ('sm', $small),
   ('md', $medium),

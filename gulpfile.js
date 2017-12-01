@@ -41,7 +41,7 @@ const bsReload = [
   srcPath.svg
 ];
 
-gulp.task('lint-css', function () {
+gulp.task('lint-css', () => {
   gulp.src(srcPath.css)
   .pipe(stylelint({
     failAfterError: false,
@@ -51,7 +51,7 @@ gulp.task('lint-css', function () {
   }))
 });
 
-gulp.task('build-css', function () {
+gulp.task('build-css', () => {
   gulp.src(srcPath.scss)
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer())
@@ -63,13 +63,13 @@ gulp.task('build-css', function () {
 
 gulp.task('css', ['lint-css', 'build-css']);
 
-gulp.task('lint-js', function () {
+gulp.task('lint-js', () => {
   gulp.src(srcPath.js)
     .pipe(eslint())
     .pipe(eslint.format())
 });
 
-gulp.task('build-js', function () {
+gulp.task('build-js', () => {
   gulp.src(srcPath.js)
     .pipe(eslint())
     .pipe(eslint.format())
@@ -84,7 +84,7 @@ gulp.task('build-js', function () {
 
 gulp.task('js', ['lint-js', 'build-js']);
 
-gulp.task('img', function () {
+gulp.task('img', () => {
   gulp.src(srcPath.img)
     .pipe(imagemin([
       mozjpeg({quality: 89}),
@@ -94,13 +94,13 @@ gulp.task('img', function () {
     .pipe(browserSync.stream());
 });
 
-gulp.task('svg', function () {
+gulp.task('svg', () => {
   gulp.src(srcPath.svg)
     .pipe(imagemin({verbose: true}))
     .pipe(gulp.dest(distPath.svg));
 });
 
-gulp.task('watch', function () {
+gulp.task('watch', () => {
   browserSync.init({
     proxy: 'localhost/' + path.basename(__dirname),
     open: false,

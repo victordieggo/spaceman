@@ -2,7 +2,7 @@
 
 Spaceman is a simple and easily customizable HTML/CSS boilerplate to build websites and apps. It provides a flexbox based responsive layout system, pre-set styles for basic UI elements and a few CSS utilities and components.
 
-It was built over many iterations, cleanups, revisions and upgrades, which makes Spaceman a solid, stable and tested base for you to build on and extend its functionalities.
+It was built over many iterations, cleanups, revisions and upgrades, which makes Spaceman a solid, stable and tested front-end codebase to build your project on.
 
 ### Getting Started ###
 
@@ -22,19 +22,21 @@ $ npm install
 $ gulp
 ```
 
+And thats it, the commands above are everything you need to start. Now read the docs (coming soon!) so you can get the best out of Spaceman.
+
 ### Gulp Tasks ###
 
 - `gulp`: run all tasks, start browsersync and watch files
 - `gulp img`: compress images
 - `gulp svg`: compress svg files
-- `gulp js`: lint/build js files
-- `gulp lint-js`: lint js files (eslint)
-- `gulp build-js`: build (compile/minify) js files
-- `gulp css`: lint/build css files
-- `gulp lint-css`: build (compile/minify) css files
-- `gulp build-css`: compile and minify css files
+- `gulp js`: lint/build js
+- `gulp js-lint`: lint js (eslint)
+- `gulp js-build`: build js (compile/minify)
+- `gulp css`: lint/build css
+- `gulp css-lint`: lint css (stylelint)
+- `gulp css-build`: build css (compile/minify)
 - `gulp watch`: start browsersync and watch files
-- `gulp build`: build js/css and compress images and svg files
+- `gulp build`: run all assets related tasks (js/css/img/svg)
 
 ### Browser Support ###
 

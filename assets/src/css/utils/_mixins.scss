@@ -44,10 +44,14 @@ Mixins
 -------------------------------------------------------
 */
 
+@function column($columnSize, $gridSize) {
+  @return $columnSize/$gridSize*100%;
+}
+
 @mixin grid($name, $cols: 12) {
   @for $i from 1 through $cols {
     .#{$name}-#{$i} {
-      width: $i/$cols*100%;
+      width: column($i, $cols);
     }
   }
 }

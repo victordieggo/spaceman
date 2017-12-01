@@ -48,7 +48,7 @@ Grid
 
 @include grid(col);
 
-@each $class, $viewport in $viewports {
+@each $class, $viewport in $breakpoints {
   @include breakpoint($viewport) {
     @include grid(#{$class});
   }
