@@ -4,7 +4,8 @@ Theme
 =======================================================
 1. Breakpoints
 2. Colors
-3. Form Elements
+3. Font Sizes
+4. Form Elements
 =======================================================
 */
 
@@ -48,11 +49,23 @@ $colors: (
 
 /*
 -------------------------------------------------------
-3. Form Elements
+3. Font Sizes
 -------------------------------------------------------
 */
 
-$base-height: 2.75;
-$fe-height: #{$base-height}em;
-$fe-lineHeight: $base-height - 0.25;
+$fontSize-glob:     1em;
+$fontSize-interval: 0.3;
+$fontSize-headings: $fontSize-glob + 1.5;
+$fontSize-small:    $fontSize-glob - 0.2;
+$fontSize-large:    $fontSize-glob + $fontSize-interval;
+
+/*
+-------------------------------------------------------
+4. Form Elements
+-------------------------------------------------------
+*/
+
+$base-height:     2.75;
+$fe-height:       #{$base-height}em;
+$fe-lineHeight:   $base-height - 0.25;
 $fe-borderRadius: 0.3rem;
