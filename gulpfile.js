@@ -41,7 +41,7 @@ const bsReload = [
   srcPath.svg
 ];
 
-gulp.task('lint-css', () => {
+gulp.task('css-lint', () => {
   gulp.src(srcPath.css)
   .pipe(stylelint({
     failAfterError: false,
@@ -51,7 +51,7 @@ gulp.task('lint-css', () => {
   }))
 });
 
-gulp.task('build-css', () => {
+gulp.task('css-build', () => {
   gulp.src(srcPath.scss)
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer())
@@ -61,15 +61,15 @@ gulp.task('build-css', () => {
     .pipe(browserSync.stream());
 });
 
-gulp.task('css', ['lint-css', 'build-css']);
+gulp.task('css', ['css-lint', 'css-build']);
 
-gulp.task('lint-js', () => {
+gulp.task('js-lint', () => {
   gulp.src(srcPath.js)
     .pipe(eslint())
     .pipe(eslint.format())
 });
 
-gulp.task('build-js', () => {
+gulp.task('js-build', () => {
   gulp.src(srcPath.js)
     .pipe(eslint())
     .pipe(eslint.format())
@@ -82,7 +82,7 @@ gulp.task('build-js', () => {
     .pipe(browserSync.stream());
 });
 
-gulp.task('js', ['lint-js', 'build-js']);
+gulp.task('js', ['js-lint', 'js-build']);
 
 gulp.task('img', () => {
   gulp.src(srcPath.img)
