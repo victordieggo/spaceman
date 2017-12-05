@@ -16,17 +16,13 @@ Theme
 */
 
 $xsmall: 480px;
-$small:  600px;
-$medium: 840px;
-$large:  960px;
-$xlarge: 1280px;
+$small:  768px;
+$medium: 992px;
 
 $breakpoints: (
   ('xs', $xsmall),
   ('sm', $small),
-  ('md', $medium),
-  ('lg', $large),
-  ('xl', $xlarge),
+  ('md', $medium)
 );
 
 /*
