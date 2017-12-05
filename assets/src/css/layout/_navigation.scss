@@ -23,6 +23,10 @@ Navigation
     display: block;
   }
 
+  a:hover {
+    text-decoration: none;
+  }
+
   .sub-menu {
     text-align: left;
     display: none;
