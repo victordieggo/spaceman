@@ -102,13 +102,13 @@ Helpers
   @include hideElement;
 }
 
-@each $class, $viewport in $breakpoints {
-  @include breakpoint($viewport) {
-    .show-#{$class} {
+@each $breakpoint in $breakpoints {
+  @include media-breakpoint(nth($breakpoint, 1)) {
+    .show-#{nth($breakpoint, 1)} {
       @include showElement;
     }
 
-    .hide-#{$class} {
+    .hide-#{nth($breakpoint, 1)} {
       @include hideElement;
     }
   }

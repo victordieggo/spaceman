@@ -23,9 +23,9 @@ body {
   font-size: $fontSize-glob;
   font-family: sans-serif;
   font-weight: normal;
-  color: $colorDark;
+  color: color(dark);
 
-  @include breakpoint($small) {
+  @include media-breakpoint(sm) {
     font-size: 85%;
   }
 }

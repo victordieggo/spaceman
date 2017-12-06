@@ -50,7 +50,7 @@ Navigation
     }
   }
 
-  @include breakpoint($xsmall) {
+  @include media-breakpoint(xs) {
     > .menu {
       width: 75%;
     }
@@ -63,7 +63,7 @@ Navigation
 -------------------------------------------------------
 */
 
-@include breakpoint($medium, min) {
+@include media-breakpoint(md, min) {
   .menu-item-is-active > a {
     color: #afafaf;
   }
@@ -90,11 +90,11 @@ Navigation
     }
 
     .sub-menu {
-      color: $colorDark;
+      color: color(dark);
       position: absolute;
       border-radius: 6px;
       white-space: nowrap;
-      background-color: $colorLight;
+      background-color: color(light);
       box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
 
       a {
@@ -106,7 +106,7 @@ Navigation
         content: '';
         display: block;
         margin: 0 0.65em;
-        border-bottom: 1px solid lighten($colorDark, 70%);
+        border-bottom: 1px solid lighten(color(dark), 70%);
       }
 
       .menu-item-has-children {
@@ -151,7 +151,7 @@ Navigation
 -------------------------------------------------------
 */
 
-@include breakpoint($medium) {
+@include media-breakpoint(md) {
   .nav-hide-overflow {
     overflow: hidden;
   }
@@ -209,9 +209,9 @@ Navigation
 
   .menu-item-is-active {
     > a {
-      background-color: $colorMain;
-      border-color: lighten($colorMain, 10%);
-      color: $colorLight;
+      background-color: color(main);
+      border-color: lighten(color(main), 10%);
+      color: color(light);
     }
 
     > a::after {

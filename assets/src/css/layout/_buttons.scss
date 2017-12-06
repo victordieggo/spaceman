@@ -23,16 +23,16 @@ Buttons
   height: $fe-height;
   font-family: inherit;
   font-size: $fontSize-glob;
-  background-color: $colorAlt;
-  border: solid 2px $colorAlt;
+  background-color: color(alt);
+  border: solid 2px color(alt);
   line-height: $fe-lineHeight;
   border-radius: $fe-borderRadius;
   transition: background 0.3s, border 0.3s, color 0.3s;
 
   &:focus,
   &:hover {
-    background-color: darken($colorAlt, 10%);
-    border-color: darken($colorAlt, 10%);
+    background-color: darken(color(alt), 10%);
+    border-color: darken(color(alt), 10%);
   }
 }
 
