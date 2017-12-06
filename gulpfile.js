@@ -6,7 +6,7 @@ const babel = require('gulp-babel');
 const concat = require('gulp-concat');
 const stylelint = require('gulp-stylelint');
 const combineMq = require('gulp-combine-mq');
-const cssmin = require('gulp-cssmin');
+const csso = require('gulp-csso');
 const sass = require('gulp-sass');
 const eslint = require('gulp-eslint');
 const uglify = require('gulp-uglify');
@@ -56,7 +56,7 @@ gulp.task('css-build', () => {
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer())
     .pipe(combineMq())
-    .pipe(cssmin())
+    .pipe(csso())
     .pipe(gulp.dest(distPath.css))
     .pipe(browserSync.stream());
 });

@@ -3,8 +3,9 @@
 Form Elements
 =======================================================
 1. Base Styles
-2. Custom Select Arrow
-3. Custom Checkbox/Radio
+2. Custom Checkbox/Radio
+3. Custom Select
+4. Sizing Options
 =======================================================
 */
 
@@ -30,18 +31,20 @@ input,
 select,
 textarea {
   width: 100%;
+  font-family: inherit;
+  font-size: $fontSize-glob;
 }
 
 select,
 input:not(.btn) {
-  height: $fe-height;
   padding: 0 0.6em;
+  height: $fe-height;
 }
 
 textarea {
+  resize: none;
   padding: 0.6em;
   overflow-y: auto;
-  resize: none;
 }
 
 select:focus,
@@ -63,7 +66,44 @@ input:not(.btn):focus,
 
 /*
 -------------------------------------------------------
-2. Custom Select Arrow
+2. Custom Checkbox/Radio
+-------------------------------------------------------
+*/
+
+input[type=radio],
+input[type=checkbox] {
+  width: 0;
+  height: 0;
+  border: 0;
+  padding: 0;
+}
+
+.label-radio::before,
+.label-checkbox::before {
+  content: '';
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: -0.1em 0.5em 0 0;
+  padding: 0.65em;
+}
+
+.label-radio::before {
+  border-radius: 50%;
+}
+
+:checked + .label-checkbox::before {
+  background-image: url('../../dist/svg/icon-check.svg');
+  background-size: 60%;
+}
+
+:checked + .label-radio::before {
+  background-image: url('../../dist/svg/icon-circle.svg');
+  background-size: 34% 100%;
+}
+
+/*
+-------------------------------------------------------
+3. Custom Select
 -------------------------------------------------------
 */
 
@@ -81,36 +121,14 @@ select {
 
 /*
 -------------------------------------------------------
-3. Custom Checkbox/Radio
+4. Sizing Options
 -------------------------------------------------------
 */
 
-input[type=radio],
-input[type=checkbox] {
-  height: 0;
-  width: 0;
-  border: 0;
-  padding: 0;
-  opacity: 0;
+.input-small {
+  font-size: $fontSize-small;
 }
 
-.label-radio::before,
-.label-checkbox::before {
-  content: '';
-  margin-right: 0.5em;
-  padding: 0.65em;
-}
-
-.label-radio::before {
-  border-radius: 50%;
-}
-
-:checked + .label-checkbox::before {
-  background: url('../../dist/svg/icon-check.svg') no-repeat center;
-  background-size: 60%;
-}
-
-:checked + .label-radio::before {
-  background: url('../../dist/svg/icon-circle.svg') no-repeat top;
-  background-size: 34% 100%;
+.input-large {
+  font-size: $fontSize-large;
 }

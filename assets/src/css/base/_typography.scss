@@ -2,26 +2,32 @@
 =======================================================
 Typography
 =======================================================
-1. Font Family/Height
-2. Font Size
-3. Font Color
-4. Misc/Effects
+1. Font-Face
+2. Defaults
 =======================================================
 */
 
 /*
 -------------------------------------------------------
-1. Font Family/Height
+1. Font-Face
 -------------------------------------------------------
 */
 
-body,
-.btn,
-input,
-select,
-textarea {
+/*
+-------------------------------------------------------
+2. Defaults
+-------------------------------------------------------
+*/
+
+body {
+  font-size: $fontSize-glob;
   font-family: sans-serif;
   font-weight: normal;
+  color: $colorDark;
+
+  @include breakpoint($small) {
+    font-size: 85%;
+  }
 }
 
 h1,
@@ -31,116 +37,4 @@ h4,
 h5,
 h6 {
   font-weight: inherit;
-}
-
-/*
--------------------------------------------------------
-2. Font Size
--------------------------------------------------------
-*/
-
-body,
-.btn,
-input,
-select,
-textarea {
-  font-size: 1em;
-}
-
-small,
-.btn-small,
-.text-small,
-.input-small {
-  font-size: 0.8em;
-}
-
-h6,
-.title-6,
-blockquote {
-  font-size: 1.1em;
-}
-
-h5,
-.title-5,
-.btn-large,
-.text-large,
-.input-large {
-  font-size: 1.3em;
-}
-
-h4,
-.title-4 {
-  font-size: 1.6em;
-}
-
-h3,
-.title-3 {
-  font-size: 1.9em;
-}
-
-h2,
-.title-2 {
-  font-size: 2.2em;
-}
-
-h1,
-.title-1 {
-  font-size: 2.5em;
-}
-
-@include breakpoint($small) {
-  body {
-    font-size: 85%;
-  }
-}
-
-/*
--------------------------------------------------------
-3. Font Color
--------------------------------------------------------
-*/
-
-body {
-  color: $colorDark;
-}
-
-@each $class, $color in $colors {
-  .text-#{$class} {
-    color: $color;
-  }
-}
-
-/*
--------------------------------------------------------
-4. Misc/Effects
--------------------------------------------------------
-*/
-
-article,
-blockquote,
-.text-block {
-  line-height: 160%;
-}
-
-.btn,
-.align-center {
-  text-align: center;
-}
-
-.align-left {
-  text-align: left;
-}
-
-.align-right {
-  text-align: right;
-}
-
-.btn:hover,
-.main-nav a:hover,
-.no-underline:hover {
-  text-decoration: none;
-}
-
-.text-uppercase {
-  text-transform: uppercase;
 }

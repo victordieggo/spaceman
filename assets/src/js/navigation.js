@@ -8,7 +8,7 @@
 
   let screenCover;
   const body = document.body;
-  const mediumViewport = '840';
+  const mediumViewport = '992';
   const navIsActive = 'main-nav-is-active';
   const itemIsActive = 'menu-item-is-active';
   const nav = body.querySelector('.main-nav');
