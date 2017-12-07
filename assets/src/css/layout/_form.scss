@@ -5,7 +5,6 @@ Form Elements
 1. Base Styles
 2. Custom Checkbox/Radio
 3. Custom Select
-4. Sizing Options
 =======================================================
 */
 
@@ -117,18 +116,4 @@ select {
   background-repeat: no-repeat;
   background-size: 0.8em;
   padding-right: 2em;
-}
-
-/*
--------------------------------------------------------
-4. Sizing Options
--------------------------------------------------------
-*/
-
-.input-small {
-  font-size: $fontSize-small;
-}
-
-.input-large {
-  font-size: $fontSize-large;
 }
