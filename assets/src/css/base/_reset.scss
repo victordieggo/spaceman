@@ -50,6 +50,11 @@ textarea:focus {
   outline: none;
 }
 
+select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+}
+
 button {
   font-size: inherit;
   background-color: transparent;
