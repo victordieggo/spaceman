@@ -50,9 +50,16 @@ textarea:focus {
   outline: none;
 }
 
-select:-moz-focusring {
-  color: transparent;
-  text-shadow: 0 0 0 #000;
+select {
+  &:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+  }
+
+  &::-ms-value {
+    background: none;
+    color: #000;
+  }
 }
 
 button {
