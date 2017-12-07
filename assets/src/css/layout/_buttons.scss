@@ -4,7 +4,6 @@ Buttons
 =======================================================
 1. Base Styles
 2. Outline Buttons
-3. Sizing Options
 =======================================================
 */
 
@@ -19,20 +18,18 @@ Buttons
   color: #fff;
   width: auto;
   padding: 0 1em;
-  white-space: normal;
   height: $fe-height;
-  font-family: inherit;
-  font-size: $fontSize-glob;
-  background-color: $colorAlt;
-  border: solid 2px $colorAlt;
+  white-space: normal;
+  background-color: color(alt);
+  border: solid 2px color(alt);
   line-height: $fe-lineHeight;
   border-radius: $fe-borderRadius;
   transition: background 0.3s, border 0.3s, color 0.3s;
 
   &:focus,
   &:hover {
-    background-color: darken($colorAlt, 10%);
-    border-color: darken($colorAlt, 10%);
+    background-color: darken(color(alt), 10%);
+    border-color: darken(color(alt), 10%);
   }
 }
 
@@ -45,18 +42,4 @@ Buttons
 .btn-outline:not(:hover):not(:focus) {
   color: inherit;
   background-color: transparent;
-}
-
-/*
--------------------------------------------------------
-3. Sizing Options
--------------------------------------------------------
-*/
-
-.btn-small {
-  font-size: $fontSize-small;
-}
-
-.btn-large {
-  font-size: $fontSize-large;
 }

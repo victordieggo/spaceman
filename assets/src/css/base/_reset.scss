@@ -51,6 +51,7 @@ textarea:focus {
 }
 
 button {
+  font-size: inherit;
   background-color: transparent;
 }
 
@@ -68,7 +69,7 @@ a {
   color: inherit;
   text-decoration: none;
 
-  :not(.btn):hover {
+  &:not(.btn):hover {
     text-decoration: underline;
   }
 }

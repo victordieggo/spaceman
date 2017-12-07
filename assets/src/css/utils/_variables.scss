@@ -2,7 +2,7 @@
 =======================================================
 Theme
 =======================================================
-1. Breakpoints
+1. Viewports
 2. Colors
 3. Font Sizes
 4. Form Elements
@@ -11,18 +11,14 @@ Theme
 
 /*
 -------------------------------------------------------
-1. Breakpoints
+1. Viewports
 -------------------------------------------------------
 */
 
-$xsmall: 480px;
-$small:  768px;
-$medium: 992px;
-
 $breakpoints: (
-  ('xs', $xsmall),
-  ('sm', $small),
-  ('md', $medium)
+  xs: 480px,
+  sm: 768px,
+  md: 992px
 );
 
 /*
@@ -31,16 +27,11 @@ $breakpoints: (
 -------------------------------------------------------
 */
 
-$colorLight: #fff;
-$colorDark:  #222;
-$colorMain:  #343a40;
-$colorAlt:   #007bff;
-
 $colors: (
-  ('light', $colorLight),
-  ('dark',  $colorDark),
-  ('main',  $colorMain),
-  ('alt',   $colorAlt)
+  light: #fff,
+  dark:  #222,
+  main:  #343a40,
+  alt:   #007bff
 );
 
 /*

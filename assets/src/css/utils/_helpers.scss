@@ -102,13 +102,13 @@ Helpers
   @include hideElement;
 }
 
-@each $class, $viewport in $breakpoints {
-  @include breakpoint($viewport) {
-    .show-#{$class} {
+@each $breakpoint in $breakpoints {
+  @include media-breakpoint(nth($breakpoint, 1)) {
+    .show-#{nth($breakpoint, 1)} {
       @include showElement;
     }
 
-    .hide-#{$class} {
+    .hide-#{nth($breakpoint, 1)} {
       @include hideElement;
     }
   }
@@ -215,6 +215,14 @@ Helpers
 @each $class, $color in $colors {
   .text-#{$class} {
     color: $color;
+  }
+}
+
+@each $sufix, $size in (small: $fontSize-small, large: $fontSize-large) {
+  .btn-#{$sufix},
+  .text-#{$sufix},
+  .input-#{$sufix} {
+    font-size: $size;
   }
 }
 
