@@ -14,53 +14,34 @@ Form Elements
 -------------------------------------------------------
 */
 
-select,
-textarea,
-input:not(.btn),
-.label-radio::before,
-.label-checkbox::before {
-  @include vcenter;
-  background-color: #fff;
-  border: solid 1px #cecece;
-  border-radius: $fe-borderRadius;
-  transition: border 0.3s, box-shadow 0.3s;
-}
-
-input,
-select,
-textarea {
-  width: 100%;
-  font-family: inherit;
-  font-size: $fontSize-glob;
-}
-
-select,
-input:not(.btn) {
-  padding: 0 0.6em;
+.input:not(textarea),
+.select:not([multiple]) {
   height: $fe-height;
 }
 
-textarea {
-  resize: none;
-  padding: 0.6em;
-  overflow-y: auto;
+.input,
+.select,
+.input-icon {
+  @include vcenter;
+  background-color: color(light);
+  border: solid 1px #cecece;
+  border-radius: $fe-borderRadius;
+  padding: 0.65em;
+  transition: border 0.3s, box-shadow 0.3s;
 }
 
-select:focus,
-textarea:focus,
-input:not(.btn):focus,
-:focus + .label-radio::before,
-:focus + .label-checkbox::before {
+.input:focus,
+.select:focus,
+:focus + .input-icon {
   border-color: #909090;
   box-shadow: 0 0 1px #909090;
+  outline: none;
 }
 
-::-webkit-input-placeholder {
-  color: #888;
-}
-
-:-ms-input-placeholder {
-  color: #888;
+@each $prefix in '::-webkit', ':-ms' {
+  #{$prefix}-input-placeholder {
+    color: #888;
+  }
 }
 
 /*
@@ -69,35 +50,35 @@ input:not(.btn):focus,
 -------------------------------------------------------
 */
 
-input[type=radio],
-input[type=checkbox] {
-  width: 0;
-  height: 0;
-  border: 0;
-  padding: 0;
+.radio input,
+.checkbox input {
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
 }
 
-.label-radio::before,
-.label-checkbox::before {
-  content: '';
+.input-icon {
+  cursor: pointer;
   background-position: center;
   background-repeat: no-repeat;
-  margin: -0.1em 0.5em 0 0;
-  padding: 0.65em;
+  margin-top: -0.1em;
 }
 
-.label-radio::before {
+.radio .input-icon {
   border-radius: 50%;
 }
 
-:checked + .label-checkbox::before {
+.checkbox :checked + .input-icon {
   background-image: url('../../dist/svg/icon-check.svg');
   background-size: 60%;
 }
 
-:checked + .label-radio::before {
+.radio :checked + .input-icon {
   background-image: url('../../dist/svg/icon-circle.svg');
-  background-size: 34% 100%;
+  background-size: 34%;
 }
 
 /*
@@ -106,11 +87,7 @@ input[type=checkbox] {
 -------------------------------------------------------
 */
 
-select::-ms-expand {
-  display: none;
-}
-
-select {
+.select:not([multiple]) {
   background-image: url('../../dist/svg/icon-arrow-alt.svg');
   background-position: right 0.5em center;
   background-repeat: no-repeat;
