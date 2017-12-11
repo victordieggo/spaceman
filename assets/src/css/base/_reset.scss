@@ -27,6 +27,7 @@ CSS Reset
 }
 
 html {
+  background-color: color(light);
   font-size: $fontSize-glob;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -41,6 +42,7 @@ label,
 }
 
 .btn,
+button,
 label,
 select {
   cursor: pointer;
