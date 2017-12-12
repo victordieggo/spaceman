@@ -40,11 +40,11 @@ $colors: (
 -------------------------------------------------------
 */
 
-$fontSize-glob:     1em;
+$fontSize-default:  1em;
 $fontSize-interval: 0.3;
-$fontSize-headings: $fontSize-glob + 1.5;
-$fontSize-small:    $fontSize-glob - 0.2;
-$fontSize-large:    $fontSize-glob + $fontSize-interval;
+$fontSize-headings: $fontSize-default + 1.5;
+$fontSize-small:    $fontSize-default - 0.2;
+$fontSize-large:    $fontSize-default + $fontSize-interval;
 
 /*
 -------------------------------------------------------

@@ -28,7 +28,7 @@ CSS Reset
 
 html {
   background-color: color(light);
-  font-size: $fontSize-glob;
+  font-size: $fontSize-default;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -ms-overflow-style: scrollbar;
@@ -57,7 +57,7 @@ select {
 #{$formElements} {
   appearance: none;
   font-family: inherit;
-  font-size: $fontSize-glob;
+  font-size: $fontSize-default;
   width: 100%;
 }
 
