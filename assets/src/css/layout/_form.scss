@@ -24,7 +24,7 @@ Form Elements
 .input-icon {
   @include vcenter;
   background-color: color(light);
-  border: solid 1px #cecece;
+  border: solid 1px color(grey);
   border-radius: $fe-borderRadius;
   padding: 0.65em;
   transition: border 0.3s, box-shadow 0.3s;
@@ -33,14 +33,14 @@ Form Elements
 .input:focus,
 .select:focus,
 :focus + .input-icon {
-  border-color: #909090;
-  box-shadow: 0 0 1px #909090;
+  border-color: color(darkgrey);
+  box-shadow: 0 0 1px color(darkgrey);
   outline: none;
 }
 
 @each $prefix in '::-webkit', ':-ms' {
   #{$prefix}-input-placeholder {
-    color: #888;
+    color: color(darkgrey);
   }
 }
 

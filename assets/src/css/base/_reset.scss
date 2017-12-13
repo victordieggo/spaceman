@@ -73,7 +73,7 @@ button {
 select {
   &:-moz-focusring {
     color: transparent;
-    text-shadow: 0 0 0 #000;
+    text-shadow: 0 0 0 color(dark);
   }
 
   &::-ms-value {
@@ -113,7 +113,7 @@ img {
 hr {
   border: 0;
   height: 1px;
-  background-color: #afafaf;
+  background-color: color(grey);
 }
 
 ul,
