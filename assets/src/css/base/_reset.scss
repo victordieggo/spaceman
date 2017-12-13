@@ -56,7 +56,7 @@ select {
 
 #{$formElements} {
   appearance: none;
-  color: inherit;
+  color: color(dark);
   font-family: inherit;
   font-size: $fontSize-default;
   width: 100%;
