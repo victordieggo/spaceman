@@ -6,7 +6,6 @@
 
   'use strict';
 
-  let screenCover;
   const body = document.body;
   const mediumViewport = '992';
   const navIsActive = 'main-nav-is-active';
@@ -15,33 +14,23 @@
   const navBtn = nav.querySelector('.nav-btn');
   const parentItem = nav.querySelectorAll('.menu-item-has-children');
 
-  function toggleScroll() {
-    body.classList.toggle('nav-hide-overflow');
-    if (nav.contains(screenCover)) {
-      nav.removeChild(screenCover);
-    } else {
-      screenCover = document.createElement('div');
-      screenCover.className = 'screen-cover';
-      nav.appendChild(screenCover);
-    }
-  }
-
   function toggleExpanded(element) {
     const ariaExpanded = element.getAttribute('aria-expanded');
     element.setAttribute('aria-expanded', ariaExpanded === 'false' ? 'true' : 'false');
   }
 
   function toggleNavigation() {
+    body.classList.toggle('nav-hide-overflow');
     nav.classList.toggle(navIsActive);
     toggleExpanded(navBtn);
-    toggleScroll();
   }
 
   function toggleSubmenu(element) {
-    element.querySelector('a').addEventListener('click', function (event) {
+    const link = element.querySelector('a');
+    link.addEventListener('click', function (event) {
       event.preventDefault();
       element.classList.toggle(itemIsActive);
-      toggleExpanded(element);
+      toggleExpanded(link);
     });
   }
 
@@ -58,20 +47,19 @@
       };
       const clickExceptions = [
         nav.querySelector('.menu'),
-        screenCover,
-        navBtn
+        navBtn,
+        nav
       ];
       if (type === 'click') {
-        if (target === navBtn || target === screenCover) {
+        if (target === navBtn || target === nav) {
           toggleNavigation();
         }
       }
       Array.prototype.forEach.call(activeItems, function (activeItem) {
         if (type === 'click' && !activeItem.contains(target)) {
-          const activeNav = nav.contains(screenCover);
           const browserWidth = window.innerWidth;
           const exceptions = clickExceptions.indexOf(target) === -1;
-          if (browserWidth > mediumViewport || (browserWidth <= mediumViewport && exceptions && activeNav)) {
+          if (browserWidth > mediumViewport || (browserWidth <= mediumViewport && exceptions)) {
             closeActiveItem(activeItem);
           }
         }
