@@ -73,12 +73,12 @@ Form Elements
 
 .checkbox :checked + .input-icon {
   background-image: url('../../dist/svg/icon-check.svg');
-  background-size: 60%;
+  background-size: 60% 100%;
 }
 
 .radio :checked + .input-icon {
   background-image: url('../../dist/svg/icon-circle.svg');
-  background-size: 34%;
+  background-size: 35% 100%;
 }
 
 /*
