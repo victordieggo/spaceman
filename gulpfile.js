@@ -71,8 +71,6 @@ gulp.task('js-lint', () => {
 
 gulp.task('js-build', () => {
   gulp.src(srcPath.js)
-    .pipe(eslint())
-    .pipe(eslint.format())
     .pipe(babel({
       presets: ['env']
     }))
