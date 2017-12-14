@@ -15,7 +15,7 @@ Buttons
 
 .btn {
   @include vcenter;
-  color: #fff;
+  color: color(light);
   width: auto;
   padding: 0 1em;
   height: $fe-height;

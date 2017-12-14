@@ -65,7 +65,7 @@ Navigation
 
 @include media-breakpoint(md, min) {
   .menu-item-is-active > a {
-    color: #afafaf;
+    color: color(darkgrey);
   }
 
   .main-nav {
@@ -73,7 +73,7 @@ Navigation
       position: relative;
 
       &:hover {
-        color: #afafaf;
+        color: color(darkgrey);
       }
     }
 
@@ -165,14 +165,14 @@ Navigation
       left: 0;
       bottom: 0;
       width: 18em;
-      color: #222;
+      color: color(dark);
       position: fixed;
       text-align: left;
       overflow-y: auto;
       transition: 0.3s;
       overflow-x: hidden;
       visibility: hidden;
-      background-color: #fff;
+      background-color: color(light);
       text-transform: uppercase;
       transform: translateX(-100%);
 
@@ -183,7 +183,7 @@ Navigation
 
     a {
       padding: 1.7em;
-      border-bottom: 1px solid #dfdfdf;
+      border-bottom: 1px solid color(lightgrey);
     }
 
     .menu-item-has-children {
@@ -212,7 +212,7 @@ Navigation
       content: '';
       z-index: -1;
       position: fixed;
-      background-color: rgba(29, 29, 29, 0.7);
+      background-color: rgba(color(dark), 0.7);
     }
   }
 
