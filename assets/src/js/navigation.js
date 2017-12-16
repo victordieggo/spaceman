@@ -6,6 +6,7 @@
 
   'use strict';
 
+  let screenCover;
   const body = document.body;
   const mediumViewport = '992';
   const navIsActive = 'main-nav-is-active';
@@ -14,15 +15,27 @@
   const navBtn = nav.querySelector('.nav-btn');
   const parentItem = nav.querySelectorAll('.menu-item-has-children');
 
+  function toggleScroll() {
+    body.classList.toggle('nav-hide-overflow');
+    if (nav.contains(screenCover)) {
+      nav.removeChild(screenCover);
+    } else {
+      screenCover = document.createElement('div');
+      screenCover.className = 'screen-cover';
+      screenCover.onclick = function () {};
+      nav.appendChild(screenCover);
+    }
+  }
+
   function toggleExpanded(element) {
     const ariaExpanded = element.getAttribute('aria-expanded');
-    element.setAttribute('aria-expanded', ariaExpanded === 'false' ? 'true' : 'false');
+    element.setAttribute('aria-expanded', ariaExpanded == 'false' ? 'true' : 'false');
   }
 
   function toggleNavigation() {
-    body.classList.toggle('nav-hide-overflow');
     nav.classList.toggle(navIsActive);
     toggleExpanded(navBtn);
+    toggleScroll();
   }
 
   function toggleSubmenu(element) {
@@ -41,30 +54,31 @@
       const target = event.target;
       const onFocus = nav.querySelector(':focus');
       const activeItems = nav.querySelectorAll('.' + itemIsActive);
-      const closeActiveItem = function (activeItem) {
+      function closeActiveItem(activeItem) {
         activeItem.classList.remove(itemIsActive);
         toggleExpanded(activeItem.querySelector('a'));
-      };
-      const clickExceptions = [
-        nav.querySelector('.menu'),
-        navBtn,
-        nav
-      ];
-      if (type === 'click') {
-        if (target === navBtn || target === nav) {
+      }
+      if (type == 'click') {
+        if (target == navBtn || target == screenCover) {
           toggleNavigation();
         }
       }
       Array.prototype.forEach.call(activeItems, function (activeItem) {
-        if (type === 'click' && !activeItem.contains(target)) {
+        if (type == 'click' && !activeItem.contains(target)) {
+          const activeNav = nav.contains(screenCover);
           const browserWidth = window.innerWidth;
-          const exceptions = clickExceptions.indexOf(target) === -1;
-          if (browserWidth > mediumViewport || (browserWidth <= mediumViewport && exceptions)) {
+          let exceptions = [
+            nav.querySelector('.menu'),
+            screenCover,
+            navBtn
+          ];
+          exceptions = exceptions.indexOf(target) == -1;
+          if (browserWidth > mediumViewport || (browserWidth <= mediumViewport && exceptions && activeNav)) {
             closeActiveItem(activeItem);
           }
         }
-        if (type === 'keyup') {
-          if (key === 27 || (key === 9 && !activeItem.contains(onFocus))) {
+        if (type == 'keyup') {
+          if (key == 27 || (key == 9 && !activeItem.contains(onFocus))) {
             closeActiveItem(activeItem);
           }
         }
