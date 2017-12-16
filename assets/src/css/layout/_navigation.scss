@@ -198,22 +198,9 @@ Navigation
     }
   }
 
-  .main-nav-is-active {
-    > .menu {
-      visibility: visible;
-      transform: translateX(0%);
-    }
-
-    &::after {
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      content: '';
-      z-index: -1;
-      position: fixed;
-      background-color: rgba(color(dark), 0.7);
-    }
+  .main-nav-is-active > .menu {
+    visibility: visible;
+    transform: translateX(0%);
   }
 
   .menu-item-is-active {
@@ -226,5 +213,15 @@ Navigation
         transform: rotate(180deg);
       }
     }
+  }
+
+  .screen-cover {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    position: fixed;
+    background-color: rgba(color(dark), 0.7);
   }
 }
