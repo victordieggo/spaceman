@@ -30,6 +30,7 @@ Buttons
   &:hover {
     background-color: darken(color(alt), 10%);
     border-color: darken(color(alt), 10%);
+    text-decoration: none;
     outline: none;
   }
 }

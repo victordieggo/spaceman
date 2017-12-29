@@ -101,7 +101,7 @@ a {
   color: inherit;
   text-decoration: none;
 
-  &:not(.btn):hover {
+  &:hover {
     text-decoration: underline;
   }
 }
