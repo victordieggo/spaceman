@@ -6,8 +6,8 @@ GULPFILE
 2. Set Assets Path
 3. Lint/Build CSS
 4. Lint/Build JS
-5. Compress IMG
-6. Compress SVG
+5. Compress Images
+6. Compress SVG files
 7. Watch/Build/Default
 =======================================================
 */
@@ -130,7 +130,7 @@ gulp.task('js', ['js-lint', 'js-build']);
 
 /*
 -------------------------------------------------------
-5. Compress IMG
+5. Compress Images
 -------------------------------------------------------
 */
 
@@ -146,7 +146,7 @@ gulp.task('img', () => {
 
 /*
 -------------------------------------------------------
-6. Compress SVG
+6. Compress SVG files
 -------------------------------------------------------
 */
 
