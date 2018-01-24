@@ -16,13 +16,13 @@ Buttons
 .btn {
   @include vcenter;
   color: color(light);
-  width: auto;
   padding: 0 1em;
   height: $fe-height;
+  text-align: center;
   white-space: normal;
+  line-height: $fe-lineHeight;
   background-color: color(alt);
   border: solid 2px color(alt);
-  line-height: $fe-lineHeight;
   border-radius: $fe-borderRadius;
   transition: background 0.3s, border 0.3s, color 0.3s;
 
