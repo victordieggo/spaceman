@@ -73,12 +73,12 @@ Form Elements
 
 .checkbox :checked + .input-icon {
   background-image: url('../../dist/svg/icon-check.svg');
-  background-size: 60% 100%;
+  background-size: 60%;
 }
 
 .radio :checked + .input-icon {
   background-image: url('../../dist/svg/icon-circle.svg');
-  background-size: 35% 100%;
+  background-size: 35%;
 }
 
 /*
@@ -89,8 +89,8 @@ Form Elements
 
 .select:not([multiple]) {
   background-image: url('../../dist/svg/icon-arrow-alt.svg');
-  background-position: right 3.5% center;
+  background-position: right 0.6em center;
   background-repeat: no-repeat;
-  background-size: 3.5% 100%;
+  background-size: 0.85em 1em;
   padding-right: 2.4em;
 }
