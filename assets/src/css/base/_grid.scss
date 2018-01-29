@@ -19,11 +19,11 @@ Grid
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-}
 
-.row:not(.no-gutter),
-.row:not(.no-gutter) > * {
-  padding: 0.7em;
+  &:not(.no-gutter),
+  &:not(.no-gutter) > * {
+    padding: 0.7em;
+  }
 }
 
 /*

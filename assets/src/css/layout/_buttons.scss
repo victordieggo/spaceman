@@ -2,14 +2,13 @@
 =======================================================
 Buttons
 =======================================================
-1. Base Styles
-2. Outline Buttons
+1. Default Styles
 =======================================================
 */
 
 /*
 -------------------------------------------------------
-1. Base Styles
+1. Default Styles
 -------------------------------------------------------
 */
 
@@ -33,15 +32,9 @@ Buttons
     text-decoration: none;
     outline: none;
   }
-}
 
-/*
--------------------------------------------------------
-2. Outline Buttons
--------------------------------------------------------
-*/
-
-.btn-outline:not(:hover):not(:focus) {
-  color: inherit;
-  background-color: transparent;
+  &-outline:not(:hover):not(:focus) {
+    color: inherit;
+    background-color: transparent;
+  }
 }
