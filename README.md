@@ -1,8 +1,8 @@
-# Spaceman #
+# Spaceman
 
 Spaceman is a simple and easily customizable HTML/CSS boilerplate to build websites and apps. It provides a flexbox based responsive layout system, pre-set styles for basic UI elements and a few CSS utilities and components.
 
-### Getting Started ###
+### Getting Started
 
 Spaceman uses [Gulp](http://gulpjs.com/) and [Browsersync](https://www.browsersync.io/), so you'll need [Node.JS](https://nodejs.org/en/). Once you have set it up, [download Spaceman](https://github.com/victordieggo/spaceman/releases/latest) to your project directory and access the terminal:
 
@@ -22,7 +22,7 @@ $ gulp
 
 And thats it, the commands above are everything you need to start. Now read the docs (coming soon!) so you can get the best out of Spaceman.
 
-### Gulp Tasks ###
+### Gulp Tasks
 
 - `gulp`: run all tasks, start browsersync and watch files
 - `gulp img`: compress images
@@ -36,10 +36,16 @@ And thats it, the commands above are everything you need to start. Now read the 
 - `gulp watch`: start browsersync and watch files
 - `gulp build`: run all assets related tasks (js/css/img/svg)
 
-### Browser Support ###
+### Browser Support
 
 Chrome 29+, IE 10+, Firefox 22+, Safari 6.1+, Opera 12+
 
-### License ###
+### Thanks
+
+[![BrowserStack](https://victordiego.com/browserstack-logo.jpg)](https://www.browserstack.com)
+
+Many thanks to [BrowserStack](https://www.browserstack.com) for providing open source licenses to test the project features across all the different browsers and devices.
+
+### License
 
 [MIT License](https://victordieggo.mit-license.org/) © Victor Diego Villar Guimarães
