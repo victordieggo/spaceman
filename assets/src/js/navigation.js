@@ -8,7 +8,7 @@
 
   let screenCover;
   const body = document.body;
-  const mediumViewport = '992';
+  const mediumViewport = 992;
   const navIsActive = 'main-nav-is-active';
   const itemIsActive = 'menu-item-is-active';
   const nav = body.querySelector('.main-nav');
@@ -19,12 +19,12 @@
     body.classList.toggle('nav-hide-overflow');
     if (nav.contains(screenCover)) {
       nav.removeChild(screenCover);
-    } else {
-      screenCover = document.createElement('div');
-      screenCover.className = 'screen-cover';
-      screenCover.onclick = () => {};
-      nav.appendChild(screenCover);
+      return;
     }
+    screenCover = document.createElement('div');
+    screenCover.className = 'screen-cover';
+    screenCover.onclick = () => {};
+    nav.appendChild(screenCover);
   };
 
   const toggleExpanded = (element) => {
@@ -47,7 +47,7 @@
     });
   };
 
-  Array.prototype.forEach.call(['click', 'keyup'], (eventType) => {
+  ['click', 'keyup'].forEach((eventType) => {
     body.addEventListener(eventType, (event) => {
       const type = event.type;
       const key = event.keyCode;
