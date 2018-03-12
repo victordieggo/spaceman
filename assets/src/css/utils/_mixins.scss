@@ -8,7 +8,6 @@ Mixins
 4. Grid
 5. Spacing
 6. Utilities
-7. Z-Index
 =======================================================
 */
 
@@ -126,18 +125,4 @@ Mixins
   left: 0;
   position: static;
   visibility: visible;
-}
-
-/*
--------------------------------------------------------
-7. Z-Index
--------------------------------------------------------
-*/
-
-@mixin stackOrder($name, $min, $max) {
-  @for $i from $min through $max {
-    .#{$name}-#{$i} {
-      z-index: #{$i};
-    }
-  }
 }
