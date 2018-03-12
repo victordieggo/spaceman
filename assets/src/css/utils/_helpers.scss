@@ -240,4 +240,8 @@ Helpers
 -------------------------------------------------------
 */
 
-@include stackOrder(z-index, 1, 6);
+@for $i from 1 through 6 {
+  .z-index-#{$i} {
+    z-index: #{$i};
+  }
+}
