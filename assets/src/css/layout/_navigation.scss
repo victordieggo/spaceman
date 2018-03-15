@@ -139,10 +139,10 @@ Navigation
   background: url('../../dist/svg/icon-menu.svg') no-repeat center;
   height: 1.5em;
   width: 1.5em;
-}
 
-.main-nav-is-active .nav-btn {
-  background-image: url('../../dist/svg/icon-close.svg');
+  .main-nav-is-active & {
+    background-image: url('../../dist/svg/icon-close.svg');
+  }
 }
 
 /*
