@@ -7,7 +7,8 @@
   'use strict';
 
   let screenCover;
-  const body = document.body;
+  const doc = document;
+  const body = doc.body;
   const mediumViewport = 992;
   const navIsActive = 'main-nav-is-active';
   const itemIsActive = 'menu-item-is-active';
@@ -21,7 +22,7 @@
       nav.removeChild(screenCover);
       return;
     }
-    screenCover = document.createElement('div');
+    screenCover = doc.createElement('div');
     screenCover.className = 'screen-cover';
     screenCover.onclick = () => {};
     nav.appendChild(screenCover);
@@ -48,7 +49,7 @@
   };
 
   ['click', 'keyup'].forEach((eventType) => {
-    body.addEventListener(eventType, (event) => {
+    doc.addEventListener(eventType, (event) => {
       const type = event.type;
       const key = event.keyCode;
       const target = event.target;
@@ -77,7 +78,7 @@
           }
         }
         if (type == 'keyup') {
-          if (key == 27 || key == 9 && !activeItem.contains(nav.querySelector(':focus'))) {
+          if (key == 27 || key == 9 && !activeItem.contains(doc.activeElement)) {
             closeActiveItem(activeItem);
           }
         }

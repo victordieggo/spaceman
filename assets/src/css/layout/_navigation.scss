@@ -32,13 +32,11 @@ Navigation
     display: none;
   }
 
-  .menu-item-has-children {
-    > a {
-      padding-right: 1.5em;
-      position: relative;
-    }
+  .menu-item-has-children > a {
+    padding-right: 1.5em;
+    position: relative;
 
-    > a::after {
+    &::after {
       top: 0;
       right: 0;
       bottom: 0;
@@ -77,47 +75,44 @@ Navigation
       }
     }
 
-    .menu {
-      > .menu-item {
-        display: inline-block;
-        margin-left: 1.5em;
-      }
+    .menu > .menu-item {
+      display: inline-block;
+      margin-left: 1.5em;
 
-      > .menu-item-has-children > a {
-        padding-top: 0.5em;
-        padding-bottom: 0.5em;
+      > .sub-menu {
+        margin-top: 0.5em;
       }
     }
 
     .sub-menu {
       color: color(dark);
       position: absolute;
-      border-radius: 6px;
+      border-radius: 0.4em;
       white-space: nowrap;
       background-color: color(light);
-      box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 0 2px color(darkgrey);
 
       a {
         font-size: 90%;
         padding: 0.7em;
       }
 
-      .menu-item:not(:last-child)::after {
-        content: '';
-        display: block;
-        margin: 0 0.65em;
-        border-bottom: 1px solid lighten(color(dark), 70%);
-      }
-
-      .menu-item-has-children {
-        > a {
-          padding-right: 2em;
+      .menu-item {
+        &:not(:last-child)::after {
+          content: '';
+          display: block;
+          margin: 0 0.65em;
+          border-bottom: 1px solid color(grey);
         }
 
-        > a::after {
-          right: 0.7em;
-          transform: rotate(-90deg);
-          background-image: url('../../dist/svg/icon-arrow-alt.svg');
+        &-has-children > a {
+          padding-right: 2em;
+
+          &::after {
+            right: 0.7em;
+            transform: rotate(-90deg);
+            background-image: url('../../dist/svg/icon-arrow-alt.svg');
+          }
         }
       }
 
@@ -175,15 +170,16 @@ Navigation
       background-color: color(light);
       text-transform: uppercase;
       transform: translateX(-100%);
-
-      > .menu-item:last-child > a {
-        border: none;
-      }
     }
 
-    a {
-      padding: 1.7em;
-      border-bottom: 1px solid color(lightgrey);
+    .menu-item {
+      a {
+        padding: 1.7em;
+      }
+
+      &:not(:last-child) {
+        border-bottom: 1px solid color(lightgrey);
+      }
     }
 
     .menu-item-has-children {
