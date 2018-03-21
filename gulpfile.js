@@ -118,9 +118,10 @@ gulp.task('js-lint', () => {
 gulp.task('js-build', () => {
   gulp.src([assets.js.vndr, assets.js.src])
     .pipe(babel({
-      ignore: [assets.js.vndr],
-      presets: ['env']
+      presets: ['env'],
+      ignore: assets.js.vndr
     }))
+    .on('error', (e) => console.log(e))
     .pipe(concat('main.js'))
     .pipe(uglify())
     .pipe(gulp.dest(assets.js.dist))
