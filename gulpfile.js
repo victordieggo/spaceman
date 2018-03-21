@@ -57,7 +57,7 @@ const assets = {
     dist: basePath.dist + 'js',
     glob: basePath.src  + 'js/**/*.js',
     src:  basePath.src  + 'js/*.js',
-    vndr: basePath.src  + 'js/vendor/**/*.js'
+    vndr: basePath.src  + 'js/vendor/*.js'
   },
   img: {
     dist: basePath.dist + 'img',
@@ -118,8 +118,10 @@ gulp.task('js-lint', () => {
 gulp.task('js-build', () => {
   gulp.src([assets.js.vndr, assets.js.src])
     .pipe(babel({
-      presets: ['env']
+      presets: ['env'],
+      ignore: assets.js.vndr
     }))
+    .on('error', (e) => console.log(e))
     .pipe(concat('main.js'))
     .pipe(uglify())
     .pipe(gulp.dest(assets.js.dist))
