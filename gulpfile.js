@@ -50,12 +50,10 @@ const basePath = {
 const assets = {
   css: {
     dist: basePath.dist + 'css',
-    glob: basePath.src  + 'css/**/*.scss',
-    src:  basePath.src  + 'css/main.scss'
+    src:  basePath.src  + 'css/**/*.scss'
   },
   js: {
     dist: basePath.dist + 'js',
-    glob: basePath.src  + 'js/**/*.js',
     src:  basePath.src  + 'js/*.js',
     vndr: basePath.src  + 'js/vendor/*.js'
   },
@@ -80,8 +78,8 @@ const bsReload = [
 -------------------------------------------------------
 */
 
-gulp.task('css-lint', () => {
-  gulp.src(basePath.src + 'css/!(vendor)**/*.scss')
+gulp.task('css', () => {
+  gulp.src(assets.css.src)
     .pipe(stylelint({
       failAfterError: false,
       reporters: [{
@@ -89,10 +87,6 @@ gulp.task('css-lint', () => {
         console: true
       }]
     }))
-});
-
-gulp.task('css-build', () => {
-  gulp.src(assets.css.src)
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer())
     .pipe(combineMq())
@@ -101,22 +95,16 @@ gulp.task('css-build', () => {
     .pipe(browserSync.stream());
 });
 
-gulp.task('css', ['css-lint', 'css-build']);
-
 /*
 -------------------------------------------------------
 4. Lint/Build JS
 -------------------------------------------------------
 */
 
-gulp.task('js-lint', () => {
-  gulp.src(assets.js.src)
+gulp.task('js', () => {
+  gulp.src([assets.js.vndr, assets.js.src])
     .pipe(eslint())
     .pipe(eslint.format())
-});
-
-gulp.task('js-build', () => {
-  gulp.src([assets.js.vndr, assets.js.src])
     .pipe(babel({
       presets: ['env'],
       ignore: assets.js.vndr
@@ -127,8 +115,6 @@ gulp.task('js-build', () => {
     .pipe(gulp.dest(assets.js.dist))
     .pipe(browserSync.stream());
 });
-
-gulp.task('js', ['js-lint', 'js-build']);
 
 /*
 -------------------------------------------------------
@@ -169,8 +155,8 @@ gulp.task('watch', () => {
     proxy: 'localhost/' + path.basename(__dirname),
     open: false,
   });
-  gulp.watch(assets.js.glob, ['js']);
-  gulp.watch(assets.css.glob, ['css']);
+  gulp.watch([assets.js.vndr, assets.js.src], ['js']);
+  gulp.watch(assets.css.src, ['css']);
   gulp.watch(assets.img.src, ['img']);
   gulp.watch(assets.svg.src, ['svg']);
   gulp.watch(bsReload, browserSync.reload);
