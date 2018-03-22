@@ -27,12 +27,8 @@ And thats it, the commands above are everything you need to start. Now read the 
 - `gulp`: run all tasks, start browsersync and watch files
 - `gulp img`: compress images
 - `gulp svg`: compress svg files
-- `gulp js-lint`: lint js (eslint)
-- `gulp js-build`: build js (compile/minify)
-- `gulp js`: wrapper for js lint/build tasks
-- `gulp css-lint`: lint css (stylelint)
-- `gulp css-build`: build css (compile/minify)
-- `gulp css`: wrapper for css lint/build tasks
+- `gulp js`: lint/build js files
+- `gulp css`: lint/build css files
 - `gulp watch`: start browsersync and watch files
 - `gulp build`: run all assets related tasks (js/css/img/svg)
 
