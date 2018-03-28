@@ -25,7 +25,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const babel = require('gulp-babel');
 const concat = require('gulp-concat');
 const stylelint = require('gulp-stylelint');
-const combineMq = require('gulp-combine-mq');
+const groupMq = require('gulp-group-css-media-queries');
 const csso = require('gulp-csso');
 const sass = require('gulp-sass');
 const eslint = require('gulp-eslint');
@@ -89,7 +89,7 @@ gulp.task('css', () => {
     }))
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer())
-    .pipe(combineMq())
+    .pipe(groupMq())
     .pipe(csso())
     .pipe(gulp.dest(assets.css.dist))
     .pipe(browserSync.stream());
