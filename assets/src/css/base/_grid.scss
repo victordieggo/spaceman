@@ -24,6 +24,11 @@ Grid
   &:not(.no-gutter) > * {
     padding: 0.7em;
   }
+
+  & & {
+    margin: -0.7em;
+    padding: 0;
+  }
 }
 
 /*
@@ -32,12 +37,14 @@ Grid
 -------------------------------------------------------
 */
 
-.row-centered {
-  justify-content: center;
-}
+.row {
+  &-centered {
+    justify-content: center;
+  }
 
-.row-inverted {
-  justify-content: flex-end;
+  &-inverted {
+    justify-content: flex-end;
+  }
 }
 
 /*
@@ -60,26 +67,28 @@ Grid
 -------------------------------------------------------
 */
 
-.col-vcenter {
-  align-self: center;
-}
+.col {
+  &-vcenter {
+    align-self: center;
+  }
 
-.col-vbottom {
-  align-self: flex-end;
-}
+  &-vbottom {
+    align-self: flex-end;
+  }
 
-.col-stretch {
-  align-self: stretch;
-}
+  &-stretch {
+    align-self: stretch;
+  }
 
-.col-mx-auto {
-  margin: 0 auto;
-}
+  &-mx-auto {
+    margin: 0 auto;
+  }
 
-.col-ml-auto {
-  margin-left: auto;
-}
+  &-ml-auto {
+    margin-left: auto;
+  }
 
-.col-mr-auto {
-  margin-right: auto;
+  &-mr-auto {
+    margin-right: auto;
+  }
 }
