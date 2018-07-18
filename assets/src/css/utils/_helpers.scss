@@ -52,7 +52,7 @@ Helpers
 -------------------------------------------------------
 */
 
-@each $display in 'block', 'inline', 'inline-block', 'table', 'table-cell' {
+@each $display in 'block', 'inline', 'inline-block', 'table', 'table-cell', 'flex' {
   .#{$display} {
     display: #{$display};
   }

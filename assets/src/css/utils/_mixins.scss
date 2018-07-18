@@ -6,8 +6,9 @@ Mixins
 2. Colors
 3. Container
 4. Grid
-5. Spacing
-6. Utilities
+5. Font-Face
+6. Spacing
+7. Utilities
 =======================================================
 */
 
@@ -74,7 +75,29 @@ Mixins
 
 /*
 -------------------------------------------------------
-5. Spacing
+5. Font-Face
+-------------------------------------------------------
+*/
+
+@mixin font-face($family, $directory, $file, $weight) {
+  $url: '../../dist/fonts/' + $directory + '/' + $file;
+
+  @font-face {
+    font-family: #{$family};
+    src: url('#{$url}.eot');
+    src:
+      url('#{$url}.eot') format('embedded-opentype'),
+      url('#{$url}.woff2') format('woff2'),
+      url('#{$url}.woff') format('woff'),
+      url('#{$url}.ttf') format('truetype'),
+      url('#{$url}.svg##{$file}') format('svg');
+    font-weight: #{$weight};
+  }
+}
+
+/*
+-------------------------------------------------------
+6. Spacing
 -------------------------------------------------------
 */
 
@@ -104,7 +127,7 @@ Mixins
 
 /*
 -------------------------------------------------------
-6. Utilities
+7. Utilities
 -------------------------------------------------------
 */
 
