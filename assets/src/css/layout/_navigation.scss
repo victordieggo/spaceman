@@ -4,8 +4,8 @@ Navigation
 =======================================================
 1. Base Styles
 2. Main Navigation
-3. Navigation Button
-4. Mobile Navigation
+3. Mobile Navigation
+4. Mobile Navigation Button
 =======================================================
 */
 
@@ -126,23 +126,7 @@ Navigation
 
 /*
 -------------------------------------------------------
-3. Navigation Button
--------------------------------------------------------
-*/
-
-.nav-btn {
-  background: url('../../dist/svg/icon-menu.svg') no-repeat center;
-  height: 1.5em;
-  width: 1.5em;
-
-  .main-nav-is-active & {
-    background-image: url('../../dist/svg/icon-close.svg');
-  }
-}
-
-/*
--------------------------------------------------------
-4. Mobile Navigation
+3. Mobile Navigation
 -------------------------------------------------------
 */
 
@@ -219,5 +203,23 @@ Navigation
     z-index: -1;
     position: fixed;
     background-color: rgba(color(dark), 0.7);
+  }
+}
+
+/*
+-------------------------------------------------------
+4. Mobile Navigation Button
+-------------------------------------------------------
+*/
+
+@include media-breakpoint(md) {
+  .nav-btn {
+    width: 1.5em;
+    height: 1.5em;
+    background: url('../../dist/svg/icon-menu.svg') no-repeat center;
+
+    .main-nav-is-active & {
+      background-image: url('../../dist/svg/icon-close.svg');
+    }
   }
 }
