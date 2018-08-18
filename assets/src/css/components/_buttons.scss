@@ -15,11 +15,9 @@ Buttons
 .btn {
   @include vcenter;
   color: color(light);
-  padding: 0 1em;
-  height: $fe-height;
+  padding: 0.5em 1em;
   text-align: center;
-  white-space: normal;
-  line-height: $fe-lineHeight;
+  line-height: 1.5em;
   background-color: color(alt);
   border: solid 2px color(alt);
   border-radius: $fe-borderRadius;

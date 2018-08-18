@@ -16,7 +16,7 @@ Form Elements
 
 .input:not(textarea),
 .select:not([multiple]) {
-  height: $fe-height;
+  height: 2.75em;
 }
 
 .input,
@@ -50,14 +50,16 @@ Form Elements
 -------------------------------------------------------
 */
 
-.radio input,
-.checkbox input {
-  clip: rect(0, 0, 0, 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  position: absolute;
-  width: 1px;
+.radio,
+.checkbox {
+  input {
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+  }
 }
 
 .input-icon {
@@ -65,20 +67,20 @@ Form Elements
   background-position: center;
   background-repeat: no-repeat;
   margin-top: -0.1em;
-}
 
-.radio .input-icon {
-  border-radius: 50%;
-}
+  .radio & {
+    border-radius: 50%;
+  }
 
-.checkbox :checked + .input-icon {
-  background-image: url('../../dist/svg/icon-check.svg');
-  background-size: 60%;
-}
+  .checkbox :checked + & {
+    background-image: url('../../dist/svg/icon-check.svg');
+    background-size: 60%;
+  }
 
-.radio :checked + .input-icon {
-  background-image: url('../../dist/svg/icon-circle.svg');
-  background-size: 35%;
+  .radio :checked + & {
+    background-image: url('../../dist/svg/icon-circle.svg');
+    background-size: 40%;
+  }
 }
 
 /*
