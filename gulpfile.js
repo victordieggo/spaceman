@@ -79,7 +79,7 @@ const bsReload = [
 */
 
 gulp.task('css', () => {
-  gulp.src(assets.css.src)
+  return gulp.src(assets.css.src)
     .pipe(stylelint({
       failAfterError: false,
       reporters: [{
@@ -102,7 +102,7 @@ gulp.task('css', () => {
 */
 
 gulp.task('js', () => {
-  gulp.src([assets.js.vndr, assets.js.src])
+  return gulp.src([assets.js.vndr, assets.js.src])
     .pipe(eslint())
     .pipe(eslint.format())
     .pipe(babel({
@@ -123,7 +123,7 @@ gulp.task('js', () => {
 */
 
 gulp.task('img', () => {
-  gulp.src(assets.img.src)
+  return gulp.src(assets.img.src)
     .pipe(imagemin([
       mozjpeg({quality: 89}),
       pngquant({quality: 70})
@@ -139,7 +139,7 @@ gulp.task('img', () => {
 */
 
 gulp.task('svg', () => {
-  gulp.src(assets.svg.src)
+  return gulp.src(assets.svg.src)
     .pipe(imagemin({verbose: true}))
     .pipe(gulp.dest(assets.svg.dist));
 });

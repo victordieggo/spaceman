@@ -56,7 +56,4 @@ $fontSize-large:    $fontSize-default + $fontSize-interval;
 */
 
 $formElements:    'input, button, select, textarea';
-$base-height:     2.75;
-$fe-height:       #{$base-height}em;
-$fe-lineHeight:   $base-height - 0.25;
 $fe-borderRadius: 0.3rem;

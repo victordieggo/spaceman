@@ -6,15 +6,15 @@
 
   'use strict';
 
-  let screenCover;
   const doc = document;
-  const body = doc.body;
-  const mediumViewport = 992;
-  const navIsActive = 'main-nav-is-active';
-  const itemIsActive = 'menu-item-is-active';
-  const nav = body.querySelector('.main-nav');
+  const nav = doc.querySelector('.main-nav');
 
   if (nav) {
+    let screenCover;
+    const body = doc.body;
+    const mediumViewport = 992;
+    const navIsActive = 'main-nav-is-active';
+    const itemIsActive = 'menu-item-is-active';
     const navBtn = nav.querySelector('.nav-btn');
     const parentItem = nav.querySelectorAll('.menu-item-has-children');
 

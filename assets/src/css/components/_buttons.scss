@@ -1,0 +1,38 @@
+/*
+=======================================================
+Buttons
+=======================================================
+1. Default Styles
+=======================================================
+*/
+
+/*
+-------------------------------------------------------
+1. Default Styles
+-------------------------------------------------------
+*/
+
+.btn {
+  @include vcenter;
+  color: color(light);
+  padding: 0.5em 1em;
+  text-align: center;
+  line-height: 1.5em;
+  background-color: color(alt);
+  border: solid 2px color(alt);
+  border-radius: $fe-borderRadius;
+  transition: background 0.3s, border 0.3s, color 0.3s;
+
+  &:focus,
+  &:hover {
+    background-color: darken(color(alt), 10%);
+    border-color: darken(color(alt), 10%);
+    text-decoration: none;
+    outline: none;
+  }
+
+  &-outline:not(:hover):not(:focus) {
+    color: inherit;
+    background-color: transparent;
+  }
+}

@@ -213,7 +213,7 @@ Helpers
 }
 
 @each $class, $color in $colors {
-  .text-#{$class} {
+  .color-#{$class} {
     color: $color;
   }
 }
