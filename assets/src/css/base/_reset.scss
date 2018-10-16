@@ -41,10 +41,10 @@ label,
   touch-action: manipulation;
 }
 
-.btn,
-button,
 label,
-select {
+button,
+select,
+input[type="submit"] {
   cursor: pointer;
 }
 
@@ -55,7 +55,6 @@ select {
 */
 
 #{$formElements} {
-  appearance: none;
   color: color(dark);
   font-family: inherit;
   font-size: $fontSize-default;
@@ -71,9 +70,8 @@ button {
 }
 
 select {
-  &:-moz-focusring {
-    color: transparent;
-    text-shadow: 0 0 0 color(dark);
+  &::-ms-expand {
+    display: none;
   }
 
   &::-ms-value {
@@ -81,8 +79,9 @@ select {
     color: inherit;
   }
 
-  &::-ms-expand {
-    display: none;
+  &:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 color(dark);
   }
 }
 

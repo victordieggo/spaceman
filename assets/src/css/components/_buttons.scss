@@ -35,4 +35,12 @@ Buttons
     color: inherit;
     background-color: transparent;
   }
+
+  &:disabled,
+  &-is-disabled {
+    pointer-events: none;
+    color: color(darkgrey) !important;
+    border-color: color(lightgrey);
+    background-color: color(lightgrey);
+  }
 }
