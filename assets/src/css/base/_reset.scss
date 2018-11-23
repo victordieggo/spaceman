@@ -48,6 +48,11 @@ input[type="submit"] {
   cursor: pointer;
 }
 
+iframe,
+fieldset {
+  border: 0;
+}
+
 /*
 -------------------------------------------------------
 2. Form Elements

@@ -43,7 +43,7 @@ Navigation
       content: '';
       padding: 0.35em;
       position: absolute;
-      background: url('../../dist/svg/icon-arrow.svg') no-repeat right;
+      background: svg('icon-arrow.svg') no-repeat right;
       background-size: 100% 100%;
     }
   }
@@ -96,7 +96,7 @@ Navigation
           &::after {
             right: 0.7em;
             transform: rotate(-90deg);
-            background-image: url('../../dist/svg/icon-arrow-alt.svg');
+            background-image: svg('icon-arrow-alt.svg');
           }
         }
       }
@@ -185,7 +185,7 @@ Navigation
         }
 
         &:not(.menu-item-is-active) > a::after {
-          background-image: url('../../dist/svg/icon-arrow-alt.svg');
+          background-image: svg('icon-arrow-alt.svg');
         }
       }
     }
@@ -212,10 +212,10 @@ Navigation
   .nav-btn {
     width: 1.5em;
     height: 1.5em;
-    background: url('../../dist/svg/icon-menu.svg') no-repeat center;
+    background: svg('icon-menu.svg') no-repeat center;
 
     .main-nav-is-active & {
-      background-image: url('../../dist/svg/icon-close.svg');
+      background-image: svg('icon-close.svg');
     }
   }
 }

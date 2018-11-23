@@ -6,9 +6,10 @@ Mixins
 2. Colors
 3. Container
 4. Grid
-5. Font-Face
-6. Spacing
-7. Utilities
+5. Assets URL
+6. Font-Face
+7. Spacing
+8. Utilities
 =======================================================
 */
 
@@ -75,12 +76,34 @@ Mixins
 
 /*
 -------------------------------------------------------
-5. Font-Face
+5. Assets URL
+-------------------------------------------------------
+*/
+
+@function assetsURL($path, $file) {
+  @return url($assets-base-path + '/' + $path + '/' + $file);
+}
+
+@function fonts($file) {
+  @return assetsURL('fonts', $file);
+}
+
+@function img($file) {
+  @return assetsURL('img', $file);
+}
+
+@function svg($file) {
+  @return assetsURL('svg', $file);
+}
+
+/*
+-------------------------------------------------------
+6. Font-Face
 -------------------------------------------------------
 */
 
 @mixin font-face($family, $directory, $file, $weight) {
-  $url: '../../dist/fonts/' + $directory + '/' + $file;
+  $url: fonts($directory + '/' + $file);
 
   @font-face {
     font-family: #{$family};
@@ -93,11 +116,16 @@ Mixins
       url('#{$url}.svg##{$file}') format('svg');
     font-weight: #{$weight};
   }
+
+  .#{$file} {
+    font-family: #{$family};
+    font-weight: #{$weight};
+  }
 }
 
 /*
 -------------------------------------------------------
-6. Spacing
+7. Spacing
 -------------------------------------------------------
 */
 
@@ -127,7 +155,7 @@ Mixins
 
 /*
 -------------------------------------------------------
-7. Utilities
+8. Utilities
 -------------------------------------------------------
 */
 

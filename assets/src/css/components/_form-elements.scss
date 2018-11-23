@@ -76,7 +76,7 @@ Form Elements
   }
 
   .input-checkbox :checked + & {
-    background-image: url('../../dist/svg/icon-check.svg');
+    background-image: svg('icon-check.svg');
     background-size: 60%;
   }
 
@@ -105,7 +105,7 @@ Form Elements
 */
 
 .select:not([multiple]) {
-  background: url('../../dist/svg/icon-arrow-alt.svg') right 0.6em center no-repeat;
+  background: svg('icon-arrow-alt.svg') right 0.6em center no-repeat;
   background-size: 0.85em 1em;
   padding-right: 2.4em;
 }
