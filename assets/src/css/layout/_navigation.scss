@@ -150,14 +150,14 @@ Navigation
       width: 18em;
       position: fixed;
       text-align: left;
-      transition: 0.3s;
       overflow-y: auto;
       overflow-x: hidden;
       visibility: hidden;
       color: color(dark);
-      text-transform: uppercase;
       transform: translateX(-100%);
+      transform-style: preserve-3d;
       background-color: color(light);
+      will-change: transform;
 
       @include media-breakpoint(xs) {
         width: 75%;
@@ -198,7 +198,20 @@ Navigation
     bottom: 0;
     z-index: -1;
     position: fixed;
+    animation: fadeIn 0.35s;
     background-color: rgba(color(dark), 0.7);
+
+    &-fade-out {
+      animation: fadeOut 0.35s;
+    }
+  }
+
+  .nav-animate > .menu {
+    transition: visibility 0s ease-in-out 0.3s, transform 0.3s ease-in-out;
+  }
+
+  .main-nav-is-active.nav-animate > .menu {
+    transition: visibility 0s ease-in-out, transform 0.3s ease-in-out;
   }
 }
 

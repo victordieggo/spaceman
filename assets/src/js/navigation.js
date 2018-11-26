@@ -1,5 +1,5 @@
 /* =====================================================================
- * MOBILE NAVIGATION
+ * MAIN NAVIGATION
  * ===================================================================*/
 
 (function (doc, win) {
@@ -11,15 +11,20 @@
   let screenCover;
   const body = doc.body;
   const mediumViewport = 992;
+  const navAnimate = 'nav-animate';
   const navIsActive = 'main-nav-is-active';
   const itemIsActive = 'menu-item-is-active';
   const navBtn = nav.querySelector('.nav-btn');
   const parentItem = nav.querySelectorAll('.menu-item-has-children');
+  const animationEvents = ['webkitAnimationEnd', 'animationend'];
 
   const toggleScroll = () => {
     body.classList.toggle('nav-hide-overflow');
     if (nav.contains(screenCover)) {
-      nav.removeChild(screenCover);
+      screenCover.classList.add('screen-cover-fade-out');
+      animationEvents.forEach((animationEvent) => {
+        screenCover.addEventListener(animationEvent, () => nav.removeChild(screenCover));
+      });
       return;
     }
     screenCover = doc.createElement('div');
@@ -34,8 +39,11 @@
   };
 
   const toggleNavigation = () => {
+    nav.classList.add(navAnimate);
     nav.classList.toggle(navIsActive);
-    toggleExpanded(navBtn);
+    animationEvents.forEach((animationEvent) => {
+      nav.addEventListener(animationEvent, () => nav.classList.remove(navAnimate));
+    });
     toggleScroll();
   };
 
