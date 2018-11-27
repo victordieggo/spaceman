@@ -39,6 +39,7 @@
   };
 
   const toggleNavigation = () => {
+    if (nav.classList.contains(navAnimate)) return;
     nav.classList.add(navAnimate);
     nav.classList.toggle(navIsActive);
     animationEvents.forEach((animationEvent) => {
