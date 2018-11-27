@@ -67,10 +67,8 @@
         activeItem.classList.remove(itemIsActive);
         toggleExpanded(activeItem.querySelector('a'));
       };
-      if (type == 'click') {
-        if (target == navBtn || target == screenCover) {
-          toggleNavigation();
-        }
+      if (type == 'click' && [navBtn, screenCover].indexOf(target) != -1) {
+        toggleNavigation();
       }
       Array.prototype.forEach.call(activeItems, (activeItem) => {
         if (type == 'click' && !activeItem.contains(target)) {
