@@ -47,8 +47,18 @@ Grid
 @include grid(col);
 
 @each $breakpoint in $breakpoints {
-  @include media-breakpoint(nth($breakpoint, 1)) {
-    @include grid(nth($breakpoint, 1));
+  $breakpoint: nth($breakpoint, 1);
+
+  @if $breakpoint == xs {
+    @include media-breakpoint(0) {
+      @include grid($breakpoint);
+    }
+  }
+
+  @else {
+    @include media-breakpoint($breakpoint) {
+      @include grid($breakpoint);
+    }
   }
 }
 

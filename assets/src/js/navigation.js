@@ -10,7 +10,7 @@
 
   let screenCover;
   const body = doc.body;
-  const mediumViewport = 992;
+  const mediumViewport = 840;
   const navAnimate = 'nav-animate';
   const navIsActive = 'main-nav-is-active';
   const itemIsActive = 'menu-item-is-active';

@@ -97,19 +97,23 @@ Helpers
 */
 
 .hide,
-.show-md,
-.show-sm,
-.show-xs {
+.hide-xs,
+.hide-sm,
+.hide-md,
+.hide-lg,
+.hide-xl {
   @include hideElement;
 }
 
 @each $breakpoint in $breakpoints {
-  @include media-breakpoint(nth($breakpoint, 1)) {
-    .show-#{nth($breakpoint, 1)} {
+  $breakpoint: nth($breakpoint, 1);
+
+  @include media-breakpoint($breakpoint) {
+    .hide-#{$breakpoint} {
       @include showElement;
     }
 
-    .hide-#{nth($breakpoint, 1)} {
+    .show-#{$breakpoint} {
       @include hideElement;
     }
   }

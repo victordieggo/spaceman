@@ -55,7 +55,7 @@ Navigation
 -------------------------------------------------------
 */
 
-@include media-breakpoint(md, min) {
+@include media-breakpoint(md) {
   .menu-item-is-active > a {
     color: color(darkgrey);
   }
@@ -124,7 +124,7 @@ Navigation
 -------------------------------------------------------
 */
 
-@include media-breakpoint(md) {
+@include media-breakpoint(md, max) {
   .nav-hide-overflow {
     overflow: hidden;
   }
@@ -221,7 +221,7 @@ Navigation
 -------------------------------------------------------
 */
 
-@include media-breakpoint(md) {
+@include media-breakpoint(md, max) {
   .nav-btn {
     width: 1.5em;
     height: 1.5em;
