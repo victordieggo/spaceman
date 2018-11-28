@@ -23,11 +23,15 @@ Mixins
   @return map-get($breakpoints, $key);
 }
 
-@mixin media-breakpoint($size, $property: max) {
-  $size: breakpoint($size);
+@mixin media-breakpoint($size, $property: min) {
+  $breakpoint: breakpoint($size);
 
-  @if $property == min {
-    $size: $size + 1;
+  @if $breakpoint {
+    $size: $breakpoint;
+  }
+
+  @if $property == max {
+    $size: $size - 1;
   }
 
   @media (#{$property}-width: $size) {
