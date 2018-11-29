@@ -206,12 +206,14 @@ Navigation
     }
   }
 
-  .nav-animate > .menu {
-    transition: visibility 0s ease-in-out 0.3s, transform 0.3s ease-in-out;
-  }
+  .nav-animate {
+    &:not(.main-nav-is-active) .menu {
+      transition: visibility 0s ease-in-out 0.3s, transform 0.3s ease-in-out;
+    }
 
-  .main-nav-is-active.nav-animate > .menu {
-    transition: visibility 0s ease-in-out, transform 0.3s ease-in-out;
+    .menu {
+      transition: visibility 0s ease-in-out, transform 0.3s ease-in-out;
+    }
   }
 }
 
