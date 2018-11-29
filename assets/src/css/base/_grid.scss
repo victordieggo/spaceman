@@ -44,21 +44,11 @@ Grid
 -------------------------------------------------------
 */
 
-@include grid(col);
-
 @each $breakpoint in $breakpoints {
   $breakpoint: nth($breakpoint, 1);
 
-  @if $breakpoint == xs {
-    @include media-breakpoint(0) {
-      @include grid($breakpoint);
-    }
-  }
-
-  @else {
-    @include media-breakpoint($breakpoint) {
-      @include grid($breakpoint);
-    }
+  @include media-breakpoint(if($breakpoint == xs, 0, $breakpoint)) {
+    @include grid('col-' + $breakpoint);
   }
 }
 
