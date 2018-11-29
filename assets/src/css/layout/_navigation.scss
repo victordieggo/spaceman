@@ -143,11 +143,11 @@ Navigation
     z-index: 1;
     position: relative;
 
-    > .menu {
+    .menu {
       top: 0;
       left: 0;
       bottom: 0;
-      width: 18em;
+      width: 20em;
       position: fixed;
       text-align: left;
       overflow-y: auto;
@@ -159,12 +159,12 @@ Navigation
       background-color: color(light);
       will-change: transform;
 
-      @include media-breakpoint(xs) {
+      @include media-breakpoint(xs, max) {
         width: 75%;
       }
     }
 
-    &-is-active > .menu {
+    &-is-active .menu {
       transform: none;
       visibility: visible;
     }
