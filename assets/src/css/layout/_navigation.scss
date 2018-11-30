@@ -55,7 +55,7 @@ Navigation
 -------------------------------------------------------
 */
 
-@include media-breakpoint(md, min) {
+@include media-breakpoint(md) {
   .menu-item-is-active > a {
     color: color(darkgrey);
   }
@@ -124,7 +124,7 @@ Navigation
 -------------------------------------------------------
 */
 
-@include media-breakpoint(md) {
+@include media-breakpoint(md, max) {
   .nav-hide-overflow {
     overflow: hidden;
   }
@@ -143,11 +143,11 @@ Navigation
     z-index: 1;
     position: relative;
 
-    > .menu {
+    .menu {
       top: 0;
       left: 0;
       bottom: 0;
-      width: 18em;
+      width: 20em;
       position: fixed;
       text-align: left;
       overflow-y: auto;
@@ -159,12 +159,12 @@ Navigation
       background-color: color(light);
       will-change: transform;
 
-      @include media-breakpoint(xs) {
+      @include media-breakpoint(xs, max) {
         width: 75%;
       }
     }
 
-    &-is-active > .menu {
+    &-is-active .menu {
       transform: none;
       visibility: visible;
     }
@@ -206,12 +206,14 @@ Navigation
     }
   }
 
-  .nav-animate > .menu {
-    transition: visibility 0s ease-in-out 0.3s, transform 0.3s ease-in-out;
-  }
+  .nav-animate {
+    &:not(.main-nav-is-active) .menu {
+      transition: visibility 0s ease-in-out 0.3s, transform 0.3s ease-in-out;
+    }
 
-  .main-nav-is-active.nav-animate > .menu {
-    transition: visibility 0s ease-in-out, transform 0.3s ease-in-out;
+    .menu {
+      transition: visibility 0s ease-in-out, transform 0.3s ease-in-out;
+    }
   }
 }
 
@@ -221,7 +223,7 @@ Navigation
 -------------------------------------------------------
 */
 
-@include media-breakpoint(md) {
+@include media-breakpoint(md, max) {
   .nav-btn {
     width: 1.5em;
     height: 1.5em;

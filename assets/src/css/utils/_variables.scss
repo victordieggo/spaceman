@@ -26,8 +26,10 @@ $assets-base-path: '../../dist';
 
 $breakpoints: (
   xs: 480px,
-  sm: 768px,
-  md: 992px
+  sm: 600px,
+  md: 840px,
+  lg: 960px,
+  xl: 1280px
 );
 
 /*

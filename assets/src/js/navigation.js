@@ -10,7 +10,7 @@
 
   let screenCover;
   const body = doc.body;
-  const mediumViewport = 992;
+  const breakpoint = 839;
   const navAnimate = 'nav-animate';
   const navIsActive = 'main-nav-is-active';
   const itemIsActive = 'menu-item-is-active';
@@ -80,7 +80,7 @@
             navBtn
           ];
           exceptions = exceptions.indexOf(target) == -1;
-          if (browserWidth > mediumViewport || browserWidth <= mediumViewport && exceptions && activeNav) {
+          if (browserWidth > breakpoint || browserWidth <= breakpoint && exceptions && activeNav) {
             closeActiveItem(activeItem);
           }
         }
