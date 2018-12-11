@@ -21,11 +21,11 @@ Grid
 
   &:not(.no-gutter),
   &:not(.no-gutter) > * {
-    padding: 0.7em;
+    padding: $grid-gutter;
   }
 
   & & {
-    margin: -0.7em;
+    margin: -$grid-gutter;
     padding: 0;
   }
 
