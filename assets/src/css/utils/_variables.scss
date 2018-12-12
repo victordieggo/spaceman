@@ -2,25 +2,35 @@
 =======================================================
 Variables
 =======================================================
-1. Set Assets Base Path
-2. Viewports
-3. Colors
-4. Font Sizes
-5. Form Elements
+1. Grid Options
+2. Set Assets Path
+3. Viewports
+4. Colors
+5. Font Sizes
+6. Form Elements
 =======================================================
 */
 
 /*
 -------------------------------------------------------
-1. Set Assets Base Path
+1. Grid Options
 -------------------------------------------------------
 */
 
-$assets-base-path: '../../dist';
+$grid-cols: 12;
+$grid-gutter: 0.7em;
 
 /*
 -------------------------------------------------------
-2. Viewports
+2. Set Assets Path
+-------------------------------------------------------
+*/
+
+$assetsPath: '../../dist';
+
+/*
+-------------------------------------------------------
+3. Viewports
 -------------------------------------------------------
 */
 
@@ -34,7 +44,7 @@ $breakpoints: (
 
 /*
 -------------------------------------------------------
-3. Colors
+4. Colors
 -------------------------------------------------------
 */
 
@@ -50,7 +60,7 @@ $colors: (
 
 /*
 -------------------------------------------------------
-4. Font Sizes
+5. Font Sizes
 -------------------------------------------------------
 */
 
@@ -62,9 +72,9 @@ $fontSize-large:    $fontSize-default + $fontSize-interval;
 
 /*
 -------------------------------------------------------
-5. Form Elements
+6. Form Elements
 -------------------------------------------------------
 */
 
-$formElements:    'input, button, select, textarea';
-$fe-borderRadius: 0.3rem;
+$formElements: 'input, button, select, textarea';
+$formElements-borderRadius: 0.3rem;

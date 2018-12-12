@@ -70,7 +70,7 @@ Mixins
   @return $columnSize / $gridSize * 100%;
 }
 
-@mixin grid($name, $cols: 12) {
+@mixin grid($name, $cols: $grid-cols) {
   @for $i from 1 through $cols {
     .#{$name}-#{$i} {
       width: column($i, $cols);
@@ -85,7 +85,7 @@ Mixins
 */
 
 @function assetsURL($path, $file) {
-  @return url($assets-base-path + '/' + $path + '/' + $file);
+  @return url($assetsPath + '/' + $path + '/' + $file);
 }
 
 @function fonts($file) {

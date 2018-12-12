@@ -20,7 +20,7 @@ Buttons
   line-height: 1.5em;
   background-color: color(alt);
   border: solid 2px color(alt);
-  border-radius: $fe-borderRadius;
+  border-radius: $formElements-borderRadius;
   transition: background 0.3s, border 0.3s, color 0.3s;
 
   &:focus,
