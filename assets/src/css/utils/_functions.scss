@@ -1,0 +1,62 @@
+/*
+=======================================================
+Functions
+=======================================================
+1. Get breakpoints
+2. Get colors
+3. Generate grid column
+4. Get assets URL
+=======================================================
+*/
+
+/*
+-------------------------------------------------------
+1. Get breakpoints
+-------------------------------------------------------
+*/
+
+@function breakpoint($key) {
+  @return map-get($breakpoints, $key);
+}
+
+/*
+-------------------------------------------------------
+2. Get colors
+-------------------------------------------------------
+*/
+
+@function color($key) {
+  @return map-get($colors, $key);
+}
+
+/*
+-------------------------------------------------------
+3. Generate grid column
+-------------------------------------------------------
+*/
+
+@function column($columnSize, $gridSize) {
+  @return $columnSize / $gridSize * 100%;
+}
+
+/*
+-------------------------------------------------------
+4. Get assets URL
+-------------------------------------------------------
+*/
+
+@function assetsURL($path, $file) {
+  @return url($assetsPath + '/' + $path + '/' + $file);
+}
+
+@function fonts($file) {
+  @return assetsURL('fonts', $file);
+}
+
+@function img($file) {
+  @return assetsURL('img', $file);
+}
+
+@function svg($file) {
+  @return assetsURL('svg', $file);
+}
