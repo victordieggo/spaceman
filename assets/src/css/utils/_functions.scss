@@ -25,8 +25,12 @@ Functions
 -------------------------------------------------------
 */
 
-@function color($key) {
-  @return map-get($colors, $key);
+@function color($color) {
+  @if map-has-key($colors, $color) {
+    @return map-get($colors, $color);
+  }
+
+  @error 'Invalid color name: #{$color}.';
 }
 
 /*
