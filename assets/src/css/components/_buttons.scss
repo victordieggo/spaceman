@@ -32,14 +32,17 @@ Buttons
   }
 
   &-outline:not(:hover):not(:focus) {
-    color: inherit;
     background-color: transparent;
+
+    &:not(:disabled):not(.btn-is-disabled) {
+      color: inherit;
+    }
   }
 
   &:disabled,
   &-is-disabled {
     pointer-events: none;
-    color: color(darkgrey) !important;
+    color: color(darkgrey);
     border-color: color(lightgrey);
     background-color: color(lightgrey);
   }

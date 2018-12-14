@@ -81,6 +81,7 @@ Form Elements
   }
 
   .input-radio :checked + & {
+    z-index: -1;
     position: relative;
 
     &::after {
@@ -105,7 +106,9 @@ Form Elements
 */
 
 .select:not([multiple]) {
-  background: svg('icon-arrow-alt.svg') right 0.6em center no-repeat;
+  background-image: svg('icon-arrow-alt.svg');
+  background-position: right 0.6em center;
+  background-repeat: no-repeat;
   background-size: 0.85em 1em;
   padding-right: 2.4em;
 }
@@ -116,15 +119,20 @@ Form Elements
 -------------------------------------------------------
 */
 
-.is-disabled {
-  pointer-events: none;
+:disabled,
+.input:read-only {
   color: color(darkgrey);
+  background-color: color(lightgrey);
+}
 
-  &:not(.input-checkbox):not(.input-radio) {
-    background-color: color(lightgrey);
-  }
+:disabled {
+  pointer-events: none;
 
-  .input-icon {
+  + .input-icon {
     background-color: color(lightgrey);
+
+    + span {
+      color: color(darkgrey);
+    }
   }
 }
