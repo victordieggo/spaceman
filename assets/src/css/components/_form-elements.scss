@@ -120,7 +120,7 @@ Form Elements
 */
 
 :disabled,
-.input:read-only {
+.input[readonly] {
   color: color(darkgrey);
   background-color: color(lightgrey);
 }
