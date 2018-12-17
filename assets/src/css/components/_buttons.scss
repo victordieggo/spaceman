@@ -14,36 +14,35 @@ Buttons
 
 .btn {
   @include vcenter;
-  color: color(light);
+  color: color(dark);
   padding: 0.5em 1em;
   text-align: center;
   line-height: 1.5em;
-  background-color: color(alt);
-  border: solid 2px color(alt);
+  background-color: color(grey);
+  border: solid 2px color(grey);
   border-radius: $formElements-borderRadius;
   transition: background 0.3s, border 0.3s, color 0.3s;
 
   &:focus,
   &:hover {
-    background-color: darken(color(alt), 10%);
-    border-color: darken(color(alt), 10%);
+    background-color: color(darkgrey);
+    border-color: color(darkgrey);
     text-decoration: none;
     outline: none;
   }
 
   &-outline:not(:hover):not(:focus) {
+    color: inherit;
     background-color: transparent;
-
-    &:not(:disabled):not(.btn-is-disabled) {
-      color: inherit;
-    }
   }
 
   &:disabled,
   &-is-disabled {
+    opacity: 0.6;
     pointer-events: none;
-    color: color(darkgrey);
-    border-color: color(lightgrey);
-    background-color: color(lightgrey);
+  }
+
+  &:disabled {
+    background-color: color(grey);
   }
 }
