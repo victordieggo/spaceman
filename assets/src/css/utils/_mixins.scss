@@ -3,13 +3,11 @@
 Mixins
 =======================================================
 1. Breakpoints
-2. Colors
-3. Container
-4. Grid
-5. Assets URL
-6. Font-Face
-7. Spacing
-8. Utilities
+2. Container
+3. Grid
+4. Font-Face
+5. Spacing
+6. Utilities
 =======================================================
 */
 
@@ -18,10 +16,6 @@ Mixins
 1. Breakpoints
 -------------------------------------------------------
 */
-
-@function breakpoint($key) {
-  @return map-get($breakpoints, $key);
-}
 
 @mixin media-breakpoint($size, $property: min) {
   $breakpoint: breakpoint($size);
@@ -41,17 +35,7 @@ Mixins
 
 /*
 -------------------------------------------------------
-2. Colors
--------------------------------------------------------
-*/
-
-@function color($key) {
-  @return map-get($colors, $key);
-}
-
-/*
--------------------------------------------------------
-3. Container
+2. Container
 -------------------------------------------------------
 */
 
@@ -62,13 +46,9 @@ Mixins
 
 /*
 -------------------------------------------------------
-4. Grid
+3. Grid
 -------------------------------------------------------
 */
-
-@function column($columnSize, $gridSize) {
-  @return $columnSize / $gridSize * 100%;
-}
 
 @mixin grid($name, $cols: $grid-cols) {
   @for $i from 1 through $cols {
@@ -80,29 +60,7 @@ Mixins
 
 /*
 -------------------------------------------------------
-5. Assets URL
--------------------------------------------------------
-*/
-
-@function assetsURL($path, $file) {
-  @return url($assetsPath + '/' + $path + '/' + $file);
-}
-
-@function fonts($file) {
-  @return assetsURL('fonts', $file);
-}
-
-@function img($file) {
-  @return assetsURL('img', $file);
-}
-
-@function svg($file) {
-  @return assetsURL('svg', $file);
-}
-
-/*
--------------------------------------------------------
-6. Font-Face
+4. Font-Face
 -------------------------------------------------------
 */
 
@@ -129,7 +87,7 @@ Mixins
 
 /*
 -------------------------------------------------------
-7. Spacing
+5. Spacing
 -------------------------------------------------------
 */
 
@@ -159,7 +117,7 @@ Mixins
 
 /*
 -------------------------------------------------------
-8. Utilities
+6. Utilitiess
 -------------------------------------------------------
 */
 
