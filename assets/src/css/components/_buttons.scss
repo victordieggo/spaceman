@@ -31,9 +31,29 @@ Buttons
     outline: none;
   }
 
+  span {
+    @include vcenter;
+  }
+
+  &-icon {
+    @include vcenter;
+    fill: color(dark);
+    height: 1em;
+    width: 1em;
+
+    span + &,
+    & + span {
+      margin-left: 0.7em;
+    }
+  }
+
   &-outline:not(:hover):not(:focus) {
     color: inherit;
     background-color: transparent;
+
+    .btn-icon {
+      fill: color(dark);
+    }
   }
 
   &:disabled,
