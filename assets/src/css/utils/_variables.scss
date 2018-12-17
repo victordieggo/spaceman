@@ -6,8 +6,9 @@ Variables
 2. Set Assets Path
 3. Viewports
 4. Colors
-5. Font Sizes
-6. Form Elements
+5. Button Variations
+6. Font Sizes
+7. Form Elements
 =======================================================
 */
 
@@ -60,7 +61,17 @@ $colors: (
 
 /*
 -------------------------------------------------------
-5. Font Sizes
+5. Button Variations
+-------------------------------------------------------
+*/
+
+$btnVariations: (
+  main: (color(light), color(alt))
+);
+
+/*
+-------------------------------------------------------
+6. Font Sizes
 -------------------------------------------------------
 */
 
@@ -72,7 +83,7 @@ $fontSize-headings: $fontSize-large;
 
 /*
 -------------------------------------------------------
-6. Form Elements
+7. Form Elements
 -------------------------------------------------------
 */
 

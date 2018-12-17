@@ -3,6 +3,7 @@
 Buttons
 =======================================================
 1. Default Styles
+2. Button Variations
 =======================================================
 */
 
@@ -64,5 +65,37 @@ Buttons
 
   &:disabled {
     background-color: color(grey);
+  }
+}
+
+/*
+-------------------------------------------------------
+2. Button Variations
+-------------------------------------------------------
+*/
+
+@each $variation, $colors in $btnVariations {
+  $text: nth($colors, 1);
+  $background: nth($colors, 2);
+
+  .btn-#{$variation} {
+    color: $text;
+    background-color: $background;
+    border-color: $background;
+
+    .btn-icon {
+      fill: $text;
+    }
+
+    &:focus,
+    &:hover {
+      background-color: darken($background, 15%);
+      border-color: darken($background, 15%);
+    }
+
+    &:disabled {
+      color: $text;
+      background-color: $background;
+    }
   }
 }
