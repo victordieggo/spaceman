@@ -81,13 +81,13 @@ Helpers
 -------------------------------------------------------
 */
 
-@for $i from 1 through 6 {
+@for $i from 6 through 1 {
   h#{$i},
   .title-#{$i} {
     font-size: $fontSize-headings;
   }
 
-  $fontSize-headings: $fontSize-headings - $fontSize-interval;
+  $fontSize-headings: $fontSize-headings + $fontSize-ratio;
 }
 
 /*

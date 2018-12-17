@@ -65,10 +65,10 @@ $colors: (
 */
 
 $fontSize-default:  1em;
-$fontSize-interval: 0.3;
-$fontSize-headings: $fontSize-default + 1.5;
-$fontSize-small:    $fontSize-default - 0.2;
-$fontSize-large:    $fontSize-default + $fontSize-interval;
+$fontSize-ratio:    0.25;
+$fontSize-small:    $fontSize-default - $fontSize-ratio;
+$fontSize-large:    $fontSize-default + $fontSize-ratio;
+$fontSize-headings: $fontSize-large;
 
 /*
 -------------------------------------------------------
