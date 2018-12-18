@@ -80,6 +80,7 @@ $fontSize-ratio:    0.25;
 $fontSize-small:    $fontSize-default - $fontSize-ratio;
 $fontSize-large:    $fontSize-default + $fontSize-ratio;
 $fontSize-headings: $fontSize-large;
+$fontSize-display:  $fontSize-large * 2;
 
 /*
 -------------------------------------------------------
