@@ -71,7 +71,7 @@ $colors: (
 */
 
 $btnVariations: (
-  main: (color(light), color(main))
+  main: (color(light), color(main), 'lighten')
 );
 
 /*

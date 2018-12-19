@@ -74,14 +74,19 @@ Buttons
 -------------------------------------------------------
 */
 
-@each $variation, $colors in $btnVariations {
-  $text: nth($colors, 1);
-  $background: nth($colors, 2);
+@each $variation, $args in $btnVariations {
+  $text: nth($args, 1);
+  $color: nth($args, 2);
+  $hover: darken($color, $colorVariation-ratio);
+
+  @if nth($args, 3) == 'lighten' {
+    $hover: lighten($color, $colorVariation-ratio);
+  }
 
   .btn-#{$variation} {
     color: $text;
-    background-color: $background;
-    border-color: $background;
+    background-color: $color;
+    border-color: $color;
 
     .btn-icon {
       fill: $text;
@@ -89,13 +94,13 @@ Buttons
 
     &:focus,
     &:hover {
-      background-color: darken($background, $colorVariation-ratio);
-      border-color: darken($background, $colorVariation-ratio);
+      background-color: $hover;
+      border-color: $hover;
     }
 
     &:disabled {
       color: $text;
-      background-color: $background;
+      background-color: $color;
     }
   }
 }
