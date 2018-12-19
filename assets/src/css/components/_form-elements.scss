@@ -21,7 +21,7 @@ Form Elements
   @include vcenter;
   appearance: none;
   background-color: color(light);
-  border: solid 1px color(grey);
+  border: solid 1px color(gray);
   border-radius: $formElements-borderRadius;
   padding: 0.65em;
   transition: border 0.3s, box-shadow 0.3s;
@@ -35,14 +35,14 @@ Form Elements
 .input:focus,
 .select:focus,
 :focus + .input-icon {
-  border-color: color(darkgrey);
-  box-shadow: 0 0 1px color(darkgrey);
+  border-color: color(gray-dark);
+  box-shadow: 0 0 1px color(gray-dark);
   outline: none;
 }
 
 @each $prefix in ':-ms', '::-webkit' {
   #{$prefix}-input-placeholder {
-    color: color(darkgrey);
+    color: color(gray-dark);
   }
 }
 
@@ -121,18 +121,18 @@ Form Elements
 
 :disabled,
 .input[readonly] {
-  color: color(darkgrey);
-  background-color: color(lightgrey);
+  color: color(gray-dark);
+  background-color: color(gray-light);
 }
 
 :disabled {
   pointer-events: none;
 
   + .input-icon {
-    background-color: color(lightgrey);
+    background-color: color(gray-light);
 
     + span {
-      color: color(darkgrey);
+      color: color(gray-dark);
     }
   }
 }

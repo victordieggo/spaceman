@@ -19,15 +19,15 @@ Buttons
   padding: 0.5em 1em;
   text-align: center;
   line-height: 1.5em;
-  background-color: color(grey);
-  border: solid 2px color(grey);
+  background-color: color(gray);
+  border: solid 2px color(gray);
   border-radius: $formElements-borderRadius;
   transition: background 0.3s, border 0.3s, color 0.3s;
 
   &:focus,
   &:hover {
-    background-color: color(darkgrey);
-    border-color: color(darkgrey);
+    background-color: color(gray-dark);
+    border-color: color(gray-dark);
     text-decoration: none;
     outline: none;
   }
@@ -64,7 +64,7 @@ Buttons
   }
 
   &:disabled {
-    background-color: color(grey);
+    background-color: color(gray);
   }
 }
 

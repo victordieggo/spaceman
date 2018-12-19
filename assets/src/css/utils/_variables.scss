@@ -50,15 +50,15 @@ $breakpoints: (
 */
 
 $colorBase-main: #24292e;
-$colorBase-grey: #cecece;
+$colorBase-gray: #cecece;
 $colorVariation-ratio: 10%;
 
 $colors: (
   light:      #fff,
   dark:       #222,
-  grey:       $colorBase-grey,
-  darkgrey:   darken($colorBase-grey, $colorVariation-ratio),
-  lightgrey:  lighten($colorBase-grey, $colorVariation-ratio),
+  gray:       $colorBase-gray,
+  gray-dark:  darken($colorBase-gray, $colorVariation-ratio),
+  gray-light: lighten($colorBase-gray, $colorVariation-ratio),
   main:       $colorBase-main,
   main-dark:  darken($colorBase-main, $colorVariation-ratio),
   main-light: lighten($colorBase-main, $colorVariation-ratio)

@@ -57,7 +57,7 @@ Navigation
 
 @include media-breakpoint(md) {
   .menu-item-is-active > a {
-    color: color(darkgrey);
+    color: color(gray-dark);
   }
 
   .main-nav {
@@ -65,7 +65,7 @@ Navigation
       position: relative;
 
       &:hover {
-        color: color(darkgrey);
+        color: color(gray-dark);
       }
     }
 
@@ -75,7 +75,7 @@ Navigation
       border-radius: 0.4em;
       white-space: nowrap;
       background-color: color(light);
-      box-shadow: 0 0 2px color(darkgrey);
+      box-shadow: 0 0 2px color(gray-dark);
 
       a {
         font-size: 90%;
@@ -87,7 +87,7 @@ Navigation
           content: '';
           display: block;
           margin: 0 0.65em;
-          border-bottom: 1px solid color(grey);
+          border-bottom: 1px solid color(gray);
         }
 
         &-has-children > a {
@@ -175,7 +175,7 @@ Navigation
       }
 
       &:not(:last-child) {
-        border-bottom: 1px solid color(lightgrey);
+        border-bottom: 1px solid color(gray-light);
       }
 
       &-has-children {
