@@ -131,7 +131,7 @@ Navigation
 
   .menu-item-is-active > a {
     background-color: color(main);
-    border-color: lighten(color(main), 10%);
+    border-bottom: 1px solid color(main-light);
     color: color(light);
 
     &::after {
