@@ -89,8 +89,8 @@ Buttons
 
     &:focus,
     &:hover {
-      background-color: darken($background, 15%);
-      border-color: darken($background, 15%);
+      background-color: darken($background, $colorVariation-ratio);
+      border-color: darken($background, $colorVariation-ratio);
     }
 
     &:disabled {
