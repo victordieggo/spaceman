@@ -6,9 +6,8 @@ Config
 2. Set Assets Path
 3. Viewports
 4. Colors
-5. Button Variations
-6. Font Sizes
-7. Form Elements
+5. Font Sizes
+6. Form Elements
 =======================================================
 */
 
@@ -66,17 +65,7 @@ $colors: (
 
 /*
 -------------------------------------------------------
-5. Button Variations
--------------------------------------------------------
-*/
-
-$btnVariations: (
-  main: (map-get($colors, light), map-get($colors, main), 'lighten')
-);
-
-/*
--------------------------------------------------------
-6. Font Sizes
+5. Font Sizes
 -------------------------------------------------------
 */
 
@@ -89,7 +78,7 @@ $fontSize-display:  $fontSize-large * 2;
 
 /*
 -------------------------------------------------------
-7. Form Elements
+6. Form Elements
 -------------------------------------------------------
 */
 

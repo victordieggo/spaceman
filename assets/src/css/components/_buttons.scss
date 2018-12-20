@@ -15,19 +15,19 @@ Buttons
 
 .btn {
   @include vcenter;
+  @include btnBackground(color(gray));
   color: color(dark);
   padding: 0.5em 1em;
   text-align: center;
   line-height: 1.5em;
-  background-color: color(gray);
-  border: solid 2px color(gray);
+  border-width: 2px;
+  border-style: solid;
   border-radius: $formElements-borderRadius;
   transition: background 0.3s, border 0.3s, color 0.3s;
 
   &:focus,
   &:hover {
-    background-color: color(gray-dark);
-    border-color: color(gray-dark);
+    @include btnBackground(color(gray-dark));
     text-decoration: none;
     outline: none;
   }
@@ -76,33 +76,21 @@ Buttons
 -------------------------------------------------------
 */
 
-@each $variation, $args in $btnVariations {
-  $text: nth($args, 1);
-  $color: nth($args, 2);
-  $hover: darken($color, $colorVariation-ratio);
+.btn-main {
+  @include btnBackground(color(main));
+  color: color(light);
 
-  @if nth($args, 3) == 'lighten' {
-    $hover: lighten($color, $colorVariation-ratio);
+  .btn-icon {
+    fill: color(light);
   }
 
-  .btn-#{$variation} {
-    color: $text;
-    background-color: $color;
-    border-color: $color;
+  &:focus,
+  &:hover {
+    @include btnBackground(color(main-light));
+  }
 
-    .btn-icon {
-      fill: $text;
-    }
-
-    &:focus,
-    &:hover {
-      background-color: $hover;
-      border-color: $hover;
-    }
-
-    &:disabled {
-      color: $text;
-      background-color: $color;
-    }
+  &:disabled {
+    color: color(light);
+    background-color: color(main);
   }
 }
