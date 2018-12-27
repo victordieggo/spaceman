@@ -53,6 +53,10 @@ fieldset {
   border: 0;
 }
 
+small {
+  font-size: $fontSize-small;
+}
+
 /*
 -------------------------------------------------------
 2. Form Elements
@@ -117,7 +121,7 @@ img {
 hr {
   border: 0;
   height: 1px;
-  background-color: color(grey);
+  background-color: color(gray);
 }
 
 ul,

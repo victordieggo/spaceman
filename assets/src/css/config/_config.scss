@@ -1,0 +1,86 @@
+/*
+=======================================================
+Config
+=======================================================
+1. Grid Options
+2. Set Assets Path
+3. Viewports
+4. Colors
+5. Font Sizes
+6. Form Elements
+=======================================================
+*/
+
+/*
+-------------------------------------------------------
+1. Grid Options
+-------------------------------------------------------
+*/
+
+$grid-cols: 12;
+$grid-gutter: 0.7em;
+
+/*
+-------------------------------------------------------
+2. Set Assets Path
+-------------------------------------------------------
+*/
+
+$assetsPath: '../../dist';
+
+/*
+-------------------------------------------------------
+3. Viewports
+-------------------------------------------------------
+*/
+
+$breakpoints: (
+  xs: 480px,
+  sm: 600px,
+  md: 840px,
+  lg: 960px,
+  xl: 1280px
+);
+
+/*
+-------------------------------------------------------
+4. Colors
+-------------------------------------------------------
+*/
+
+$colorBase-main: #24292e;
+$colorBase-gray: #cecece;
+$colorVariation-ratio: 10%;
+
+$colors: (
+  light:      #fff,
+  dark:       #222,
+  gray:       $colorBase-gray,
+  gray-dark:  darken($colorBase-gray, $colorVariation-ratio),
+  gray-light: lighten($colorBase-gray, $colorVariation-ratio),
+  main:       $colorBase-main,
+  main-dark:  darken($colorBase-main, $colorVariation-ratio),
+  main-light: lighten($colorBase-main, $colorVariation-ratio)
+);
+
+/*
+-------------------------------------------------------
+5. Font Sizes
+-------------------------------------------------------
+*/
+
+$fontSize-default:  1em;
+$fontSize-ratio:    0.25;
+$fontSize-small:    $fontSize-default - $fontSize-ratio;
+$fontSize-large:    $fontSize-default + $fontSize-ratio;
+$fontSize-headings: $fontSize-large;
+$fontSize-display:  $fontSize-large * 2;
+
+/*
+-------------------------------------------------------
+6. Form Elements
+-------------------------------------------------------
+*/
+
+$formElements: 'input, button, select, textarea';
+$formElements-borderRadius: 0.3rem;

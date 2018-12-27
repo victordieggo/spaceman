@@ -3,6 +3,7 @@
 Buttons
 =======================================================
 1. Default Styles
+2. Button Variations
 =======================================================
 */
 
@@ -14,36 +15,93 @@ Buttons
 
 .btn {
   @include vcenter;
-  color: color(light);
+  @include btnBackground(color(gray));
+  color: color(dark);
   padding: 0.5em 1em;
   text-align: center;
   line-height: 1.5em;
-  background-color: color(alt);
-  border: solid 2px color(alt);
+  border-width: 2px;
+  border-style: solid;
   border-radius: $formElements-borderRadius;
   transition: background 0.3s, border 0.3s, color 0.3s;
 
   &:focus,
   &:hover {
-    background-color: darken(color(alt), 10%);
-    border-color: darken(color(alt), 10%);
+    @include btnBackground(color(gray-dark));
     text-decoration: none;
     outline: none;
   }
 
-  &-outline:not(:hover):not(:focus) {
+  span {
+    @include vcenter;
+  }
+
+  &-icon {
+    @include vcenter;
+    fill: color(dark);
+    height: 1em;
+    width: 1em;
+    transition: fill 0.3s;
+
+    span + &,
+    & + span {
+      margin-left: 0.7em;
+    }
+  }
+
+  &--outline:not(:hover):not(:focus) {
+    color: inherit;
     background-color: transparent;
 
-    &:not(:disabled):not(.btn-is-disabled) {
-      color: inherit;
+    .btn-icon {
+      fill: color(dark);
     }
   }
 
   &:disabled,
   &-is-disabled {
+    z-index: -1;
+    opacity: 0.6;
+    position: relative;
     pointer-events: none;
-    color: color(darkgrey);
-    border-color: color(lightgrey);
-    background-color: color(lightgrey);
+  }
+}
+
+/*
+-------------------------------------------------------
+2. Button Variations
+-------------------------------------------------------
+*/
+
+.btn-main {
+  @include btnBackground(color(main));
+  color: color(light);
+
+  .btn-icon {
+    fill: color(light);
+  }
+
+  &:focus,
+  &:hover {
+    @include btnBackground(color(main-light));
+  }
+
+  &--outline {
+    @include btnBackground(transparent, color(main));
+    color: color(main);
+
+    .btn-icon {
+      fill: color(main);
+    }
+
+    &:focus,
+    &:hover {
+      @include btnBackground(color(main-light));
+      color: color(light);
+
+      .btn-icon {
+        fill: color(light);
+      }
+    }
   }
 }

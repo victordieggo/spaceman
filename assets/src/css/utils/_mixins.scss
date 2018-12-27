@@ -126,6 +126,11 @@ Mixins
   vertical-align: middle;
 }
 
+@mixin btnBackground($backgroundColor, $borderColor: $backgroundColor) {
+  background-color: $backgroundColor;
+  border-color: $borderColor;
+}
+
 @mixin hideElement {
   top: -9999px;
   left: -9999px;
