@@ -41,6 +41,7 @@ Buttons
     fill: color(dark);
     height: 1em;
     width: 1em;
+    transition: fill 0.3s;
 
     span + &,
     & + span {
@@ -48,7 +49,7 @@ Buttons
     }
   }
 
-  &-outline:not(:hover):not(:focus) {
+  &--outline:not(:hover):not(:focus) {
     color: inherit;
     background-color: transparent;
 
@@ -63,10 +64,6 @@ Buttons
     opacity: 0.6;
     position: relative;
     pointer-events: none;
-  }
-
-  &:disabled {
-    background-color: color(gray);
   }
 }
 
@@ -89,8 +86,22 @@ Buttons
     @include btnBackground(color(main-light));
   }
 
-  &:disabled {
-    color: color(light);
-    background-color: color(main);
+  &--outline {
+    @include btnBackground(transparent, color(main));
+    color: color(main);
+
+    .btn-icon {
+      fill: color(main);
+    }
+
+    &:focus,
+    &:hover {
+      @include btnBackground(color(main-light));
+      color: color(light);
+
+      .btn-icon {
+        fill: color(light);
+      }
+    }
   }
 }

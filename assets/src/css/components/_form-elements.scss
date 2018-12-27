@@ -119,7 +119,7 @@ Form Elements
 -------------------------------------------------------
 */
 
-:disabled,
+:disabled:not(.btn),
 .input[readonly] {
   color: color(gray-dark);
   background-color: color(gray-light);
