@@ -1,6 +1,6 @@
 {
   "extends": "stylelint-config-standard",
-  "ignoreFiles": "assets/src/css/vendor/*.scss",
+  "ignoreFiles": "assets/src/sass/vendor/*.scss",
   "rules": {
     "no-descending-specificity": null,
     "declaration-empty-line-before": "never",

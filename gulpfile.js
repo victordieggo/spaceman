@@ -50,7 +50,7 @@ const basePath = {
 const assets = {
   css: {
     dist: basePath.dist + 'css',
-    src:  basePath.src  + 'css/**/*.scss'
+    src:  basePath.src  + 'sass/**/*.scss'
   },
   js: {
     dist: basePath.dist + 'js',
@@ -78,7 +78,7 @@ const bsReload = [
 -------------------------------------------------------
 */
 
-gulp.task('css', () => {
+gulp.task('sass', () => {
   return gulp.src(assets.css.src)
     .pipe(stylelint({
       failAfterError: false,
@@ -156,12 +156,12 @@ gulp.task('watch', () => {
     open: false,
   });
   gulp.watch([assets.js.vndr, assets.js.src], ['js']);
-  gulp.watch(assets.css.src, ['css']);
+  gulp.watch(assets.css.src, ['sass']);
   gulp.watch(assets.img.src, ['img']);
   gulp.watch(assets.svg.src, ['svg']);
   gulp.watch(bsReload, browserSync.reload);
 });
 
-gulp.task('build', ['js', 'css', 'img', 'svg']);
+gulp.task('build', ['js', 'sass', 'img', 'svg']);
 
 gulp.task('default', ['build', 'watch']);
