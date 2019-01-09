@@ -4,10 +4,10 @@ GULPFILE
 =======================================================
 1. Require Plugins
 2. Set Assets Paths
-3. Lint/Build CSS
-4. Lint/Build JS
-5. Compress Images
-6. Compress SVG files
+3. Build Styles
+4. Build Scripts
+5. Optimize Images
+6. Optimize SVGs
 7. Start Server
 8. Reload Browser
 9. Watch Files
@@ -87,7 +87,7 @@ const bsReload = [
 
 /*
 -------------------------------------------------------
-3. Lint/Build CSS
+3. Build Styles
 -------------------------------------------------------
 */
 
@@ -111,7 +111,7 @@ const buildStyles = (done) => {
 
 /*
 -------------------------------------------------------
-4. Lint/Build JS
+4. Build Scripts
 -------------------------------------------------------
 */
 
@@ -133,7 +133,7 @@ const buildScripts = (done) => {
 
 /*
 -------------------------------------------------------
-5. Compress Images
+5. Optimize Images
 -------------------------------------------------------
 */
 
@@ -150,7 +150,7 @@ const optimizeIMG = (done) => {
 
 /*
 -------------------------------------------------------
-6. Compress SVG files
+6. Optimize SVGs
 -------------------------------------------------------
 */
 
