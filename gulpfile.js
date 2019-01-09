@@ -204,14 +204,14 @@ const watchFiles = () => {
 -------------------------------------------------------
 */
 
-const build = parallel(
+const buildApp = parallel(
   buildScripts,
   buildStyles,
   optimizeIMG,
   optimizeSVG
 );
 
-exports.build = build;
+exports.build = buildApp;
 
 /*
 -------------------------------------------------------
@@ -219,4 +219,4 @@ exports.build = build;
 -------------------------------------------------------
 */
 
-exports.default = parallel(build, startServer, watchFiles);
+exports.default = parallel(buildApp, startServer, watchFiles);
