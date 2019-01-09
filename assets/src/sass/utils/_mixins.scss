@@ -24,8 +24,8 @@ Mixins
     $size: $breakpoint;
   }
 
-  @if $property == max {
-    $size: $size - 1;
+  @if $property == min {
+    $size: $size + 1;
   }
 
   @media (#{$property}-width: $size) {
