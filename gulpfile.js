@@ -191,7 +191,7 @@ const reloadBrowser = (done) => {
 */
 
 const watchFiles = () => {
-  watch([assets.js.vndr, assets.js.src], buildScripts);
+  watch(assets.js.src, buildScripts);
   watch(assets.css.src, buildStyles);
   watch(assets.img.src, optimizeIMG);
   watch(assets.svg.src, optimizeSVG);
