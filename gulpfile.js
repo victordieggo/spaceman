@@ -180,8 +180,8 @@ const startServer = (done) => {
 */
 
 const reloadBrowser = (done) => {
-	browserSync.reload();
-	done();
+  browserSync.reload();
+  done();
 };
 
 /*
