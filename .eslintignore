@@ -1,1 +1,3 @@
+assets/src/js/libs/*.js
+assets/src/js/polyfill/*.js
 assets/src/js/vendor/*.js
