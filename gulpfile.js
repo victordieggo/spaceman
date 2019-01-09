@@ -116,12 +116,12 @@ const buildStyles = (done) => {
 */
 
 const buildScripts = (done) => {
-  return src([assets.js.vndr, assets.js.src])
+  return src([assets.js.libs, assets.js.polyfill, assets.js.vendor, assets.js.src])
     .pipe(eslint())
     .pipe(eslint.format())
     .pipe(babel({
       presets: ['env'],
-      ignore: assets.js.vndr
+      ignore: [assets.js.libs, assets.js.polyfill, assets.js.vendor]
     }))
     .on('error', (e) => console.log(e))
     .pipe(concat('main.js'))
