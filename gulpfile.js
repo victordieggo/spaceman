@@ -3,7 +3,7 @@
 GULPFILE
 =======================================================
 1. Require Plugins
-2. Set Assets Path
+2. Set Assets Paths
 3. Lint/Build CSS
 4. Lint/Build JS
 5. Compress Images
@@ -49,7 +49,7 @@ const pngquant = require('imagemin-pngquant');
 
 /*
 -------------------------------------------------------
-2. Set Assets Path
+2. Set Assets Paths
 -------------------------------------------------------
 */
 
@@ -60,21 +60,23 @@ const basePath = {
 
 const assets = {
   css: {
-    dist: basePath.dist + 'css',
-    src:  basePath.src  + 'sass/**/*.scss'
+    src: basePath.src + 'sass/**/*.scss',
+    dist: basePath.dist + 'css'
   },
   js: {
+    src: basePath.src + 'js/**/*.js',
     dist: basePath.dist + 'js',
-    src:  basePath.src  + 'js/*.js',
-    vndr: basePath.src  + 'js/vendor/*.js'
+    libs: basePath.src + 'js/libs/*.js',
+    polyfill: basePath.src + 'js/polyfill/*.js',
+    vendor: basePath.src + 'js/vendor/*.js'
   },
   img: {
-    dist: basePath.dist + 'img',
-    src:  basePath.src  + 'img/*.{png,gif,jpg}'
+    src: basePath.src + 'img/*.{png,gif,jpg}',
+    dist: basePath.dist + 'img'
   },
   svg: {
-    dist: basePath.dist + 'svg',
-    src:  basePath.src  + 'svg/*.svg'
+    src: basePath.src + 'svg/*.svg',
+    dist: basePath.dist + 'svg'
   }
 };
 
