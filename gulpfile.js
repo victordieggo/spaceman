@@ -8,7 +8,11 @@ GULPFILE
 4. Lint/Build JS
 5. Compress Images
 6. Compress SVG files
-7. Watch/Build/Default
+7. Start Server
+8. Reload Browser
+9. Watch Files
+10. Build Task
+11. Default Task
 =======================================================
 */
 
@@ -20,21 +24,28 @@ GULPFILE
 -------------------------------------------------------
 */
 
-const gulp = require('gulp');
-const autoprefixer = require('gulp-autoprefixer');
+// General
+const {gulp, src, dest, watch, series, parallel} = require('gulp');
+const browserSync = require('browser-sync');
+const path = require('path');
+
+// Scripts
+const eslint = require('gulp-eslint');
 const babel = require('gulp-babel');
 const concat = require('gulp-concat');
-const stylelint = require('gulp-stylelint');
-const groupMq = require('gulp-group-css-media-queries');
-const csso = require('gulp-csso');
-const sass = require('gulp-sass');
-const eslint = require('gulp-eslint');
 const uglify = require('gulp-uglify');
+
+// Styles
+const stylelint = require('gulp-stylelint');
+const sass = require('gulp-sass');
+const csso = require('gulp-csso');
+const autoprefixer = require('gulp-autoprefixer');
+const groupMq = require('gulp-group-css-media-queries');
+
+// Images/SVGs
 const imagemin = require('gulp-imagemin');
 const mozjpeg = require('imagemin-mozjpeg');
 const pngquant = require('imagemin-pngquant');
-const browserSync = require('browser-sync').create();
-const path = require('path');
 
 /*
 -------------------------------------------------------
@@ -78,8 +89,8 @@ const bsReload = [
 -------------------------------------------------------
 */
 
-gulp.task('sass', () => {
-  return gulp.src(assets.css.src)
+const buildStyles = (done) => {
+  return src(assets.css.src)
     .pipe(stylelint({
       failAfterError: false,
       reporters: [{
@@ -91,9 +102,10 @@ gulp.task('sass', () => {
     .pipe(autoprefixer())
     .pipe(groupMq())
     .pipe(csso())
-    .pipe(gulp.dest(assets.css.dist))
+    .pipe(dest(assets.css.dist))
     .pipe(browserSync.stream());
-});
+  done();
+};
 
 /*
 -------------------------------------------------------
@@ -101,8 +113,8 @@ gulp.task('sass', () => {
 -------------------------------------------------------
 */
 
-gulp.task('js', () => {
-  return gulp.src([assets.js.vndr, assets.js.src])
+const buildScripts = (done) => {
+  return src([assets.js.vndr, assets.js.src])
     .pipe(eslint())
     .pipe(eslint.format())
     .pipe(babel({
@@ -112,9 +124,10 @@ gulp.task('js', () => {
     .on('error', (e) => console.log(e))
     .pipe(concat('main.js'))
     .pipe(uglify())
-    .pipe(gulp.dest(assets.js.dist))
+    .pipe(dest(assets.js.dist))
     .pipe(browserSync.stream());
-});
+  done();
+};
 
 /*
 -------------------------------------------------------
@@ -122,15 +135,16 @@ gulp.task('js', () => {
 -------------------------------------------------------
 */
 
-gulp.task('img', () => {
-  return gulp.src(assets.img.src)
+const optimizeIMG = (done) => {
+  return src(assets.img.src)
     .pipe(imagemin([
       mozjpeg({quality: 89}),
       pngquant({quality: 70})
-    ], {verbose: true}))
-    .pipe(gulp.dest(assets.img.dist))
+    ]))
+    .pipe(dest(assets.img.dist))
     .pipe(browserSync.stream());
-});
+  done();
+};
 
 /*
 -------------------------------------------------------
@@ -138,30 +152,71 @@ gulp.task('img', () => {
 -------------------------------------------------------
 */
 
-gulp.task('svg', () => {
-  return gulp.src(assets.svg.src)
-    .pipe(imagemin({verbose: true}))
-    .pipe(gulp.dest(assets.svg.dist));
-});
+const optimizeSVG = (done) => {
+  return src(assets.svg.src)
+    .pipe(imagemin())
+    .pipe(dest(assets.svg.dist));
+  done();
+};
 
 /*
 -------------------------------------------------------
-7. Watch/Build/Default
+7. Start Server
 -------------------------------------------------------
 */
 
-gulp.task('watch', () => {
+const startServer = (done) => {
   browserSync.init({
     proxy: 'localhost/' + path.basename(__dirname),
     open: false,
   });
-  gulp.watch([assets.js.vndr, assets.js.src], ['js']);
-  gulp.watch(assets.css.src, ['sass']);
-  gulp.watch(assets.img.src, ['img']);
-  gulp.watch(assets.svg.src, ['svg']);
-  gulp.watch(bsReload, browserSync.reload);
-});
+  done();
+};
 
-gulp.task('build', ['js', 'sass', 'img', 'svg']);
+/*
+-------------------------------------------------------
+8. Reload Browser
+-------------------------------------------------------
+*/
 
-gulp.task('default', ['build', 'watch']);
+const reloadBrowser = (done) => {
+	browserSync.reload();
+	done();
+};
+
+/*
+-------------------------------------------------------
+9. Watch Files
+-------------------------------------------------------
+*/
+
+const watchFiles = () => {
+  watch([assets.js.vndr, assets.js.src], buildScripts);
+  watch(assets.css.src, buildStyles);
+  watch(assets.img.src, optimizeIMG);
+  watch(assets.svg.src, optimizeSVG);
+  watch(bsReload, reloadBrowser);
+};
+
+/*
+-------------------------------------------------------
+10. Build Task
+-------------------------------------------------------
+*/
+
+const build = parallel(
+  buildScripts,
+  buildStyles,
+  optimizeIMG,
+  optimizeSVG
+);
+
+exports.build = build;
+
+/*
+-------------------------------------------------------
+11. Default Task
+-------------------------------------------------------
+*/
+
+exports.default = parallel(build, startServer, watchFiles);
