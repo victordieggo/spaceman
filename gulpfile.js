@@ -38,9 +38,8 @@ const uglify = require('gulp-uglify');
 // Styles
 const stylelint = require('gulp-stylelint');
 const sass = require('gulp-sass');
-const csso = require('gulp-csso');
 const autoprefixer = require('gulp-autoprefixer');
-const groupMq = require('gulp-group-css-media-queries');
+const cssnano = require('gulp-cssnano');
 
 // Images/SVGs
 const imagemin = require('gulp-imagemin');
@@ -102,8 +101,7 @@ const buildStyles = (done) => {
     }))
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer())
-    .pipe(groupMq())
-    .pipe(csso())
+    .pipe(cssnano())
     .pipe(dest(assets.css.dist))
     .pipe(browserSync.stream());
   done();
