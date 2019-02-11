@@ -28,6 +28,7 @@ GULPFILE
 const {gulp, src, dest, watch, series, parallel} = require('gulp');
 const browserSync = require('browser-sync');
 const path = require('path');
+const del = require('del');
 
 // Scripts
 const eslint = require('gulp-eslint');
@@ -91,6 +92,7 @@ const bsReload = [
 */
 
 const buildStyles = (done) => {
+  del.sync(assets.css.dist);
   return src(assets.css.src)
     .pipe(stylelint({
       failAfterError: false,
@@ -114,6 +116,7 @@ const buildStyles = (done) => {
 */
 
 const buildScripts = (done) => {
+  del.sync(assets.js.dist);
   return src([assets.js.libs, assets.js.polyfill, assets.js.vendor, assets.js.src])
     .pipe(eslint())
     .pipe(eslint.format())
@@ -136,6 +139,7 @@ const buildScripts = (done) => {
 */
 
 const optimizeIMG = (done) => {
+  del.sync(assets.img.dist);
   return src(assets.img.src)
     .pipe(imagemin([
       mozjpeg({quality: 89}),
@@ -153,6 +157,7 @@ const optimizeIMG = (done) => {
 */
 
 const optimizeSVG = (done) => {
+  del.sync(assets.svg.dist);
   return src(assets.svg.src)
     .pipe(imagemin())
     .pipe(dest(assets.svg.dist));
