@@ -21,6 +21,7 @@
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
     "browser-sync": "^2.24.5",
+    "del": "^3.0.0",
     "gulp": "4.0.0",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-babel": "^7.0.0",
@@ -33,7 +34,7 @@
     "gulp-uglify": "^3.0.0",
     "imagemin-mozjpeg": "^7.0.0",
     "imagemin-pngquant": "^6.0.1",
-    "stylelint": "^9.9.0",
+    "stylelint": "^9.10.1",
     "stylelint-config-standard": "^18.2.0"
   }
 }
