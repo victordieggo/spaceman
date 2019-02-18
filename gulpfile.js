@@ -106,6 +106,7 @@ const buildStyles = (done) => {
     .pipe(cssnano())
     .pipe(dest(assets.css.dist))
     .pipe(dest(assets.css.dist, {sourcemaps: '.'}))
+    .pipe(browserSync.stream());
   done();
 };
 
