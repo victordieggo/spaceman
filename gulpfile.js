@@ -93,7 +93,7 @@ const bsReload = [
 
 const buildStyles = (done) => {
   del.sync(assets.css.dist);
-  return src(assets.css.src)
+  return src(assets.css.src, {sourcemaps: true})
     .pipe(stylelint({
       failAfterError: false,
       reporters: [{
@@ -105,6 +105,7 @@ const buildStyles = (done) => {
     .pipe(autoprefixer())
     .pipe(cssnano())
     .pipe(dest(assets.css.dist))
+    .pipe(dest(assets.css.dist, {sourcemaps: '.'}))
     .pipe(browserSync.stream());
   done();
 };
@@ -117,7 +118,7 @@ const buildStyles = (done) => {
 
 const buildScripts = (done) => {
   del.sync(assets.js.dist);
-  return src([assets.js.libs, assets.js.polyfill, assets.js.vendor, assets.js.src])
+  return src([assets.js.libs, assets.js.polyfill, assets.js.vendor, assets.js.src], {sourcemaps: true})
     .pipe(eslint())
     .pipe(eslint.format())
     .pipe(babel({
@@ -127,7 +128,7 @@ const buildScripts = (done) => {
     .on('error', (e) => console.log(e))
     .pipe(concat('main.js'))
     .pipe(uglify())
-    .pipe(dest(assets.js.dist))
+    .pipe(dest(assets.js.dist, {sourcemaps: '.'}))
     .pipe(browserSync.stream());
   done();
 };
