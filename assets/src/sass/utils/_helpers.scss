@@ -140,14 +140,14 @@ Helpers
 -------------------------------------------------------
 */
 
-.label,
+.tag,
 .vcenter {
   @include vcenter;
 }
 
-.label {
+.tag {
   padding: 0.4em 0.6em;
-  border-radius: 0.2em;
+  border-radius: $formElements-borderRadius;
 }
 
 .hide-overflow {
