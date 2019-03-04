@@ -14,8 +14,6 @@ Buttons
 */
 
 .btn {
-  @include vcenter;
-  @include btnBackground(color(gray));
   color: color(dark);
   padding: 0.5em 1em;
   text-align: center;
@@ -24,12 +22,14 @@ Buttons
   border-style: solid;
   border-radius: $formElements-borderRadius;
   transition: background 0.3s, border 0.3s, color 0.3s;
+  @include btnBackground(color(gray));
+  @include vcenter;
 
   &:focus,
   &:hover {
-    @include btnBackground(color(gray-dark));
-    text-decoration: none;
     outline: none;
+    text-decoration: none;
+    @include btnBackground(color(gray-dark));
   }
 
   span {
@@ -37,11 +37,11 @@ Buttons
   }
 
   &-icon {
-    @include vcenter;
-    fill: color(dark);
-    height: 1em;
     width: 1em;
+    height: 1em;
+    fill: color(dark);
     transition: fill 0.3s;
+    @include vcenter;
 
     span + &,
     & + span {
@@ -74,8 +74,8 @@ Buttons
 */
 
 .btn-main {
-  @include btnBackground(color(main));
   color: color(light);
+  @include btnBackground(color(main));
 
   .btn-icon {
     fill: color(light);
@@ -87,8 +87,8 @@ Buttons
   }
 
   &--outline {
-    @include btnBackground(transparent, color(main));
     color: color(main);
+    @include btnBackground(transparent, color(main));
 
     .btn-icon {
       fill: color(main);
@@ -96,8 +96,8 @@ Buttons
 
     &:focus,
     &:hover {
-      @include btnBackground(color(main-light));
       color: color(light);
+      @include btnBackground(color(main-light));
 
       .btn-icon {
         fill: color(light);
