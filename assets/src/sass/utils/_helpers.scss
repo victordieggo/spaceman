@@ -239,9 +239,7 @@ Helpers
 }
 
 @each $sufix, $size in (small: $fontSize-small, large: $fontSize-large) {
-  .btn-#{$sufix},
-  .text-#{$sufix},
-  .input-#{$sufix} {
+  .font-#{$sufix} {
     font-size: $size;
   }
 }
