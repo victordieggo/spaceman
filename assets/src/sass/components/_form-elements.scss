@@ -18,13 +18,13 @@ Form Elements
 .input,
 .select,
 .input-icon {
-  @include vcenter;
   appearance: none;
   background-color: color(light);
   border: solid 1px color(gray);
   border-radius: $formElements-borderRadius;
   padding: 0.65em;
   transition: border 0.3s, box-shadow 0.3s;
+  @include vcenter;
 }
 
 .input:not(textarea),
@@ -85,7 +85,6 @@ Form Elements
     position: relative;
 
     &::after {
-      @include vcenter;
       top: 0;
       left: 0;
       right: 0;
@@ -95,6 +94,7 @@ Form Elements
       border-radius: 50%;
       border: 0.45em solid color(light);
       background-color: color(dark);
+      @include vcenter;
     }
   }
 }
