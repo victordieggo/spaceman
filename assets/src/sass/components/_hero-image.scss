@@ -12,6 +12,8 @@ Hero Image
 -------------------------------------------------------
 */
 
-.hero-image .row {
-  height: 65vh;
+.hero-image {
+  .container > .row {
+    height: 65vh;
+  }
 }
