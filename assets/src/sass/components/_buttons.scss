@@ -59,7 +59,7 @@ Buttons
   }
 
   &:disabled,
-  &-is-disabled {
+  &.is-disabled {
     z-index: -1;
     opacity: 0.6;
     position: relative;
@@ -73,7 +73,7 @@ Buttons
 -------------------------------------------------------
 */
 
-.btn-main {
+.btn--main {
   color: color(light);
   @include btnBackground(color(main));
 
@@ -85,23 +85,23 @@ Buttons
   &:hover {
     @include btnBackground(color(main-light));
   }
+}
 
-  &--outline {
-    color: color(main);
-    @include btnBackground(transparent, color(main));
+.btn--mainOutline {
+  color: color(main);
+  @include btnBackground(transparent, color(main));
+
+  .btn-icon {
+    fill: color(main);
+  }
+
+  &:focus,
+  &:hover {
+    color: color(light);
+    @include btnBackground(color(main-light));
 
     .btn-icon {
-      fill: color(main);
-    }
-
-    &:focus,
-    &:hover {
-      color: color(light);
-      @include btnBackground(color(main-light));
-
-      .btn-icon {
-        fill: color(light);
-      }
+      fill: color(light);
     }
   }
 }
