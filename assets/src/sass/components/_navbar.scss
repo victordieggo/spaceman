@@ -1,6 +1,6 @@
 /*
 =======================================================
-Navigation
+Navbar
 =======================================================
 1. Base Styles
 2. Main Navigation
@@ -15,7 +15,7 @@ Navigation
 -------------------------------------------------------
 */
 
-.main-nav {
+.navBar {
   text-align: right;
 
   .sub-menu {
@@ -24,7 +24,7 @@ Navigation
   }
 
   a,
-  .menu-item-is-active > .sub-menu {
+  .is-active > .sub-menu {
     display: block;
   }
 
@@ -56,13 +56,13 @@ Navigation
 */
 
 @include media-breakpoint(md) {
-  .menu-item-is-active > a {
-    color: color(gray-dark);
-  }
-
-  .main-nav {
+  .navBar {
     .menu-item {
       position: relative;
+
+      &.is-active > a {
+        color: color(gray-dark);
+      }
 
       &:hover {
         color: color(gray-dark);
@@ -129,7 +129,7 @@ Navigation
     overflow: hidden;
   }
 
-  .menu-item-is-active > a {
+  .is-active > a {
     background-color: color(main);
     border-bottom: 1px solid color(main-light);
     color: color(light);
@@ -139,7 +139,7 @@ Navigation
     }
   }
 
-  .main-nav {
+  .navBar {
     z-index: 1;
     position: relative;
 
@@ -164,7 +164,7 @@ Navigation
       }
     }
 
-    &-is-active .menu {
+    &.is-active .menu {
       transform: none;
       visibility: visible;
     }
@@ -184,7 +184,7 @@ Navigation
           padding: 0.5em;
         }
 
-        &:not(.menu-item-is-active) > a::after {
+        &:not(.is-active) > a::after {
           background-image: svg('icon-arrow-alt.svg');
         }
       }
@@ -206,8 +206,8 @@ Navigation
     }
   }
 
-  .nav-animate {
-    &:not(.main-nav-is-active) .menu {
+  .navBar.is-animating {
+    &:not(.is-active) .menu {
       transition: visibility 0s ease-in-out 0.3s, transform 0.3s ease-in-out;
     }
 
@@ -224,12 +224,12 @@ Navigation
 */
 
 @include media-breakpoint(md, max) {
-  .nav-btn {
+  .navBar-btn {
     width: 1.5em;
     height: 1.5em;
     background: svg('icon-menu.svg') no-repeat center;
 
-    .main-nav-is-active & {
+    .is-active & {
       background-image: svg('icon-close.svg');
     }
   }
