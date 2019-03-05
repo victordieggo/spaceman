@@ -65,23 +65,23 @@ Mixins
 */
 
 @mixin font-face($family, $directory, $file, $weight) {
-  $url: fonts($directory + '/' + $file);
+  $url: $directory + '/' + $file;
 
   @font-face {
-    font-family: #{$family};
-    src: url('#{$url}.eot');
+    font-family: $family;
+    src: fonts($url + '.eot');
     src:
-      url('#{$url}.eot') format('embedded-opentype'),
-      url('#{$url}.woff2') format('woff2'),
-      url('#{$url}.woff') format('woff'),
-      url('#{$url}.ttf') format('truetype'),
-      url('#{$url}.svg##{$file}') format('svg');
-    font-weight: #{$weight};
+      fonts($url + '.eot') format('embedded-opentype'),
+      fonts($url + '.woff2') format('woff2'),
+      fonts($url + '.woff') format('woff'),
+      fonts($url + '.ttf') format('truetype'),
+      fonts($url + '.svg##{$file}') format('svg');
+    font-weight: $weight;
   }
 
   .#{$file} {
-    font-family: #{$family};
-    font-weight: #{$weight};
+    font-family: $family;
+    font-weight: $weight;
   }
 }
 
