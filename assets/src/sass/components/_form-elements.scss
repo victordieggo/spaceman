@@ -52,8 +52,8 @@ Form Elements
 -------------------------------------------------------
 */
 
-.input-radio,
-.input-checkbox {
+.inputRadio,
+.inputCheckbox {
   input {
     width: 1px;
     height: 1px;
@@ -71,16 +71,16 @@ Form Elements
   background-position: center;
   background-repeat: no-repeat;
 
-  .input-radio & {
+  .inputRadio & {
     border-radius: 50%;
   }
 
-  .input-checkbox :checked + & {
+  .inputCheckbox :checked + & {
     background-image: svg('icon-check.svg');
     background-size: 60%;
   }
 
-  .input-radio :checked + & {
+  .inputRadio :checked + & {
     z-index: -1;
     position: relative;
 
