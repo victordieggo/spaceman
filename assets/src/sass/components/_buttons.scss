@@ -29,7 +29,7 @@ Buttons
   &:hover {
     outline: none;
     text-decoration: none;
-    @include btnBackground(color(gray-dark));
+    @include btnBackground(color(grayDark));
   }
 
   span {
@@ -83,7 +83,7 @@ Buttons
 
   &:focus,
   &:hover {
-    @include btnBackground(color(main-light));
+    @include btnBackground(color(mainLight));
   }
 }
 
@@ -98,7 +98,7 @@ Buttons
   &:focus,
   &:hover {
     color: color(light);
-    @include btnBackground(color(main-light));
+    @include btnBackground(color(mainLight));
 
     .btn-icon {
       fill: color(light);

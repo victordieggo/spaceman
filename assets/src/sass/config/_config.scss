@@ -56,11 +56,11 @@ $colors: (
   light:      #fff,
   dark:       #222,
   gray:       $colorBase-gray,
-  gray-dark:  darken($colorBase-gray, $colorVariation-ratio),
-  gray-light: lighten($colorBase-gray, $colorVariation-ratio),
+  grayDark:   darken($colorBase-gray, $colorVariation-ratio),
+  grayLight:  lighten($colorBase-gray, $colorVariation-ratio),
   main:       $colorBase-main,
-  main-dark:  darken($colorBase-main, $colorVariation-ratio),
-  main-light: lighten($colorBase-main, $colorVariation-ratio)
+  mainDark:   darken($colorBase-main, $colorVariation-ratio),
+  mainLight:  lighten($colorBase-main, $colorVariation-ratio)
 );
 
 /*

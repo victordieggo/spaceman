@@ -35,14 +35,14 @@ Form Elements
 .input:focus,
 .select:focus,
 :focus + .input-icon {
-  border-color: color(gray-dark);
-  box-shadow: 0 0 1px color(gray-dark);
+  border-color: color(grayDark);
+  box-shadow: 0 0 1px color(grayDark);
   outline: none;
 }
 
 @each $prefix in ':-ms', '::-webkit' {
   #{$prefix}-input-placeholder {
-    color: color(gray-dark);
+    color: color(grayDark);
   }
 }
 
@@ -121,18 +121,18 @@ Form Elements
 
 :disabled:not(.btn),
 .input[readonly] {
-  color: color(gray-dark);
-  background-color: color(gray-light);
+  color: color(grayDark);
+  background-color: color(grayLight);
 }
 
 :disabled {
   pointer-events: none;
 
   + .input-icon {
-    background-color: color(gray-light);
+    background-color: color(mainLight);
 
     + span {
-      color: color(gray-dark);
+      color: color(grayDark);
     }
   }
 }

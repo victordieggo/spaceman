@@ -61,11 +61,11 @@ Navbar
       position: relative;
 
       &.is-active > a {
-        color: color(gray-dark);
+        color: color(grayDark);
       }
 
       &:hover {
-        color: color(gray-dark);
+        color: color(grayDark);
       }
     }
 
@@ -75,7 +75,7 @@ Navbar
       border-radius: 0.4em;
       white-space: nowrap;
       background-color: color(light);
-      box-shadow: 0 0 2px color(gray-dark);
+      box-shadow: 0 0 2px color(grayDark);
 
       a {
         font-size: 90%;
@@ -131,7 +131,7 @@ Navbar
 
   .is-active > a {
     background-color: color(main);
-    border-bottom: 1px solid color(main-light);
+    border-bottom: 1px solid color(mainLight);
     color: color(light);
 
     &::after {
@@ -175,7 +175,7 @@ Navbar
       }
 
       &:not(:last-child) {
-        border-bottom: 1px solid color(gray-light);
+        border-bottom: 1px solid color(grayLight);
       }
 
       &-has-children {
