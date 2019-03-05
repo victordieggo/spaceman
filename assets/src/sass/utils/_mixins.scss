@@ -79,7 +79,7 @@ Mixins
     font-weight: $weight;
   }
 
-  .#{$file} {
+  .u-#{camelize('font-' + $file)} {
     font-family: $family;
     font-weight: $weight;
   }
@@ -97,14 +97,10 @@ Mixins
   @while $i < 35 {
     $result: $i/10;
     $result: #{$result}em;
-    $class: #{$name}-#{$i};
+    $class: #{$name}#{$i};
 
     @if $zero == true {
       $result: #{$result} 0;
-    }
-
-    @if $i < 10 {
-      $class: #{$name}-0#{$i};
     }
 
     .#{$class} {

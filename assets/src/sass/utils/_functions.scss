@@ -6,6 +6,7 @@ Functions
 2. Get colors
 3. Generate grid column
 4. Get assets URL
+5. String Helpers
 =======================================================
 */
 
@@ -63,4 +64,59 @@ Functions
 
 @function svg($file) {
   @return assetsURL('svg', $file);
+}
+
+/*
+-------------------------------------------------------
+5. String Helpers
+-------------------------------------------------------
+*/
+
+@function contain($list, $value) {
+  @return not not index($list, $value);
+}
+
+@function capitalize($string) {
+  @return to-upper-case(str-slice($string, 1, 1)) + str-slice($string, 2);
+}
+
+@function str-ucwords($string) {
+  $progress: $string;
+  $result: '';
+
+  $running: true;
+
+  @while $running {
+    $index: str-index($progress, ' ');
+    @if $index {
+      $result: $result + capitalize(str-slice($progress, 1, $index));
+      $progress: str-slice($progress, ($index + 1));
+    }
+    @else {
+      $running: false;
+    }
+  }
+
+  @return capitalize($result) + capitalize($progress);
+}
+
+@function camelize($string) {
+  $progress: $string;
+  $result: '';
+  $exclude: ' ', '-', '–', '—', '_', ',', ';', ':', '.';
+
+  @while str-length($progress) > 0 {
+    $char: str-slice($progress, 1, 1);
+
+    @if contain($exclude, $char) {
+      $progress: capitalize(str-slice($progress, 2, 2)) + str-slice($progress, 3);
+    }
+
+    @else {
+      $result: $result + $char;
+      $progress: str-slice($progress, 2);
+    }
+  }
+
+  @return $result;
 }
