@@ -16,35 +16,36 @@ Navbar
 */
 
 .navBar {
-  text-align: right;
+  display: flex;
+  justify-content: flex-end;
 
-  .sub-menu {
+  :not(.is-active) > .navBar-subMenu {
     display: none;
-    text-align: left;
   }
 
-  a,
-  .is-active > .sub-menu {
-    display: block;
-  }
+  &-menuItem {
+    &-link {
+      display: block;
 
-  a:hover {
-    text-decoration: none;
-  }
+      &:hover {
+        text-decoration: none;
+      }
+    }
 
-  .menu-item-has-children > a {
-    padding-right: 1.5em;
-    position: relative;
+    &--hasChildren > &-link {
+      padding-right: 1.5em;
+      position: relative;
 
-    &::after {
-      top: 0;
-      right: 0;
-      bottom: 0;
-      content: '';
-      padding: 0.35em;
-      position: absolute;
-      background: svg('icon-arrow.svg') no-repeat right;
-      background-size: 100% 100%;
+      &::after {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        content: '';
+        padding: 0.35em;
+        position: absolute;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
     }
   }
 }
@@ -57,32 +58,36 @@ Navbar
 
 @include media-breakpoint(md) {
   .navBar {
-    .menu-item {
-      position: relative;
+    &-menu {
+      display: flex;
+      flex: 0 0 100%;
+      justify-content: space-between;
 
-      &.is-active > a {
-        color: color(grayDark);
-      }
+      &Item {
+        position: relative;
 
-      &:hover {
-        color: color(grayDark);
+        &:hover,
+        &.is-active > &-link {
+          color: color(grayDark);
+        }
+
+        &-link::after {
+          background-image: svg('icon-arrow.svg');
+        }
       }
     }
 
-    .sub-menu {
+    &-subMenu {
+      z-index: 1;
       color: color(dark);
       position: absolute;
-      border-radius: 0.4em;
       white-space: nowrap;
+      border-radius: 0.4em;
+      top: calc(100% + 0.5em);
       background-color: color(light);
       box-shadow: 0 0 2px color(grayDark);
 
-      a {
-        font-size: 90%;
-        padding: 0.7em;
-      }
-
-      .menu-item {
+      .navBar-menuItem {
         &:not(:last-child)::after {
           content: '';
           display: block;
@@ -90,7 +95,12 @@ Navbar
           border-bottom: 1px solid color(gray);
         }
 
-        &-has-children > a {
+        &-link {
+          font-size: 90%;
+          padding: 0.7em;
+        }
+
+        &--hasChildren > .navBar-menuItem-link {
           padding-right: 2em;
 
           &::after {
@@ -101,18 +111,9 @@ Navbar
         }
       }
 
-      .sub-menu {
+      & & {
         top: 0;
         left: 100%;
-      }
-    }
-
-    .menu > .menu-item {
-      display: inline-block;
-      margin-left: 1.5em;
-
-      > .sub-menu {
-        margin-top: 0.5em;
       }
     }
   }
@@ -125,95 +126,90 @@ Navbar
 */
 
 @include media-breakpoint(md, max) {
-  .nav-hide-overflow {
-    overflow: hidden;
-  }
-
-  .is-active > a {
-    background-color: color(main);
-    border-bottom: 1px solid color(mainLight);
-    color: color(light);
-
-    &::after {
-      transform: rotate(180deg);
-    }
-  }
-
   .navBar {
     z-index: 1;
     position: relative;
 
-    .menu {
+    &-menu {
       top: 0;
       left: 0;
       bottom: 0;
       width: 20em;
       position: fixed;
-      text-align: left;
       overflow-y: auto;
       overflow-x: hidden;
       visibility: hidden;
       color: color(dark);
+      will-change: transform;
       transform: translateX(-100%);
       transform-style: preserve-3d;
       background-color: color(light);
-      will-change: transform;
 
-      @include media-breakpoint(xs, max) {
-        width: 75%;
-      }
-    }
-
-    &.is-active .menu {
-      transform: none;
-      visibility: visible;
-    }
-
-    .menu-item {
-      a {
-        padding: 1.7em;
+      .is-active & {
+        transform: none;
+        visibility: visible;
       }
 
-      &:not(:last-child) {
-        border-bottom: 1px solid color(grayLight);
+      .is-animating & {
+        transition: visibility 0s ease-in-out, transform 0.3s ease-in-out;
       }
 
-      &-has-children {
-        > a::after {
+      .is-animating:not(.is-active) & {
+        transition: visibility 0s ease-in-out 0.3s, transform 0.3s ease-in-out;
+      }
+
+      &Item {
+        &:not(:last-child) {
+          border-bottom: 1px solid color(grayLight);
+        }
+
+        &-link {
+          padding: 1.7em;
+        }
+
+        &--hasChildren > &-link::after {
           right: 1.5em;
           padding: 0.5em;
+          background-image: svg('icon-arrow-alt.svg');
         }
 
-        &:not(.is-active) > a::after {
-          background-image: svg('icon-arrow-alt.svg');
+        .is-active > &-link {
+          background-color: color(main);
+          border-bottom: 1px solid color(mainLight);
+          color: color(light);
+
+          &::after {
+            transform: rotate(180deg);
+            background-image: svg('icon-arrow.svg');
+          }
         }
       }
     }
-  }
 
-  .screen-cover {
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    position: fixed;
-    animation: fadeIn 0.35s;
-    background-color: rgba(color(dark), 0.7);
+    &-disableScroll {
+      overflow: hidden;
+    }
 
-    &-fade-out {
-      animation: fadeOut 0.35s;
+    &-overlay {
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+      position: fixed;
+      animation: fadeIn 0.35s;
+      background-color: rgba(color(dark), 0.7);
+
+      .is-animating:not(.is-active) & {
+        animation: fadeOut 0.35s;
+      }
     }
   }
+}
 
-  .navBar.is-animating {
-    &:not(.is-active) .menu {
-      transition: visibility 0s ease-in-out 0.3s, transform 0.3s ease-in-out;
-    }
-
-    .menu {
-      transition: visibility 0s ease-in-out, transform 0.3s ease-in-out;
-    }
+@include media-breakpoint(sm, max) {
+  .navBar-menu {
+    width: 75%;
   }
 }
 
