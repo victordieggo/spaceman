@@ -62,6 +62,10 @@ Form Elements
     position: absolute;
     clip: rect(0, 0, 0, 0);
   }
+
+  &.is-disabled {
+    cursor: default;
+  }
 }
 
 .input-icon {
@@ -129,7 +133,7 @@ Form Elements
   pointer-events: none;
 
   + .input-icon {
-    background-color: color(mainLight);
+    background-color: color(grayLight);
 
     + span {
       color: color(grayDark);
