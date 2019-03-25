@@ -7,7 +7,8 @@ Mixins
 3. Grid
 4. Font-Face
 5. Spacing
-6. Utilities
+6. Offset Positioning
+7. Utilities
 =======================================================
 */
 
@@ -117,7 +118,37 @@ Mixins
 
 /*
 -------------------------------------------------------
-6. Utilities
+6. Offset Positioning
+-------------------------------------------------------
+*/
+
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin absolute($args...) {
+  @include position(absolute, $args...);
+}
+
+@mixin relative($args...) {
+  @include position(relative, $args...);
+}
+
+@mixin fixed($args...) {
+  @include position(fixed, $args...);
+}
+
+@mixin static($args...) {
+  @include position(static, $args...);
+}
+
+/*
+-------------------------------------------------------
+7. Utilities
 -------------------------------------------------------
 */
 
@@ -132,15 +163,11 @@ Mixins
 }
 
 @mixin hideElement {
-  top: -9999px;
-  left: -9999px;
-  position: absolute;
   visibility: hidden;
+  @include absolute($top: -9999px, $left: -9999px);
 }
 
 @mixin showElement {
-  top: 0;
-  left: 0;
-  position: static;
   visibility: inherit;
+  @include static($top: 0, $left: 0);
 }

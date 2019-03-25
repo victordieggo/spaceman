@@ -19,7 +19,7 @@ Navbar
   display: flex;
   justify-content: flex-end;
 
-  :not(.is-active) > .navBar-subMenu {
+  :not(.is-active) > &-subMenu {
     display: none;
   }
 
@@ -37,14 +37,11 @@ Navbar
       position: relative;
 
       &::after {
-        top: 0;
-        right: 0;
-        bottom: 0;
         content: '';
         padding: 0.35em;
-        position: absolute;
         background-position: center;
         background-repeat: no-repeat;
+        @include absolute(0, 0, 0);
       }
     }
   }
@@ -80,12 +77,11 @@ Navbar
     &-subMenu {
       z-index: 1;
       color: color(dark);
-      position: absolute;
       white-space: nowrap;
       border-radius: 0.4em;
-      top: calc(100% + 0.5em);
       background-color: color(light);
       box-shadow: 0 0 2px color(grayDark);
+      @include absolute(calc(100% + 0.5em));
 
       .navBar-menuItem {
         &:not(:last-child)::after {
@@ -131,11 +127,7 @@ Navbar
     position: relative;
 
     &-menu {
-      top: 0;
-      left: 0;
-      bottom: 0;
       width: 20em;
-      position: fixed;
       overflow-y: auto;
       overflow-x: hidden;
       visibility: hidden;
@@ -143,6 +135,7 @@ Navbar
       will-change: transform;
       transform: translateX(-100%);
       transform-style: preserve-3d;
+      @include fixed(0, null, 0, 0);
       background-color: color(light);
 
       .is-active & {
@@ -191,14 +184,10 @@ Navbar
     }
 
     &-overlay {
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
       z-index: -1;
-      position: fixed;
       animation: fadeIn 0.35s;
       background-color: rgba(color(dark), 0.7);
+      @include fixed(0, 0, 0, 0);
 
       .is-animating:not(.is-active) & {
         animation: fadeOut 0.35s;
