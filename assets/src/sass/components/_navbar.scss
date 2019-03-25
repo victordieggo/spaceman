@@ -210,9 +210,8 @@ Navbar
 
 @include media-breakpoint(md, max) {
   .navBar-btn {
-    width: 1.5em;
-    height: 1.5em;
     background: svg('icon-menu.svg') no-repeat center;
+    @include size(1.5em);
 
     .is-active & {
       background-image: svg('icon-close.svg');

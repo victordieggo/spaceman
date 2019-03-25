@@ -55,10 +55,9 @@ Form Elements
 .inputRadio,
 .inputCheckbox {
   input {
-    width: 1px;
-    height: 1px;
     margin: -1px;
     overflow: hidden;
+    @include size(1px);
     position: absolute;
     clip: rect(0, 0, 0, 0);
   }
@@ -69,9 +68,8 @@ Form Elements
 }
 
 .input-icon {
-  width: 1.5em;
-  height: 1.5em;
   margin-top: -0.1em;
+  @include size(1.5em);
   background-position: center;
   background-repeat: no-repeat;
 

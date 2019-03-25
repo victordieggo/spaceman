@@ -157,6 +157,11 @@ Mixins
   vertical-align: middle;
 }
 
+@mixin size($width: null, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
 @mixin btnBackground($backgroundColor, $borderColor: $backgroundColor) {
   background-color: $backgroundColor;
   border-color: $borderColor;
