@@ -86,7 +86,7 @@ Helpers
 
 @for $i from 6 through 1 {
   h#{$i},
-  .u-title#{$i} {
+  .u-title-#{$i} {
     font-size: $fontSize-headings;
   }
 
@@ -100,7 +100,7 @@ Helpers
 */
 
 @for $i from 4 through 1 {
-  .u-display#{$i} {
+  .u-display-#{$i} {
     font-size: $fontSize-display;
   }
 
@@ -170,9 +170,9 @@ Helpers
 -------------------------------------------------------
 */
 
-@include spacing(u-pad, padding);
-@include spacing(u-padTop, padding-top);
-@include spacing(u-padBottom, padding-bottom);
+@include spacing('u-pad-', 'padding');
+@include spacing('u-padTop-', 'padding-top');
+@include spacing('u-padBottom-', 'padding-bottom');
 
 /*
 -------------------------------------------------------
@@ -218,9 +218,9 @@ Helpers
 -------------------------------------------------------
 */
 
-@include spacing(u-spacer, margin, true);
-@include spacing(u-spacerTop, margin-top);
-@include spacing(u-spacerBottom, margin-bottom);
+@include spacing('u-spacer-', 'margin', true);
+@include spacing('u-spacerTop-', 'margin-top');
+@include spacing('u-spacerBottom-', 'margin-bottom');
 
 /*
 -------------------------------------------------------
@@ -261,7 +261,7 @@ Helpers
 */
 
 @for $i from 1 through 6 {
-  .u-zindex#{$i} {
+  .u-zIndex-#{$i} {
     z-index: $i;
   }
 }

@@ -103,6 +103,10 @@ Mixins
       $result: #{$result} 0;
     }
 
+    @if $i < 10 {
+      $class: #{$name}0#{$i};
+    }
+
     .#{$class} {
       #{$property}: #{$result};
     }
