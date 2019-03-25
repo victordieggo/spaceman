@@ -162,7 +162,7 @@ Mixins
   height: $height;
 }
 
-@mixin btnBackground($backgroundColor, $borderColor: $backgroundColor) {
+@mixin btnColor($backgroundColor, $borderColor: $backgroundColor) {
   background-color: $backgroundColor;
   border-color: $borderColor;
 }

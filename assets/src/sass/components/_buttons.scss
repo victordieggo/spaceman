@@ -22,14 +22,14 @@ Buttons
   border-style: solid;
   border-radius: $formElements-borderRadius;
   transition: background 0.3s, border 0.3s, color 0.3s;
-  @include btnBackground(color(gray));
+  @include btnColor(color(gray));
   @include vcenter;
 
   &:focus,
   &:hover {
     outline: none;
     text-decoration: none;
-    @include btnBackground(color(grayDark));
+    @include btnColor(color(grayDark));
   }
 
   span {
@@ -74,7 +74,7 @@ Buttons
 
 .btn--main {
   color: color(light);
-  @include btnBackground(color(main));
+  @include btnColor(color(main));
 
   .btn-icon {
     fill: color(light);
@@ -82,13 +82,13 @@ Buttons
 
   &:focus,
   &:hover {
-    @include btnBackground(color(mainLight));
+    @include btnColor(color(mainLight));
   }
 }
 
 .btn--mainOutline {
   color: color(main);
-  @include btnBackground(transparent, color(main));
+  @include btnColor(transparent, color(main));
 
   .btn-icon {
     fill: color(main);
@@ -97,7 +97,7 @@ Buttons
   &:focus,
   &:hover {
     color: color(light);
-    @include btnBackground(color(mainLight));
+    @include btnColor(color(mainLight));
 
     .btn-icon {
       fill: color(light);
