@@ -4,7 +4,7 @@ Grid
 =======================================================
 1. Row
 2. Columns
-3. Columns Alignment
+3. Responsive Columns
 =======================================================
 */
 
@@ -44,21 +44,9 @@ Grid
 -------------------------------------------------------
 */
 
-@each $breakpoint in $breakpoints {
-  $breakpoint: nth($breakpoint, 1);
-
-  @include media-breakpoint(if($breakpoint == xs, -1, $breakpoint)) {
-    @include grid('col-' + $breakpoint);
-  }
-}
-
-/*
--------------------------------------------------------
-3. Columns Alignment
--------------------------------------------------------
-*/
-
 .col {
+  flex: 1 1 0;
+
   &-vcenter {
     align-self: center;
   }
@@ -81,5 +69,19 @@ Grid
 
   &-mr-auto {
     margin-right: auto;
+  }
+}
+
+/*
+-------------------------------------------------------
+3. Responsive Columns
+-------------------------------------------------------
+*/
+
+@each $breakpoint in $breakpoints {
+  $breakpoint: nth($breakpoint, 1);
+
+  @include media-breakpoint(if($breakpoint == xs, -1, $breakpoint)) {
+    @include grid('col-' + $breakpoint);
   }
 }
