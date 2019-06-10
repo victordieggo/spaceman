@@ -22,14 +22,14 @@ Buttons
   border-style: solid;
   border-radius: $formElements-borderRadius;
   transition: background 0.3s, border 0.3s, color 0.3s;
-  @include btnBackground(color(gray));
+  @include btnColor(color(gray));
   @include vcenter;
 
   &:focus,
   &:hover {
     outline: none;
     text-decoration: none;
-    @include btnBackground(color(gray-dark));
+    @include btnColor(color(grayDark));
   }
 
   span {
@@ -37,11 +37,10 @@ Buttons
   }
 
   &-icon {
-    width: 1em;
-    height: 1em;
     fill: color(dark);
-    transition: fill 0.3s;
     @include vcenter;
+    @include size(1em);
+    transition: fill 0.3s;
 
     span + &,
     & + span {
@@ -59,7 +58,7 @@ Buttons
   }
 
   &:disabled,
-  &-is-disabled {
+  &.is-disabled {
     z-index: -1;
     opacity: 0.6;
     position: relative;
@@ -73,9 +72,9 @@ Buttons
 -------------------------------------------------------
 */
 
-.btn-main {
+.btn--main {
   color: color(light);
-  @include btnBackground(color(main));
+  @include btnColor(color(main));
 
   .btn-icon {
     fill: color(light);
@@ -83,25 +82,25 @@ Buttons
 
   &:focus,
   &:hover {
-    @include btnBackground(color(main-light));
+    @include btnColor(color(mainLight));
+  }
+}
+
+.btn--mainOutline {
+  color: color(main);
+  @include btnColor(transparent, color(main));
+
+  .btn-icon {
+    fill: color(main);
   }
 
-  &--outline {
-    color: color(main);
-    @include btnBackground(transparent, color(main));
+  &:focus,
+  &:hover {
+    color: color(light);
+    @include btnColor(color(mainLight));
 
     .btn-icon {
-      fill: color(main);
-    }
-
-    &:focus,
-    &:hover {
-      color: color(light);
-      @include btnBackground(color(main-light));
-
-      .btn-icon {
-        fill: color(light);
-      }
+      fill: color(light);
     }
   }
 }

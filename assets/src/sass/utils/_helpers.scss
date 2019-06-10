@@ -27,12 +27,14 @@ Helpers
 */
 
 @each $class, $color in $colors {
-  .bg-#{$class} {
+  $class: '.u-bg' + str-ucwords(#{$class});
+
+  #{$class} {
     background-color: $color;
   }
 }
 
-.bg-image {
+.u-bgImage {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -54,9 +56,9 @@ Helpers
 -------------------------------------------------------
 */
 
-@each $display in 'block', 'inline', 'inline-block', 'table', 'table-cell', 'flex' {
-  .#{$display} {
-    display: #{$display};
+@each $property in 'block', 'inline', 'inline-block', 'table', 'table-cell', 'flex' {
+  .u-#{camelize($property)} {
+    display: #{$property};
   }
 }
 
@@ -67,12 +69,12 @@ Helpers
 */
 
 @each $float in 'left', 'right', 'none' {
-  .f#{$float} {
+  .u-f#{$float} {
     float: #{$float};
   }
 }
 
-.clear {
+.u-clear {
   clear: both;
 }
 
@@ -84,7 +86,7 @@ Helpers
 
 @for $i from 6 through 1 {
   h#{$i},
-  .title-#{$i} {
+  .u-title-#{$i} {
     font-size: $fontSize-headings;
   }
 
@@ -98,7 +100,7 @@ Helpers
 */
 
 @for $i from 4 through 1 {
-  .display-#{$i} {
+  .u-display-#{$i} {
     font-size: $fontSize-display;
   }
 
@@ -111,12 +113,12 @@ Helpers
 -------------------------------------------------------
 */
 
-.hide,
-.hide-xs,
-.hide-sm,
-.hide-md,
-.hide-lg,
-.hide-xl {
+.u-hide,
+.u-xs-hide,
+.u-sm-hide,
+.u-md-hide,
+.u-lg-hide,
+.u-xl-hide {
   @include hideElement;
 }
 
@@ -124,11 +126,11 @@ Helpers
   $breakpoint: nth($breakpoint, 1);
 
   @include media-breakpoint($breakpoint) {
-    .hide-#{$breakpoint} {
+    .u-#{$breakpoint}-hide {
       @include showElement;
     }
 
-    .show-#{$breakpoint} {
+    .u-#{$breakpoint}-show {
       @include hideElement;
     }
   }
@@ -140,25 +142,25 @@ Helpers
 -------------------------------------------------------
 */
 
-.tag,
-.vcenter {
+.u-tag,
+.u-vcenter {
   @include vcenter;
 }
 
-.tag {
+.u-tag {
   padding: 0.4em 0.6em;
   border-radius: $formElements-borderRadius;
 }
 
-.hide-overflow {
+.u-hideOverflow {
   overflow: hidden;
 }
 
-.smooth-transition {
+.u-smoothTransition {
   transition: all 0.3s;
 }
 
-.no-underline:hover {
+.u-noUnderline:hover {
   text-decoration: none;
 }
 
@@ -168,9 +170,9 @@ Helpers
 -------------------------------------------------------
 */
 
-@include spacing(pad, padding);
-@include spacing(pad-top, padding-top);
-@include spacing(pad-bottom, padding-bottom);
+@include spacing('u-pad-', 'padding');
+@include spacing('u-padTop-', 'padding-top');
+@include spacing('u-padBottom-', 'padding-bottom');
 
 /*
 -------------------------------------------------------
@@ -179,7 +181,7 @@ Helpers
 */
 
 @each $position in 'relative', 'absolute', 'fixed' {
-  .#{$position} {
+  .u-#{$position} {
     position: #{$position};
   }
 }
@@ -190,23 +192,23 @@ Helpers
 -------------------------------------------------------
 */
 
-.auto-size,
-.auto-width {
+.u-autoSize,
+.u-autoWidth {
   width: auto;
 }
 
-.auto-size,
-.auto-height {
+.u-autoSize,
+.u-autoHeight {
   height: auto;
 }
 
-.full-size,
-.full-width {
+.u-fullSize,
+.u-fullWidth {
   width: 100%;
 }
 
-.full-size,
-.full-height {
+.u-fullSize,
+.u-fullHeight {
   height: 100%;
 }
 
@@ -216,9 +218,9 @@ Helpers
 -------------------------------------------------------
 */
 
-@include spacing(spacer, margin, true);
-@include spacing(spacer-top, margin-top);
-@include spacing(spacer-bottom, margin-bottom);
+@include spacing('u-spacer-', 'margin', true);
+@include spacing('u-spacerTop-', 'margin-top');
+@include spacing('u-spacerBottom-', 'margin-bottom');
 
 /*
 -------------------------------------------------------
@@ -226,29 +228,29 @@ Helpers
 -------------------------------------------------------
 */
 
-@each $align in 'center', 'left', 'right' {
-  .align-#{$align} {
-    text-align: #{$align};
-  }
-}
-
 @each $class, $color in $colors {
-  .color-#{$class} {
+  .u-#{camelize('color-' + $class)} {
     color: $color;
   }
 }
 
+@each $align in 'center', 'left', 'right' {
+  .u-#{camelize('text-' + $align)} {
+    text-align: #{$align};
+  }
+}
+
 @each $sufix, $size in (small: $fontSize-small, large: $fontSize-large) {
-  .font-#{$sufix} {
+  .u-#{camelize('text-' + $sufix)} {
     font-size: $size;
   }
 }
 
-.text-uppercase {
+.u-textUppercase {
   text-transform: uppercase;
 }
 
-.text-block {
+.u-textBlock {
   line-height: 160%;
 }
 
@@ -259,8 +261,8 @@ Helpers
 */
 
 @for $i from 1 through 6 {
-  .z-index-#{$i} {
-    z-index: #{$i};
+  .u-zIndex-#{$i} {
+    z-index: $i;
   }
 }
 

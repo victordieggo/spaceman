@@ -35,14 +35,14 @@ Form Elements
 .input:focus,
 .select:focus,
 :focus + .input-icon {
-  border-color: color(gray-dark);
-  box-shadow: 0 0 1px color(gray-dark);
+  border-color: color(grayDark);
+  box-shadow: 0 0 1px color(grayDark);
   outline: none;
 }
 
 @each $prefix in ':-ms', '::-webkit' {
   #{$prefix}-input-placeholder {
-    color: color(gray-dark);
+    color: color(grayDark);
   }
 }
 
@@ -52,49 +52,47 @@ Form Elements
 -------------------------------------------------------
 */
 
-.input-radio,
-.input-checkbox {
+.inputRadio,
+.inputCheckbox {
   input {
-    width: 1px;
-    height: 1px;
     margin: -1px;
     overflow: hidden;
+    @include size(1px);
     position: absolute;
     clip: rect(0, 0, 0, 0);
+  }
+
+  &.is-disabled {
+    cursor: default;
   }
 }
 
 .input-icon {
-  width: 1.5em;
-  height: 1.5em;
   margin-top: -0.1em;
+  @include size(1.5em);
   background-position: center;
   background-repeat: no-repeat;
 
-  .input-radio & {
+  .inputRadio & {
     border-radius: 50%;
   }
 
-  .input-checkbox :checked + & {
+  .inputCheckbox :checked + & {
     background-image: svg('icon-check.svg');
     background-size: 60%;
   }
 
-  .input-radio :checked + & {
+  .inputRadio :checked + & {
     z-index: -1;
     position: relative;
 
     &::after {
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
       content: '';
-      position: absolute;
       border-radius: 50%;
       border: 0.45em solid color(light);
       background-color: color(dark);
       @include vcenter;
+      @include absolute(0, 0, 0, 0);
     }
   }
 }
@@ -121,18 +119,18 @@ Form Elements
 
 :disabled:not(.btn),
 .input[readonly] {
-  color: color(gray-dark);
-  background-color: color(gray-light);
+  color: color(grayDark);
+  background-color: color(grayLight);
 }
 
 :disabled {
   pointer-events: none;
 
   + .input-icon {
-    background-color: color(gray-light);
+    background-color: color(grayLight);
 
     + span {
-      color: color(gray-dark);
+      color: color(grayDark);
     }
   }
 }

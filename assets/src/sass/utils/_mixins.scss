@@ -7,7 +7,8 @@ Mixins
 3. Grid
 4. Font-Face
 5. Spacing
-6. Utilities
+6. Offset Positioning
+7. Utilities
 =======================================================
 */
 
@@ -79,7 +80,7 @@ Mixins
     font-weight: $weight;
   }
 
-  .#{$file} {
+  .u-#{camelize('font-' + $file)} {
     font-family: $family;
     font-weight: $weight;
   }
@@ -97,14 +98,14 @@ Mixins
   @while $i < 35 {
     $result: $i/10;
     $result: #{$result}em;
-    $class: #{$name}-#{$i};
+    $class: #{$name}#{$i};
 
     @if $zero == true {
       $result: #{$result} 0;
     }
 
     @if $i < 10 {
-      $class: #{$name}-0#{$i};
+      $class: #{$name}0#{$i};
     }
 
     .#{$class} {
@@ -117,7 +118,37 @@ Mixins
 
 /*
 -------------------------------------------------------
-6. Utilities
+6. Offset Positioning
+-------------------------------------------------------
+*/
+
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin absolute($args...) {
+  @include position(absolute, $args...);
+}
+
+@mixin relative($args...) {
+  @include position(relative, $args...);
+}
+
+@mixin fixed($args...) {
+  @include position(fixed, $args...);
+}
+
+@mixin static($args...) {
+  @include position(static, $args...);
+}
+
+/*
+-------------------------------------------------------
+7. Utilities
 -------------------------------------------------------
 */
 
@@ -126,21 +157,22 @@ Mixins
   vertical-align: middle;
 }
 
-@mixin btnBackground($backgroundColor, $borderColor: $backgroundColor) {
+@mixin size($width: null, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin btnColor($backgroundColor, $borderColor: $backgroundColor) {
   background-color: $backgroundColor;
   border-color: $borderColor;
 }
 
 @mixin hideElement {
-  top: -9999px;
-  left: -9999px;
-  position: absolute;
   visibility: hidden;
+  @include absolute($top: -9999px, $left: -9999px);
 }
 
 @mixin showElement {
-  top: 0;
-  left: 0;
-  position: static;
   visibility: inherit;
+  @include static($top: 0, $left: 0);
 }

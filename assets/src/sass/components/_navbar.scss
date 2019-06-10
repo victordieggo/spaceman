@@ -1,0 +1,220 @@
+/*
+=======================================================
+Navbar
+=======================================================
+1. Base Styles
+2. Main Navigation
+3. Mobile Navigation
+4. Mobile Navigation Button
+=======================================================
+*/
+
+/*
+-------------------------------------------------------
+1. Base Styles
+-------------------------------------------------------
+*/
+
+.navBar {
+  display: flex;
+  justify-content: flex-end;
+
+  :not(.is-active) > &-subMenu {
+    display: none;
+  }
+
+  &-menuItem {
+    &-link {
+      display: block;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    &--hasChildren > &-link {
+      padding-right: 1.5em;
+      position: relative;
+
+      &::after {
+        content: '';
+        padding: 0.35em;
+        background-position: center;
+        background-repeat: no-repeat;
+        @include absolute(0, 0, 0);
+      }
+    }
+  }
+}
+
+/*
+-------------------------------------------------------
+2. Main Navigation
+-------------------------------------------------------
+*/
+
+@include media-breakpoint(md) {
+  .navBar {
+    &-menu {
+      display: flex;
+      flex: 0 0 100%;
+      justify-content: space-between;
+
+      &Item {
+        position: relative;
+
+        &:hover,
+        &.is-active > &-link {
+          color: color(grayDark);
+        }
+
+        &-link::after {
+          background-image: svg('icon-arrow.svg');
+        }
+      }
+    }
+
+    &-subMenu {
+      z-index: 1;
+      color: color(dark);
+      white-space: nowrap;
+      border-radius: 0.4em;
+      background-color: color(light);
+      box-shadow: 0 0 2px color(grayDark);
+      @include absolute(calc(100% + 0.5em));
+
+      .navBar-menuItem {
+        &:not(:last-child)::after {
+          content: '';
+          display: block;
+          margin: 0 0.65em;
+          border-bottom: 1px solid color(gray);
+        }
+
+        &-link {
+          font-size: 90%;
+          padding: 0.7em;
+        }
+
+        &--hasChildren > .navBar-menuItem-link {
+          padding-right: 2em;
+
+          &::after {
+            right: 0.7em;
+            transform: rotate(-90deg);
+            background-image: svg('icon-arrow-alt.svg');
+          }
+        }
+      }
+
+      & & {
+        top: 0;
+        left: 100%;
+      }
+    }
+  }
+}
+
+/*
+-------------------------------------------------------
+3. Mobile Navigation
+-------------------------------------------------------
+*/
+
+@include media-breakpoint(md, max) {
+  .navBar {
+    z-index: 1;
+    position: relative;
+
+    &-menu {
+      width: 20em;
+      overflow-y: auto;
+      overflow-x: hidden;
+      visibility: hidden;
+      color: color(dark);
+      will-change: transform;
+      transform: translateX(-100%);
+      transform-style: preserve-3d;
+      @include fixed(0, null, 0, 0);
+      background-color: color(light);
+
+      .is-active & {
+        transform: none;
+        visibility: visible;
+      }
+
+      .is-animating & {
+        transition: visibility 0s ease-in-out, transform 0.3s ease-in-out;
+      }
+
+      .is-animating:not(.is-active) & {
+        transition: visibility 0s ease-in-out 0.3s, transform 0.3s ease-in-out;
+      }
+
+      &Item {
+        &:not(:last-child) {
+          border-bottom: 1px solid color(grayLight);
+        }
+
+        &-link {
+          padding: 1.7em;
+        }
+
+        &--hasChildren > &-link::after {
+          right: 1.5em;
+          padding: 0.5em;
+          background-image: svg('icon-arrow-alt.svg');
+        }
+
+        .is-active > &-link {
+          background-color: color(main);
+          border-bottom: 1px solid color(mainLight);
+          color: color(light);
+
+          &::after {
+            transform: rotate(180deg);
+            background-image: svg('icon-arrow.svg');
+          }
+        }
+      }
+    }
+
+    &-disableScroll {
+      overflow: hidden;
+    }
+
+    &-overlay {
+      z-index: -1;
+      animation: fadeIn 0.35s;
+      background-color: rgba(color(dark), 0.7);
+      @include fixed(0, 0, 0, 0);
+
+      .is-animating:not(.is-active) & {
+        animation: fadeOut 0.35s;
+      }
+    }
+  }
+}
+
+@include media-breakpoint(sm, max) {
+  .navBar-menu {
+    width: 75%;
+  }
+}
+
+/*
+-------------------------------------------------------
+4. Mobile Navigation Button
+-------------------------------------------------------
+*/
+
+@include media-breakpoint(md, max) {
+  .navBar-btn {
+    background: svg('icon-menu.svg') no-repeat center;
+    @include size(1.5em);
+
+    .is-active & {
+      background-image: svg('icon-close.svg');
+    }
+  }
+}
