@@ -144,7 +144,7 @@ const optimizeIMG = (done) => {
   return src(assets.img.src)
     .pipe(imagemin([
       mozjpeg({quality: 89}),
-      pngquant({quality: 70})
+      pngquant({quality: [0.7, 0.8]})
     ]))
     .pipe(dest(assets.img.dist))
     .pipe(browserSync.stream());
