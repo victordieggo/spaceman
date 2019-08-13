@@ -15,7 +15,8 @@
     "url": "https://github.com/victordieggo/spaceman"
   },
   "scripts": {
-    "start": "gulp"
+    "dev": "gulp",
+    "build": "gulp build"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
