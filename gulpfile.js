@@ -31,10 +31,8 @@ const path = require('path');
 const del = require('del');
 
 // Scripts
-const eslint = require('gulp-eslint');
-const babel = require('gulp-babel');
-const concat = require('gulp-concat');
-const uglify = require('gulp-uglify');
+const webpackStream = require('webpack-stream');
+const webpackConfig = require('./webpack.config.js');
 
 // Styles
 const stylelint = require('gulp-stylelint');
@@ -66,8 +64,6 @@ const assets = {
   js: {
     src: basePath.src + 'js/**/*.js',
     dist: basePath.dist + 'js',
-    libs: basePath.src + 'js/libs/*.js',
-    polyfill: basePath.src + 'js/polyfill/*.js',
     vendor: basePath.src + 'js/vendor/*.js'
   },
   img: {
@@ -118,17 +114,15 @@ const buildStyles = (done) => {
 
 const buildScripts = (done) => {
   del.sync(assets.js.dist);
-  return src([assets.js.libs, assets.js.polyfill, assets.js.vendor, assets.js.src], {sourcemaps: true})
-    .pipe(eslint())
-    .pipe(eslint.format())
-    .pipe(babel({
-      presets: ['env'],
-      ignore: [assets.js.libs, assets.js.polyfill, assets.js.vendor]
-    }))
-    .on('error', (e) => console.log(e))
-    .pipe(concat('main.js'))
-    .pipe(uglify())
-    .pipe(dest(assets.js.dist, {sourcemaps: '.'}))
+  return src([assets.js.vendor, assets.js.src])
+    .pipe(
+      webpackStream(webpackConfig)
+      .on('error', function(error) {
+        console.log(error.message);
+        this.emit('end');
+      })
+    )
+    .pipe(dest(assets.js.dist))
     .pipe(browserSync.stream());
   done();
 };
