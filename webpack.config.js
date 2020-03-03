@@ -1,4 +1,4 @@
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const uglifyjs = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   mode: 'production',
@@ -11,21 +11,24 @@ module.exports = {
       {
         enforce: 'pre',
         test: /\.js$/,
+        loader: 'eslint-loader',
         exclude: /node_modules/,
-        loader: 'eslint-loader'
+        options: {
+          emitWarning: true
+        }
       },
       {
         test: /\.js$/,
         loader: 'babel-loader',
+        exclude: /node_modules/,
         query: {
           presets: ['env']
-        },
-        exclude: /node_modules/
+        }
       }
     ]
   },
   optimization: {
-    minimizer: [new UglifyJsPlugin({
+    minimizer: [new uglifyjs({
       sourceMap: true,
     })],
   },
