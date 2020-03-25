@@ -8,7 +8,6 @@
  * ===================================================================*/
 
 (function (doc, win) {
-  'use strict';
 
   const navBar = doc.querySelector('.navBar');
   if (!navBar) return;
