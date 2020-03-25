@@ -8,7 +8,6 @@
  * ===================================================================*/
 
 (function (doc, win) {
-  'use strict';
 
   const navBar = doc.querySelector('.navBar');
   if (!navBar) return;
@@ -28,9 +27,7 @@
     element.setAttribute('aria-expanded', ariaExpanded == 'false' ? 'true' : 'false');
   };
 
-  const getActiveItems = (context) => {
-    return context.querySelectorAll('.' + isActive);
-  };
+  const getActiveItems = (context) => context.querySelectorAll('.' + isActive);
 
   const disableActiveItems = (element) => {
     Array.prototype.forEach.call(getActiveItems(element.parentNode), (activeItem) => {
