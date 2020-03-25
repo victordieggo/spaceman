@@ -19,7 +19,7 @@
     "build": "gulp build"
   },
   "devDependencies": {
-    "babel-loader": "^8.0.6",
+    "babel-loader": "^8.1.0",
     "babel-preset-env": "^1.7.0",
     "browser-sync": "^2.26.7",
     "del": "^5.1.0",
@@ -33,7 +33,7 @@
     "gulp-stylelint": "^11.0.0",
     "imagemin-mozjpeg": "^8.0.0",
     "imagemin-pngquant": "^8.0.0",
-    "stylelint": "^13.0.0",
+    "stylelint": "^13.2.1",
     "stylelint-config-standard": "^19.0.0",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack-stream": "^5.2.1"
