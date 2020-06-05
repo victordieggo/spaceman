@@ -174,5 +174,5 @@ Mixins
 
 @mixin showElement {
   visibility: inherit;
-  @include static($top: 0, $left: 0);
+  @include static($top: auto, $left: auto);
 }
