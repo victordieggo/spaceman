@@ -4,9 +4,10 @@ Functions
 =======================================================
 1. Get breakpoints
 2. Get colors
-3. Generate grid column
-4. Get assets URL
-5. String Helpers
+3. Get font sizes
+4. Generate grid column
+5. Get assets URL
+6. String helpers
 =======================================================
 */
 
@@ -36,7 +37,17 @@ Functions
 
 /*
 -------------------------------------------------------
-3. Generate grid column
+3. Get font sizes
+-------------------------------------------------------
+*/
+
+@function font-size($key) {
+  @return map-get($fontSizes, $key);
+}
+
+/*
+-------------------------------------------------------
+4. Generate grid column
 -------------------------------------------------------
 */
 
@@ -46,7 +57,7 @@ Functions
 
 /*
 -------------------------------------------------------
-4. Get assets URL
+5. Get assets URL
 -------------------------------------------------------
 */
 
@@ -68,7 +79,7 @@ Functions
 
 /*
 -------------------------------------------------------
-5. String Helpers
+6. String helpers
 -------------------------------------------------------
 */
 

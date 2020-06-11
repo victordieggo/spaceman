@@ -6,17 +6,15 @@ Helpers
 2. Container
 3. Display
 4. Floating
-5. Headings
-6. Display Headings
-7. Hide/Show
-8. Misc
-9. Padding
-10. Position
-11. Sizing
-12. Spacers
-13. Text Utilities
-14. Z-Index
-15. Animations
+5. Hide/Show Elements
+6. Misc
+7. Padding
+8. Position
+9. Sizing
+10. Spacers
+11. Text Utilities
+12. Z-Index
+13. Animations
 =======================================================
 */
 
@@ -80,36 +78,7 @@ Helpers
 
 /*
 -------------------------------------------------------
-5. Headings
--------------------------------------------------------
-*/
-
-@for $i from 6 through 1 {
-  h#{$i},
-  .u-title-#{$i} {
-    font-size: $fontSize-headings;
-  }
-
-  $fontSize-headings: $fontSize-headings + $fontSize-ratio;
-}
-
-/*
--------------------------------------------------------
-6. Display Headings
--------------------------------------------------------
-*/
-
-@for $i from 4 through 1 {
-  .u-display-#{$i} {
-    font-size: $fontSize-display;
-  }
-
-  $fontSize-display: $fontSize-display + $fontSize-ratio;
-}
-
-/*
--------------------------------------------------------
-7. Hide/Show
+5. Hide/Show Elements
 -------------------------------------------------------
 */
 
@@ -138,7 +107,7 @@ Helpers
 
 /*
 -------------------------------------------------------
-8. Misc
+6. Misc
 -------------------------------------------------------
 */
 
@@ -166,7 +135,7 @@ Helpers
 
 /*
 -------------------------------------------------------
-9. Padding
+7. Padding
 -------------------------------------------------------
 */
 
@@ -176,7 +145,7 @@ Helpers
 
 /*
 -------------------------------------------------------
-10. Position
+8. Position
 -------------------------------------------------------
 */
 
@@ -188,7 +157,7 @@ Helpers
 
 /*
 -------------------------------------------------------
-11. Sizing
+9. Sizing
 -------------------------------------------------------
 */
 
@@ -214,7 +183,7 @@ Helpers
 
 /*
 -------------------------------------------------------
-12. Spacers
+10. Spacers
 -------------------------------------------------------
 */
 
@@ -224,7 +193,7 @@ Helpers
 
 /*
 -------------------------------------------------------
-13. Text Utilities
+11. Text Utilities
 -------------------------------------------------------
 */
 
@@ -234,15 +203,28 @@ Helpers
   }
 }
 
-@each $align in 'center', 'left', 'right' {
-  .u-#{camelize('text-' + $align)} {
-    text-align: #{$align};
+@each $size in 'small', 'default' {
+  .u-#{camelize('fontSize-' + $size)} {
+    font-size: font-size($size);
   }
 }
 
-@each $sufix, $size in (small: $fontSize-small, large: $fontSize-large) {
-  .u-#{camelize('text-' + $sufix)} {
-    font-size: $size;
+@for $i from 1 through 6 {
+  h#{$i},
+  .u-fontSizeTitle-#{$i} {
+    font-size: font-size('title-#{$i}');
+  }
+}
+
+@for $i from 1 through 4 {
+  .u-fontSizeDisplay-#{$i} {
+    font-size: font-size('display-#{$i}');
+  }
+}
+
+@each $align in 'center', 'left', 'right' {
+  .u-#{camelize('text-' + $align)} {
+    text-align: #{$align};
   }
 }
 
@@ -256,7 +238,7 @@ Helpers
 
 /*
 -------------------------------------------------------
-14. Z-Index
+12. Z-Index
 -------------------------------------------------------
 */
 
@@ -268,7 +250,7 @@ Helpers
 
 /*
 -------------------------------------------------------
-15. Animations
+13. Animations
 -------------------------------------------------------
 */
 

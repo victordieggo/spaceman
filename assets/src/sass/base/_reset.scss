@@ -28,7 +28,7 @@ CSS Reset
 
 html {
   background-color: color(light);
-  font-size: $fontSize-default;
+  font-size: font-size('default');
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -ms-overflow-style: scrollbar;
@@ -54,7 +54,7 @@ fieldset {
 }
 
 small {
-  font-size: $fontSize-small;
+  font-size: font-size('small');
 }
 
 /*
@@ -66,7 +66,7 @@ small {
 #{$formElements} {
   color: color(dark);
   font-family: inherit;
-  font-size: $fontSize-default;
+  font-size: font-size('default');
 }
 
 button {
