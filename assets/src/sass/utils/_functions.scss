@@ -61,20 +61,20 @@ Functions
 -------------------------------------------------------
 */
 
-@function assetsURL($path, $file) {
+@function assets-url($path, $file) {
   @return url($assetsPath + '/' + $path + '/' + $file);
 }
 
 @function fonts($file) {
-  @return assetsURL('fonts', $file);
+  @return assets-url('fonts', $file);
 }
 
 @function img($file) {
-  @return assetsURL('img', $file);
+  @return assets-url('img', $file);
 }
 
 @function svg($file) {
-  @return assetsURL('svg', $file);
+  @return assets-url('svg', $file);
 }
 
 /*
