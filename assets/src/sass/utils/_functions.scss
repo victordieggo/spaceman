@@ -42,7 +42,11 @@ Functions
 */
 
 @function font-size($key) {
-  @return map-get($fontSizes, $key);
+  @if map-has-key($fontSizes, $key) {
+    @return map-get($fontSizes, $key);
+  }
+
+  @error 'Invalid font-size: #{$key}.';
 }
 
 /*
