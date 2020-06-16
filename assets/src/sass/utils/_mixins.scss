@@ -34,6 +34,15 @@ Mixins
   }
 }
 
+@mixin media-breakpoint-between($minWidth, $maxWidth) {
+  $minWidth: if(breakpoint($minWidth), breakpoint($minWidth), $minWidth);
+  $maxWidth: if(breakpoint($maxWidth), breakpoint($maxWidth), $maxWidth);
+
+  @media (min-width: $minWidth + 1) and (max-width: $maxWidth) {
+    @content;
+  }
+}
+
 /*
 -------------------------------------------------------
 2. Container
