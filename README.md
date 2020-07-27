@@ -4,7 +4,7 @@ Spaceman is a simple and easily customizable HTML/CSS boilerplate to build websi
 
 ### Getting Started
 
-Spaceman uses [Gulp](http://gulpjs.com/) and [Browsersync](https://www.browsersync.io/), so you'll need [Node.JS](https://nodejs.org/en/). Once you have set it up, [download Spaceman](https://github.com/victordieggo/spaceman/releases/latest) to your project directory and access the terminal:
+[Download Spaceman](https://github.com/victordieggo/spaceman/releases/latest) and extract all files into the root directory of your project. The build system is based on [Gulp](#build-tools) and [Webpack](https://webpack.js.org/), so you'll need [Node.JS](https://nodejs.org/en/) installed first. Once you have set it up, access the bash/terminal/command line:
 
 ```
 # install gulp globally
@@ -13,24 +13,19 @@ $ npm install -g gulp
 # go to your project directory
 $ cd myproject
 
-# install dev dependencies:
+# install dev dependencies
 $ npm install
 
-# initialize gulp and browsersync:
-$ gulp
+# start the development server at localhost:3000
+$ npm run dev
 ```
 
-And thats it, the commands above are everything you need to start. Now read the docs (coming soon!) so you can get the best out of Spaceman.
+To summarize, the `gulpfile.js` located in the project root does the following:
 
-### Gulp Tasks
-
-- `gulp`: run all tasks, start browsersync and watch files
-- `gulp js`: lint/build js files
-- `gulp css`: lint/build css files
-- `gulp img`: compress images
-- `gulp svg`: compress svg files
-- `gulp watch`: start browsersync and watch files
-- `gulp build`: run all assets related tasks (js/css/img/svg)
+* Optimize SVGs and images
+* Compile, minify, autoprefix and lint Sass files
+* Use Webpack to compile, concatenate, minify, and lint JavaScript
+* Watch files for changes, rebuild everything and reload all browsers
 
 ### Browser Support
 
