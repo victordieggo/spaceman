@@ -105,12 +105,15 @@ Mixins
   $i: 5;
 
   @while $i < 35 {
-    $result: $i/10;
-    $result: #{$result}em;
+    $result: $i/10#{em};
     $class: #{$name}#{$i};
 
-    @if $zero == true {
+    @if $zero == 'after' {
       $result: #{$result} 0;
+    }
+
+    @if $zero == 'before' {
+      $result: 0 #{$result};
     }
 
     @if $i < 10 {

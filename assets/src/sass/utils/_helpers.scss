@@ -8,13 +8,12 @@ Helpers
 4. Floating
 5. Hide/Show Elements
 6. Misc
-7. Padding
+7. Padding/Margin
 8. Position
 9. Sizing
-10. Spacers
-11. Text Utilities
-12. Z-Index
-13. Animations
+10. Text Utilities
+11. Z-Index
+12. Animations
 =======================================================
 */
 
@@ -135,13 +134,23 @@ Helpers
 
 /*
 -------------------------------------------------------
-7. Padding
+7. Padding/Margin
 -------------------------------------------------------
 */
 
-@include spacing('u-pad-', 'padding');
-@include spacing('u-padTop-', 'padding-top');
-@include spacing('u-padBottom-', 'padding-bottom');
+@each $property in 'padding', 'margin' {
+  @each $breakpoint in $breakpoints {
+    $breakpoint: nth($breakpoint, 1);
+    @include media-breakpoint(if($breakpoint == xs, -1, $breakpoint)) {
+      @include spacing('u-#{$breakpoint}-#{$property}-', '#{$property}');
+      @include spacing('u-#{$breakpoint}-#{$property}-y-', '#{$property}', 'after');
+      @include spacing('u-#{$breakpoint}-#{$property}-x-', '#{$property}', 'before');
+      @each $position in 'top', 'left', 'right', 'bottom' {
+        @include spacing('u-#{$breakpoint}-#{camelize('#{$property}-' + $position)}-', #{$property}-#{$position});
+      }
+    }
+  }
+}
 
 /*
 -------------------------------------------------------
@@ -183,17 +192,7 @@ Helpers
 
 /*
 -------------------------------------------------------
-10. Spacers
--------------------------------------------------------
-*/
-
-@include spacing('u-spacer-', 'margin', true);
-@include spacing('u-spacerTop-', 'margin-top');
-@include spacing('u-spacerBottom-', 'margin-bottom');
-
-/*
--------------------------------------------------------
-11. Text Utilities
+10. Text Utilities
 -------------------------------------------------------
 */
 
@@ -238,7 +237,7 @@ Helpers
 
 /*
 -------------------------------------------------------
-12. Z-Index
+11. Z-Index
 -------------------------------------------------------
 */
 
@@ -250,7 +249,7 @@ Helpers
 
 /*
 -------------------------------------------------------
-13. Animations
+12. Animations
 -------------------------------------------------------
 */
 
