@@ -63,8 +63,7 @@ const assets = {
   },
   js: {
     src: basePath.src + 'js/**/*.js',
-    dist: basePath.dist + 'js',
-    vendor: basePath.src + 'js/vendor/*.js'
+    dist: basePath.dist + 'js'
   },
   img: {
     src: basePath.src + 'img/*.{png,gif,jpg}',
@@ -114,7 +113,7 @@ const buildStyles = (done) => {
 
 const buildScripts = (done) => {
   del.sync(assets.js.dist);
-  return src([assets.js.vendor, assets.js.src])
+  return src(assets.js.src)
     .pipe(
       webpackStream(webpackConfig)
       .on('error', function(error) {
