@@ -37,9 +37,9 @@ export default {
 
   handleKeyup() {
     document.addEventListener('keyup', (event) => {
-      const key = event.keyCode;
-      Array.prototype.forEach.call(this.getActiveItems(this.elements.navBar), (activeItem) => {
-        if (key == 27 || key == 9 && !activeItem.contains(event.target)) {
+      const key = event.key;
+      this.getActiveItems(this.elements.navBar).forEach((activeItem) => {
+        if (key == 'Escape' || key == 'Tab' && !activeItem.contains(event.target)) {
           this.toggleSubmenu(activeItem);
         }
       });
@@ -57,7 +57,7 @@ export default {
   },
 
   disableActiveItems(element) {
-    Array.prototype.forEach.call(this.getActiveItems(element.parentNode), (activeItem) => {
+    this.getActiveItems(element.parentNode).forEach(activeItem => {
       if (activeItem != element) {
         this.toggleSubmenu(activeItem);
       }
@@ -75,7 +75,7 @@ export default {
     const overlayClass = 'navBar-overlay';
     const navOverlay = navBar.querySelector('.' + overlayClass);
 
-    ['webkitAnimationEnd', 'animationend'].forEach((animationEvent) => {
+    ['webkitAnimationEnd', 'animationend'].map(animationEvent => {
       navBar.addEventListener(animationEvent, () => navBar.classList.remove('is-animating'));
       if (navOverlay) {
         navOverlay.addEventListener(animationEvent, () => navBar.removeChild(navOverlay));
@@ -84,13 +84,13 @@ export default {
 
     if (!navOverlay) {
       const newOverlay = document.createElement('div');
-      newOverlay.className = [overlayClass, 'navBar-toggle'].join(' ');
-      newOverlay.onclick = () => {};
+      newOverlay.className = `${overlayClass} navBar-toggle`;
+      newOverlay.onclick = () => { };
       navBar.appendChild(newOverlay);
     }
 
     const triggers = document.querySelectorAll('.navBar-toggle');
-    Array.prototype.forEach.call(triggers, (trigger) => this.toggleExpanded(trigger));
+    triggers.forEach(trigger => this.toggleExpanded(trigger));
   },
 
   toggleSubmenu(element) {
