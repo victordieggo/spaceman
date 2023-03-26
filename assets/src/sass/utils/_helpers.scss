@@ -235,8 +235,19 @@ Helpers
 }
 
 @each $align in 'center', 'left', 'right' {
-  .u-#{camelize('text-' + $align)} {
+  .u-text-#{$align} {
     text-align: #{$align};
+  }
+
+  @each $breakpoint in $breakpoints {
+    $breakpoint: nth($breakpoint, 1);
+    @if $breakpoint != xs {
+      @include media-breakpoint($breakpoint) {
+        .u-#{$breakpoint}-text-#{$align} {
+          text-align: #{$align};
+        }
+      }
+    }
   }
 }
 
