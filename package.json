@@ -30,7 +30,7 @@
     "gulp-cssnano": "^2.1.3",
     "gulp-imagemin": "^7.1.0",
     "gulp-sass": "^4.1.1",
-    "gulp-stylelint": "^11.0.0",
+    "gulp-stylelint": "13.0.0",
     "imagemin-mozjpeg": "^8.0.0",
     "imagemin-pngquant": "^8.0.0",
     "stylelint": "^13.7.0",
