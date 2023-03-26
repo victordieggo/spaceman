@@ -13,7 +13,13 @@ Hero Image
 */
 
 .heroImage {
-  .container > .row {
-    height: 65vh;
+  .row {
+    height: 60vh;
+  }
+
+  &__background {
+    z-index: -1;
+    object-fit: cover;
+    @include absolute(0, 0, 0, 0);
   }
 }
