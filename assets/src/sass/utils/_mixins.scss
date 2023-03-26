@@ -101,7 +101,7 @@ Mixins
 -------------------------------------------------------
 */
 
-@mixin spacing($name, $property, $zero: false) {
+@mixin spacing($name, $property) {
   $i: 0;
 
   @while $i < 35 {
