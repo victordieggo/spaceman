@@ -53,9 +53,22 @@ Helpers
 -------------------------------------------------------
 */
 
-@each $property in 'block', 'inline', 'inline-block', 'table', 'table-cell', 'flex' {
-  .u-#{camelize($property)} {
+@each $property in 'none', 'block', 'inline', 'inline-block', 'table', 'table-cell', 'flex' {
+  .u-display-#{camelize($property)} {
     display: #{$property};
+  }
+}
+
+@each $property in 'none', 'block', 'inline', 'inline-block', 'table', 'table-cell', 'flex' {
+  @each $breakpoint in $breakpoints {
+    $breakpoint: nth($breakpoint, 1);
+    @if $breakpoint != xs {
+      @include media-breakpoint($breakpoint) {
+        .u-#{$breakpoint}-display-#{camelize($property)} {
+          display: #{$property};
+        }
+      }
+    }
   }
 }
 
