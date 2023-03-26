@@ -66,7 +66,7 @@ const assets = {
     dist: basePath.dist + 'js'
   },
   img: {
-    src: basePath.src + 'img/*.{png,gif,jpg}',
+    src: basePath.src + 'img/*.{png,gif,jpg,webp}',
     dist: basePath.dist + 'img'
   },
   svg: {
