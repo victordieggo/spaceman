@@ -206,22 +206,20 @@ Helpers
   }
 }
 
-@each $size in 'small', 'default' {
-  .u-#{camelize('fontSize-' + $size)} {
-    font-size: font-size($size);
+@each $class, $size in $fontSizes {
+  .u-fontSize-#{$class} {
+    font-size: $size;
   }
-}
 
-@for $i from 1 through 6 {
-  h#{$i},
-  .u-fontSizeTitle-#{$i} {
-    font-size: font-size('title-#{$i}');
-  }
-}
-
-@for $i from 1 through 4 {
-  .u-fontSizeDisplay-#{$i} {
-    font-size: font-size('display-#{$i}');
+  @each $breakpoint in $breakpoints {
+    $breakpoint: nth($breakpoint, 1);
+    @if $breakpoint != xs {
+      @include media-breakpoint($breakpoint) {
+        .u-#{$breakpoint}-fontSize-#{$class} {
+          font-size: $size;
+        }
+      }
+    }
   }
 }
 
