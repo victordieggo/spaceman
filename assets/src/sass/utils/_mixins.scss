@@ -38,7 +38,7 @@ Mixins
   $minWidth: if(breakpoint($minWidth), breakpoint($minWidth), $minWidth);
   $maxWidth: if(breakpoint($maxWidth), breakpoint($maxWidth), $maxWidth);
 
-  @media (min-width: $minWidth + 1) and (max-width: $maxWidth) {
+  @media (min-width: ($minWidth + 1)) and (max-width: $maxWidth) {
     @content;
   }
 }
@@ -102,26 +102,26 @@ Mixins
 */
 
 @mixin spacing($name, $property, $zero: false) {
-  $i: 5;
+  $i: 0;
 
   @while $i < 35 {
     $result: $i/10#{em};
     $class: #{$name}#{$i};
 
-    @if $zero == 'after' {
-      $result: #{$result} 0;
-    }
-
-    @if $zero == 'before' {
-      $result: 0 #{$result};
-    }
-
     @if $i < 10 {
-      $class: #{$name}0#{$i};
+      $class: if($i == 0, #{$name}#{$i}, #{$name}0#{$i});
     }
 
     .#{$class} {
-      #{$property}: #{$result};
+      @if type-of($property) == list {
+        @each $subproperty in $property {
+          #{$subproperty}: #{$result};
+        }
+      }
+
+      @else {
+        #{$property}: #{$result};
+      }
     }
 
     $i: $i + 5;
