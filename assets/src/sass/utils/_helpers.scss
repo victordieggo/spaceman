@@ -81,12 +81,7 @@ Helpers
 -------------------------------------------------------
 */
 
-.u-hide,
-.u-xs-hide,
-.u-sm-hide,
-.u-md-hide,
-.u-lg-hide,
-.u-xl-hide {
+.u-hide {
   @include hideElement;
 }
 
@@ -95,11 +90,11 @@ Helpers
 
   @include media-breakpoint($breakpoint) {
     .u-#{$breakpoint}-hide {
-      @include showElement;
+      @include hideElement;
     }
 
     .u-#{$breakpoint}-show {
-      @include hideElement;
+      @include showElement;
     }
   }
 }
