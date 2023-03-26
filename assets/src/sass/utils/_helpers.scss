@@ -201,8 +201,19 @@ Helpers
 */
 
 @each $class, $color in $colors {
-  .u-#{camelize('color-' + $class)} {
+  .u-color-#{$class} {
     color: $color;
+  }
+
+  @each $breakpoint in $breakpoints {
+    $breakpoint: nth($breakpoint, 1);
+    @if $breakpoint != xs {
+      @include media-breakpoint($breakpoint) {
+        .u-#{$breakpoint}-color-#{$class} {
+          color: $color;
+        }
+      }
+    }
   }
 }
 
