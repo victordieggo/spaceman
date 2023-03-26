@@ -39,8 +39,6 @@ Navbar
       &::after {
         content: '';
         padding: 0.35em;
-        background-position: center;
-        background-repeat: no-repeat;
         @include absolute(0, 0, 0);
       }
     }
@@ -64,12 +62,21 @@ Navbar
         position: relative;
 
         &:hover,
+        &:hover > &-link,
         &.is-active > &-link {
           color: color(grayDark);
+
+          &::after {
+            background-color: color(grayDark);
+          }
         }
 
         &-link::after {
-          background-image: svg('icon-arrow.svg');
+          background-color: color(light);
+          mask-position: center;
+          mask-repeat: no-repeat;
+          mask-size: 1.35rem;
+          mask-image: svg('icon-arrow-down.svg');
         }
       }
     }
@@ -101,8 +108,18 @@ Navbar
 
           &::after {
             right: 0.7em;
-            transform: rotate(-90deg);
-            background-image: svg('icon-arrow-alt.svg');
+            background-color: color(dark);
+            mask-position: center;
+            mask-repeat: no-repeat;
+            mask-size: 1.2rem;
+            mask-image: svg('icon-arrow-right.svg');
+          }
+        }
+
+        &:hover,
+        &.is-active {
+          & > .navBar-menuItem-link::after {
+            background-color: color(grayDark);
           }
         }
       }
@@ -162,8 +179,12 @@ Navbar
 
         &--hasChildren > &-link::after {
           right: 1.5em;
-          padding: 0.5em;
-          background-image: svg('icon-arrow-alt.svg');
+          padding: 1em;
+          background-color: color(dark);
+          mask-position: center;
+          mask-repeat: no-repeat;
+          mask-size: 100%;
+          mask-image: svg('icon-arrow-down.svg');
         }
 
         .is-active > &-link {
@@ -173,7 +194,7 @@ Navbar
 
           &::after {
             transform: rotate(180deg);
-            background-image: svg('icon-arrow.svg');
+            background-color: color(light);
           }
         }
       }
@@ -210,11 +231,15 @@ Navbar
 
 @include media-breakpoint(md, max) {
   .navBar-btn {
-    background: svg('icon-menu.svg') no-repeat center;
-    @include size(1.5em);
+    @include size(2em);
+    background-color: color(light);
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: 100%;
+    mask-image: svg('icon-menu.svg');
 
     .is-active & {
-      background-image: svg('icon-close.svg');
+      mask-image: svg('icon-close.svg');
     }
   }
 }

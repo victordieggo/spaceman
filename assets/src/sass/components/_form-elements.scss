@@ -104,10 +104,10 @@ Form Elements
 */
 
 .select:not([multiple]) {
-  background-image: svg('icon-arrow-alt.svg');
+  background-image: svg('icon-arrow-down.svg');
   background-position: right 0.6em center;
   background-repeat: no-repeat;
-  background-size: 0.85em 1em;
+  background-size: 1.5em;
   padding-right: 2.4em;
 }
 
