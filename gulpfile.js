@@ -39,6 +39,7 @@ const stylelint = require('gulp-stylelint');
 const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
 const cssnano = require('gulp-cssnano');
+const mmq = require('gulp-merge-media-queries');
 
 // Images/SVGs
 const imagemin = require('gulp-imagemin');
@@ -98,6 +99,7 @@ const buildStyles = (done) => {
     }))
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer())
+    .pipe(mmq())
     .pipe(cssnano())
     .pipe(dest(assets.css.dist))
     .pipe(dest(assets.css.dist, {sourcemaps: '.'}))
