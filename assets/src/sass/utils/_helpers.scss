@@ -272,8 +272,19 @@ Helpers
 */
 
 @each $position in 'relative', 'absolute', 'fixed' {
-  .u-#{$position} {
+  .u-position-#{$position} {
     position: #{$position};
+
+    @each $breakpoint in $breakpoints {
+      $breakpoint: nth($breakpoint, 1);
+      @if $breakpoint != xs {
+        @include media-breakpoint($breakpoint) {
+          .u-#{$breakpoint}-position-#{$position} {
+            display: #{$position};
+          }
+        }
+      }
+    }
   }
 }
 
