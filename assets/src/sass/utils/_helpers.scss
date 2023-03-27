@@ -95,7 +95,7 @@ Helpers
 }
 
 @each $property in 'start', 'center', 'end', 'space-between', 'space-around' {
-  .u-justifyContent-#{$property} {
+  .u-justifyContent-#{camelize($property)} {
     justify-content: #{$property};
   }
 
@@ -103,7 +103,7 @@ Helpers
     $breakpoint: nth($breakpoint, 1);
     @if $breakpoint != xs {
       @include media-breakpoint($breakpoint) {
-        .u-#{$breakpoint}-justifyContent-#{$property} {
+        .u-#{$breakpoint}-justifyContent-#{camelize($property)} {
           justify-content: #{$property};
         }
       }
@@ -230,40 +230,41 @@ Helpers
   }
 
   @each $position in 'top', 'left', 'right', 'bottom' {
-    @include spacing('u-#{$property}-#{$position}-', #{$property}-#{$position});
+    @include spacing('u-#{camelize(#{$property}-#{$position})}-', #{$property}-#{$position});
 
-    .u-#{$property}-#{$position}-auto {
+    .u-#{camelize(#{$property}-#{$position})}-auto {
       #{$property}-#{$position}: auto;
     }
   }
 
   @each $breakpoint in $breakpoints {
     $breakpoint: nth($breakpoint, 1);
+    @if $breakpoint != xs {
+      @include media-breakpoint($breakpoint) {
+        @include spacing('u-#{$breakpoint}-#{$property}-', $property);
+        @include spacing('u-#{$breakpoint}-#{$property}-y-', ('#{$property}-top', '#{$property}-bottom'));
+        @include spacing('u-#{$breakpoint}-#{$property}-x-', ('#{$property}-left', '#{$property}-right'));
 
-    @include media-breakpoint($breakpoint) {
-      @include spacing('u-#{$breakpoint}-#{$property}-', $property);
-      @include spacing('u-#{$breakpoint}-#{$property}-y-', ('#{$property}-top', '#{$property}-bottom'));
-      @include spacing('u-#{$breakpoint}-#{$property}-x-', ('#{$property}-left', '#{$property}-right'));
+        .u-#{$breakpoint}-#{$property}-auto {
+          #{$property}: auto;
+        }
 
-      .u-#{$breakpoint}-#{$property}-auto {
-        #{$property}: auto;
-      }
+        .u-#{$breakpoint}-#{$property}-y-auto {
+          #{$property}-top: auto;
+          #{$property}-bottom: auto;
+        }
 
-      .u-#{$breakpoint}-#{$property}-y-auto {
-        #{$property}-top: auto;
-        #{$property}-bottom: auto;
-      }
+        .u-#{$breakpoint}-#{$property}-x-auto {
+          #{$property}-left: auto;
+          #{$property}-right: auto;
+        }
 
-      .u-#{$breakpoint}-#{$property}-x-auto {
-        #{$property}-left: auto;
-        #{$property}-right: auto;
-      }
+        @each $position in 'top', 'left', 'right', 'bottom' {
+          @include spacing('u-#{$breakpoint}-#{camelize(#{$property}-#{$position})}-', #{$property}-#{$position});
 
-      @each $position in 'top', 'left', 'right', 'bottom' {
-        @include spacing('u-#{$breakpoint}-#{$property}-#{$position}-', #{$property}-#{$position});
-
-        .u-#{$breakpoint}-#{$property}-#{$position}-auto {
-          #{$property}-#{$position}: auto;
+          .u-#{camelize(#{$property}-#{$position})}-auto {
+            #{$property}-#{$position}: auto;
+          }
         }
       }
     }
