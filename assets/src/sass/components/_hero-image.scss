@@ -13,11 +13,11 @@ Hero Image
 */
 
 .heroImage {
-  &__content {
+  &-content {
     height: 30rem;
   }
 
-  &__background {
+  &-background {
     z-index: -1;
     object-fit: cover;
     @include absolute(0, 0, 0, 0);
