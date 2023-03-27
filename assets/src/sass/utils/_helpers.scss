@@ -78,20 +78,21 @@ Helpers
 -------------------------------------------------------
 */
 
-.u-flexRow {
-  flex-direction: row;
-}
+@each $property in 'row', 'row-reverse', 'column', 'column-reverse' {
+  .u-flexDirection-#{camelize($property)} {
+    flex-direction: #{$property};
+  }
 
-.u-flexRow-reverse {
-  flex-direction: row-reverse;
-}
-
-.u-flexColumn {
-  flex-direction: column;
-}
-
-.u-flexColumn-reverse {
-  flex-direction: column-reverse;
+  @each $breakpoint in $breakpoints {
+    $breakpoint: nth($breakpoint, 1);
+    @if $breakpoint != xs {
+      @include media-breakpoint($breakpoint) {
+        .u-#{$breakpoint}-flexDirection-#{camelize($property)} {
+          flex-direction: #{$property};
+        }
+      }
+    }
+  }
 }
 
 @each $property in 'start', 'center', 'end', 'space-between', 'space-around' {
