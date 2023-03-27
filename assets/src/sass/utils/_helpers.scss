@@ -25,17 +25,9 @@ Helpers
 */
 
 @each $class, $color in $colors {
-  $class: '.u-bg' + str-ucwords(#{$class});
-
-  #{$class} {
+  .u-bg-#{$class} {
     background-color: $color;
   }
-}
-
-.u-bgImage {
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 /*
@@ -320,17 +312,6 @@ Helpers
 @each $class, $color in $colors {
   .u-color-#{$class} {
     color: $color;
-  }
-
-  @each $breakpoint in $breakpoints {
-    $breakpoint: nth($breakpoint, 1);
-    @if $breakpoint != xs {
-      @include media-breakpoint($breakpoint) {
-        .u-#{$breakpoint}-color-#{$class} {
-          color: $color;
-        }
-      }
-    }
   }
 }
 
