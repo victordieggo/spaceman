@@ -176,14 +176,8 @@ Helpers
 -------------------------------------------------------
 */
 
-.u-tag,
 .u-vcenter {
   @include vcenter;
-}
-
-.u-tag {
-  padding: 0.4em 0.6em;
-  border-radius: $formElements-borderRadius;
 }
 
 .u-hideOverflow {
@@ -294,24 +288,24 @@ Helpers
 -------------------------------------------------------
 */
 
-.u-autoSize,
-.u-autoWidth {
-  width: auto;
-}
-
-.u-autoSize,
-.u-autoHeight {
-  height: auto;
-}
-
-.u-fullSize,
-.u-fullWidth {
+.u-size-full,
+.u-width-full {
   width: 100%;
 }
 
-.u-fullSize,
-.u-fullHeight {
+.u-size-full,
+.u-height-full {
   height: 100%;
+}
+
+.u-size-auto,
+.u-width-auto {
+  width: auto;
+}
+
+.u-size-auto,
+.u-height-auto {
+  height: auto;
 }
 
 /*
@@ -360,8 +354,12 @@ Helpers
   }
 }
 
-.u-textUppercase {
+.u-text-uppercase {
   text-transform: uppercase;
+}
+
+.u-text-lowercase {
+  text-transform: lowercase;
 }
 
 .u-textBlock {
