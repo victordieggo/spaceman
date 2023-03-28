@@ -137,12 +137,27 @@ Floating
 */
 
 @each $float in 'left', 'right', 'none' {
-  .u-f#{$float} {
+  .u-float-#{$float} {
     float: #{$float};
+  }
+
+  @each $breakpoint in $breakpoints {
+    $breakpoint: nth($breakpoint, 1);
+    @if $breakpoint != xs {
+      @include media-breakpoint($breakpoint) {
+        .u-#{$breakpoint}-float-#{$float} {
+          align-items: #{$float};
+        }
+
+        .u-#{$breakpoint}-float-#{$float} {
+          align-self: #{$float};
+        }
+      }
+    }
   }
 }
 
-.u-clear {
+.u-clearFix {
   clear: both;
 }
 
