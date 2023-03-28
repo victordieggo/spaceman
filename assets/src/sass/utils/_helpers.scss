@@ -11,6 +11,7 @@ Hide/Show Elements
 Misc
 Padding/Margin
 Position
+Overflow
 Sizing
 Text Utilities
 Z-Index
@@ -191,16 +192,8 @@ Misc
 -------------------------------------------------------
 */
 
-.u-hideOverflow {
-  overflow: hidden;
-}
-
 .u-smoothTransition {
   transition: all 0.3s;
-}
-
-.u-noUnderline:hover {
-  text-decoration: none;
 }
 
 /*
@@ -290,6 +283,18 @@ Position
         }
       }
     }
+  }
+}
+
+/*
+-------------------------------------------------------
+Overflow
+-------------------------------------------------------
+*/
+
+@each $property in 'auto', 'hidden', 'visible', 'scroll' {
+  .u-overflow-#{$property} {
+    overflow: #{$property};
   }
 }
 
