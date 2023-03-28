@@ -147,11 +147,7 @@ Floating
     @if $breakpoint != xs {
       @include media-breakpoint($breakpoint) {
         .u-#{$breakpoint}-float-#{$float} {
-          align-items: #{$float};
-        }
-
-        .u-#{$breakpoint}-float-#{$float} {
-          align-self: #{$float};
+          float: #{$float};
         }
       }
     }
