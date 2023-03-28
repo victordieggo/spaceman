@@ -166,11 +166,6 @@ Utilities
 -------------------------------------------------------
 */
 
-@mixin vcenter {
-  display: inline-block;
-  vertical-align: middle;
-}
-
 @mixin size($width: null, $height: $width) {
   width: $width;
   height: $height;

@@ -23,7 +23,6 @@ Default Styles
   border-radius: $formElements-borderRadius;
   transition: background 0.3s, border 0.3s, color 0.3s;
   @include btnColor(color(gray));
-  @include vcenter;
 
   &:focus,
   &:hover {
@@ -32,13 +31,8 @@ Default Styles
     @include btnColor(color(grayDark));
   }
 
-  span {
-    @include vcenter;
-  }
-
   &-icon {
     fill: color(dark);
-    @include vcenter;
     @include size(1em);
     transition: fill 0.3s;
 

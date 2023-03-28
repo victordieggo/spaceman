@@ -24,7 +24,6 @@ Base Styles
   border-radius: $formElements-borderRadius;
   padding: 0.65em;
   transition: border 0.3s, box-shadow 0.3s;
-  @include vcenter;
 }
 
 .input:not(textarea),
@@ -91,7 +90,6 @@ Custom Checkbox/Radio
       border-radius: 50%;
       border: 0.45em solid color(light);
       background-color: color(dark);
-      @include vcenter;
       @include absolute(0, 0, 0, 0);
     }
   }
