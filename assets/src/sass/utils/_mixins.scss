@@ -2,19 +2,19 @@
 =======================================================
 Mixins
 =======================================================
-1. Breakpoints
-2. Container
-3. Grid
-4. Font-Face
-5. Spacing
-6. Offset Positioning
-7. Utilities
+Breakpoints
+Container
+Grid
+Font-Face
+Spacing
+Offset Positioning
+Utilities
 =======================================================
 */
 
 /*
 -------------------------------------------------------
-1. Breakpoints
+Breakpoints
 -------------------------------------------------------
 */
 
@@ -34,34 +34,33 @@ Mixins
   }
 }
 
-/*
--------------------------------------------------------
-2. Container
--------------------------------------------------------
-*/
+@mixin media-breakpoint-between($minWidth, $maxWidth) {
+  $minWidth: if(breakpoint($minWidth), breakpoint($minWidth), $minWidth);
+  $maxWidth: if(breakpoint($maxWidth), breakpoint($maxWidth), $maxWidth);
 
-@mixin container($size) {
-  max-width: #{$size};
-  margin: 0 auto;
+  @media (min-width: ($minWidth + 1)) and (max-width: $maxWidth) {
+    @content;
+  }
 }
 
 /*
 -------------------------------------------------------
-3. Grid
+Grid
 -------------------------------------------------------
 */
 
 @mixin grid($name, $cols: $grid-cols) {
   @for $i from 1 through $cols {
     .#{$name}-#{$i} {
-      width: column($i, $cols);
+      flex: 0 0 column($i, $cols);
+      max-width: column($i, $cols);
     }
   }
 }
 
 /*
 -------------------------------------------------------
-4. Font-Face
+Font-Face
 -------------------------------------------------------
 */
 
@@ -88,28 +87,31 @@ Mixins
 
 /*
 -------------------------------------------------------
-5. Spacing
+Spacing
 -------------------------------------------------------
 */
 
-@mixin spacing($name, $property, $zero: false) {
-  $i: 5;
+@mixin spacing($name, $property) {
+  $i: 0;
 
   @while $i < 35 {
-    $result: $i/10;
-    $result: #{$result}em;
+    $result: $i/10#{em};
     $class: #{$name}#{$i};
 
-    @if $zero == true {
-      $result: #{$result} 0;
-    }
-
     @if $i < 10 {
-      $class: #{$name}0#{$i};
+      $class: if($i == 0, #{$name}#{$i}, #{$name}0#{$i});
     }
 
     .#{$class} {
-      #{$property}: #{$result};
+      @if type-of($property) == list {
+        @each $subproperty in $property {
+          #{$subproperty}: #{$result};
+        }
+      }
+
+      @else {
+        #{$property}: #{$result};
+      }
     }
 
     $i: $i + 5;
@@ -118,7 +120,7 @@ Mixins
 
 /*
 -------------------------------------------------------
-6. Offset Positioning
+Offset Positioning
 -------------------------------------------------------
 */
 
@@ -148,14 +150,9 @@ Mixins
 
 /*
 -------------------------------------------------------
-7. Utilities
+Utilities
 -------------------------------------------------------
 */
-
-@mixin vcenter {
-  display: inline-block;
-  vertical-align: middle;
-}
 
 @mixin size($width: null, $height: $width) {
   width: $width;

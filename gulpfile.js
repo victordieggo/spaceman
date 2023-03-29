@@ -39,6 +39,7 @@ const stylelint = require('gulp-stylelint');
 const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
 const cssnano = require('gulp-cssnano');
+const mmq = require('gulp-merge-media-queries');
 
 // Images/SVGs
 const imagemin = require('gulp-imagemin');
@@ -63,11 +64,10 @@ const assets = {
   },
   js: {
     src: basePath.src + 'js/**/*.js',
-    dist: basePath.dist + 'js',
-    vendor: basePath.src + 'js/vendor/*.js'
+    dist: basePath.dist + 'js'
   },
   img: {
-    src: basePath.src + 'img/*.{png,gif,jpg}',
+    src: basePath.src + 'img/*.{png,gif,jpg,webp}',
     dist: basePath.dist + 'img'
   },
   svg: {
@@ -99,6 +99,7 @@ const buildStyles = (done) => {
     }))
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer())
+    .pipe(mmq())
     .pipe(cssnano())
     .pipe(dest(assets.css.dist))
     .pipe(dest(assets.css.dist, {sourcemaps: '.'}))
@@ -114,7 +115,7 @@ const buildStyles = (done) => {
 
 const buildScripts = (done) => {
   del.sync(assets.js.dist);
-  return src([assets.js.vendor, assets.js.src])
+  return src(assets.js.src)
     .pipe(
       webpackStream(webpackConfig)
       .on('error', function(error) {

@@ -2,16 +2,16 @@
 =======================================================
 Form Elements
 =======================================================
-1. Base Styles
-2. Custom Checkbox/Radio
-3. Custom Select
-4. Disabled Elements
+Base Styles
+Custom Checkbox/Radio
+Custom Select
+Disabled Elements
 =======================================================
 */
 
 /*
 -------------------------------------------------------
-1. Base Styles
+Base Styles
 -------------------------------------------------------
 */
 
@@ -24,7 +24,6 @@ Form Elements
   border-radius: $formElements-borderRadius;
   padding: 0.65em;
   transition: border 0.3s, box-shadow 0.3s;
-  @include vcenter;
 }
 
 .input:not(textarea),
@@ -48,7 +47,7 @@ Form Elements
 
 /*
 -------------------------------------------------------
-2. Custom Checkbox/Radio
+Custom Checkbox/Radio
 -------------------------------------------------------
 */
 
@@ -70,6 +69,7 @@ Form Elements
 .input-icon {
   margin-top: -0.1em;
   @include size(1.5em);
+  display: inline-block;
   background-position: center;
   background-repeat: no-repeat;
 
@@ -91,7 +91,6 @@ Form Elements
       border-radius: 50%;
       border: 0.45em solid color(light);
       background-color: color(dark);
-      @include vcenter;
       @include absolute(0, 0, 0, 0);
     }
   }
@@ -99,21 +98,21 @@ Form Elements
 
 /*
 -------------------------------------------------------
-4. Custom Select
+Custom Select
 -------------------------------------------------------
 */
 
 .select:not([multiple]) {
-  background-image: svg('icon-arrow-alt.svg');
+  background-image: svg('icon-arrow-down.svg');
   background-position: right 0.6em center;
   background-repeat: no-repeat;
-  background-size: 0.85em 1em;
+  background-size: 1.5em;
   padding-right: 2.4em;
 }
 
 /*
 -------------------------------------------------------
-3. Disabled Elements
+Disabled Elements
 -------------------------------------------------------
 */
 

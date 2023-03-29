@@ -1,25 +1,26 @@
 /*
 =======================================================
-Hero Image
+Container
 =======================================================
-Default Style
+Base Styles
 =======================================================
 */
 
 /*
 -------------------------------------------------------
-Default Style
+Base Styles
 -------------------------------------------------------
 */
 
-.heroImage {
-  &-content {
-    height: 25rem;
-  }
+.container {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $grid-gutter;
+  padding-right: $grid-gutter;
 
-  &-background {
-    z-index: -1;
-    object-fit: cover;
-    @include absolute(0, 0, 0, 0);
+  &Fluid {
+    padding-left: $grid-gutter;
+    padding-right: $grid-gutter;
   }
 }

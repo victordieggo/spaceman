@@ -2,15 +2,15 @@
 =======================================================
 CSS Reset
 =======================================================
-1. Defaults
-2. Form Elements
-3. Misc
+Defaults
+Form Elements
+Misc
 =======================================================
 */
 
 /*
 -------------------------------------------------------
-1. Defaults
+Defaults
 -------------------------------------------------------
 */
 
@@ -27,8 +27,10 @@ CSS Reset
 }
 
 html {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
   background-color: color(light);
-  font-size: $fontSize-default;
+  font-size: font-size('default');
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -ms-overflow-style: scrollbar;
@@ -54,19 +56,19 @@ fieldset {
 }
 
 small {
-  font-size: $fontSize-small;
+  font-size: font-size('small');
 }
 
 /*
 -------------------------------------------------------
-2. Form Elements
+Form Elements
 -------------------------------------------------------
 */
 
 #{$formElements} {
   color: color(dark);
   font-family: inherit;
-  font-size: $fontSize-default;
+  font-size: font-size('default');
 }
 
 button {
@@ -101,7 +103,7 @@ textarea {
 
 /*
 -------------------------------------------------------
-3. Misc
+Misc
 -------------------------------------------------------
 */
 

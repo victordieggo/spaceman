@@ -2,14 +2,14 @@
 =======================================================
 Buttons
 =======================================================
-1. Default Styles
-2. Button Variations
+Default Styles
+Button Variations
 =======================================================
 */
 
 /*
 -------------------------------------------------------
-1. Default Styles
+Default Styles
 -------------------------------------------------------
 */
 
@@ -20,10 +20,12 @@ Buttons
   line-height: 1.5em;
   border-width: 2px;
   border-style: solid;
+  display: inline-block;
+  cursor: pointer;
+  font-size: font-size(default);
   border-radius: $formElements-borderRadius;
   transition: background 0.3s, border 0.3s, color 0.3s;
   @include btnColor(color(gray));
-  @include vcenter;
 
   &:focus,
   &:hover {
@@ -32,13 +34,8 @@ Buttons
     @include btnColor(color(grayDark));
   }
 
-  span {
-    @include vcenter;
-  }
-
   &-icon {
     fill: color(dark);
-    @include vcenter;
     @include size(1em);
     transition: fill 0.3s;
 
@@ -68,7 +65,7 @@ Buttons
 
 /*
 -------------------------------------------------------
-2. Button Variations
+Button Variations
 -------------------------------------------------------
 */
 

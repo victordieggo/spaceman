@@ -10,16 +10,15 @@
 
 <body>
 
-  <!-- HEADER -->
-  <header class="mainHeader u-bgMain u-colorLight">
+  <header class="mainHeader u-bg-main u-color-light u-padding-y-15">
     <div class="container">
-      <div class="row">
-        <div class="col col-vcenter">
-          <h1 class="u-title-5">Project Title</h1>
+      <div class="row u-alignItems-center">
+        <div class="col">
+          <h1 class="u-fontSize-title-5">Project Title</h1>
         </div>
-        <div class="col col-vcenter">
+        <div class="col">
           <nav class="navBar" role="navigation">
-            <button class="navBar-btn navBar-toggle u-md-show" aria-expanded="false" aria-label="Toggle navigation"></button>
+            <button class="navBar-btn navBar-toggle u-md-hide" aria-expanded="false" aria-label="Toggle navigation"></button>
             <ul class="navBar-menu">
               <li class="navBar-menuItem">
                 <a class="navBar-menuItem-link" href="#home">Home</a>
@@ -66,47 +65,39 @@
       </div>
     </div>
   </header>
-  <!-- /HEADER -->
 
-  <!-- HERO IMAGE -->
-  <div class="heroImage u-bgImage" role="banner" style="background-image:url('assets/dist/img/slide.jpg');">
-    <div class="container">
-      <div class="row">
-        <div class="col-vbottom">
-          <span class="u-inlineBlock u-bgMain u-pad-05 u-title-5 u-colorLight">
-            Lorem ipsum dolor sit amet
-          </span>
-          <br/>
-          <span class="u-inlineBlock u-bgLight u-pad-05">
-            Sed ut nunc cursus, dapibus sapien ut
-          </span>
-        </div>
-      </div>
+  <div class="heroImage u-position-relative u-hideOverflow u-padding-y-15" role="banner">
+    <img class="heroImage-background u-size-full" src="assets/dist/img/slide.webp" alt="">
+    <div class="heroImage-content container u-display-flex u-flexDirection-column u-alignItems-start u-justifyContent-end">
+      <span class="u-bg-main u-padding-05 u-fontSize-title-5 u-color-light">
+        Lorem ipsum dolor sit amet
+      </span>
+      <span class="u-bg-light u-padding-05">
+        Sed ut nunc cursus, dapibus sapien ut
+      </span>
     </div>
   </div>
-  <!-- /HERO IMAGE -->
 
-  <!-- MAIN CONTENT -->
   <main role="main">
-    <section class="container">
+    <section class="container u-padding-y-15">
       <div class="row">
         <div class="col-lg-4">
-          <h2 class="u-title-6">Lorem ipsum dolor sit amet</h2>
-          <hr class="u-spacer-10">
+          <h2 class="u-fontSize-title-6">Lorem ipsum dolor sit amet</h2>
+          <hr class="u-margin-y-10">
           <p class="u-textBlock">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut nunc cursus, dapibus sapien ut, mollis mi. In at felis purus. Cras lacinia urna nec neque pellentesque, in tempus nunc tristique.</p>
           <br/>
           <a class="btn btn--main" href="#learn-more-1">Learn More</a>
         </div>
-        <div class="col-md-6 col-lg-4">
-          <h2 class="u-title-6">Lorem ipsum dolor sit amet</h2>
-          <hr class="u-spacer-10">
+        <div class="col-md-6 col-lg-4 u-marginTop-15 u-lg-marginTop-0">
+          <h2 class="u-fontSize-title-6">Lorem ipsum dolor sit amet</h2>
+          <hr class="u-margin-y-10">
           <p class="u-textBlock">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut nunc cursus, dapibus sapien ut, mollis mi. In at felis purus. Cras lacinia urna nec neque pellentesque, in tempus nunc tristique.</p>
           <br/>
           <a class="btn btn--main" href="#learn-more-2">Learn More</a>
         </div>
-        <div class="col-md-6 col-lg-4">
-          <h2 class="u-title-6">Lorem ipsum dolor sit amet</h2>
-          <hr class="u-spacer-10">
+        <div class="col-md-6 col-lg-4 u-marginTop-15 u-lg-marginTop-0">
+          <h2 class="u-fontSize-title-6">Lorem ipsum dolor sit amet</h2>
+          <hr class="u-margin-y-10">
           <p class="u-textBlock">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut nunc cursus, dapibus sapien ut, mollis mi. In at felis purus. Cras lacinia urna nec neque pellentesque, in tempus nunc tristique.</p>
           <br/>
           <a class="btn btn--main" href="#learn-more-3">Learn More</a>
@@ -114,15 +105,12 @@
       </div>
     </section>
   </main>
-  <!-- /MAIN CONTENT -->
 
-  <!-- FOOTER -->
-  <footer class="mainFooter u-bgMain u-colorLight" role="contentinfo">
-    <div class="container u-textCenter u-pad-20">
-      &copy; 2017-2019 | Project Title
+  <footer class="mainFooter u-bg-main u-color-light" role="contentinfo">
+    <div class="container u-text-center u-padding-20">
+      &copy; 2017-2023 | Project Title
     </div>
   </footer>
-  <!-- /FOOTER -->
 
   <script src="assets/dist/js/main.js"></script>
 

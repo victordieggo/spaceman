@@ -2,123 +2,158 @@
 =======================================================
 Helpers
 =======================================================
-1. Background
-2. Container
-3. Display
-4. Floating
-5. Headings
-6. Display Headings
-7. Hide/Show
-8. Misc
-9. Padding
-10. Position
-11. Sizing
-12. Spacers
-13. Text Utilities
-14. Z-Index
-15. Animations
+Background
+Display
+Flex
+Floating
+Hide/Show Elements
+Misc
+Padding/Margin
+Position
+Overflow
+Sizing
+Text Utilities
+Z-Index
+Animations
 =======================================================
 */
 
 /*
 -------------------------------------------------------
-1. Background
+Background
 -------------------------------------------------------
 */
 
 @each $class, $color in $colors {
-  $class: '.u-bg' + str-ucwords(#{$class});
-
-  #{$class} {
+  .u-bg-#{$class} {
     background-color: $color;
   }
 }
 
-.u-bgImage {
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 /*
 -------------------------------------------------------
-2. Container
+Display
 -------------------------------------------------------
 */
 
-.container {
-  @include container(1280px);
-}
-
-/*
--------------------------------------------------------
-3. Display
--------------------------------------------------------
-*/
-
-@each $property in 'block', 'inline', 'inline-block', 'table', 'table-cell', 'flex' {
-  .u-#{camelize($property)} {
+@each $property in 'none', 'block', 'inline', 'inline-block', 'inline-flex', 'flex' {
+  .u-display-#{camelize($property)} {
     display: #{$property};
   }
 }
 
+@each $property in 'none', 'block', 'inline', 'inline-block', 'inline-flex', 'flex' {
+  @each $breakpoint in $breakpoints {
+    $breakpoint: nth($breakpoint, 1);
+    @if $breakpoint != xs {
+      @include media-breakpoint($breakpoint) {
+        .u-#{$breakpoint}-display-#{camelize($property)} {
+          display: #{$property};
+        }
+      }
+    }
+  }
+}
+
 /*
 -------------------------------------------------------
-4. Floating
+Flex
+-------------------------------------------------------
+*/
+
+@each $property in 'row', 'row-reverse', 'column', 'column-reverse' {
+  .u-flexDirection-#{camelize($property)} {
+    flex-direction: #{$property};
+  }
+
+  @each $breakpoint in $breakpoints {
+    $breakpoint: nth($breakpoint, 1);
+    @if $breakpoint != xs {
+      @include media-breakpoint($breakpoint) {
+        .u-#{$breakpoint}-flexDirection-#{camelize($property)} {
+          flex-direction: #{$property};
+        }
+      }
+    }
+  }
+}
+
+@each $property in 'start', 'center', 'end', 'space-between', 'space-around' {
+  .u-justifyContent-#{camelize($property)} {
+    justify-content: #{$property};
+  }
+
+  @each $breakpoint in $breakpoints {
+    $breakpoint: nth($breakpoint, 1);
+    @if $breakpoint != xs {
+      @include media-breakpoint($breakpoint) {
+        .u-#{$breakpoint}-justifyContent-#{camelize($property)} {
+          justify-content: #{$property};
+        }
+      }
+    }
+  }
+}
+
+@each $property in 'start', 'center', 'end', 'stretch' {
+  .u-alignItems-#{$property} {
+    align-items: #{$property};
+  }
+
+  .u-alignSelf-#{$property} {
+    align-self: #{$property};
+  }
+
+  @each $breakpoint in $breakpoints {
+    $breakpoint: nth($breakpoint, 1);
+    @if $breakpoint != xs {
+      @include media-breakpoint($breakpoint) {
+        .u-#{$breakpoint}-alignItems-#{$property} {
+          align-items: #{$property};
+        }
+
+        .u-#{$breakpoint}-alignSelf-#{$property} {
+          align-self: #{$property};
+        }
+      }
+    }
+  }
+}
+
+/*
+-------------------------------------------------------
+Floating
 -------------------------------------------------------
 */
 
 @each $float in 'left', 'right', 'none' {
-  .u-f#{$float} {
+  .u-float-#{$float} {
     float: #{$float};
+  }
+
+  @each $breakpoint in $breakpoints {
+    $breakpoint: nth($breakpoint, 1);
+    @if $breakpoint != xs {
+      @include media-breakpoint($breakpoint) {
+        .u-#{$breakpoint}-float-#{$float} {
+          float: #{$float};
+        }
+      }
+    }
   }
 }
 
-.u-clear {
+.u-clearFix {
   clear: both;
 }
 
 /*
 -------------------------------------------------------
-5. Headings
+Hide/Show Elements
 -------------------------------------------------------
 */
 
-@for $i from 6 through 1 {
-  h#{$i},
-  .u-title-#{$i} {
-    font-size: $fontSize-headings;
-  }
-
-  $fontSize-headings: $fontSize-headings + $fontSize-ratio;
-}
-
-/*
--------------------------------------------------------
-6. Display Headings
--------------------------------------------------------
-*/
-
-@for $i from 4 through 1 {
-  .u-display-#{$i} {
-    font-size: $fontSize-display;
-  }
-
-  $fontSize-display: $fontSize-display + $fontSize-ratio;
-}
-
-/*
--------------------------------------------------------
-7. Hide/Show
--------------------------------------------------------
-*/
-
-.u-hide,
-.u-xs-hide,
-.u-sm-hide,
-.u-md-hide,
-.u-lg-hide,
-.u-xl-hide {
+.u-hide {
   @include hideElement;
 }
 
@@ -127,167 +162,219 @@ Helpers
 
   @include media-breakpoint($breakpoint) {
     .u-#{$breakpoint}-hide {
-      @include showElement;
+      @include hideElement;
     }
 
     .u-#{$breakpoint}-show {
-      @include hideElement;
+      @include showElement;
     }
   }
 }
 
 /*
 -------------------------------------------------------
-8. Misc
+Misc
 -------------------------------------------------------
 */
-
-.u-tag,
-.u-vcenter {
-  @include vcenter;
-}
-
-.u-tag {
-  padding: 0.4em 0.6em;
-  border-radius: $formElements-borderRadius;
-}
-
-.u-hideOverflow {
-  overflow: hidden;
-}
 
 .u-smoothTransition {
   transition: all 0.3s;
 }
 
-.u-noUnderline:hover {
-  text-decoration: none;
+/*
+-------------------------------------------------------
+Padding/Margin
+-------------------------------------------------------
+*/
+
+@each $property in 'padding', 'margin' {
+  @include spacing('u-#{$property}-', $property);
+  @include spacing('u-#{$property}-y-', ('#{$property}-top', '#{$property}-bottom'));
+  @include spacing('u-#{$property}-x-', ('#{$property}-left', '#{$property}-right'));
+
+  .u-#{$property}-auto {
+    #{$property}: auto;
+  }
+
+  .u-#{$property}-y-auto {
+    #{$property}-top: auto;
+    #{$property}-bottom: auto;
+  }
+
+  .u-#{$property}-x-auto {
+    #{$property}-left: auto;
+    #{$property}-right: auto;
+  }
+
+  @each $position in 'top', 'left', 'right', 'bottom' {
+    @include spacing('u-#{camelize(#{$property}-#{$position})}-', #{$property}-#{$position});
+
+    .u-#{camelize(#{$property}-#{$position})}-auto {
+      #{$property}-#{$position}: auto;
+    }
+  }
+
+  @each $breakpoint in $breakpoints {
+    $breakpoint: nth($breakpoint, 1);
+    @if $breakpoint != xs {
+      @include media-breakpoint($breakpoint) {
+        @include spacing('u-#{$breakpoint}-#{$property}-', $property);
+        @include spacing('u-#{$breakpoint}-#{$property}-y-', ('#{$property}-top', '#{$property}-bottom'));
+        @include spacing('u-#{$breakpoint}-#{$property}-x-', ('#{$property}-left', '#{$property}-right'));
+
+        .u-#{$breakpoint}-#{$property}-auto {
+          #{$property}: auto;
+        }
+
+        .u-#{$breakpoint}-#{$property}-y-auto {
+          #{$property}-top: auto;
+          #{$property}-bottom: auto;
+        }
+
+        .u-#{$breakpoint}-#{$property}-x-auto {
+          #{$property}-left: auto;
+          #{$property}-right: auto;
+        }
+
+        @each $position in 'top', 'left', 'right', 'bottom' {
+          @include spacing('u-#{$breakpoint}-#{camelize(#{$property}-#{$position})}-', #{$property}-#{$position});
+
+          .u-#{camelize(#{$property}-#{$position})}-auto {
+            #{$property}-#{$position}: auto;
+          }
+        }
+      }
+    }
+  }
 }
 
 /*
 -------------------------------------------------------
-9. Padding
--------------------------------------------------------
-*/
-
-@include spacing('u-pad-', 'padding');
-@include spacing('u-padTop-', 'padding-top');
-@include spacing('u-padBottom-', 'padding-bottom');
-
-/*
--------------------------------------------------------
-10. Position
+Position
 -------------------------------------------------------
 */
 
 @each $position in 'relative', 'absolute', 'fixed' {
-  .u-#{$position} {
+  .u-position-#{$position} {
     position: #{$position};
+
+    @each $breakpoint in $breakpoints {
+      $breakpoint: nth($breakpoint, 1);
+      @if $breakpoint != xs {
+        @include media-breakpoint($breakpoint) {
+          .u-#{$breakpoint}-position-#{$position} {
+            display: #{$position};
+          }
+        }
+      }
+    }
   }
 }
 
 /*
 -------------------------------------------------------
-11. Sizing
+Overflow
 -------------------------------------------------------
 */
 
-.u-autoSize,
-.u-autoWidth {
-  width: auto;
+@each $property in 'auto', 'hidden', 'visible', 'scroll' {
+  .u-overflow-#{$property} {
+    overflow: #{$property};
+  }
 }
 
-.u-autoSize,
-.u-autoHeight {
-  height: auto;
-}
+/*
+-------------------------------------------------------
+Sizing
+-------------------------------------------------------
+*/
 
-.u-fullSize,
-.u-fullWidth {
+.u-size-full,
+.u-width-full {
   width: 100%;
 }
 
-.u-fullSize,
-.u-fullHeight {
+.u-size-full,
+.u-height-full {
   height: 100%;
+}
+
+.u-size-auto,
+.u-width-auto {
+  width: auto;
+}
+
+.u-size-auto,
+.u-height-auto {
+  height: auto;
 }
 
 /*
 -------------------------------------------------------
-12. Spacers
--------------------------------------------------------
-*/
-
-@include spacing('u-spacer-', 'margin', true);
-@include spacing('u-spacerTop-', 'margin-top');
-@include spacing('u-spacerBottom-', 'margin-bottom');
-
-/*
--------------------------------------------------------
-13. Text Utilities
+Text Utilities
 -------------------------------------------------------
 */
 
 @each $class, $color in $colors {
-  .u-#{camelize('color-' + $class)} {
+  .u-color-#{$class} {
     color: $color;
   }
 }
 
-@each $align in 'center', 'left', 'right' {
-  .u-#{camelize('text-' + $align)} {
-    text-align: #{$align};
-  }
-}
-
-@each $sufix, $size in (small: $fontSize-small, large: $fontSize-large) {
-  .u-#{camelize('text-' + $sufix)} {
+@each $class, $size in $fontSizes {
+  .u-fontSize-#{$class} {
     font-size: $size;
   }
+
+  @each $breakpoint in $breakpoints {
+    $breakpoint: nth($breakpoint, 1);
+    @if $breakpoint != xs {
+      @include media-breakpoint($breakpoint) {
+        .u-#{$breakpoint}-fontSize-#{$class} {
+          font-size: $size;
+        }
+      }
+    }
+  }
 }
 
-.u-textUppercase {
+@each $align in 'center', 'left', 'right' {
+  .u-text-#{$align} {
+    text-align: #{$align};
+  }
+
+  @each $breakpoint in $breakpoints {
+    $breakpoint: nth($breakpoint, 1);
+    @if $breakpoint != xs {
+      @include media-breakpoint($breakpoint) {
+        .u-#{$breakpoint}-text-#{$align} {
+          text-align: #{$align};
+        }
+      }
+    }
+  }
+}
+
+.u-text-uppercase {
   text-transform: uppercase;
 }
 
+.u-text-lowercase {
+  text-transform: lowercase;
+}
+
 .u-textBlock {
-  line-height: 160%;
+  line-height: 1.6;
 }
 
 /*
 -------------------------------------------------------
-14. Z-Index
+Z-Index
 -------------------------------------------------------
 */
 
 @for $i from 1 through 6 {
   .u-zIndex-#{$i} {
     z-index: $i;
-  }
-}
-
-/*
--------------------------------------------------------
-15. Animations
--------------------------------------------------------
-*/
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-
-  to {
-    opacity: 0;
   }
 }
