@@ -3,7 +3,6 @@
 Helpers
 =======================================================
 Background
-Container
 Display
 Flex
 Floating
@@ -29,16 +28,6 @@ Background
   .u-bg-#{$class} {
     background-color: $color;
   }
-}
-
-/*
--------------------------------------------------------
-Container
--------------------------------------------------------
-*/
-
-.container {
-  @include container(1280px);
 }
 
 /*

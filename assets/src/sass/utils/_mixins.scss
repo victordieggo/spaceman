@@ -45,19 +45,6 @@ Breakpoints
 
 /*
 -------------------------------------------------------
-Container
--------------------------------------------------------
-*/
-
-@mixin container($size) {
-  max-width: #{$size};
-  margin: 0 auto;
-  padding-left: $grid-gutter + $grid-gutter / 2;
-  padding-right: $grid-gutter + $grid-gutter / 2;
-}
-
-/*
--------------------------------------------------------
 Grid
 -------------------------------------------------------
 */
@@ -65,7 +52,8 @@ Grid
 @mixin grid($name, $cols: $grid-cols) {
   @for $i from 1 through $cols {
     .#{$name}-#{$i} {
-      width: column($i, $cols);
+      flex: 0 0 column($i, $cols);
+      max-width: column($i, $cols);
     }
   }
 }
