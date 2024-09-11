@@ -95,7 +95,7 @@ Spacing
   $i: 0;
 
   @while $i < 35 {
-    $result: $i/10#{em};
+    $result: calc($i / 10);
     $class: #{$name}#{$i};
 
     @if $i < 10 {
@@ -105,12 +105,12 @@ Spacing
     .#{$class} {
       @if type-of($property) == list {
         @each $subproperty in $property {
-          #{$subproperty}: #{$result};
+          #{$subproperty}: #{$result}em;
         }
       }
 
       @else {
-        #{$property}: #{$result};
+        #{$property}: #{$result}em;
       }
     }
 

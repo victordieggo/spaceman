@@ -56,7 +56,7 @@ Generate grid column
 */
 
 @function column($columnSize, $gridSize) {
-  @return $columnSize / $gridSize * 100%;
+  @return calc($columnSize / $gridSize) * 100%;
 }
 
 /*

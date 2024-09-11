@@ -18,7 +18,7 @@ Grid Options
 */
 
 $grid-cols: 12;
-$grid-gutter: 1.5em;
+$grid-gutter: 2em;
 
 /*
 -------------------------------------------------------
@@ -26,7 +26,7 @@ Set Assets Path
 -------------------------------------------------------
 */
 
-$assetsPath: '../../dist';
+$assetsPath: '../../resources';
 
 /*
 -------------------------------------------------------
@@ -55,7 +55,7 @@ $colorVariation-ratio: 10%;
 $colors: (
   light:      #fff,
   dark:       #222,
-  gray:       $colorBase-gray,
+  grayDefault: $colorBase-gray,
   grayDark:   darken($colorBase-gray, $colorVariation-ratio),
   grayLight:  lighten($colorBase-gray, $colorVariation-ratio),
   main:       $colorBase-main,

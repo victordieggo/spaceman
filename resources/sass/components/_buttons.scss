@@ -25,7 +25,7 @@ Default Styles
   font-size: font-size(default);
   border-radius: $formElements-borderRadius;
   transition: background 0.3s, border 0.3s, color 0.3s;
-  @include btnColor(color(gray));
+  @include btnColor(color(grayDefault));
 
   &:focus,
   &:hover {
