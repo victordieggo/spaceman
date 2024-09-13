@@ -1,4 +1,5 @@
 import VitePluginBrowserSync from 'vite-plugin-browser-sync'
+import path from 'path'
 
 export default {
   plugins: [
@@ -7,7 +8,7 @@ export default {
         enable: true,
         codeSync: true,
         bs: {
-          proxy: 'http://localhost/spaceman/',
+          proxy: `localhost/${path.basename(__dirname)}`,
           files: ['./**/*.{html,php,scss,js}'],
           notify: true,
         }
