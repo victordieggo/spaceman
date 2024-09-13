@@ -21,6 +21,7 @@ export default {
       entry: 'resources/scripts/main.js',
       name: 'mcf',
     },
+    sourcemap: true,
     outDir: 'dist',
     rollupOptions: {
       output: {
@@ -28,6 +29,9 @@ export default {
         chunkFileNames: `[name].js`,
         assetFileNames: `[name].[ext]`
       }
+    },
+    css: {
+      sourcemap: true
     }
   },
 };
