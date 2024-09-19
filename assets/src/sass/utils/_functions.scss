@@ -66,7 +66,7 @@ Get assets URL
 */
 
 @function assets-url($path, $file) {
-  @return url($assetsPath + '/' + $path + '/' + $file);
+  @return url('@/' + $path + '/' + $file);
 }
 
 @function fonts($file) {
