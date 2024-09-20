@@ -16,8 +16,11 @@
   },
   "devDependencies": {
     "sass-embedded": "^1.78.0",
+    "sharp": "^0.33.5",
+    "svgo": "^3.3.2",
     "vite": "^5.2.9",
-    "vite-plugin-browser-sync": "^3.0.2"
+    "vite-plugin-browser-sync": "^3.0.2",
+    "vite-plugin-imagemin": "^0.6.1"
   },
   "scripts": {
     "build": "vite build",
