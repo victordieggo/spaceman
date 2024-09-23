@@ -1,9 +1,8 @@
-import VitePluginBrowserSync from 'vite-plugin-browser-sync';
-import { defineConfig } from 'vite';
-import path from 'path';
 import fs from 'fs';
-import { optimize } from 'svgo';
+import path from 'path';
 import sharp from 'sharp';
+import { optimize } from 'svgo';
+import VitePluginBrowserSync from 'vite-plugin-browser-sync';
 
 function optimizeAssets() {
   return {
@@ -37,18 +36,17 @@ function optimizeAssets() {
         const inputPath = path.join(paths.img.source, file);
         const outputPath = path.join(paths.img.dist, file);
         const image = sharp(inputPath);
+        const metadata = await image.metadata();
 
-        const format = await image.metadata().format;
-        if (['jpeg', 'jpg', 'png', 'webp'].includes(format)) {
-          await image[format]({ quality: 80 }).toFile(outputPath);
+        if (['jpeg', 'jpg', 'png', 'webp'].includes(metadata.format)) {
+          await image[metadata.format]({ quality: 80 }).toFile(outputPath);
         }
 
-        if (format === 'gif') {
+        if (metadata.format === 'gif') {
           fs.copyFileSync(inputPath, outputPath);
         }
       }
 
-      // Optimize SVGs
       for (const file of fs.readdirSync(paths.svg.source)) {
         const svgPath = path.join(paths.svg.source, file);
         const svgContent = fs.readFileSync(svgPath, 'utf8');
@@ -75,7 +73,7 @@ function optimizeAssets() {
   }
 }
 
-export default defineConfig({
+export default {
   plugins: [
     VitePluginBrowserSync({
       buildWatch: {
@@ -106,5 +104,8 @@ export default defineConfig({
         assetFileNames: `[name].[ext]`
       }
     },
+    css: {
+      devSourcemap: true
+    }
   },
-});
+};
