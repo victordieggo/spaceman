@@ -48,6 +48,8 @@ Colors
 -------------------------------------------------------
 */
 
+@use 'sass:color';
+
 $colorBase-main: #24292e;
 $colorBase-gray: #cecece;
 $colorVariation-ratio: 10%;
@@ -56,11 +58,11 @@ $colors: (
   light:      #fff,
   dark:       #222,
   grayDefault: $colorBase-gray,
-  grayDark:   darken($colorBase-gray, $colorVariation-ratio),
-  grayLight:  lighten($colorBase-gray, $colorVariation-ratio),
+  grayDark:   color.adjust($colorBase-gray, $blackness: -$colorVariation-ratio),
+  grayLight:  color.adjust($colorBase-gray, $lightness: $colorVariation-ratio),
   main:       $colorBase-main,
-  mainDark:   darken($colorBase-main, $colorVariation-ratio),
-  mainLight:  lighten($colorBase-main, $colorVariation-ratio)
+  mainDark:   color.adjust($colorBase-main, $blackness: -$colorVariation-ratio),
+  mainLight:  color.adjust($colorBase-main, $lightness: $colorVariation-ratio)
 );
 
 /*
