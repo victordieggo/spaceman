@@ -58,11 +58,11 @@ $colors: (
   light:      #fff,
   dark:       #222,
   grayDefault: $colorBase-gray,
-  grayDark:   color.adjust($colorBase-gray, $blackness: -$colorVariation-ratio),
-  grayLight:  color.adjust($colorBase-gray, $lightness: $colorVariation-ratio),
+  grayDark:   color.scale($colorBase-gray, $blackness: -$colorVariation-ratio),
+  grayLight:  color.scale($colorBase-gray, $lightness: $colorVariation-ratio),
   main:       $colorBase-main,
-  mainDark:   color.adjust($colorBase-main, $blackness: -$colorVariation-ratio),
-  mainLight:  color.adjust($colorBase-main, $lightness: $colorVariation-ratio)
+  mainDark:   color.scale($colorBase-main, $blackness: -$colorVariation-ratio),
+  mainLight:  color.scale($colorBase-main, $lightness: $colorVariation-ratio)
 );
 
 /*
