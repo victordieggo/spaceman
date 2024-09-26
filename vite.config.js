@@ -1,79 +1,10 @@
-import fs from 'fs';
 import path from 'path';
-import sharp from 'sharp';
-import { optimize } from 'svgo';
 import VitePluginBrowserSync from 'vite-plugin-browser-sync';
+import viteImagemin from 'vite-plugin-imagemin';
+import { defineConfig } from 'vite';
+import { promises as fs } from 'fs';
 
-function optimizeAssets() {
-  return {
-    async generateBundle() {
-      const basePath = directory => path.resolve(__dirname, directory);
-
-      const paths = {
-        img: {
-          source: basePath('resources/img'),
-          dist: basePath('dist/img'),
-        },
-        svg: {
-          source: basePath('resources/svg'),
-          dist: basePath('dist/svg'),
-        },
-      };
-
-      if (!fs.existsSync(paths.img.dist)) {
-        fs.mkdirSync(paths.img.dist, {
-          recursive: true
-        });
-      }
-
-      if (!fs.existsSync(paths.svg.dist)) {
-        fs.mkdirSync(paths.svg.dist, {
-          recursive: true
-        });
-      }
-
-      for (const file of fs.readdirSync(paths.img.source)) {
-        const inputPath = path.join(paths.img.source, file);
-        const outputPath = path.join(paths.img.dist, file);
-        const image = sharp(inputPath);
-        const metadata = await image.metadata();
-
-        if (['jpeg', 'jpg', 'png', 'webp'].includes(metadata.format)) {
-          await image[metadata.format]({ quality: 80 }).toFile(outputPath);
-        }
-
-        if (metadata.format === 'gif') {
-          fs.copyFileSync(inputPath, outputPath);
-        }
-      }
-
-      for (const file of fs.readdirSync(paths.svg.source)) {
-        const svgPath = path.join(paths.svg.source, file);
-        const svgContent = fs.readFileSync(svgPath, 'utf8');
-
-        const result = optimize(svgContent, {
-          path: svgPath,
-          multipass: true,
-          plugins: [
-            {
-              name: 'preset-default',
-              params: {
-                overrides: {
-                  removeViewBox: false,
-                  removeEmptyAttrs: false,
-                },
-              },
-            },
-          ],
-        });
-
-        fs.writeFileSync(path.join(paths.svg.dist, file), result.data)
-      }
-    }
-  }
-}
-
-export default {
+export default defineConfig({
   plugins: [
     VitePluginBrowserSync({
       buildWatch: {
@@ -81,18 +12,55 @@ export default {
         codeSync: true,
         bs: {
           proxy: `localhost/${path.basename(__dirname)}`,
-          files: ['./**/*.{html,php,scss,js}'],
+          files: ['./**/*.{html,php,scss,js}', './resources/img/**/*.{png,jpg,jpeg,gif,webp}', './resources/svg/**/*.svg'],
           notify: true,
+          open: false,
         }
       }
     }),
-    optimizeAssets(),
+    // Image optimization with vite-plugin-imagemin
+    viteImagemin({
+      gifsicle: { optimizationLevel: 7 },
+      optipng: { optimizationLevel: 7 },
+      mozjpeg: { quality: 80 },
+      pngquant: { quality: [0.65, 0.8] },
+      svgo: {
+        plugins: [
+          { name: 'removeViewBox', active: false }, // Ensure viewBox is not removed
+          { name: 'cleanupIDs', active: true }
+        ]
+      },
+      webp: { quality: 75 }
+    }),
+    // Custom plugin to ensure images and SVGs are copied and included in the build
+    {
+      name: 'copy-images-and-svgs',
+      async buildStart() {
+        // Read and process image files
+        const imgFiles = await fs.readdir('resources/img');
+        for (const file of imgFiles) {
+          this.emitFile({
+            type: 'asset',
+            name: file,
+            fileName: `img/${file}`,
+            source: await fs.readFile(`resources/img/${file}`)
+          });
+        }
+
+        // Read and process SVG files
+        const svgFiles = await fs.readdir('resources/svg');
+        for (const file of svgFiles) {
+          this.emitFile({
+            type: 'asset',
+            name: file,
+            fileName: `svg/${file}`,
+            source: await fs.readFile(`resources/svg/${file}`)
+          });
+        }
+      }
+    }
   ],
   build: {
-    lib: {
-      entry: 'resources/scripts/main.js',
-      name: 'spaceman',
-    },
     sourcemap: true,
     outDir: 'dist',
     emptyOutDir: false,
@@ -101,11 +69,25 @@ export default {
       output: {
         entryFileNames: `[name].js`,
         chunkFileNames: `[name].js`,
-        assetFileNames: `[name].[ext]`
+        // Ensure optimized assets are output to the correct directories
+        assetFileNames: ({ name }) => {
+          if (name.endsWith('.svg')) {
+            return `svg/[name].[ext]`;  // Output optimized SVG files to dist/svg
+          } else if (/\.(png|jpe?g|gif|webp)$/.test(name)) {
+            return `img/[name].[ext]`;  // Output optimized image files to dist/img
+          }
+          return `[name].[ext]`;
+        }
       }
     },
+    cssCodeSplit: false, // Combine CSS into a single file
     css: {
-      devSourcemap: true
-    }
+      devSourcemap: true,
+    },
   },
-};
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'resources')
+    }
+  }
+});
