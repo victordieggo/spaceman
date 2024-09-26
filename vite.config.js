@@ -12,13 +12,13 @@ export default defineConfig({
         codeSync: true,
         bs: {
           proxy: `localhost/${path.basename(__dirname)}`,
-          files: ['./**/*.{html,php,scss,js}', './resources/img/**/*.{png,jpg,jpeg,gif,webp}', './resources/svg/**/*.svg'],
+          files: ['./**/*.{html,php,scss,js}'],
           notify: true,
           open: false,
+          watchEvents: ['change', 'add', 'unlink', 'addDir', 'unlinkDir']
         }
       }
     }),
-    // Image optimization with vite-plugin-imagemin
     viteImagemin({
       gifsicle: { optimizationLevel: 7 },
       optipng: { optimizationLevel: 7 },
@@ -26,13 +26,19 @@ export default defineConfig({
       pngquant: { quality: [0.65, 0.8] },
       svgo: {
         plugins: [
-          { name: 'removeViewBox', active: false }, // Ensure viewBox is not removed
+          { name: 'removeViewBox', active: false },
           { name: 'cleanupIDs', active: true }
         ]
       },
       webp: { quality: 75 }
     }),
-    // Custom plugin to ensure images and SVGs are copied and included in the build
+    {
+      name: 'watch-images-and-svgs',
+      async buildStart() {
+        this.addWatchFile('resources/img');
+        this.addWatchFile('resources/svg');
+      },
+    },
     {
       name: 'copy-images-and-svgs',
       async buildStart() {
@@ -69,18 +75,17 @@ export default defineConfig({
       output: {
         entryFileNames: `[name].js`,
         chunkFileNames: `[name].js`,
-        // Ensure optimized assets are output to the correct directories
         assetFileNames: ({ name }) => {
           if (name.endsWith('.svg')) {
-            return `svg/[name].[ext]`;  // Output optimized SVG files to dist/svg
+            return `svg/[name].[ext]`;
           } else if (/\.(png|jpe?g|gif|webp)$/.test(name)) {
-            return `img/[name].[ext]`;  // Output optimized image files to dist/img
+            return `img/[name].[ext]`;
           }
           return `[name].[ext]`;
         }
       }
     },
-    cssCodeSplit: false, // Combine CSS into a single file
+    cssCodeSplit: false,
     css: {
       devSourcemap: true,
     },
