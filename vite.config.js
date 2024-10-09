@@ -2,6 +2,8 @@ import path from 'path';
 import VitePluginBrowserSync from 'vite-plugin-browser-sync';
 import viteImagemin from 'vite-plugin-imagemin';
 import { defineConfig } from 'vite';
+import stylelint from 'vite-plugin-stylelint'; // Stylelint plugin
+import eslintPlugin from 'vite-plugin-eslint'; // ESLint plugin
 import { promises as fs } from 'fs';
 
 export default defineConfig({
@@ -32,6 +34,19 @@ export default defineConfig({
       },
       webp: { quality: 75 }
     }),
+    stylelint({
+      files: 'resources/sass/**/*.scss',
+      configFile: path.resolve(__dirname, '.stylelintrc.js'),
+      failOnError: false,
+      emitWarning: true,
+      emitError: true,
+    }),
+    eslintPlugin({
+      include: ['resources/scripts/**/*.js'],
+      exclude: 'node_modules',
+      failOnWarning: false,
+      failOnError: false,
+    }),
     {
       name: 'watch-images-and-svgs',
       async buildStart() {
@@ -42,7 +57,6 @@ export default defineConfig({
     {
       name: 'copy-images-and-svgs',
       async buildStart() {
-        // Read and process image files
         const imgFiles = await fs.readdir('resources/img');
         for (const file of imgFiles) {
           this.emitFile({
@@ -53,7 +67,6 @@ export default defineConfig({
           });
         }
 
-        // Read and process SVG files
         const svgFiles = await fs.readdir('resources/svg');
         for (const file of svgFiles) {
           this.emitFile({
