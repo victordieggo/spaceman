@@ -2,8 +2,8 @@ import path from 'path';
 import VitePluginBrowserSync from 'vite-plugin-browser-sync';
 import viteImagemin from 'vite-plugin-imagemin';
 import { defineConfig } from 'vite';
-import stylelint from 'vite-plugin-stylelint'; // Stylelint plugin
-import eslintPlugin from 'vite-plugin-eslint'; // ESLint plugin
+import stylelint from 'vite-plugin-stylelint';
+import eslintPlugin from 'vite-plugin-eslint';
 import { promises as fs } from 'fs';
 
 export default defineConfig({
@@ -22,14 +22,28 @@ export default defineConfig({
       }
     }),
     viteImagemin({
-      gifsicle: { optimizationLevel: 7 },
-      optipng: { optimizationLevel: 7 },
-      mozjpeg: { quality: 80 },
-      pngquant: { quality: [0.65, 0.8] },
+      gifsicle: {
+        optimizationLevel: 7
+      },
+      optipng: {
+        optimizationLevel: 7
+      },
+      mozjpeg: {
+        quality: 80
+      },
+      pngquant: {
+        quality: [0.65, 0.8]
+      },
       svgo: {
         plugins: [
-          { name: 'removeViewBox', active: false },
-          { name: 'cleanupIDs', active: true }
+          {
+            name: 'removeViewBox',
+            active: false
+          },
+          {
+            name: 'cleanupIDs',
+            active: true
+          }
         ]
       },
       webp: { quality: 75 }
