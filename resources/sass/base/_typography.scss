@@ -1,3 +1,6 @@
+@use "../utils/functions";
+@use "../utils/mixins";
+
 /*
 =======================================================
 Typography
@@ -20,11 +23,11 @@ Defaults
 */
 
 body {
-  color: color(dark);
+  color: functions.color(dark);
   font-family: sans-serif;
   font-weight: normal;
 
-  @include media-breakpoint(md, max) {
+  @include mixins.media-breakpoint(md, max) {
     font-size: 90%;
   }
 }

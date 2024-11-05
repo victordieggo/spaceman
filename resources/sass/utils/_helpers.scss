@@ -1,3 +1,8 @@
+@use "sass:list";
+@use "../config/config";
+@use "functions";
+@use "mixins";
+
 /*
 =======================================================
 Helpers
@@ -24,7 +29,7 @@ Background
 -------------------------------------------------------
 */
 
-@each $class, $color in $colors {
+@each $class, $color in config.$colors {
   .u-bg-#{$class} {
     background-color: $color;
   }
@@ -37,17 +42,17 @@ Display
 */
 
 @each $property in 'none', 'block', 'inline', 'inline-block', 'inline-flex', 'flex' {
-  .u-display-#{camelize($property)} {
+  .u-display-#{functions.camelize($property)} {
     display: #{$property};
   }
 }
 
 @each $property in 'none', 'block', 'inline', 'inline-block', 'inline-flex', 'flex' {
-  @each $breakpoint in $breakpoints {
-    $breakpoint: nth($breakpoint, 1);
+  @each $breakpoint in config.$breakpoints {
+    $breakpoint: list.nth($breakpoint, 1);
     @if $breakpoint != xs {
-      @include media-breakpoint($breakpoint) {
-        .u-#{$breakpoint}-display-#{camelize($property)} {
+      @include mixins.media-breakpoint($breakpoint) {
+        .u-#{$breakpoint}-display-#{functions.camelize($property)} {
           display: #{$property};
         }
       }
@@ -62,15 +67,15 @@ Flex
 */
 
 @each $property in 'row', 'row-reverse', 'column', 'column-reverse' {
-  .u-flexDirection-#{camelize($property)} {
+  .u-flexDirection-#{functions.camelize($property)} {
     flex-direction: #{$property};
   }
 
-  @each $breakpoint in $breakpoints {
-    $breakpoint: nth($breakpoint, 1);
+  @each $breakpoint in config.$breakpoints {
+    $breakpoint: list.nth($breakpoint, 1);
     @if $breakpoint != xs {
-      @include media-breakpoint($breakpoint) {
-        .u-#{$breakpoint}-flexDirection-#{camelize($property)} {
+      @include mixins.media-breakpoint($breakpoint) {
+        .u-#{$breakpoint}-flexDirection-#{functions.camelize($property)} {
           flex-direction: #{$property};
         }
       }
@@ -79,15 +84,15 @@ Flex
 }
 
 @each $property in 'start', 'center', 'end', 'space-between', 'space-around' {
-  .u-justifyContent-#{camelize($property)} {
+  .u-justifyContent-#{functions.camelize($property)} {
     justify-content: #{$property};
   }
 
-  @each $breakpoint in $breakpoints {
-    $breakpoint: nth($breakpoint, 1);
+  @each $breakpoint in config.$breakpoints {
+    $breakpoint: list.nth($breakpoint, 1);
     @if $breakpoint != xs {
-      @include media-breakpoint($breakpoint) {
-        .u-#{$breakpoint}-justifyContent-#{camelize($property)} {
+      @include mixins.media-breakpoint($breakpoint) {
+        .u-#{$breakpoint}-justifyContent-#{functions.camelize($property)} {
           justify-content: #{$property};
         }
       }
@@ -104,10 +109,10 @@ Flex
     align-self: #{$property};
   }
 
-  @each $breakpoint in $breakpoints {
-    $breakpoint: nth($breakpoint, 1);
+  @each $breakpoint in config.$breakpoints {
+    $breakpoint: list.nth($breakpoint, 1);
     @if $breakpoint != xs {
-      @include media-breakpoint($breakpoint) {
+      @include mixins.media-breakpoint($breakpoint) {
         .u-#{$breakpoint}-alignItems-#{$property} {
           align-items: #{$property};
         }
@@ -131,10 +136,10 @@ Floating
     float: #{$float};
   }
 
-  @each $breakpoint in $breakpoints {
-    $breakpoint: nth($breakpoint, 1);
+  @each $breakpoint in config.$breakpoints {
+    $breakpoint: list.nth($breakpoint, 1);
     @if $breakpoint != xs {
-      @include media-breakpoint($breakpoint) {
+      @include mixins.media-breakpoint($breakpoint) {
         .u-#{$breakpoint}-float-#{$float} {
           float: #{$float};
         }
@@ -154,19 +159,19 @@ Hide/Show Elements
 */
 
 .u-hide {
-  @include hideElement;
+  @include mixins.hideElement;
 }
 
-@each $breakpoint in $breakpoints {
-  $breakpoint: nth($breakpoint, 1);
+@each $breakpoint in config.$breakpoints {
+  $breakpoint: list.nth($breakpoint, 1);
 
-  @include media-breakpoint($breakpoint) {
+  @include mixins.media-breakpoint($breakpoint) {
     .u-#{$breakpoint}-hide {
-      @include hideElement;
+      @include mixins.hideElement;
     }
 
     .u-#{$breakpoint}-show {
-      @include showElement;
+      @include mixins.showElement;
     }
   }
 }
@@ -188,9 +193,9 @@ Padding/Margin
 */
 
 @each $property in 'padding', 'margin' {
-  @include spacing('u-#{$property}-', $property);
-  @include spacing('u-#{$property}-y-', ('#{$property}-top', '#{$property}-bottom'));
-  @include spacing('u-#{$property}-x-', ('#{$property}-left', '#{$property}-right'));
+  @include mixins.spacing('u-#{$property}-', $property);
+  @include mixins.spacing('u-#{$property}-y-', ('#{$property}-top', '#{$property}-bottom'));
+  @include mixins.spacing('u-#{$property}-x-', ('#{$property}-left', '#{$property}-right'));
 
   .u-#{$property}-auto {
     #{$property}: auto;
@@ -207,20 +212,20 @@ Padding/Margin
   }
 
   @each $position in 'top', 'left', 'right', 'bottom' {
-    @include spacing('u-#{camelize(#{$property}-#{$position})}-', #{$property}-#{$position});
+    @include mixins.spacing('u-#{functions.camelize(#{$property}-#{$position})}-', #{$property}-#{$position});
 
-    .u-#{camelize(#{$property}-#{$position})}-auto {
+    .u-#{functions.camelize(#{$property}-#{$position})}-auto {
       #{$property}-#{$position}: auto;
     }
   }
 
-  @each $breakpoint in $breakpoints {
-    $breakpoint: nth($breakpoint, 1);
+  @each $breakpoint in config.$breakpoints {
+    $breakpoint: list.nth($breakpoint, 1);
     @if $breakpoint != xs {
-      @include media-breakpoint($breakpoint) {
-        @include spacing('u-#{$breakpoint}-#{$property}-', $property);
-        @include spacing('u-#{$breakpoint}-#{$property}-y-', ('#{$property}-top', '#{$property}-bottom'));
-        @include spacing('u-#{$breakpoint}-#{$property}-x-', ('#{$property}-left', '#{$property}-right'));
+      @include mixins.media-breakpoint($breakpoint) {
+        @include mixins.spacing('u-#{$breakpoint}-#{$property}-', $property);
+        @include mixins.spacing('u-#{$breakpoint}-#{$property}-y-', ('#{$property}-top', '#{$property}-bottom'));
+        @include mixins.spacing('u-#{$breakpoint}-#{$property}-x-', ('#{$property}-left', '#{$property}-right'));
 
         .u-#{$breakpoint}-#{$property}-auto {
           #{$property}: auto;
@@ -237,9 +242,9 @@ Padding/Margin
         }
 
         @each $position in 'top', 'left', 'right', 'bottom' {
-          @include spacing('u-#{$breakpoint}-#{camelize(#{$property}-#{$position})}-', #{$property}-#{$position});
+          @include mixins.spacing('u-#{$breakpoint}-#{functions.camelize(#{$property}-#{$position})}-', #{$property}-#{$position});
 
-          .u-#{camelize(#{$property}-#{$position})}-auto {
+          .u-#{functions.camelize(#{$property}-#{$position})}-auto {
             #{$property}-#{$position}: auto;
           }
         }
@@ -258,10 +263,10 @@ Position
   .u-position-#{$position} {
     position: #{$position};
 
-    @each $breakpoint in $breakpoints {
-      $breakpoint: nth($breakpoint, 1);
+    @each $breakpoint in config.$breakpoints {
+      $breakpoint: list.nth($breakpoint, 1);
       @if $breakpoint != xs {
-        @include media-breakpoint($breakpoint) {
+        @include mixins.media-breakpoint($breakpoint) {
           .u-#{$breakpoint}-position-#{$position} {
             display: #{$position};
           }
@@ -315,21 +320,21 @@ Text Utilities
 -------------------------------------------------------
 */
 
-@each $class, $color in $colors {
+@each $class, $color in config.$colors {
   .u-color-#{$class} {
     color: $color;
   }
 }
 
-@each $class, $size in $fontSizes {
+@each $class, $size in config.$fontSizes {
   .u-fontSize-#{$class} {
     font-size: $size;
   }
 
-  @each $breakpoint in $breakpoints {
-    $breakpoint: nth($breakpoint, 1);
+  @each $breakpoint in config.$breakpoints {
+    $breakpoint: list.nth($breakpoint, 1);
     @if $breakpoint != xs {
-      @include media-breakpoint($breakpoint) {
+      @include mixins.media-breakpoint($breakpoint) {
         .u-#{$breakpoint}-fontSize-#{$class} {
           font-size: $size;
         }
@@ -343,10 +348,10 @@ Text Utilities
     text-align: #{$align};
   }
 
-  @each $breakpoint in $breakpoints {
-    $breakpoint: nth($breakpoint, 1);
+  @each $breakpoint in config.$breakpoints {
+    $breakpoint: list.nth($breakpoint, 1);
     @if $breakpoint != xs {
-      @include media-breakpoint($breakpoint) {
+      @include mixins.media-breakpoint($breakpoint) {
         .u-#{$breakpoint}-text-#{$align} {
           text-align: #{$align};
         }

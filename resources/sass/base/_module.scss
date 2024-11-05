@@ -4,7 +4,7 @@ Module: Base
 =======================================================
 */
 
-@import 'reset';
-@import 'grid';
-@import 'container';
-@import 'typography';
+@use 'reset';
+@use 'grid';
+@use 'container';
+@use 'typography';

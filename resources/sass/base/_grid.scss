@@ -1,3 +1,7 @@
+@use "sass:list";
+@use "../config/config";
+@use "../utils/mixins";
+
 /*
 =======================================================
 Grid
@@ -13,17 +17,17 @@ Row
 -------------------------------------------------------
 */
 
-$teste: calc($grid-gutter / 2);
+$grid-gutter: calc(config.$grid-gutter / 2);
 
 .row {
   display: flex;
   flex-wrap: wrap;
-  margin-left: -$teste;
-  margin-right: -$teste;
+  margin-left: -$grid-gutter;
+  margin-right: -$grid-gutter;
 
   & > [class*='col'] {
-    padding-left: $teste;
-    padding-right: $teste;
+    padding-left: $grid-gutter;
+    padding-right: $grid-gutter;
   }
 }
 
@@ -37,13 +41,13 @@ Columns
   flex: 1 1 0;
 }
 
-@include grid('col');
+@include mixins.grid('col');
 
-@each $breakpoint in $breakpoints {
-  $breakpoint: nth($breakpoint, 1);
+@each $breakpoint in config.$breakpoints {
+  $breakpoint: list.nth($breakpoint, 1);
   @if $breakpoint != xs {
-    @include media-breakpoint($breakpoint) {
-      @include grid('col-' + $breakpoint);
+    @include mixins.media-breakpoint($breakpoint) {
+      @include mixins.grid('col-' + $breakpoint);
     }
   }
 }

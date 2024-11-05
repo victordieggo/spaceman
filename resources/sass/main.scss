@@ -4,9 +4,9 @@ MAIN
 =======================================================
 */
 
-@import 'config/module';
-@import 'utils/module';
-@import 'base/module';
-@import 'components/module';
-@import 'layout/module';
-@import 'vendor/module';
+@use 'config/module';
+@use 'utils/module' as module2;
+@use 'base/module' as module3;
+@use 'components/module' as module4;
+@use 'layout/module' as module5;
+@use 'vendor/module' as module6;

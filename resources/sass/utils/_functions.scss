@@ -1,3 +1,8 @@
+@use "sass:list";
+@use "sass:map";
+@use "sass:string";
+@use "../config/config";
+
 /*
 =======================================================
 Functions
@@ -18,7 +23,7 @@ Get breakpoints
 */
 
 @function breakpoint($key) {
-  @return map-get($breakpoints, $key);
+  @return map.get(config.$breakpoints, $key);
 }
 
 /*
@@ -28,8 +33,8 @@ Get colors
 */
 
 @function color($color) {
-  @if map-has-key($colors, $color) {
-    @return map-get($colors, $color);
+  @if map.has-key(config.$colors, $color) {
+    @return map.get(config.$colors, $color);
   }
 
   @error 'Invalid color name: #{$color}.';
@@ -42,8 +47,8 @@ Get font sizes
 */
 
 @function font-size($key) {
-  @if map-has-key($fontSizes, $key) {
-    @return map-get($fontSizes, $key);
+  @if map.has-key(config.$fontSizes, $key) {
+    @return map.get(config.$fontSizes, $key);
   }
 
   @error 'Invalid font-size: #{$key}.';
@@ -66,7 +71,7 @@ Get assets URL
 */
 
 @function assets-url($path, $file) {
-  @return url($assetsPath + '/' + $path + '/' + $file);
+  @return url('/' + $path + '/' + $file);
 }
 
 @function fonts($file) {
@@ -88,11 +93,11 @@ String helpers
 */
 
 @function contain($list, $value) {
-  @return not not index($list, $value);
+  @return not not list.index($list, $value);
 }
 
 @function capitalize($string) {
-  @return to-upper-case(str-slice($string, 1, 1)) + str-slice($string, 2);
+  @return string.to-upper-case(string.slice($string, 1, 1)) + string.slice($string, 2);
 }
 
 @function str-ucwords($string) {
@@ -102,10 +107,10 @@ String helpers
   $running: true;
 
   @while $running {
-    $index: str-index($progress, ' ');
+    $index: string.index($progress, ' ');
     @if $index {
-      $result: $result + capitalize(str-slice($progress, 1, $index));
-      $progress: str-slice($progress, ($index + 1));
+      $result: $result + capitalize(string.slice($progress, 1, $index));
+      $progress: string.slice($progress, ($index + 1));
     }
     @else {
       $running: false;
@@ -120,16 +125,16 @@ String helpers
   $result: '';
   $exclude: ' ', '-', '–', '—', '_', ',', ';', ':', '.';
 
-  @while str-length($progress) > 0 {
-    $char: str-slice($progress, 1, 1);
+  @while string.length($progress) > 0 {
+    $char: string.slice($progress, 1, 1);
 
     @if contain($exclude, $char) {
-      $progress: capitalize(str-slice($progress, 2, 2)) + str-slice($progress, 3);
+      $progress: capitalize(string.slice($progress, 2, 2)) + string.slice($progress, 3);
     }
 
     @else {
       $result: $result + $char;
-      $progress: str-slice($progress, 2);
+      $progress: string.slice($progress, 2);
     }
   }
 

@@ -1,3 +1,6 @@
+@use "../config/config";
+@use "../utils/functions";
+
 /*
 =======================================================
 CSS Reset
@@ -29,8 +32,8 @@ Defaults
 html {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
-  background-color: color(light);
-  font-size: font-size('default');
+  background-color: functions.color(light);
+  font-size: functions.font-size('default');
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -ms-overflow-style: scrollbar;
@@ -39,7 +42,7 @@ html {
 
 a,
 label,
-#{$formElements} {
+#{config.$formElements} {
   touch-action: manipulation;
 }
 
@@ -56,7 +59,7 @@ fieldset {
 }
 
 small {
-  font-size: font-size('small');
+  font-size: functions.font-size('small');
 }
 
 /*
@@ -65,10 +68,10 @@ Form Elements
 -------------------------------------------------------
 */
 
-#{$formElements} {
-  color: color(dark);
+#{config.$formElements} {
+  color: functions.color(dark);
   font-family: inherit;
-  font-size: font-size('default');
+  font-size: functions.font-size('default');
 }
 
 button {
@@ -92,7 +95,7 @@ select {
 
   &:-moz-focusring {
     color: transparent;
-    text-shadow: 0 0 0 color(dark);
+    text-shadow: 0 0 0 functions.color(dark);
   }
 }
 
@@ -123,7 +126,7 @@ img {
 hr {
   border: 0;
   height: 1px;
-  background-color: color(grayDefault);
+  background-color: functions.color(grayDefault);
 }
 
 ul,

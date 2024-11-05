@@ -4,7 +4,7 @@ Module: Utils
 =======================================================
 */
 
-@import 'functions';
-@import 'mixins';
-@import 'helpers';
-@import 'animations';
+@use 'functions';
+@use 'mixins';
+@use 'helpers';
+@use 'animations';

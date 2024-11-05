@@ -1,3 +1,5 @@
+@use "../config/config";
+
 /*
 =======================================================
 Container
@@ -16,11 +18,11 @@ Base Styles
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: $grid-gutter;
-  padding-right: $grid-gutter;
+  padding-left: config.$grid-gutter;
+  padding-right: config.$grid-gutter;
 
   &Fluid {
-    padding-left: $grid-gutter;
-    padding-right: $grid-gutter;
+    padding-left: config.$grid-gutter;
+    padding-right: config.$grid-gutter;
   }
 }

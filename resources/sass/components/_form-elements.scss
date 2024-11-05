@@ -1,3 +1,7 @@
+@use "../config/config";
+@use "../utils/functions";
+@use "../utils/mixins";
+
 /*
 =======================================================
 Form Elements
@@ -19,9 +23,9 @@ Base Styles
 .select,
 .input-icon {
   appearance: none;
-  background-color: color(light);
-  border: solid 1px color(grayDefault);
-  border-radius: $formElements-borderRadius;
+  background-color: functions.color(light);
+  border: solid 1px functions.color(grayDefault);
+  border-radius: config.$formElements-borderRadius;
   padding: 0.65em;
   transition: border 0.3s, box-shadow 0.3s;
 }
@@ -34,14 +38,14 @@ Base Styles
 .input:focus,
 .select:focus,
 :focus + .input-icon {
-  border-color: color(grayDark);
-  box-shadow: 0 0 1px color(grayDark);
+  border-color: functions.color(grayDark);
+  box-shadow: 0 0 1px functions.color(grayDark);
   outline: none;
 }
 
 @each $prefix in ':-ms', '::-webkit' {
   #{$prefix}-input-placeholder {
-    color: color(grayDark);
+    color: functions.color(grayDark);
   }
 }
 
@@ -56,7 +60,7 @@ Custom Checkbox/Radio
   input {
     margin: -1px;
     overflow: hidden;
-    @include size(1px);
+    @include mixins.size(1px);
     position: absolute;
     clip: rect(0, 0, 0, 0);
   }
@@ -68,7 +72,7 @@ Custom Checkbox/Radio
 
 .input-icon {
   margin-top: -0.1em;
-  @include size(1.5em);
+  @include mixins.size(1.5em);
   display: inline-block;
   background-position: center;
   background-repeat: no-repeat;
@@ -78,7 +82,7 @@ Custom Checkbox/Radio
   }
 
   .inputCheckbox :checked + & {
-    background-image: svg('icon-check.svg');
+    background-image: functions.svg('icon-check.svg');
     background-size: 60%;
   }
 
@@ -89,9 +93,9 @@ Custom Checkbox/Radio
     &::after {
       content: '';
       border-radius: 50%;
-      border: 0.45em solid color(light);
-      background-color: color(dark);
-      @include absolute(0, 0, 0, 0);
+      border: 0.45em solid functions.color(light);
+      background-color: functions.color(dark);
+      @include mixins.absolute(0, 0, 0, 0);
     }
   }
 }
@@ -103,7 +107,7 @@ Custom Select
 */
 
 .select:not([multiple]) {
-  background-image: svg('icon-arrow-down.svg');
+  background-image: functions.svg('icon-arrow-down.svg');
   background-position: right 0.6em center;
   background-repeat: no-repeat;
   background-size: 1.5em;
@@ -118,18 +122,18 @@ Disabled Elements
 
 :disabled:not(.btn),
 .input[readonly] {
-  color: color(grayDark);
-  background-color: color(grayLight);
+  color: functions.color(grayDark);
+  background-color: functions.color(grayLight);
 }
 
 :disabled {
   pointer-events: none;
 
   + .input-icon {
-    background-color: color(grayLight);
+    background-color: functions.color(grayLight);
 
     + span {
-      color: color(grayDark);
+      color: functions.color(grayDark);
     }
   }
 }

@@ -1,3 +1,5 @@
+@use "../utils/mixins";
+
 /*
 =======================================================
 Hero Image
@@ -20,6 +22,6 @@ Default Style
   &-background {
     z-index: -1;
     object-fit: cover;
-    @include absolute(0, 0, 0, 0);
+    @include mixins.absolute(0, 0, 0, 0);
   }
 }
