@@ -35,7 +35,7 @@ Chrome 29+, IE 10+, Firefox 22+, Safari 6.1+, Opera 12+
 
 [![BrowserStack](https://victordiego.com/browserstack-logo.jpg)](https://www.browserstack.com)
 
-Many thanks to [BrowserStack](https://www.browserstack.com) for providing open source licenses to test the project features across all the different browsers and devices.
+This project is supported by the [BrowserStack](https://www.browserstack.com) open source program, which provides free testing across multiple devices and browsers.
 
 ### License
 
