@@ -1,38 +1,42 @@
-import globals from "globals";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
-import js from "@eslint/js";
-import { FlatCompat } from "@eslint/eslintrc";
+import eslint from '@eslint/js';
+import globals from 'globals';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const compat = new FlatCompat({
-    baseDirectory: __dirname,
-    recommendedConfig: js.configs.recommended,
-    allConfig: js.configs.all
-});
-
-export default [{
-    ignores: [
-        "assets/src/js/libs/*.js",
-        "assets/src/js/polyfill/*.js",
-        "assets/src/js/vendor/*.js",
-    ],
-}, ...compat.extends("eslint:recommended"), {
+export default [
+  {
+    files: ['**/*.js'],
     languageOptions: {
-        globals: {
-            ...globals.browser,
-            ...globals.node,
-        },
-
-        ecmaVersion: 2015,
-        sourceType: "module",
+      ecmaVersion: 'latest',
+      sourceType: 'module',
+      globals: {
+        ...globals.browser,
+        ...globals.es2021,
+        ...globals.node,
+      },
     },
-
     rules: {
-        indent: ["error", 2],
-        semi: ["error", "always"],
-        quotes: ["error", "single"],
-        strict: ["error", "function"],
+      // Formatting
+      'indent': ['error', 2],
+      'linebreak-style': ['error', 'unix'],
+      'quotes': ['error', 'single'],
+      'semi': ['error', 'always'],
+      'max-len': ['warn', { code: 100 }],
+
+      // Spacing
+      'arrow-spacing': 'error',
+      'space-before-blocks': 'error',
+      'keyword-spacing': 'error',
+      'object-curly-spacing': ['error', 'always'],
+      'array-bracket-spacing': ['error', 'never'],
+
+      // Best Practices
+      'no-unused-vars': 'warn',
+      'no-console': 'warn',
+      'prefer-const': 'error',
+      'no-var': 'error',
+
+      // Style
+      'comma-dangle': ['error', 'always-multiline'],
     },
-}];
+  },
+  eslint.configs.recommended,
+];

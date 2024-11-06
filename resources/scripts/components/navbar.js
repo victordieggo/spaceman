@@ -92,5 +92,5 @@ export default {
   toggleSubmenu(element) {
     element.classList.toggle('is-active');
     this.toggleExpanded(element.firstElementChild);
-  }
+  },
 };

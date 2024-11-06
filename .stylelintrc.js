@@ -1,17 +1,41 @@
 export default {
-  extends: "stylelint-config-standard",
-  ignoreFiles: "assets/src/sass/vendor/*.scss",
+  extends: [
+    'stylelint-config-standard-scss',
+  ],
+  plugins: [
+    'stylelint-scss',
+  ],
   rules: {
-    "no-descending-specificity": null,
-    "declaration-empty-line-before": "never",
-    "at-rule-empty-line-before": ["always", {
-      ignore: ["after-comment", "inside-block", "blockless-after-same-name-blockless"]
-    }],
-    "at-rule-no-unknown": [true, {
-      ignoreAtRules: [
-        "at-root", "content", "debug", "each", "else", "error", "extend",
-        "for", "function", "if", "include", "mixin", "return", "warn", "while"
-      ]
-    }]
-  }
+    // Formatting
+    'indentation': 2,
+    'string-quotes': 'single',
+    'declaration-block-trailing-semicolon': 'always',
+    'declaration-colon-space-after': 'always',
+    'number-leading-zero': 'always',
+
+    // Selectors
+    'selector-pseudo-class-no-unknown': true,
+    'selector-pseudo-element-no-unknown': true,
+    'selector-max-id': 1,
+    'selector-class-pattern': '^[a-z][a-zA-Z0-9-]*$',
+    'max-nesting-depth': 3,
+
+    // Properties and Values
+    'color-hex-case': 'lower',
+    'color-hex-length': 'short',
+    'color-named': 'never',
+    'declaration-no-important': true,
+
+    // Duplicates and Prefixes
+    'no-duplicate-selectors': true,
+    'property-no-vendor-prefix': true,
+    'value-no-vendor-prefix': true,
+
+    // URL Handling
+    'function-url-quotes': 'always',
+
+    // SCSS-specific rules
+    'scss/at-rule-no-unknown': true,
+    'scss/selector-no-redundant-nesting-selector': true,
+  },
 };
