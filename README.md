@@ -4,29 +4,24 @@ Spaceman is a simple and easily customizable HTML/CSS boilerplate to build websi
 
 ### Getting Started
 
-[Download Spaceman](https://github.com/victordieggo/spaceman/releases/latest) and extract all files into the root directory of your project. The build system is based on [Gulp](#build-tools) and [Webpack](https://webpack.js.org/), so you'll need [Node.JS](https://nodejs.org/en/) installed first. Once you have set it up, access the bash/terminal/command line:
+[Download Spaceman](https://github.com/victordieggo/spaceman/releases/latest) and extract all files into the root directory of your project. The build system is based on [Vite](https://vite.dev/) so you'll need [Node.JS](https://nodejs.org/en/) installed first. Once you have set it up, access the bash/terminal/command line:
 
 ```
-# install gulp globally
-$ npm install -g gulp
-
 # go to your project directory
 $ cd myproject
 
 # install dev dependencies
-$ npm install
+$ npm i
 
 # start the development server at localhost:3000
 $ npm run dev
+
+# preview and test the production-optimized build
+$ npm run preview
+
+# after editing your app, build it to the /dist directory
+$ npm run build
 ```
-
-To summarize, the `gulpfile.js` located in the project root does the following:
-
-* Optimize SVGs and images
-* Compile, minify, autoprefix and lint Sass files
-* Use Webpack to compile, concatenate, minify, and lint JavaScript
-* Watch files for changes, rebuild everything and reload all browsers
-
 ### Browser Support
 
 Chrome 29+, IE 10+, Firefox 22+, Safari 6.1+, Opera 12+
