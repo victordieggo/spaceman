@@ -4,9 +4,9 @@ MAIN
 =======================================================
 */
 
-@use 'config/module';
-@use 'utils/module' as module2;
-@use 'base/module' as module3;
-@use 'components/module' as module4;
-@use 'layout/module' as module5;
-@use 'vendor/module' as module6;
+@use 'config/module' as config;
+@use 'utils/module' as utils;
+@use 'base/module' as base;
+@use 'components/module' as components;
+@use 'layout/module' as layout;
+@use 'vendor/module' as vendor;
