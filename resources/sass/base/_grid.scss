@@ -1,0 +1,53 @@
+@use "sass:list";
+@use "../config/config";
+@use "../utils/mixins";
+
+/*
+=======================================================
+Grid
+=======================================================
+Row
+Columns
+=======================================================
+*/
+
+/*
+-------------------------------------------------------
+Row
+-------------------------------------------------------
+*/
+
+$grid-gutter: calc(config.$grid-gutter / 2);
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -$grid-gutter;
+  margin-right: -$grid-gutter;
+
+  & > [class*='col'] {
+    padding-left: $grid-gutter;
+    padding-right: $grid-gutter;
+  }
+}
+
+/*
+-------------------------------------------------------
+Columns
+-------------------------------------------------------
+*/
+
+.col {
+  flex: 1 1 0;
+}
+
+@include mixins.grid('col');
+
+@each $breakpoint in config.$breakpoints {
+  $breakpoint: list.nth($breakpoint, 1);
+  @if $breakpoint != xs {
+    @include mixins.media-breakpoint($breakpoint) {
+      @include mixins.grid('col-' + $breakpoint);
+    }
+  }
+}

@@ -1,0 +1,28 @@
+@use "../config/config";
+
+/*
+=======================================================
+Container
+=======================================================
+Base Styles
+=======================================================
+*/
+
+/*
+-------------------------------------------------------
+Base Styles
+-------------------------------------------------------
+*/
+
+.container {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: config.$grid-gutter;
+  padding-right: config.$grid-gutter;
+
+  &Fluid {
+    padding-left: config.$grid-gutter;
+    padding-right: config.$grid-gutter;
+  }
+}

@@ -1,0 +1,179 @@
+@use "sass:meta";
+@use "../config/config";
+@use "functions";
+
+/*
+=======================================================
+Mixins
+=======================================================
+Breakpoints
+Container
+Grid
+Font-Face
+Spacing
+Offset Positioning
+Utilities
+=======================================================
+*/
+
+/*
+-------------------------------------------------------
+Breakpoints
+-------------------------------------------------------
+*/
+
+@mixin media-breakpoint($size, $property: min) {
+  $breakpoint: functions.breakpoint($size);
+
+  @if $breakpoint {
+    $size: $breakpoint;
+  }
+
+  @if $property == min {
+    $size: $size + 1;
+  }
+
+  @media (#{$property}-width: $size) {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-between($minWidth, $maxWidth) {
+  $minWidth: if(functions.breakpoint($minWidth), functions.breakpoint($minWidth), $minWidth);
+  $maxWidth: if(functions.breakpoint($maxWidth), functions.breakpoint($maxWidth), $maxWidth);
+
+  @media (min-width: ($minWidth + 1)) and (max-width: $maxWidth) {
+    @content;
+  }
+}
+
+/*
+-------------------------------------------------------
+Grid
+-------------------------------------------------------
+*/
+
+@mixin grid($name, $cols: config.$grid-cols) {
+  @for $i from 1 through $cols {
+    .#{$name}-#{$i} {
+      flex: 0 0 functions.column($i, $cols);
+      max-width: functions.column($i, $cols);
+    }
+  }
+}
+
+/*
+-------------------------------------------------------
+Font-Face
+-------------------------------------------------------
+*/
+
+@mixin font-face($family, $directory, $file, $weight) {
+  $url: $directory + '/' + $file;
+
+  @font-face {
+    font-family: $family;
+    src: functions.fonts($url + '.eot');
+    src:
+      functions.fonts($url + '.eot') format('embedded-opentype'),
+      functions.fonts($url + '.woff2') format('woff2'),
+      functions.fonts($url + '.woff') format('woff'),
+      functions.fonts($url + '.ttf') format('truetype'),
+      functions.fonts($url + '.svg##{$file}') format('svg');
+    font-weight: $weight;
+  }
+
+  .u-#{functions.camelize('font-' + $file)} {
+    font-family: $family;
+    font-weight: $weight;
+  }
+}
+
+/*
+-------------------------------------------------------
+Spacing
+-------------------------------------------------------
+*/
+
+@mixin spacing($name, $property) {
+  $i: 0;
+
+  @while $i < 35 {
+    $result: calc($i / 10);
+    $class: #{$name}#{$i};
+
+    @if $i < 10 {
+      $class: if($i == 0, #{$name}#{$i}, #{$name}0#{$i});
+    }
+
+    .#{$class} {
+      @if meta.type-of($property) == list {
+        @each $subproperty in $property {
+          #{$subproperty}: #{$result}em;
+        }
+      }
+
+      @else {
+        #{$property}: #{$result}em;
+      }
+    }
+
+    $i: $i + 5;
+  }
+}
+
+/*
+-------------------------------------------------------
+Offset Positioning
+-------------------------------------------------------
+*/
+
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin absolute($args...) {
+  @include position(absolute, $args...);
+}
+
+@mixin relative($args...) {
+  @include position(relative, $args...);
+}
+
+@mixin fixed($args...) {
+  @include position(fixed, $args...);
+}
+
+@mixin static($args...) {
+  @include position(static, $args...);
+}
+
+/*
+-------------------------------------------------------
+Utilities
+-------------------------------------------------------
+*/
+
+@mixin size($width: null, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin btnColor($backgroundColor, $borderColor: $backgroundColor) {
+  background-color: $backgroundColor;
+  border-color: $borderColor;
+}
+
+@mixin hideElement {
+  visibility: hidden;
+  @include absolute($top: -9999px, $left: -9999px);
+}
+
+@mixin showElement {
+  visibility: inherit;
+  @include static($top: auto, $left: auto);
+}

@@ -1,0 +1,385 @@
+@use "sass:list";
+@use "../config/config";
+@use "functions";
+@use "mixins";
+
+/*
+=======================================================
+Helpers
+=======================================================
+Background
+Display
+Flex
+Floating
+Hide/Show Elements
+Misc
+Padding/Margin
+Position
+Overflow
+Sizing
+Text Utilities
+Z-Index
+Animations
+=======================================================
+*/
+
+/*
+-------------------------------------------------------
+Background
+-------------------------------------------------------
+*/
+
+@each $class, $color in config.$colors {
+  .u-bg-#{$class} {
+    background-color: $color;
+  }
+}
+
+/*
+-------------------------------------------------------
+Display
+-------------------------------------------------------
+*/
+
+@each $property in 'none', 'block', 'inline', 'inline-block', 'inline-flex', 'flex' {
+  .u-display-#{functions.camelize($property)} {
+    display: #{$property};
+  }
+}
+
+@each $property in 'none', 'block', 'inline', 'inline-block', 'inline-flex', 'flex' {
+  @each $breakpoint in config.$breakpoints {
+    $breakpoint: list.nth($breakpoint, 1);
+    @if $breakpoint != xs {
+      @include mixins.media-breakpoint($breakpoint) {
+        .u-#{$breakpoint}-display-#{functions.camelize($property)} {
+          display: #{$property};
+        }
+      }
+    }
+  }
+}
+
+/*
+-------------------------------------------------------
+Flex
+-------------------------------------------------------
+*/
+
+@each $property in 'row', 'row-reverse', 'column', 'column-reverse' {
+  .u-flexDirection-#{functions.camelize($property)} {
+    flex-direction: #{$property};
+  }
+
+  @each $breakpoint in config.$breakpoints {
+    $breakpoint: list.nth($breakpoint, 1);
+    @if $breakpoint != xs {
+      @include mixins.media-breakpoint($breakpoint) {
+        .u-#{$breakpoint}-flexDirection-#{functions.camelize($property)} {
+          flex-direction: #{$property};
+        }
+      }
+    }
+  }
+}
+
+@each $property in 'start', 'center', 'end', 'space-between', 'space-around' {
+  .u-justifyContent-#{functions.camelize($property)} {
+    justify-content: #{$property};
+  }
+
+  @each $breakpoint in config.$breakpoints {
+    $breakpoint: list.nth($breakpoint, 1);
+    @if $breakpoint != xs {
+      @include mixins.media-breakpoint($breakpoint) {
+        .u-#{$breakpoint}-justifyContent-#{functions.camelize($property)} {
+          justify-content: #{$property};
+        }
+      }
+    }
+  }
+}
+
+@each $property in 'start', 'center', 'end', 'stretch' {
+  .u-alignItems-#{$property} {
+    align-items: #{$property};
+  }
+
+  .u-alignSelf-#{$property} {
+    align-self: #{$property};
+  }
+
+  @each $breakpoint in config.$breakpoints {
+    $breakpoint: list.nth($breakpoint, 1);
+    @if $breakpoint != xs {
+      @include mixins.media-breakpoint($breakpoint) {
+        .u-#{$breakpoint}-alignItems-#{$property} {
+          align-items: #{$property};
+        }
+
+        .u-#{$breakpoint}-alignSelf-#{$property} {
+          align-self: #{$property};
+        }
+      }
+    }
+  }
+}
+
+/*
+-------------------------------------------------------
+Floating
+-------------------------------------------------------
+*/
+
+@each $float in 'left', 'right', 'none' {
+  .u-float-#{$float} {
+    float: #{$float};
+  }
+
+  @each $breakpoint in config.$breakpoints {
+    $breakpoint: list.nth($breakpoint, 1);
+    @if $breakpoint != xs {
+      @include mixins.media-breakpoint($breakpoint) {
+        .u-#{$breakpoint}-float-#{$float} {
+          float: #{$float};
+        }
+      }
+    }
+  }
+}
+
+.u-clearFix {
+  clear: both;
+}
+
+/*
+-------------------------------------------------------
+Hide/Show Elements
+-------------------------------------------------------
+*/
+
+.u-hide {
+  @include mixins.hideElement;
+}
+
+@each $breakpoint in config.$breakpoints {
+  $breakpoint: list.nth($breakpoint, 1);
+
+  @include mixins.media-breakpoint($breakpoint) {
+    .u-#{$breakpoint}-hide {
+      @include mixins.hideElement;
+    }
+
+    .u-#{$breakpoint}-show {
+      @include mixins.showElement;
+    }
+  }
+}
+
+/*
+-------------------------------------------------------
+Misc
+-------------------------------------------------------
+*/
+
+.u-smoothTransition {
+  transition: all 0.3s;
+}
+
+/*
+-------------------------------------------------------
+Padding/Margin
+-------------------------------------------------------
+*/
+
+@each $property in 'padding', 'margin' {
+  @include mixins.spacing('u-#{$property}-', $property);
+  @include mixins.spacing('u-#{$property}-y-', ('#{$property}-top', '#{$property}-bottom'));
+  @include mixins.spacing('u-#{$property}-x-', ('#{$property}-left', '#{$property}-right'));
+
+  .u-#{$property}-auto {
+    #{$property}: auto;
+  }
+
+  .u-#{$property}-y-auto {
+    #{$property}-top: auto;
+    #{$property}-bottom: auto;
+  }
+
+  .u-#{$property}-x-auto {
+    #{$property}-left: auto;
+    #{$property}-right: auto;
+  }
+
+  @each $position in 'top', 'left', 'right', 'bottom' {
+    @include mixins.spacing('u-#{functions.camelize(#{$property}-#{$position})}-', #{$property}-#{$position});
+
+    .u-#{functions.camelize(#{$property}-#{$position})}-auto {
+      #{$property}-#{$position}: auto;
+    }
+  }
+
+  @each $breakpoint in config.$breakpoints {
+    $breakpoint: list.nth($breakpoint, 1);
+    @if $breakpoint != xs {
+      @include mixins.media-breakpoint($breakpoint) {
+        @include mixins.spacing('u-#{$breakpoint}-#{$property}-', $property);
+        @include mixins.spacing('u-#{$breakpoint}-#{$property}-y-', ('#{$property}-top', '#{$property}-bottom'));
+        @include mixins.spacing('u-#{$breakpoint}-#{$property}-x-', ('#{$property}-left', '#{$property}-right'));
+
+        .u-#{$breakpoint}-#{$property}-auto {
+          #{$property}: auto;
+        }
+
+        .u-#{$breakpoint}-#{$property}-y-auto {
+          #{$property}-top: auto;
+          #{$property}-bottom: auto;
+        }
+
+        .u-#{$breakpoint}-#{$property}-x-auto {
+          #{$property}-left: auto;
+          #{$property}-right: auto;
+        }
+
+        @each $position in 'top', 'left', 'right', 'bottom' {
+          @include mixins.spacing('u-#{$breakpoint}-#{functions.camelize(#{$property}-#{$position})}-', #{$property}-#{$position});
+
+          .u-#{functions.camelize(#{$property}-#{$position})}-auto {
+            #{$property}-#{$position}: auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*
+-------------------------------------------------------
+Position
+-------------------------------------------------------
+*/
+
+@each $position in 'relative', 'absolute', 'fixed' {
+  .u-position-#{$position} {
+    position: #{$position};
+
+    @each $breakpoint in config.$breakpoints {
+      $breakpoint: list.nth($breakpoint, 1);
+      @if $breakpoint != xs {
+        @include mixins.media-breakpoint($breakpoint) {
+          .u-#{$breakpoint}-position-#{$position} {
+            display: #{$position};
+          }
+        }
+      }
+    }
+  }
+}
+
+/*
+-------------------------------------------------------
+Overflow
+-------------------------------------------------------
+*/
+
+@each $property in 'auto', 'hidden', 'visible', 'scroll' {
+  .u-overflow-#{$property} {
+    overflow: #{$property};
+  }
+}
+
+/*
+-------------------------------------------------------
+Sizing
+-------------------------------------------------------
+*/
+
+.u-size-full,
+.u-width-full {
+  width: 100%;
+}
+
+.u-size-full,
+.u-height-full {
+  height: 100%;
+}
+
+.u-size-auto,
+.u-width-auto {
+  width: auto;
+}
+
+.u-size-auto,
+.u-height-auto {
+  height: auto;
+}
+
+/*
+-------------------------------------------------------
+Text Utilities
+-------------------------------------------------------
+*/
+
+@each $class, $color in config.$colors {
+  .u-color-#{$class} {
+    color: $color;
+  }
+}
+
+@each $class, $size in config.$fontSizes {
+  .u-fontSize-#{$class} {
+    font-size: $size;
+  }
+
+  @each $breakpoint in config.$breakpoints {
+    $breakpoint: list.nth($breakpoint, 1);
+    @if $breakpoint != xs {
+      @include mixins.media-breakpoint($breakpoint) {
+        .u-#{$breakpoint}-fontSize-#{$class} {
+          font-size: $size;
+        }
+      }
+    }
+  }
+}
+
+@each $align in 'center', 'left', 'right' {
+  .u-text-#{$align} {
+    text-align: #{$align};
+  }
+
+  @each $breakpoint in config.$breakpoints {
+    $breakpoint: list.nth($breakpoint, 1);
+    @if $breakpoint != xs {
+      @include mixins.media-breakpoint($breakpoint) {
+        .u-#{$breakpoint}-text-#{$align} {
+          text-align: #{$align};
+        }
+      }
+    }
+  }
+}
+
+.u-text-uppercase {
+  text-transform: uppercase;
+}
+
+.u-text-lowercase {
+  text-transform: lowercase;
+}
+
+.u-textBlock {
+  line-height: 1.6;
+}
+
+/*
+-------------------------------------------------------
+Z-Index
+-------------------------------------------------------
+*/
+
+@for $i from 1 through 6 {
+  .u-zIndex-#{$i} {
+    z-index: $i;
+  }
+}

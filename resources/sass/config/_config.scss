@@ -1,0 +1,90 @@
+/*
+=======================================================
+Config
+=======================================================
+Grid Options
+Viewports
+Colors
+Font Sizes
+Form Elements
+=======================================================
+*/
+
+/*
+-------------------------------------------------------
+Grid Options
+-------------------------------------------------------
+*/
+
+$grid-cols: 12;
+$grid-gutter: 2em;
+
+/*
+-------------------------------------------------------
+Viewports
+-------------------------------------------------------
+*/
+
+$breakpoints: (
+  xs: 480px,
+  sm: 600px,
+  md: 840px,
+  lg: 960px,
+  xl: 1280px
+);
+
+/*
+-------------------------------------------------------
+Colors
+-------------------------------------------------------
+*/
+
+@use 'sass:color';
+
+$colorBase-main: #24292e;
+$colorBase-gray: #cecece;
+$colorVariation-ratio: 10%;
+
+$colors: (
+  light:      #fff,
+  dark:       #222,
+  grayDefault: $colorBase-gray,
+  grayDark:   color.scale($colorBase-gray, $blackness: -$colorVariation-ratio),
+  grayLight:  color.scale($colorBase-gray, $lightness: $colorVariation-ratio),
+  main:       $colorBase-main,
+  mainDark:   color.scale($colorBase-main, $blackness: -$colorVariation-ratio),
+  mainLight:  color.scale($colorBase-main, $lightness: $colorVariation-ratio)
+);
+
+/*
+-------------------------------------------------------
+Font Sizes
+-------------------------------------------------------
+*/
+
+$fontSize-default:  1em;
+$fontSize-ratio:    0.25;
+
+$fontSizes: (
+  small:     $fontSize-default - $fontSize-ratio,
+  default:   $fontSize-default,
+  title-6:   $fontSize-default + $fontSize-ratio * 1,
+  title-5:   $fontSize-default + $fontSize-ratio * 2,
+  title-4:   $fontSize-default + $fontSize-ratio * 3,
+  title-3:   $fontSize-default + $fontSize-ratio * 4,
+  title-2:   $fontSize-default + $fontSize-ratio * 5,
+  title-1:   $fontSize-default + $fontSize-ratio * 6,
+  display-4: $fontSize-default + $fontSize-ratio * 7,
+  display-3: $fontSize-default + $fontSize-ratio * 8,
+  display-2: $fontSize-default + $fontSize-ratio * 9,
+  display-1: $fontSize-default + $fontSize-ratio * 10
+);
+
+/*
+-------------------------------------------------------
+Form Elements
+-------------------------------------------------------
+*/
+
+$formElements: 'input, button, select, textarea';
+$formElements-borderRadius: 0.3rem;

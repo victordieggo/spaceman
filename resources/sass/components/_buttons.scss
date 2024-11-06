@@ -1,0 +1,107 @@
+@use "../config/config";
+@use "../utils/functions";
+@use "../utils/mixins";
+
+/*
+=======================================================
+Buttons
+=======================================================
+Default Styles
+Button Variations
+=======================================================
+*/
+
+/*
+-------------------------------------------------------
+Default Styles
+-------------------------------------------------------
+*/
+
+.btn {
+  color: functions.color(dark);
+  padding: 0.5em 1em;
+  text-align: center;
+  line-height: 1.5em;
+  border-width: 2px;
+  border-style: solid;
+  display: inline-block;
+  cursor: pointer;
+  font-size: functions.font-size(default);
+  border-radius: config.$formElements-borderRadius;
+  transition: background 0.3s, border 0.3s, color 0.3s;
+  @include mixins.btnColor(functions.color(grayDefault));
+
+  &:focus,
+  &:hover {
+    outline: none;
+    text-decoration: none;
+    @include mixins.btnColor(functions.color(grayDark));
+  }
+
+  &-icon {
+    fill: functions.color(dark);
+    @include mixins.size(1em);
+    transition: fill 0.3s;
+
+    span + &,
+    & + span {
+      margin-left: 0.7em;
+    }
+  }
+
+  &--outline:not(:hover):not(:focus) {
+    color: inherit;
+    background-color: transparent;
+
+    .btn-icon {
+      fill: functions.color(dark);
+    }
+  }
+
+  &:disabled,
+  &.is-disabled {
+    z-index: -1;
+    opacity: 0.6;
+    position: relative;
+    pointer-events: none;
+  }
+}
+
+/*
+-------------------------------------------------------
+Button Variations
+-------------------------------------------------------
+*/
+
+.btn--main {
+  color: functions.color(light);
+  @include mixins.btnColor(functions.color(main));
+
+  .btn-icon {
+    fill: functions.color(light);
+  }
+
+  &:focus,
+  &:hover {
+    @include mixins.btnColor(functions.color(mainLight));
+  }
+}
+
+.btn--mainOutline {
+  color: functions.color(main);
+  @include mixins.btnColor(transparent, functions.color(main));
+
+  .btn-icon {
+    fill: functions.color(main);
+  }
+
+  &:focus,
+  &:hover {
+    color: functions.color(light);
+    @include mixins.btnColor(functions.color(mainLight));
+
+    .btn-icon {
+      fill: functions.color(light);
+    }
+  }
+}

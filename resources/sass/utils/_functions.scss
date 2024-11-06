@@ -1,0 +1,142 @@
+@use "sass:list";
+@use "sass:map";
+@use "sass:string";
+@use "../config/config";
+
+/*
+=======================================================
+Functions
+=======================================================
+Get breakpoints
+Get colors
+Get font sizes
+Generate grid column
+Get assets URL
+String helpers
+=======================================================
+*/
+
+/*
+-------------------------------------------------------
+Get breakpoints
+-------------------------------------------------------
+*/
+
+@function breakpoint($key) {
+  @return map.get(config.$breakpoints, $key);
+}
+
+/*
+-------------------------------------------------------
+Get colors
+-------------------------------------------------------
+*/
+
+@function color($color) {
+  @if map.has-key(config.$colors, $color) {
+    @return map.get(config.$colors, $color);
+  }
+
+  @error 'Invalid color name: #{$color}.';
+}
+
+/*
+-------------------------------------------------------
+Get font sizes
+-------------------------------------------------------
+*/
+
+@function font-size($key) {
+  @if map.has-key(config.$fontSizes, $key) {
+    @return map.get(config.$fontSizes, $key);
+  }
+
+  @error 'Invalid font-size: #{$key}.';
+}
+
+/*
+-------------------------------------------------------
+Generate grid column
+-------------------------------------------------------
+*/
+
+@function column($columnSize, $gridSize) {
+  @return calc($columnSize / $gridSize) * 100%;
+}
+
+/*
+-------------------------------------------------------
+Get assets URL
+-------------------------------------------------------
+*/
+
+@function assets-url($path, $file) {
+  @return url('/' + $path + '/' + $file);
+}
+
+@function fonts($file) {
+  @return assets-url('fonts', $file);
+}
+
+@function img($file) {
+  @return assets-url('img', $file);
+}
+
+@function svg($file) {
+  @return assets-url('svg', $file);
+}
+
+/*
+-------------------------------------------------------
+String helpers
+-------------------------------------------------------
+*/
+
+@function contain($list, $value) {
+  @return not not list.index($list, $value);
+}
+
+@function capitalize($string) {
+  @return string.to-upper-case(string.slice($string, 1, 1)) + string.slice($string, 2);
+}
+
+@function str-ucwords($string) {
+  $progress: $string;
+  $result: '';
+
+  $running: true;
+
+  @while $running {
+    $index: string.index($progress, ' ');
+    @if $index {
+      $result: $result + capitalize(string.slice($progress, 1, $index));
+      $progress: string.slice($progress, ($index + 1));
+    }
+    @else {
+      $running: false;
+    }
+  }
+
+  @return capitalize($result) + capitalize($progress);
+}
+
+@function camelize($string) {
+  $progress: $string;
+  $result: '';
+  $exclude: ' ', '-', '–', '—', '_', ',', ';', ':', '.';
+
+  @while string.length($progress) > 0 {
+    $char: string.slice($progress, 1, 1);
+
+    @if contain($exclude, $char) {
+      $progress: capitalize(string.slice($progress, 2, 2)) + string.slice($progress, 3);
+    }
+
+    @else {
+      $result: $result + $char;
+      $progress: string.slice($progress, 2);
+    }
+  }
+
+  @return $result;
+}

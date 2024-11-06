@@ -1,0 +1,248 @@
+@use "../utils/functions";
+@use "../utils/mixins";
+
+/*
+=======================================================
+Navbar
+=======================================================
+Base Styles
+Main Navigation
+Mobile Navigation
+Mobile Navigation Button
+=======================================================
+*/
+
+/*
+-------------------------------------------------------
+Base Styles
+-------------------------------------------------------
+*/
+
+.navBar {
+  display: flex;
+  justify-content: flex-end;
+
+  :not(.is-active) > &-subMenu {
+    display: none;
+  }
+
+  &-menuItem {
+    &-link {
+      display: block;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    &--hasChildren > &-link {
+      padding-right: 1.5em;
+      position: relative;
+
+      &::after {
+        content: '';
+        padding: 0.35em;
+        @include mixins.absolute(0, 0, 0);
+      }
+    }
+  }
+}
+
+/*
+-------------------------------------------------------
+Main Navigation
+-------------------------------------------------------
+*/
+
+@include mixins.media-breakpoint(md) {
+  .navBar {
+    &-menu {
+      display: flex;
+      flex: 0 0 100%;
+      justify-content: space-between;
+
+      &Item {
+        position: relative;
+
+        &:hover,
+        &:hover > &-link,
+        &.is-active > &-link {
+          color: functions.color(grayDark);
+
+          &::after {
+            background-color: functions.color(grayDark);
+          }
+        }
+
+        &-link::after {
+          background-color: functions.color(light);
+          mask-position: center;
+          mask-repeat: no-repeat;
+          mask-size: 1.35rem;
+          mask-image: functions.svg('icon-arrow-down.svg');
+        }
+      }
+    }
+
+    &-subMenu {
+      z-index: 1;
+      color: functions.color(dark);
+      white-space: nowrap;
+      border-radius: 0.4em;
+      background-color: functions.color(light);
+      box-shadow: 0 0 2px functions.color(grayDark);
+      @include mixins.absolute(calc(100% + 0.5em));
+
+      .navBar-menuItem {
+        &:not(:last-child)::after {
+          content: '';
+          display: block;
+          margin: 0 0.65em;
+          border-bottom: 1px solid functions.color(grayDefault);
+        }
+
+        &-link {
+          font-size: 90%;
+          padding: 0.7em;
+        }
+
+        &--hasChildren > .navBar-menuItem-link {
+          padding-right: 2em;
+
+          &::after {
+            right: 0.7em;
+            background-color: functions.color(dark);
+            mask-position: center;
+            mask-repeat: no-repeat;
+            mask-size: 1.2rem;
+            mask-image: functions.svg('icon-arrow-right.svg');
+          }
+        }
+
+        &:hover,
+        &.is-active {
+          & > .navBar-menuItem-link::after {
+            background-color: functions.color(grayDark);
+          }
+        }
+      }
+
+      & & {
+        top: 0;
+        left: 100%;
+      }
+    }
+  }
+}
+
+/*
+-------------------------------------------------------
+Mobile Navigation
+-------------------------------------------------------
+*/
+
+@include mixins.media-breakpoint(md, max) {
+  .navBar {
+    z-index: 1;
+    position: relative;
+
+    &-menu {
+      width: 20em;
+      overflow-y: auto;
+      overflow-x: hidden;
+      visibility: hidden;
+      color: functions.color(dark);
+      will-change: transform;
+      transform: translateX(-100%);
+      transform-style: preserve-3d;
+      @include mixins.fixed(0, null, 0, 0);
+      background-color: functions.color(light);
+
+      .is-active & {
+        transform: none;
+        visibility: visible;
+      }
+
+      .is-animating & {
+        transition: visibility 0s ease-in-out, transform 0.3s ease-in-out;
+      }
+
+      .is-animating:not(.is-active) & {
+        transition: visibility 0s ease-in-out 0.3s, transform 0.3s ease-in-out;
+      }
+
+      &Item {
+        &:not(:last-child) {
+          border-bottom: 1px solid functions.color(grayLight);
+        }
+
+        &-link {
+          padding: 1.7em;
+        }
+
+        &--hasChildren > &-link::after {
+          right: 1.5em;
+          padding: 1em;
+          background-color: functions.color(dark);
+          mask-position: center;
+          mask-repeat: no-repeat;
+          mask-size: 100%;
+          mask-image: functions.svg('icon-arrow-down.svg');
+        }
+
+        .is-active > &-link {
+          background-color: functions.color(main);
+          border-bottom: 1px solid functions.color(mainLight);
+          color: functions.color(light);
+
+          &::after {
+            transform: rotate(180deg);
+            background-color: functions.color(light);
+          }
+        }
+      }
+    }
+
+    &-disableScroll {
+      overflow: hidden;
+    }
+
+    &-overlay {
+      z-index: -1;
+      animation: fadeIn 0.35s;
+      background-color: rgba(functions.color(dark), 0.7);
+      @include mixins.fixed(0, 0, 0, 0);
+
+      .is-animating:not(.is-active) & {
+        animation: fadeOut 0.35s;
+      }
+    }
+  }
+}
+
+@include mixins.media-breakpoint(sm, max) {
+  .navBar-menu {
+    width: 75%;
+  }
+}
+
+/*
+-------------------------------------------------------
+Mobile Navigation Button
+-------------------------------------------------------
+*/
+
+@include mixins.media-breakpoint(md, max) {
+  .navBar-btn {
+    @include mixins.size(2em);
+    background-color: functions.color(light);
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: 100%;
+    mask-image: functions.svg('icon-menu.svg');
+
+    .is-active & {
+      mask-image: functions.svg('icon-close.svg');
+    }
+  }
+}

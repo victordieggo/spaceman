@@ -1,0 +1,12 @@
+/*
+=======================================================
+MAIN
+=======================================================
+*/
+
+@use 'config/module' as config;
+@use 'utils/module' as utils;
+@use 'base/module' as base;
+@use 'components/module' as components;
+@use 'layout/module' as layout;
+@use 'vendor/module' as vendor;
