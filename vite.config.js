@@ -1,3 +1,5 @@
+import viteJoinMediaQueries from 'vite-join-media-queries';
+
 export default {
   root: 'resources',
   base: './',
@@ -15,4 +17,7 @@ export default {
       }
     }
   },
+  plugins: [
+    viteJoinMediaQueries()
+  ]
 };

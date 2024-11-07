@@ -22,6 +22,7 @@
   },
   "devDependencies": {
     "sass-embedded": "^1.80.6",
-    "vite": "^5.4.10"
+    "vite": "^5.4.10",
+    "vite-join-media-queries": "^0.1.3"
   }
 }
