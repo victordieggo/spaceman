@@ -62,22 +62,18 @@ Font Sizes
 -------------------------------------------------------
 */
 
-$fontSize-default:  1em;
-$fontSize-ratio:    0.25;
+$fontSize-default: 1em;
+$fontSize-ratio: 0.25;
 
 $fontSizes: (
-  small:     $fontSize-default - $fontSize-ratio,
-  default:   $fontSize-default,
-  title-6:   $fontSize-default + $fontSize-ratio * 1,
-  title-5:   $fontSize-default + $fontSize-ratio * 2,
-  title-4:   $fontSize-default + $fontSize-ratio * 3,
-  title-3:   $fontSize-default + $fontSize-ratio * 4,
-  title-2:   $fontSize-default + $fontSize-ratio * 5,
-  title-1:   $fontSize-default + $fontSize-ratio * 6,
-  display-4: $fontSize-default + $fontSize-ratio * 7,
-  display-3: $fontSize-default + $fontSize-ratio * 8,
-  display-2: $fontSize-default + $fontSize-ratio * 9,
-  display-1: $fontSize-default + $fontSize-ratio * 10
+  default: $fontSize-default,
+  small: $fontSize-default - $fontSize-ratio,
+  h6: $fontSize-default + $fontSize-ratio * 1,
+  h5: $fontSize-default + $fontSize-ratio * 2,
+  h4: $fontSize-default + $fontSize-ratio * 3,
+  h3: $fontSize-default + $fontSize-ratio * 4,
+  h2: $fontSize-default + $fontSize-ratio * 5,
+  h1: $fontSize-default + $fontSize-ratio * 6
 );
 
 /*
