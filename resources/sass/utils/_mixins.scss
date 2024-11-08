@@ -130,10 +130,15 @@ Offset Positioning
 
 @mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
   position: $position;
-  top: $top;
-  right: $right;
-  bottom: $bottom;
-  left: $left;
+
+  @if ($top == $bottom and $left == $right and $top == $left and $bottom == $right) {
+    inset: $top;
+  } @else {
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+  }
 }
 
 @mixin absolute($args...) {
