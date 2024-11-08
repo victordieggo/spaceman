@@ -8,94 +8,88 @@
 </head>
 
 <body>
-  <header class="mainHeader u-bg-main u-color-light u-padding-y-15">
-    <div class="container">
-      <div class="row u-alignItems-center">
-        <div class="col">
-          <h1 class="u-fontSize-title-5">Project Title</h1>
-        </div>
-        <div class="col">
-          <nav class="navBar" role="navigation">
-            <button class="navBar-btn navBar-toggle u-md-hide" aria-expanded="false" aria-label="Toggle navigation"></button>
-            <ul class="navBar-menu">
-              <li class="navBar-menuItem">
-                <a class="navBar-menuItem-link" href="#home">Home</a>
-              </li>
-              <li class="navBar-menuItem">
-                <a class="navBar-menuItem-link" href="#about">About</a>
-              </li>
+  <header class="mainHeader u-bg-main u-cl-light u-py-15">
+    <div class="container u-d-flex u-ai-center u-jc-spaceBetween">
+      <h1 class="u-fs-h5">Project Title</h1>
+      <nav class="navBar" role="navigation">
+        <button class="navBar-btn navBar-toggle u-md-hide" aria-expanded="false" aria-label="Toggle navigation"></button>
+        <ul class="navBar-menu">
+          <li class="navBar-menuItem">
+            <a class="navBar-menuItem-link" href="#home">Home</a>
+          </li>
+          <li class="navBar-menuItem">
+            <a class="navBar-menuItem-link" href="#about">About</a>
+          </li>
+          <li class="navBar-menuItem navBar-menuItem--hasChildren">
+            <a class="navBar-menuItem-link" href="#services" aria-expanded="false">Services</a>
+            <ul class="navBar-subMenu">
               <li class="navBar-menuItem navBar-menuItem--hasChildren">
-                <a class="navBar-menuItem-link" href="#services" aria-expanded="false">Services</a>
+                <a class="navBar-menuItem-link" href="#lorem-ipsum" aria-expanded="false">Lorem Ipsum</a>
                 <ul class="navBar-subMenu">
-                  <li class="navBar-menuItem navBar-menuItem--hasChildren">
-                    <a class="navBar-menuItem-link" href="#lorem-ipsum" aria-expanded="false">Lorem Ipsum</a>
-                    <ul class="navBar-subMenu">
-                      <li class="navBar-menuItem">
-                        <a class="navBar-menuItem-link" href="#dolor-sit-amet">Dolor Sit Amet</a>
-                      </li>
-                      <li class="navBar-menuItem">
-                        <a class="navBar-menuItem-link" href="#lorem-ipsum">Lorem Ipsum</a>
-                      </li>
-                    </ul>
+                  <li class="navBar-menuItem">
+                    <a class="navBar-menuItem-link" href="#dolor-sit-amet">Dolor Sit Amet</a>
                   </li>
-                  <li class="navBar-menuItem navBar-menuItem--hasChildren">
-                    <a class="navBar-menuItem-link" href="#dolor-sit-amet" aria-expanded="false">Dolor Sit Amet</a>
-                    <ul class="navBar-subMenu">
-                      <li class="navBar-menuItem">
-                        <a class="navBar-menuItem-link" href="#in-faucibus">In Faucibus</a>
-                      </li>
-                      <li class="navBar-menuItem">
-                        <a class="navBar-menuItem-link" href="#velit-semper">Velit Semper</a>
-                      </li>
-                    </ul>
+                  <li class="navBar-menuItem">
+                    <a class="navBar-menuItem-link" href="#lorem-ipsum">Lorem Ipsum</a>
                   </li>
                 </ul>
               </li>
-              <li class="navBar-menuItem">
-                <a class="navBar-menuItem-link" href="#blog">Blog</a>
-              </li>
-              <li class="navBar-menuItem">
-                <a class="navBar-menuItem-link" href="#contact">Contact</a>
+              <li class="navBar-menuItem navBar-menuItem--hasChildren">
+                <a class="navBar-menuItem-link" href="#dolor-sit-amet" aria-expanded="false">Dolor Sit Amet</a>
+                <ul class="navBar-subMenu">
+                  <li class="navBar-menuItem">
+                    <a class="navBar-menuItem-link" href="#in-faucibus">In Faucibus</a>
+                  </li>
+                  <li class="navBar-menuItem">
+                    <a class="navBar-menuItem-link" href="#velit-semper">Velit Semper</a>
+                  </li>
+                </ul>
               </li>
             </ul>
-          </nav>
-        </div>
-      </div>
+          </li>
+          <li class="navBar-menuItem">
+            <a class="navBar-menuItem-link" href="#blog">Blog</a>
+          </li>
+          <li class="navBar-menuItem">
+            <a class="navBar-menuItem-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </nav>
     </div>
   </header>
 
-  <div class="heroImage u-position-relative u-hideOverflow u-padding-y-15" role="banner">
-    <img class="heroImage-background u-width-100 u-height-100" src="images/slide.webp" alt="">
-    <div class="heroImage-content container u-display-flex u-flexDirection-column u-alignItems-start u-justifyContent-end">
-      <span class="u-bg-main u-padding-05 u-fontSize-title-5 u-color-light">
+  <div class="heroImage u-p-relative u-py-15" role="banner">
+    <img class="heroImage-background u-w-100 u-h-100" src="images/slide.webp" alt="">
+    <div class="heroImage-content container u-d-flex u-fd-column u-ai-start u-jc-end">
+      <span class="u-bg-main u-p-05 u-fs-h5 u-cl-light">
         Lorem ipsum dolor sit amet
       </span>
-      <span class="u-bg-light u-padding-05">
+      <span class="u-bg-light u-p-05">
         Sed ut nunc cursus, dapibus sapien ut
       </span>
     </div>
   </div>
 
   <main role="main">
-    <section class="container u-padding-y-15">
+    <section class="container u-py-15">
       <div class="row">
         <div class="col-lg-4">
-          <h2 class="u-fontSize-title-6">Lorem ipsum dolor sit amet</h2>
-          <hr class="u-margin-y-10">
+          <h2 class="u-fs-h6">Lorem ipsum dolor sit amet</h2>
+          <hr class="u-my-10">
           <p class="u-textBlock">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut nunc cursus, dapibus sapien ut, mollis mi. In at felis purus. Cras lacinia urna nec neque pellentesque, in tempus nunc tristique.</p>
           <br/>
           <a class="btn btn--main" href="#learn-more-1">Learn More</a>
         </div>
-        <div class="col-md-6 col-lg-4 u-marginTop-15 u-lg-marginTop-0">
-          <h2 class="u-fontSize-title-6">Lorem ipsum dolor sit amet</h2>
-          <hr class="u-margin-y-10">
+        <div class="col-md-6 col-lg-4 u-mt-15 u-lg-mt-0">
+          <h2 class="u-fs-h6">Lorem ipsum dolor sit amet</h2>
+          <hr class="u-my-10">
           <p class="u-textBlock">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut nunc cursus, dapibus sapien ut, mollis mi. In at felis purus. Cras lacinia urna nec neque pellentesque, in tempus nunc tristique.</p>
           <br/>
           <a class="btn btn--main" href="#learn-more-2">Learn More</a>
         </div>
-        <div class="col-md-6 col-lg-4 u-marginTop-15 u-lg-marginTop-0">
-          <h2 class="u-fontSize-title-6">Lorem ipsum dolor sit amet</h2>
-          <hr class="u-margin-y-10">
+        <div class="col-md-6 col-lg-4 u-mt-15 u-lg-mt-0">
+          <h2 class="u-fs-h6">Lorem ipsum dolor sit amet</h2>
+          <hr class="u-my-10">
           <p class="u-textBlock">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut nunc cursus, dapibus sapien ut, mollis mi. In at felis purus. Cras lacinia urna nec neque pellentesque, in tempus nunc tristique.</p>
           <br/>
           <a class="btn btn--main" href="#learn-more-3">Learn More</a>
@@ -104,8 +98,8 @@
     </section>
   </main>
 
-  <footer class="mainFooter u-bg-main u-color-light" role="contentinfo">
-    <div class="container u-text-center u-padding-20">
+  <footer class="mainFooter u-bg-main u-cl-light" role="contentinfo">
+    <div class="container u-ta-center u-p-20">
       &copy; 2017-2024 | Project Title
     </div>
   </footer>

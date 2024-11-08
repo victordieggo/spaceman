@@ -56,6 +56,8 @@ Main Navigation
 
 @include mixins.media-breakpoint(md) {
   .navBar {
+    min-width: 50%;
+
     &-menu {
       display: flex;
       flex: 0 0 100%;
