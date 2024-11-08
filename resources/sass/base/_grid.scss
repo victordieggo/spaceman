@@ -41,6 +41,10 @@ Columns
   flex: 1 1 0;
 }
 
+[class^='col-'] {
+  width: 100%;
+}
+
 @include mixins.grid('col');
 
 @each $breakpoint in config.$breakpoints {
